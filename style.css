@@ -4449,7 +4449,7 @@ body {
   position: fixed;
   bottom: 2rem;
   left: 50%;
-  transform: translateX(-50%) translateY(80px);
+  transform: translateX(-50%) translateY(30px);
   background: rgba(13, 11, 26, 0.95);
   border: 1px solid var(--gold-color);
   border-radius: 12px;
@@ -4457,14 +4457,18 @@ body {
   font-size: 0.9rem;
   padding: 0.85rem 1.5rem;
   z-index: 9999;
-  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.35s ease;
   text-align: center;
   backdrop-filter: blur(12px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .share-toast.show {
   transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* ==========================================================================
@@ -5580,6 +5584,57 @@ body.high-contrast .lunar-cal-day.selected-day {
 
 .grimorio-book .grimorio-card-art.minor-arcana-placeholder .suit-text {
   font-size: 0.88rem;
+}
+
+/* ==========================================================================
+   MEJORA DE NAVEGACIÓN EN MÓVIL (Pestañas deslizables de un solo renglón)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .app-nav {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none !important; /* Firefox */
+    padding: 0.2rem 1rem 0.6rem 1rem !important;
+    gap: 0.6rem !important;
+    margin-bottom: 1.5rem !important;
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  }
+  
+  .app-nav::-webkit-scrollbar {
+    display: none !important; /* Ocultar barra en Chrome/Safari */
+  }
+  
+  .nav-tab {
+    flex-shrink: 0 !important;
+    font-size: 0.88rem !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 20px !important; /* Estilo píldora premium */
+    border: 1.5px solid var(--border-color) !important;
+    margin-bottom: 0 !important;
+    background: rgba(229, 193, 88, 0.02) !important;
+  }
+  
+  .nav-tab.active {
+    background: rgba(229, 193, 88, 0.08) !important;
+    border-color: var(--gold-color) !important;
+    box-shadow: 0 0 10px rgba(229, 193, 88, 0.15) !important;
+  }
+  
+  .nav-tab.active::after {
+    display: none !important; /* Elimina la línea inferior del estilo de pestañas de escritorio */
+  }
+  
+  /* Ajuste de márgenes del header móvil */
+  .app-header {
+    padding: 1.5rem 1rem 1rem 1rem !important;
+  }
+  
+  .main-title {
+    font-size: 1.8rem !important;
+  }
 }
 
 
