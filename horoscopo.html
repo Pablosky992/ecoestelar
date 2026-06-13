@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>El Oráculo del Destino — El Eco de las Estrellas</title>
+  <title>Tu Horóscopo Diario — El Eco de las Estrellas</title>
   
   <!-- Favicon / Icono de la pestaña -->
   <link rel="icon" type="image/png" href="assets/logo_luna_v2.webp">
@@ -74,13 +74,13 @@
 
     <!-- Menú de Pestañas -->
         <nav class="app-nav" aria-label="Navegación principal">
-      <a href="index.html" class="nav-tab active">
+      <a href="index.html" class="nav-tab">
         <span class="tab-icon">🔮</span> El Oráculo
       </a>
       <a href="carta-del-dia.html" class="nav-tab">
         <span class="tab-icon">🌟</span> Carta del Día
       </a>
-      <a href="horoscopo.html" class="nav-tab">
+      <a href="horoscopo.html" class="nav-tab active">
         <span class="tab-icon">✨</span> Tu Horóscopo
       </a>
       <a href="fase-lunar.html" class="nav-tab">
@@ -96,198 +96,291 @@
 
     <!-- Contenido de Pestañas -->
 
-    <div id="oracle-tab-content" class="tab-content">
+    <!-- Pestaña 3: Tu Horóscopo (Astrología y Tarot) -->
+    <div id="horoscope-tab-content" class="tab-content">
       <main class="main-layout">
-      <!-- Configuration Panel -->
-      <section class="config-panel" aria-label="Configuración de la consulta">
-        <div class="glass-card">
-          <h2 class="panel-title">Prepara tu Consulta</h2>
+        <!-- Configuration Panel -->
+        <section class="config-panel" aria-label="Configuración del horóscopo">
+          <div class="glass-card">
+            <h2 class="panel-title">Predicción Astrológica</h2>
+            
+            <div class="numerology-mode-toggle astro-mode-toggle" style="margin-bottom: 1.5rem;" id="astro-mode-toggle">
+              <button type="button" class="mode-btn active" data-astro-mode="tarot">Tiradas de Tarot</button>
+              <button type="button" class="mode-btn" data-astro-mode="transits">Tránsitos Celestes</button>
+            </div>
+            
+            <!-- Zodiac Sign Selection (Shared) -->
+            <div class="form-group">
+              <label for="zodiac-select">Selecciona tu Signo del Zodiaco:</label>
+              <div class="select-wrapper">
+                <select id="zodiac-select" class="premium-select">
+                  <option value="aries">Aries ♈</option>
+                  <option value="tauro">Tauro ♉</option>
+                  <option value="geminis">Géminis ♊</option>
+                  <option value="cancer">Cáncer ♋</option>
+                  <option value="leo">Leo ♌</option>
+                  <option value="virgo">Virgo ♍</option>
+                  <option value="libra">Libra ♎</option>
+                  <option value="escorpio">Escorpio ♏</option>
+                  <option value="sagitario">Sagitario ♐</option>
+                  <option value="capricornio">Capricornio ♑</option>
+                  <option value="acuario">Acuario ♒</option>
+                  <option value="piscis">Piscis ♓</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Formulario Modo Tarot -->
+            <div id="astro-tarot-form-group">
+              <!-- Horoscope Spread Selection -->
+              <div class="form-group">
+                <label for="astro-spread-select">Elige tu Tirada del Horóscopo:</label>
+                <div class="select-wrapper">
+                  <select id="astro-spread-select" class="premium-select">
+                    <option value="astro_daily">✦ Tirada Diaria (1 carta)</option>
+                    <option value="astro_weekly">✦ Tirada Semanal (3 cartas)</option>
+                    <option value="astro_houses">✦ Rueda de las 12 Casas (12 cartas)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Action Button -->
+              <button type="button" id="astro-consult-btn" class="consult-button">
+                CONSULTAR ASTROS
+              </button>
+            </div>
+
+            <!-- Formulario Modo Tránsitos Celestes -->
+            <div id="astro-transits-form-group" class="hidden">
+              <div class="form-group">
+                <label for="astro-transits-period-select">Período de Predicción:</label>
+                <div class="select-wrapper">
+                  <select id="astro-transits-period-select" class="premium-select">
+                    <option value="daily">✦ Clima Diario (La Luna)</option>
+                    <option value="weekly">✦ Clima Semanal (Planetas Rápidos)</option>
+                    <option value="monthly">✦ Clima Mensual (Sol y Lentos)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Action Button -->
+              <button type="button" id="astro-transits-consult-btn" class="consult-button success-theme">
+                LEER CLIMA CELESTE
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Astro Reading Table (Tapete Astrológico) -->
+        <section class="reading-table" aria-label="Tapete de lectura astrológica">
+          <div class="tapete-mat">
+            <div class="tapete-header">
+              <h2 id="astro-reading-status-title">Alinea tu energía con el Zodíaco...</h2>
+              <p id="astro-reading-status-desc">Elige tu signo y realiza la tirada para consultar el clima astral.</p>
+            </div>
+
+            <!-- Astro Cards Deal Board -->
+            <div class="cards-board" id="astro-cards-board">
+              <!-- Dynamic placeholders and card elements will be generated here -->
+            </div>
+
+            <!-- Instructions or Deck display -->
+            <div class="deck-container" id="astro-deck-container">
+              <div class="mystical-deck" id="astro-mystical-deck">
+                <div class="deck-card"></div>
+                <div class="deck-card"></div>
+                <div class="deck-card"></div>
+                <div class="deck-card"></div>
+              </div>
+              <button type="button" id="astro-shuffle-btn" class="shuffle-button">Barajar Astros</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Astro Interpretation Panel (Results) -->
+      <section class="results-panel hidden" id="astro-results-panel" aria-label="Resultados del horóscopo">
+        <div class="glass-card result-container">
           
-          <!-- Question Input -->
-          <div class="form-group">
-            <label for="question-input">Escribe tu pregunta para el oráculo:</label>
-            <input type="text" id="question-input" placeholder="Ej: ¿Conseguiré el trabajo al que postulé?" autocomplete="off">
+          <!-- Results Header -->
+          <div class="result-header">
+            <span class="category-badge" id="astro-result-badge">Predicción Astrológica</span>
+            <h2 class="result-title" id="astro-result-title">Tu Horóscopo del Destino</h2>
+            <p class="user-question-text" id="astro-user-sign-text">Signo: Libra</p>
           </div>
 
-          <!-- Category Selection -->
-          <div class="form-group">
-            <label for="category-select">Selecciona la categoría de tu pregunta:</label>
-            <div class="select-wrapper">
-              <select id="category-select" class="premium-select">
-                <option value="general">✦ General (Destino y vida)</option>
-                <option value="love">✦ Amor (Afecto y sentimientos)</option>
-                <option value="work">✦ Trabajo (Profesión y economía)</option>
-                <option value="health">✦ Salud (Bienestar y energía)</option>
-              </select>
+          <!-- Tarot Results Group -->
+          <div id="astro-tarot-results-group">
+            <!-- Astro Climate Card (Three Columns) -->
+            <div class="astro-climate-card" id="astro-climate-card">
+              <!-- 3 columns: User Sign Info, Sun Transit Info, Moon Transit Info -->
+              <div class="climate-col user-sign-info">
+                <div class="climate-header">
+                  <span class="climate-icon" id="climate-user-icon">♈</span>
+                  <h4>Tu Signo</h4>
+                </div>
+                <p class="climate-subtitle" id="climate-user-name">Aries</p>
+                <div class="climate-desc" id="climate-user-desc">
+                  Cargando tu correspondencia física...
+                </div>
+              </div>
+              
+              <div class="climate-col sun-transit-info">
+                <div class="climate-header">
+                  <span class="climate-icon">☀️</span>
+                  <h4>Tránsito Solar</h4>
+                </div>
+                <p class="climate-subtitle" id="climate-sun-name">Temporada de...</p>
+                <div class="climate-desc" id="climate-sun-desc">
+                  Cargando influjo solar y chakra...
+                </div>
+              </div>
+              
+              <div class="climate-col moon-transit-info">
+                <div class="climate-header">
+                  <div class="climate-moon-svg-container" id="climate-moon-icon"></div>
+                  <h4>Tránsito Lunar</h4>
+                </div>
+                <p class="climate-subtitle" id="climate-moon-name">Luna en...</p>
+                <div class="climate-desc" id="climate-moon-desc">
+                  Cargando fase y ángel regente...
+                </div>
+              </div>
+            </div>
+
+            <!-- Predicción Rápida -->
+            <div id="astro-summary-forecast-section" class="astro-summary-forecast-section">
+              <h3 class="section-title" id="astro-summary-title">Tu Clave del Día</h3>
+              <div class="narrative-box summary-forecast-box" style="margin-bottom: 2rem; border-left: 4px solid var(--gold-color); background: rgba(229, 193, 88, 0.04); padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0;">
+                <p id="astro-summary-forecast-text" style="font-size: 1.15rem; line-height: 1.6; font-weight: 500; font-style: italic; color: var(--text-main); margin: 0;"></p>
+              </div>
+            </div>
+
+            <!-- Narrative Synthesis Section -->
+            <div class="destiny-synthesis-section">
+              <h3 class="section-title">Síntesis y Predicción Astrológica</h3>
+              <div class="narrative-box">
+                <p id="astro-forecast-text">El horóscopo que unifica tránsitos, signos y cartas aparecerá aquí...</p>
+              </div>
+            </div>
+
+            <!-- Special Synastry / Conjunctions (Benages couples, Sign Match) -->
+            <div class="astro-special-section hidden" id="astro-special-section">
+              <h3 class="section-title">Alineaciones de Destino Detectadas</h3>
+              <div class="special-box" id="astro-special-box">
+                <!-- Special synergy/couple info here -->
+              </div>
+            </div>
+
+            <!-- Divisor Místico -->
+            <div class="mystical-divider">
+              <svg viewBox="0 0 100 8" class="divider-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 4H42M58 4H100" stroke="var(--border-color)" stroke-width="0.75" />
+                <polygon points="50,0.5 51.5,3.5 55,3.5 52.5,5.5 54,8.5 50,6.8 46,8.5 47.5,5.5 45,3.5 48.5,3.5" fill="var(--gold-color)" />
+              </svg>
+            </div>
+
+            <!-- Individual Card Detail Breakdown -->
+            <div class="cards-breakdown">
+              <h3 class="section-title">Detalle de las Cartas de Tránsito</h3>
+              <div class="breakdown-grid" id="astro-breakdown-grid">
+                <!-- Dynamic card breakdown list -->
+              </div>
             </div>
           </div>
 
-          <!-- Spread Selection -->
-          <div class="form-group">
-            <label for="spread-select">Elige el tipo de tirada:</label>
-            <div class="select-wrapper">
-              <select id="spread-select" class="premium-select">
-                <option value="yesno1">✦ Sí o No (1 carta)</option>
-                <option value="yesno3">✦ Sí o No (3 cartas)</option>
-                <option value="destiny">✦ Tirada del Destino (3 cartas - Pasado/Presente/Futuro)</option>
-                <option value="cross5">✦ Tirada en Cruz (5 cartas - Pros/Contras/Central)</option>
-                <option value="pyramid6">✦ Pirámide Invertida (6 cartas - Decantación evolutiva)</option>
-                <option value="celtic10">✦ La Cruz Celta (10 cartas - Lectura Completa Evolutiva)</option>
-                <option value="mirror4">✦ El Espejo Relacional (4 cartas - Pareja y Proyecciones)</option>
-                <option value="clarity4">✦ Hechizo de Claridad (4 cartas - Bloqueo y Solución)</option>
-              </select>
+          <!-- Celestial Transits Results Group -->
+          <div id="astro-transits-results-group" class="hidden">
+            <div class="transits-dashboard">
+              <div class="transits-wheel-section">
+                <h3 class="section-title">Rueda de Aspectos Celestes</h3>
+                <p class="section-subtitle">Alineaciones geométricas calculadas entre los planetas y tu signo solar.</p>
+                <div class="aspects-wheel-container">
+                  <div id="aspects-wheel-dial" class="aspects-wheel-dial">
+                    <!-- Dynamically populated SVG -->
+                  </div>
+                </div>
+                <div class="aspects-legend">
+                  <div class="legend-item"><span class="legend-dot conjunction"></span>Conjunción (0° - Fusión)</div>
+                  <div class="legend-item"><span class="legend-dot sextile"></span>Sextil (60° - Armonía)</div>
+                  <div class="legend-item"><span class="legend-dot square"></span>Cuadratura (90° - Tensión)</div>
+                  <div class="legend-item"><span class="legend-dot trine"></span>Trígono (120° - Fluidez)</div>
+                  <div class="legend-item"><span class="legend-dot opposition"></span>Oposición (180° - Reto)</div>
+                </div>
+              </div>
+
+              <div class="transits-grid-section">
+                <h3 class="section-title">Posiciones Celestes en Tiempo Real</h3>
+                <p class="section-subtitle">Coordenadas exactas en la eclíptica para el momento de consulta.</p>
+                <div class="transits-planets-grid" id="transits-planets-grid">
+                  <!-- Dynamically populated planet cards -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Detailed Forecast Narratives -->
+            <div class="transits-narratives">
+              <h3 class="section-title">Lectura Detallada del Clima Astral</h3>
+              
+              <div class="narrative-card general">
+                <div class="narrative-header">
+                  <span class="narrative-icon">🌌</span>
+                  <h4>Influencia y Clima General</h4>
+                </div>
+                <div class="narrative-body" id="transits-general-box">
+                  <!-- Text content -->
+                </div>
+              </div>
+
+              <div class="narrative-card love">
+                <div class="narrative-header">
+                  <span class="narrative-icon">💖</span>
+                  <h4>Amor y Relaciones</h4>
+                </div>
+                <div class="narrative-body" id="transits-love-box">
+                  <!-- Text content -->
+                </div>
+              </div>
+
+              <div class="narrative-card career">
+                <div class="narrative-header">
+                  <span class="narrative-icon">💼</span>
+                  <h4>Trabajo, Finanzas y Éxito</h4>
+                </div>
+                <div class="narrative-body" id="transits-career-box">
+                  <!-- Text content -->
+                </div>
+              </div>
+
+              <div class="narrative-card mind">
+                <div class="narrative-header">
+                  <span class="narrative-icon">🧘</span>
+                  <h4>Mente, Salud y Espiritualidad</h4>
+                </div>
+                <div class="narrative-body" id="transits-mind-box">
+                  <!-- Text content -->
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Reversals Toggle -->
-          <div class="form-group" style="margin-bottom: 1.5rem;">
-            <div class="toggle-container" style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.02); border: 1.5px solid var(--border-color); padding: 0.75rem 1rem; border-radius: 8px;">
-              <span class="toggle-label" style="font-size: 0.9rem; color: var(--text-muted); letter-spacing: 0.05em;">Permitir cartas invertidas</span>
-              <label class="toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px; cursor: pointer;">
-                <input type="checkbox" id="reversals-toggle" style="opacity: 0; width: 0; height: 0;">
-                <span class="toggle-slider"></span>
-              </label>
-            </div>
+          <!-- Divisor Místico -->
+          <div class="mystical-divider">
+            <svg viewBox="0 0 100 8" class="divider-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 4H42M58 4H100" stroke="var(--border-color)" stroke-width="0.75" />
+              <polygon points="50,0.5 51.5,3.5 55,3.5 52.5,5.5 54,8.5 50,6.8 46,8.5 47.5,5.5 45,3.5 48.5,3.5" fill="var(--gold-color)" />
+            </svg>
           </div>
 
-          <!-- Action Button -->
-          <button type="button" id="consult-btn" class="consult-button">
-            CONSULTAR EL ORÁCULO
-          </button>
-
-          <!-- MEJORA 4: Guided Questions Panel -->
-          <div id="guided-questions-panel" class="guided-questions-panel">
-            <p class="guided-q-title">&#x2728; Sugerencias de preguntas:</p>
-            <!-- Chips will be injected by JS based on category -->
+          <!-- Reset Button -->
+          <div class="reset-container">
+            <button type="button" id="astro-reset-btn" class="reset-button">
+              REALIZAR OTRA TIRADA ASTRO
+            </button>
           </div>
         </div>
       </section>
-
-      <!-- Reading Table (Tapete) -->
-      <section class="reading-table" aria-label="Tapete de lectura de cartas">
-        <div class="tapete-mat">
-          <div class="tapete-header">
-            <h2 id="reading-status-title">Prepara tu mente y formula tu pregunta...</h2>
-            <p id="reading-status-desc">Selecciona tus opciones en el panel lateral y pulsa el botón dorado.</p>
-          </div>
-
-          <!-- Cards Deal Board -->
-          <div class="cards-board" id="cards-board">
-            <!-- Dynamic placeholders and card elements will be generated here -->
-          </div>
-
-          <!-- Instructions or Deck display -->
-          <div class="deck-container" id="deck-container">
-            <div class="mystical-deck" id="mystical-deck">
-              <!-- Animated deck cards -->
-              <div class="deck-card"></div>
-              <div class="deck-card"></div>
-              <div class="deck-card"></div>
-              <div class="deck-card"></div>
-            </div>
-            <button type="button" id="shuffle-btn" class="shuffle-button">Barajar Mazo</button>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Interpretation Panel (Results) -->
-    <section class="results-panel hidden" id="results-panel" aria-label="Resultados de la lectura">
-      <div class="glass-card result-container">
-        
-        <!-- Results Header -->
-        <div class="result-header">
-          <span class="category-badge" id="result-category-badge">Amor</span>
-          <h2 class="result-title">El veredicto del Oráculo</h2>
-          <p class="user-question-text" id="result-question-text">¿Pregunta?</p>
-          <!-- MEJORA 2: Share Button -->
-          <button type="button" class="share-reading-btn" id="share-reading-btn">
-            💫 Compartir esta lectura
-          </button>
-        </div>
-
-        <!-- Yes/No Verdict Section (For yesno1 and yesno3) -->
-        <div class="yesno-verdict-section hidden" id="yesno-verdict-section">
-          <div class="verdict-display">
-            <span class="verdict-label">Respuesta del Tarot:</span>
-            <div class="verdict-badge" id="verdict-badge">SÍ</div>
-          </div>
-          <p class="verdict-explanation" id="verdict-explanation">Explicación del sí o no...</p>
-        </div>
-
-        <!-- Lunar Influence Section -->
-        <div class="lunar-influence-section hidden" id="lunar-influence-section">
-          <div class="lunar-influence-header">
-            <span class="lunar-symbol" id="lunar-influence-symbol">🌕</span>
-            <h4>Sinergia Lunar de la Lectura</h4>
-          </div>
-          <p id="lunar-influence-text">Cargando influencia lunar...</p>
-        </div>
-
-        <!-- MEJORA 9: Oracle Loader (shown briefly before synthesis) -->
-        <div class="destiny-synthesis-section hidden" id="oracle-loader-section">
-          <div id="oracle-loader-overlay">
-            <div class="oracle-loader-crystal">🔮</div>
-            <p class="oracle-loader-text">El oráculo está hablando<span class="oracle-loader-dots">...</span></p>
-          </div>
-        </div>
-
-        <!-- Narrative Synthesis Section (For destiny) -->
-        <div class="destiny-synthesis-section hidden" id="destiny-synthesis-section">
-          <h3 class="section-title">Síntesis Narrativa del Destino</h3>
-          <div class="narrative-box">
-            <p id="destiny-synthesis-text">La narrativa que conecta pasado, presente y futuro aparecerá aquí...</p>
-          </div>
-        </div>
-
-        <!-- Divisor Místico -->
-        <div class="mystical-divider">
-          <svg viewBox="0 0 100 8" class="divider-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 4H42M58 4H100" stroke="var(--border-color)" stroke-width="0.75" />
-            <polygon points="50,0.5 51.5,3.5 55,3.5 52.5,5.5 54,8.5 50,6.8 46,8.5 47.5,5.5 45,3.5 48.5,3.5" fill="var(--gold-color)" />
-          </svg>
-        </div>
-
-        <!-- Individual Card Detail Breakdown -->
-        <div class="cards-breakdown">
-          <h3 class="section-title">Detalle de las Cartas Reveladas</h3>
-          <div class="breakdown-grid" id="breakdown-grid">
-            <!-- Dynamic card cards will be inserted here -->
-          </div>
-        </div>
-
-        <!-- Divisor Místico -->
-        <div class="mystical-divider">
-          <svg viewBox="0 0 100 8" class="divider-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 4H42M58 4H100" stroke="var(--border-color)" stroke-width="0.75" />
-            <polygon points="50,0.5 51.5,3.5 55,3.5 52.5,5.5 54,8.5 50,6.8 46,8.5 47.5,5.5 45,3.5 48.5,3.5" fill="var(--gold-color)" />
-          </svg>
-        </div>
-
-        <!-- Reset Button -->
-        <div class="reset-container">
-          <button type="button" id="reset-btn" class="reset-button">
-            REALIZAR OTRA CONSULTA
-          </button>
-        </div>
-        
-    </section>
-
-    <!-- Reading History Panel (Diario del Destino) -->
-    <section class="history-panel" id="history-panel" aria-label="Historial de consultas">
-      <div class="glass-card history-container">
-        <div class="history-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1.5rem;">
-          <h3 class="section-title" style="margin-bottom: 0; border: none; font-size: 1.4rem;">Tu Diario del Destino</h3>
-          <button type="button" id="clear-history-btn" class="clear-history-button" style="background: transparent; border: 1px solid var(--error-color); color: var(--error-color); border-radius: 20px; padding: 0.35rem 1rem; font-size: 0.8rem; cursor: pointer; transition: var(--transition-smooth);">Borrar Diario</button>
-        </div>
-        
-        <div id="history-list" class="history-list">
-          <!-- History items will be generated here -->
-          <p class="no-history-text" style="color: var(--text-muted); text-align: center; font-style: italic; padding: 2rem 0;">Aún no has registrado lecturas en tu diario de destino. Las consultas que realices aparecerán aquí.</p>
-        </div>
-      </div>
-    </section>
-    </div> <!-- Cierre de #oracle-tab-content -->
+    </div>
 
 
   </div> <!-- Cierre de .app-container -->

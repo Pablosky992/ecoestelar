@@ -247,7 +247,7 @@ const NUM_REL_DEST_DB = {
   8: "Vuestro sendero conjunto os reta a dominar las finanzas y el plano material con absoluta justicia y honestidad espiritual.",
   9: "Vuestra misión evolutiva es vivir con desapego, dedicándose a obras benéficas o humanitarias con amor incondicional universal.",
   11: "Vuestro camino maestro es servir como faro de inspiración espiritual y elevación de conciencia para vuestra comunidad.",
-  22: "Vuestro propósito es construir sistemas u obras a gran escala que dejen una huella práctica de bienestar para la sociedad.",
+  22: "Vuestro propósito es construir sistemas u obras a gran escala que dejen una huella pr��ctica de bienestar para la sociedad.",
   33: "Vuestra misión de luz es guiar con el ejemplo del amor compasivo incondicional, brindando consuelo espiritual a gran escala."
 };
 
@@ -894,24 +894,27 @@ if (categorySelect) {
 }
 
 // Shuffling Animation Trigger
-shuffleBtn.addEventListener('click', () => {
-  if (isShuffling) return;
-  isShuffling = true;
-  const deck = document.getElementById('mystical-deck');
-  deck.classList.add('shuffling');
-  shuffleBtn.textContent = 'Mezclando astros...';
-  shuffleBtn.disabled = true;
-  
-  setTimeout(() => {
-    deck.classList.remove('shuffling');
-    shuffleBtn.textContent = 'Barajar Mazo';
-    shuffleBtn.disabled = false;
-    isShuffling = false;
-  }, 1800);
-});
+if (shuffleBtn) {
+  shuffleBtn.addEventListener('click', () => {
+    if (isShuffling) return;
+    isShuffling = true;
+    const deck = document.getElementById('mystical-deck');
+    if (deck) deck.classList.add('shuffling');
+    shuffleBtn.textContent = 'Mezclando astros...';
+    shuffleBtn.disabled = true;
+    
+    setTimeout(() => {
+      if (deck) deck.classList.remove('shuffling');
+      shuffleBtn.textContent = 'Barajar Mazo';
+      shuffleBtn.disabled = false;
+      isShuffling = false;
+    }, 1800);
+  });
+}
 
 // Consult Oracle Button click handler
-consultBtn.addEventListener('click', () => {
+if (consultBtn) {
+  consultBtn.addEventListener('click', () => {
   const question = questionInput.value.trim();
   const selectedSpreadVal = spreadSelect ? spreadSelect.value : 'yesno1';
   
@@ -1306,7 +1309,8 @@ function calculateYesNo(type) {
           <strong>${cardNameDisplay}</strong>: ${answerText}
         </li>
       `;
-    });
+      });
+}
     
     listHTML += `</ul>`;
     explanation.innerHTML = listHTML;
@@ -1447,20 +1451,23 @@ function generatePyramidSynthesis(question) {
 }
 
 // Reset / Perform another consultation
-resetBtn.addEventListener('click', () => {
-  // Clear inputs and state
-  questionInput.value = '';
-  resultsPanel.classList.add('hidden');
-  deckContainer.style.display = 'flex';
-  cardsBoard.innerHTML = '';
-  
-  // Reset tapete text
-  readingStatusTitle.textContent = "Prepara tu mente y formula tu pregunta...";
-  readingStatusDesc.textContent = "Selecciona tus opciones en el panel lateral y pulsa el botón dorado.";
-  
-  // Smooth scroll back to settings
-  document.querySelector('.config-panel').scrollIntoView({ behavior: 'smooth' });
-});
+if (resetBtn) {
+  resetBtn.addEventListener('click', () => {
+    // Clear inputs and state
+    if (questionInput) questionInput.value = '';
+    if (resultsPanel) resultsPanel.classList.add('hidden');
+    if (deckContainer) deckContainer.style.display = 'flex';
+    if (cardsBoard) cardsBoard.innerHTML = '';
+    
+    // Reset tapete text
+    if (readingStatusTitle) readingStatusTitle.textContent = "Prepara tu mente y formula tu pregunta...";
+    if (readingStatusDesc) readingStatusDesc.textContent = "Selecciona tus opciones en el panel lateral y pulsa el botón dorado.";
+    
+    // Smooth scroll back to settings
+    const configPanel = document.querySelector('.config-panel');
+    if (configPanel) configPanel.scrollIntoView({ behavior: 'smooth' });
+  });
+}
 
 // Save reading to localStorage
 function saveReading(question, spreadType) {
@@ -2070,52 +2077,61 @@ function initTabNavigation() {
   const lunarContent = document.getElementById('lunar-tab-content');
   const dailyContent = document.getElementById('daily-tab-content');
 
+  // Auto-initialize features based on which content divs are active/present on the page
+  if (bookContent) {
+    initTarotBook();
+  }
+  if (lunarContent) {
+    renderLunarTabDetails();
+  }
+  if (horoscopeContent) {
+    // Load saved zodiac sign if available
+    const savedZodiac = localStorage.getItem('user_zodiac_sign');
+    if (savedZodiac && zodiacSelect) {
+      zodiacSelect.value = savedZodiac;
+      selectedZodiac = savedZodiac;
+    }
+  }
+
   tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
+    tab.addEventListener('click', (e) => {
+      const target = tab.getAttribute('data-tab');
+      if (!target) return; // If standard link without data-tab, let browser navigate
+      
+      e.preventDefault();
+
       // Deactivate all tabs
       tabs.forEach(t => t.classList.remove('active'));
       // Activate clicked tab
       tab.classList.add('active');
 
-      const target = tab.getAttribute('data-tab');
-      
       // Hide all first
-      oracleContent.classList.add('hidden');
-      bookContent.classList.add('hidden');
+      if (oracleContent) oracleContent.classList.add('hidden');
+      if (bookContent) bookContent.classList.add('hidden');
       if (horoscopeContent) horoscopeContent.classList.add('hidden');
       if (numerologyContent) numerologyContent.classList.add('hidden');
       if (lunarContent) lunarContent.classList.add('hidden');
       if (dailyContent) dailyContent.classList.add('hidden');
 
-      if (target === 'oracle') {
+      if (target === 'oracle' && oracleContent) {
         oracleContent.classList.remove('hidden');
-      } else if (target === 'daily') {
-        if (dailyContent) {
-          dailyContent.classList.remove('hidden');
+      } else if (target === 'daily' && dailyContent) {
+        dailyContent.classList.remove('hidden');
+      } else if (target === 'horoscope' && horoscopeContent) {
+        horoscopeContent.classList.remove('hidden');
+        const savedZodiac = localStorage.getItem('user_zodiac_sign');
+        if (savedZodiac && zodiacSelect) {
+          zodiacSelect.value = savedZodiac;
+          selectedZodiac = savedZodiac;
         }
-      } else if (target === 'horoscope') {
-        if (horoscopeContent) {
-          horoscopeContent.classList.remove('hidden');
-          // Load saved zodiac sign if available
-          const savedZodiac = localStorage.getItem('user_zodiac_sign');
-          if (savedZodiac && zodiacSelect) {
-            zodiacSelect.value = savedZodiac;
-            selectedZodiac = savedZodiac;
-          }
-        }
-      } else if (target === 'book') {
+      } else if (target === 'book' && bookContent) {
         bookContent.classList.remove('hidden');
-        // Lazy initialize the book grid if it hasn't been done
         initTarotBook();
-      } else if (target === 'numerology') {
-        if (numerologyContent) {
-          numerologyContent.classList.remove('hidden');
-        }
-      } else if (target === 'lunar') {
-        if (lunarContent) {
-          lunarContent.classList.remove('hidden');
-          renderLunarTabDetails();
-        }
+      } else if (target === 'numerology' && numerologyContent) {
+        numerologyContent.classList.remove('hidden');
+      } else if (target === 'lunar' && lunarContent) {
+        lunarContent.classList.remove('hidden');
+        renderLunarTabDetails();
       }
     });
   });
@@ -4337,7 +4353,7 @@ function initLunarTab() {
     full: {
       title: "Luna Llena",
       subtitle: "Fase de Plenitud, Revelación e Intuición Máxima",
-      image: "assets/luna_llena.png",
+      image: "assets/luna_llena.webp",
       influence: "La Luna Llena es el momento en que la energía cósmica alcanza su cúspide. Simboliza la culminación de proyectos, la iluminación de lo que estaba oculto en el subconsciente y el punto de mayor sensibilidad psíquica. Durante esta fase, las emociones pueden ser intensas y las percepciones extrasensoriales están muy potenciadas. Es una temporada ideal para la autoexpresión, la manifestación de deseos y la celebración de los logros.",
       ritual: "<strong>Ritual de Carga y Manifestación:</strong> Escribe en un papel las metas que has alcanzado y agradece al universo. Para manifestar, coloca tus cristales y un vaso con agua purificada bajo la luz directa de la luna llena toda la noche. Al día siguiente, bebe el agua cargada con la energía lunar para impregnar tu cuerpo físico y astral de vitalidad, claridad y protección espiritual.",
       tarot: "<strong>Consagración y Limpieza del Mazo:</strong> Es la fase perfecta para limpiar y cargar tu mazo de cartas de Tarot. Expón el mazo directamente a los rayos de la luna llena sobre el alféizar de una ventana. Su luz purificará cualquier energía residual acumulada y sintonizará tus lecturas con tu vibración espiritual más alta."
@@ -4345,7 +4361,7 @@ function initLunarTab() {
     crescent: {
       title: "Luna Creciente",
       subtitle: "Fase de Intención, Siembra y Acción Inicial",
-      image: "assets/luna_creciente.png",
+      image: "assets/luna_creciente.webp",
       influence: "La Luna Creciente marca el inicio del crecimiento de la luz. Representa el impulso para actuar, la siembra de nuevas intenciones y la recolección de ideas innovadoras. La energía cósmica nos empuja hacia adelante, inspirándonos a superar la inercia y a dar los primeros pasos con valentía. Es una fase de creatividad, planificación estructurada y enfoque mental en tus deseos.",
       ritual: "<strong>Ritual de Intenciones del Sembrador:</strong> Enciende una vela verde o dorada. Escribe en tu diario de destino 3 objetivos claros que quieras hacer crecer en las próximas semanas. Visualízate lográndolos mientras sostienes un cuarzo transparente en tus manos. Conserva el papel debajo de tu almohada o en un lugar secreto.",
       tarot: "<strong>Activación del Mazo:</strong> Realiza lecturas enfocadas en proyectos que inician. Para cargar tus cartas con esta vibración, baraja el mazo con suavidad y visualiza una luz dorada que emana de tus manos, infundiendo al Tarot la energía del crecimiento y el dinamismo."
@@ -4353,7 +4369,7 @@ function initLunarTab() {
     new: {
       title: "Luna Nueva",
       subtitle: "Fase de Introspección, Renacimiento y Vacío Místico",
-      image: "assets/luna_nueva.png",
+      image: "assets/luna_nueva.webp",
       influence: "La Luna Nueva es el momento de total oscuridad en el cielo. Representa el punto cero, el útero cósmico donde todo nace y donde todo descansa. Es el ciclo ideal para replegarse, mirar hacia el interior (introspección), meditar en el silencio y soltar apegos. La energía de hoy nos invita a purificar la mente y el espíritu, limpiando el terreno para el ciclo que comienza.",
       ritual: "<strong>Ritual de Vacío y Purificación:</strong> Enciende un incienso de sándalo o copal. Escribe en un papel aquello que te limita o te causa ansiedad. Quema el papel de forma segura en un cuenco resistente al fuego, entregando tus miedos al fuego sagrado para transmutarlos en sabiduría. Medita 10 minutos en silencio absoluto.",
       tarot: "<strong>Limpieza y Descanso:</strong> Se aconseja dar un respiro a tus lecturas profundas o realizar tiradas terapéuticas de autoconocimiento. Envuelve tu mazo de Tarot en un paño de seda violeta o negra y colócalo junto a una piedra de obsidiana o turmalina negra para absorber y neutralizar las vibraciones densas."
@@ -4361,7 +4377,7 @@ function initLunarTab() {
     quarter: {
       title: "Cuarto Creciente",
       subtitle: "Fase de Decisión, Superación y Fuerza de Voluntad",
-      image: "assets/luna_cuarto.png",
+      image: "assets/luna_cuarto.webp",
       influence: "El Cuarto Creciente representa el equilibrio perfecto de luz y sombra (media luna). En este punto, el universo te reta a superar los primeros obstáculos que surgen tras sembrar tus metas en la Luna Nueva. Es una fase que exige tomar decisiones firmes, templar el carácter y demostrar resistencia mental y disciplina. La energía cósmica es de lucha constructiva y autoafirmación.",
       ritual: "<strong>Ritual de Fuerza y Enfoque:</strong> Coloca tres velas amarillas en forma de triángulo. Escribe en una tarjeta tus mayores desafíos actuales. Sostén un cuarzo ahumado o citrino en tu mano dominante, respira hondo y repite tres veces: 'Soy fuerte, soy constante, ningún obstáculo desvía mi camino'. Guarda la tarjeta en tu billetera como recordatorio visual.",
       tarot: "<strong>Tiradas de Bloqueos:</strong> Es el momento ideal para realizar la tirada 'Hechizo de Claridad' o 'La Cruz Celta', enfocando las preguntas en destrabar dificultades. Limpia el mazo pasándolo a través del humo de un sahumerio de romero o ruda."
@@ -4369,7 +4385,7 @@ function initLunarTab() {
     waning: {
       title: "Luna Menguante",
       subtitle: "Fase de Cierre, Liberación, Desapego y Destierro",
-      image: "assets/luna_menguante_v2.png",
+      image: "assets/luna_menguante_v2.webp",
       influence: "La Luna Menguante marca el declive paulatino de la luz. Es el momento cósmico para soltar, liberar lo que ya no sirve, perdonar, sanar viejas heridas y cerrar ciclos afectivos o laborales. La energía te invita a la limpieza profunda de tu entorno físico y de tus cuerpos sutiles, eliminando la toxicidad y el cansancio acumulado para descansar de verdad.",
       ritual: "<strong>Ritual de Destierro y Despojo:</strong> Limpia tu hogar barriendo desde el interior hacia la puerta de salida mientras visualizas que expulsas las energías estancadas. Toma un baño purificador con sal marina y unas gotas de aceite de lavanda o eucalipto, decretando que el agua arrastra y disuelve todo dolor y fatiga.",
       tarot: "<strong>Purificación Profunda del Mazo:</strong> Coloca tus cartas sobre una superficie plana y pon una piedra de sal de roca o selenita encima del mazo durante 24 horas. Esto descargará por completo la energía impregnada por consultas anteriores, dejándolo neutralizado y en paz."
