@@ -5432,7 +5432,13 @@ function initNatalCard() {
     panel.classList.add('hidden');
   });
 
-
+  const contactBtn = document.getElementById('contact-email-btn');
+  const emailDisplay = document.getElementById('contact-email-display');
+  if (contactBtn && emailDisplay) {
+    contactBtn.addEventListener('click', () => {
+      emailDisplay.style.display = 'block';
+    });
+  }
 
   document.addEventListener('click', (e) => {
     if (!panel.classList.contains('hidden') && 
