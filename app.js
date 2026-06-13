@@ -5432,12 +5432,7 @@ function initNatalCard() {
     panel.classList.add('hidden');
   });
 
-  const contactBtn = document.getElementById('contact-email-btn');
-  if (contactBtn) {
-    contactBtn.addEventListener('click', () => {
-      window.location.href = 'mailto:expondudas@yahoo.com';
-    });
-  }
+
 
   document.addEventListener('click', (e) => {
     if (!panel.classList.contains('hidden') && 
