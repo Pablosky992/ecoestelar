@@ -5435,19 +5435,7 @@ function initNatalCard() {
   const contactBtn = document.getElementById('contact-email-btn');
   if (contactBtn) {
     contactBtn.addEventListener('click', () => {
-      // Intentar abrir el cliente de correo
       window.location.href = 'mailto:expondudas@yahoo.com';
-      
-      // Copiar al portapapeles como respaldo
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText('expondudas@yahoo.com').then(() => {
-          const originalText = contactBtn.innerHTML;
-          contactBtn.innerHTML = '✉️ ¡Copiado!';
-          setTimeout(() => {
-            contactBtn.innerHTML = originalText;
-          }, 3000);
-        }).catch(err => console.error('Error al copiar: ', err));
-      }
     });
   }
 
