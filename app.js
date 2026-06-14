@@ -1926,6 +1926,7 @@ function initConstellations() {
   const canvas = document.getElementById('constellations-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
+  if (!ctx) return;
 
   let width = window.innerWidth;
   let height = window.innerHeight;
@@ -2066,6 +2067,33 @@ function initConstellations() {
 
 // Initialize constellations background
 initConstellations();
+
+const LUNAR_RITUALS = {
+  "Luna Nueva": "Excelente momento para meditar en silencio y establecer propósitos. Escribe en un papel tus intenciones para este ciclo y visualízalas bajo el cielo oscuro.",
+  "Luna Creciente": "Enciende una vela dorada o verde y enfócate en la atracción de abundancia y nuevos proyectos. Haz afirmaciones positivas sobre el crecimiento de tus metas.",
+  "Cuarto Creciente": "Fase de acción. Realiza un ritual de empoderamiento visualizándote superando cualquier obstáculo. Enciende una vela violeta para transmutar miedos en valentía.",
+  "Luna Giba Creciente": "Analiza tus planes. Es propicio realizar infusiones de hierbas (té de manzanilla o menta) para calmar la mente y afinar detalles prácticos de tu vida.",
+  "Luna Llena": "Ritual de consagración. Expón tus cristales, amuletos y agua al brillo plateado de la luna llena. Medita bajo su luz enfocándote en la revelación y la gratitud.",
+  "Luna Giba Menguante": "Espacio de agradecimiento. Da las gracias por los frutos recibidos y comienza a identificar de forma lógica qué hábitos o relaciones necesitas soltar.",
+  "Cuarto Menguante": "Ritual de destierro y desapego. Escribe en un trozo de papel aquello que deseas soltar de tu vida (malos hábitos, miedos o ataduras) y quémalo con cuidado.",
+  "Luna Menguante": "Limpieza y purificación. Sahúma tu hogar con romero o lavanda para disolver energías densas y preparar el espacio para el silencio del nuevo ciclo."
+};
+
+const LUNAR_TAROT_CARE = {
+  "Luna Nueva": "Purificación absoluta. Envuelve tu mazo de tarot en un paño de seda violeta y déjalo reposar toda la noche sobre un lecho de sal marina (sin contacto directo) para limpiar su energía acumulada.",
+  "Luna Creciente": "Magnetización. Pasa cada una de las cartas por el humo de un incienso de sándalo o mirra, decretando que el mazo canalice mensajes de crecimiento y claridad.",
+  "Cuarto Creciente": "Fuerza activa. Mezcla bien las cartas boca abajo y ordénalas en secuencia numérica de arcanos. Expón el mazo a la luz del atardecer para reactivar su vitalidad.",
+  "Luna Giba Creciente": "Afinación intuitiva. Sostén el mazo entre tus manos a la altura del corazón e insufla tu aliento sobre él tres veces mientras visualizas luz dorada limpiando las cartas.",
+  "Luna Llena": "Consagración total. Coloca tu mazo en una ventana donde reciba la luz directa de la Luna Llena durante unas horas. Esto potenciará al máximo su sensibilidad predictiva.",
+  "Luna Giba Menguante": "Descanso protector. Guarda tu mazo junto a un cristal de cuarzo transparente o una amatista dentro de su caja de madera para estabilizar sus vibraciones.",
+  "Cuarto Menguante": "Limpieza de remanentes. Pasa el mazo de cartas por el humo de salvia blanca o romero seco para liberar cualquier energía residual que haya quedado tras lecturas intensas.",
+  "Luna Menguante": "Silencio sagrado. Evita realizar lecturas complejas o predictivas de gran calado durante estos días. Deja descansar el mazo en un espacio oscuro y reservado."
+};
+
+const ZODIAC_SIGNS_LIST = [
+  "aries", "tauro", "geminis", "cancer", "leo", "virgo", 
+  "libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis"
+];
 
 // Navigation & Tarot Book Encyclopedia Logic
 function initTabNavigation() {
@@ -4213,32 +4241,7 @@ initNumerology();
    Pestaña Mística de La Luna (Influencia Lunar y Tránsitos)
    ========================================================================== */
 
-const LUNAR_RITUALS = {
-  "Luna Nueva": "Excelente momento para meditar en silencio y establecer propósitos. Escribe en un papel tus intenciones para este ciclo y visualízalas bajo el cielo oscuro.",
-  "Luna Creciente": "Enciende una vela dorada o verde y enfócate en la atracción de abundancia y nuevos proyectos. Haz afirmaciones positivas sobre el crecimiento de tus metas.",
-  "Cuarto Creciente": "Fase de acción. Realiza un ritual de empoderamiento visualizándote superando cualquier obstáculo. Enciende una vela violeta para transmutar miedos en valentía.",
-  "Luna Giba Creciente": "Analiza tus planes. Es propicio realizar infusiones de hierbas (té de manzanilla o menta) para calmar la mente y afinar detalles prácticos de tu vida.",
-  "Luna Llena": "Ritual de consagración. Expón tus cristales, amuletos y agua al brillo plateado de la luna llena. Medita bajo su luz enfocándote en la revelación y la gratitud.",
-  "Luna Giba Menguante": "Espacio de agradecimiento. Da las gracias por los frutos recibidos y comienza a identificar de forma lógica qué hábitos o relaciones necesitas soltar.",
-  "Cuarto Menguante": "Ritual de destierro y desapego. Escribe en un trozo de papel aquello que deseas soltar de tu vida (malos hábitos, miedos o ataduras) y quémalo con cuidado.",
-  "Luna Menguante": "Limpieza y purificación. Sahúma tu hogar con romero o lavanda para disolver energías densas y preparar el espacio para el silencio del nuevo ciclo."
-};
 
-const LUNAR_TAROT_CARE = {
-  "Luna Nueva": "Purificación absoluta. Envuelve tu mazo de tarot en un paño de seda violeta y déjalo reposar toda la noche sobre un lecho de sal marina (sin contacto directo) para limpiar su energía acumulada.",
-  "Luna Creciente": "Magnetización. Pasa cada una de las cartas por el humo de un incienso de sándalo o mirra, decretando que el mazo canalice mensajes de crecimiento y claridad.",
-  "Cuarto Creciente": "Fuerza activa. Mezcla bien las cartas boca abajo y ordénalas en secuencia numérica de arcanos. Expón el mazo a la luz del atardecer para reactivar su vitalidad.",
-  "Luna Giba Creciente": "Afinación intuitiva. Sostén el mazo entre tus manos a la altura del corazón e insufla tu aliento sobre él tres veces mientras visualizas luz dorada limpiando las cartas.",
-  "Luna Llena": "Consagración total. Coloca tu mazo en una ventana donde reciba la luz directa de la Luna Llena durante unas horas. Esto potenciará al máximo su sensibilidad predictiva.",
-  "Luna Giba Menguante": "Descanso protector. Guarda tu mazo junto a un cristal de cuarzo transparente o una amatista dentro de su caja de madera para estabilizar sus vibraciones.",
-  "Cuarto Menguante": "Limpieza de remanentes. Pasa el mazo de cartas por el humo de salvia blanca o romero seco para liberar cualquier energía residual que haya quedado tras lecturas intensas.",
-  "Luna Menguante": "Silencio sagrado. Evita realizar lecturas complejas o predictivas de gran calado durante estos días. Deja descansar el mazo en un espacio oscuro y reservado."
-};
-
-const ZODIAC_SIGNS_LIST = [
-  "aries", "tauro", "geminis", "cancer", "leo", "virgo", 
-  "libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis"
-];
 
 function initLunarTab() {
   const moonWidget = document.getElementById('moon-phase-widget');
