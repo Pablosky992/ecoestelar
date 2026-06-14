@@ -5586,12 +5586,33 @@ function initNatalCard() {
     if (!audio) {
       audio = new Audio('assets/ambient_meditation.mp3');
       audio.loop = true;
+      audio.addEventListener('timeupdate', () => {
+        localStorage.setItem('tarot_audio_time', audio.currentTime);
+      });
     }
     const vol = slider ? parseFloat(slider.value) : 0.5;
     audio.volume = vol;
+
+    const savedTime = localStorage.getItem('tarot_audio_time');
+    if (savedTime !== null && audio.currentTime === 0) {
+      audio.currentTime = parseFloat(savedTime);
+    }
+
+    localStorage.setItem('tarot_audio_playing', 'true');
+
     audio.play().catch(err => {
       console.log("Autoplay bloqueado por políticas del navegador:", err);
-      if (toggle) toggle.checked = false;
+      // Wait for user interaction to resume playing
+      const resumeOnInteraction = () => {
+        if (localStorage.getItem('tarot_audio_playing') === 'true') {
+          audio.play().then(() => {
+            document.removeEventListener('click', resumeOnInteraction);
+            document.removeEventListener('touchstart', resumeOnInteraction);
+          }).catch(e => console.log("Aún bloqueado:", e));
+        }
+      };
+      document.addEventListener('click', resumeOnInteraction);
+      document.addEventListener('touchstart', resumeOnInteraction);
     });
   }
 
@@ -5599,6 +5620,7 @@ function initNatalCard() {
     if (audio) {
       audio.pause();
     }
+    localStorage.setItem('tarot_audio_playing', 'false');
   }
 
   function updateVolume(vol) {
@@ -5608,11 +5630,17 @@ function initNatalCard() {
   }
 
   if (toggle && slider) {
-    toggle.checked = false;
-    
     const savedVol = localStorage.getItem('tarot_volume');
     if (savedVol !== null) {
       slider.value = savedVol;
+    }
+
+    const isPlaying = localStorage.getItem('tarot_audio_playing') === 'true';
+    if (isPlaying) {
+      toggle.checked = true;
+      startAudio();
+    } else {
+      toggle.checked = false;
     }
 
     toggle.addEventListener('change', () => {
