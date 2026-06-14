@@ -5722,9 +5722,7 @@ function initNatalCard() {
 
   function closeOnboarding() {
     modal.classList.add('hidden');
-    if (checkboxDontShow && checkboxDontShow.checked) {
-      localStorage.setItem('tarot_onboarding_completed', 'true');
-    }
+    localStorage.setItem('tarot_onboarding_completed', 'true');
   }
 
   function openOnboarding() {
