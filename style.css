@@ -1241,7 +1241,7 @@ body {
     display: none;
   }
   
-  \n    flex: 0 0 auto !important;\n    min-width: 90px !important;
+  \n  .nav-tab {\n    flex: 0 0 auto !important;\n    min-width: 90px !important;\n    white-space: nowrap !important;\n    display: flex !important;\n    flex-direction: column !important;\n    align-items: center !important;\n    justify-content: center !important;
     text-align: center !important;
     font-size: 0.72rem !important;
     font-weight: 500 !important;
