@@ -1,3 +1,8 @@
+
+function createSlug(text) {
+  return text.toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+}
+
 // Application State
 let currentSpread = []; // Array of drawn card objects
 let flippedCount = 0;
@@ -2198,8 +2203,11 @@ function initTarotBook() {
   const sortedCards = [...window.tarotDb].sort((a, b) => a.id - b.id);
   
   sortedCards.forEach(card => {
-    const cardEl = document.createElement('div');
+    const cardEl = document.createElement('a');
     cardEl.className = 'book-card-item';
+    cardEl.style.textDecoration = 'none';
+    const slug = createSlug(card.name);
+    cardEl.href = "?carta=" + slug;
     cardEl.setAttribute('data-id', card.id);
     cardEl.setAttribute('data-name', card.name.toLowerCase());
     
@@ -2208,7 +2216,8 @@ function initTarotBook() {
       <span class="book-card-name">${card.name}</span>
     `;
     
-    cardEl.addEventListener('click', () => {
+    cardEl.addEventListener('click', (e) => {
+      e.preventDefault();
       openCardDetailModal(card.id);
     });
     
@@ -2260,6 +2269,14 @@ function openCardDetailModal(cardId) {
 
   const card = window.tarotDb.find(c => c.id === cardId);
   if (!card) return;
+  
+  if (window.history.pushState) {
+    const slug = createSlug(card.name);
+    const newUrl = window.location.pathname + '?carta=' + slug;
+    if (window.location.search !== '?carta=' + slug) {
+       window.history.pushState({ path: newUrl }, '', newUrl);
+    }
+  }
 
   const astro = ASTRO_MAP[card.id] || { ruler: "Cosmos", symbol: "✦", keywords: "Fuerza universal" };
   const romanId = card.id < 22 ? getRomanNumeral(card.id) : "";
@@ -2374,6 +2391,9 @@ function closeCardDetailModal() {
   if (modal) {
     modal.classList.add('hidden');
     modal.classList.remove('book-mode');
+  }
+  if (window.history.pushState && window.location.search.includes('carta=')) {
+    window.history.pushState({ path: window.location.pathname }, '', window.location.pathname);
   }
 }
 
@@ -5553,6 +5573,28 @@ function initNatalCard() {
   const savedContrast = localStorage.getItem('tarot_contrast');
   setContrast(savedContrast === 'high');
 
+  const reducedMotionToggle = document.getElementById('reduced-motion-toggle');
+
+  function setReducedMotion(isReduced) {
+    if (isReduced) {
+      document.body.classList.add('reduced-motion');
+      if (reducedMotionToggle) reducedMotionToggle.checked = true;
+    } else {
+      document.body.classList.remove('reduced-motion');
+      if (reducedMotionToggle) reducedMotionToggle.checked = false;
+    }
+    localStorage.setItem('tarot_reduced_motion', isReduced ? 'true' : 'false');
+  }
+
+  if (reducedMotionToggle) {
+    reducedMotionToggle.addEventListener('change', () => {
+      setReducedMotion(reducedMotionToggle.checked);
+    });
+  }
+
+  const savedReducedMotion = localStorage.getItem('tarot_reduced_motion');
+  setReducedMotion(savedReducedMotion === 'true');
+
   function setFontSize(size) {
     document.documentElement.setAttribute('data-font-size', size);
     fontBtns.forEach(btn => {
@@ -5930,3 +5972,41 @@ const LEGAL_TEXTS = {
   // Iniciar por defecto en Consejo Diario
   switchDailySub('express');
 })();
+
+window.addEventListener('popstate', (e) => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const carta = urlParams.get('carta');
+  if (carta) {
+     const card = window.tarotDb.find(c => createSlug(c.name) === carta);
+     if (card) {
+        // Prevent pushing state again
+        const origPush = window.history.pushState;
+        window.history.pushState = function(){};
+        openCardDetailModal(card.id);
+        window.history.pushState = origPush;
+     }
+  } else {
+     const modal = document.getElementById('card-detail-modal');
+     if (modal && !modal.classList.contains('hidden')) {
+        // Prevent pushing state
+        const origPush = window.history.pushState;
+        window.history.pushState = function(){};
+        closeCardDetailModal();
+        window.history.pushState = origPush;
+     }
+  }
+});
+
+// Initial load check
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const carta = urlParams.get('carta');
+    if (carta && window.tarotDb) {
+       const card = window.tarotDb.find(c => createSlug(c.name) === carta);
+       if (card) {
+          openCardDetailModal(card.id);
+       }
+    }
+  }, 500);
+});

@@ -5602,6 +5602,10 @@ body.high-contrast .lunar-cal-day.selected-day {
     flex-wrap: wrap !important;
   }
   
+  .nav-tab:nth-child(7) {
+    grid-column: span 3 !important;
+  }
+  
   .nav-tab {
     display: flex !important;
     flex-direction: column !important;
@@ -5695,4 +5699,367 @@ body.high-contrast .lunar-cal-day.selected-day {
   background: linear-gradient(135deg, #f3cf58 0%, #d4af37 100%) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important;
+}
+
+/* ==========================================================================
+   DREAM MEANING SEARCH STYLES
+   ========================================================================== */
+
+.dream-search-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.dream-search-input {
+  width: 100%;
+  padding: 0.85rem 2.75rem 0.85rem 1.25rem;
+  background: rgba(13, 11, 26, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.dream-search-input:focus {
+  border-color: var(--gold-color);
+  box-shadow: 0 0 12px rgba(229, 193, 88, 0.2);
+  outline: none;
+}
+
+.dream-clear-btn {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.2s ease;
+  z-index: 2;
+}
+
+.dream-clear-btn:hover {
+  color: var(--gold-color);
+}
+
+.dream-clear-btn.hidden {
+  display: none;
+}
+
+.dream-categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.dream-cat-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(13, 11, 26, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.dream-cat-btn:hover, .dream-cat-btn.active {
+  background: rgba(229, 193, 88, 0.08);
+  border-color: var(--gold-color);
+  color: var(--gold-color);
+  text-shadow: 0 0 6px var(--gold-glow);
+  box-shadow: 0 0 8px rgba(229, 193, 88, 0.1);
+}
+
+.dream-cat-btn .cat-icon {
+  font-size: 1.1rem;
+}
+
+.dream-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.dream-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  min-height: 200px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  background: rgba(13, 11, 26, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dream-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-color);
+  box-shadow: 0 8px 25px rgba(229, 193, 88, 0.15);
+}
+
+.dream-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.dream-card-cat {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--purple-light);
+  font-weight: 600;
+}
+
+.dream-card-icon {
+  font-size: 1.25rem;
+}
+
+.dream-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--gold-color);
+  margin: 0 0 0.75rem 0;
+  letter-spacing: 0.03em;
+  text-shadow: 0 0 4px rgba(229, 193, 88, 0.1);
+}
+
+.dream-card-preview {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  flex-grow: 1;
+  margin: 0 0 1.25rem 0;
+  text-align: justify;
+}
+
+.dream-card-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--gold-color);
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.dream-card:hover .dream-card-btn {
+  border-color: var(--gold-color);
+  background: rgba(229, 193, 88, 0.05);
+  box-shadow: 0 0 10px rgba(229, 193, 88, 0.1);
+}
+
+.dream-tag {
+  background: rgba(106, 90, 205, 0.12);
+  border: 1px solid rgba(106, 90, 205, 0.3);
+  color: var(--purple-light);
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.dream-tag:hover {
+  background: rgba(229, 193, 88, 0.1);
+  border-color: var(--gold-color);
+  color: var(--gold-color);
+}
+
+/* Written Dream Analyzer Styles */
+.dream-mode-selector {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.dream-mode-btn {
+  flex: 1;
+  padding: 0.7rem 0.5rem;
+  border-radius: 8px;
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.dream-mode-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(229, 193, 88, 0.4);
+}
+
+.dream-mode-btn.active {
+  background: rgba(229, 193, 88, 0.08);
+  border-color: var(--gold-color);
+  color: var(--gold-color);
+  box-shadow: 0 0 10px rgba(229, 193, 88, 0.1);
+}
+
+.dream-textarea-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.dream-textarea {
+  width: 100%;
+  min-height: 160px;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(10, 8, 20, 0.5);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  resize: vertical;
+  line-height: 1.6;
+  outline: none;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.dream-textarea:focus {
+  border-color: var(--gold-color);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 12px rgba(229, 193, 88, 0.15);
+  background: rgba(15, 12, 30, 0.6);
+}
+
+.dream-textarea-count {
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+  letter-spacing: 0.02em;
+}
+
+.dream-analysis-box {
+  padding: 1.75rem;
+  border: 1px dashed var(--gold-color) !important;
+  background: rgba(229, 193, 88, 0.02) !important;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  animation: slideUp 0.4s ease;
+}
+
+.dream-analysis-box-title {
+  margin: 0 0 1.25rem 0;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  letter-spacing: 0.03em;
+}
+
+.dream-analysis-text {
+  line-height: 1.8;
+  text-align: justify;
+  font-size: 0.98rem;
+  color: var(--text-color);
+  margin-bottom: 1.75rem;
+}
+
+.dream-analysis-text p {
+  margin: 0 0 1rem 0;
+}
+.dream-analysis-text p:last-child {
+  margin: 0;
+}
+
+.dream-analysis-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .dream-categories-list {
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+    scrollbar-width: thin;
+  }
+  
+  .dream-cat-btn {
+    width: auto !important;
+    display: inline-flex !important;
+    flex-shrink: 0 !important;
+    padding: 0.6rem 0.9rem !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+
+
+/* Reduced Motion / Energy Saver Mode */
+body.reduced-motion .stars-container::after,
+body.reduced-motion .twinkling {
+  display: none !important;
+  animation: none !important;
+}
+
+body.reduced-motion .logo {
+  animation: none !important;
+  filter: drop-shadow(0 0 12px rgba(229,193,88,0.45));
+}
+
+body.reduced-motion .consult-button::after {
+  display: none !important;
+  animation: none !important;
+}
+
+body.reduced-motion .glass-card:hover {
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 0 0 1px rgba(139, 92, 246, 0.06);
+  border-color: rgba(212, 175, 55, 0.12);
 }

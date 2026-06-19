@@ -109,6 +109,12 @@
       <a href="grimorio.html" class="nav-tab active">
         <span class="tab-icon">📖</span> El Libro del Tarot
       </a>
+          <a href="significado-suenos.html" class="nav-tab">
+        <span class="tab-icon">💤</span> Sueños
+      </a>
+          <a href="tienda.html" class="nav-tab">
+        <span class="tab-icon">🛍️</span> Tienda
+      </a>
     </nav>
 
     <!-- Contenido de Pestañas -->
@@ -118,7 +124,7 @@
       <div class="glass-card book-container">
         <h2 class="panel-title" style="text-align: center; margin-bottom: 1.25rem;">El Libro de los Arcanos</h2>
         <p class="book-intro" style="color: var(--text-muted); text-align: center; max-width: 700px; margin: 0 auto 2rem auto; line-height: 1.6;">
-          Explora la sabiduría ancestral de los 22 Arcanos Mayores. Selecciona cualquier carta para abrir el grimorio y estudiar sus correspondencias astrológicas, significados en el amor, trabajo, salud y su vibración espiritual.
+          Explora la sabiduría ancestral de los 78 arcanos del Tarot (Mayores y Menores). Selecciona cualquier carta para abrir el grimorio y estudiar sus correspondencias astrológicas, significados en el amor, trabajo, salud y su vibración espiritual.
         </p>
         
         <!-- MEJORA 7: Búsqueda + Filtros + Vista -->
@@ -170,7 +176,7 @@
       <div class="lunar-modal-body">
         <div class="lunar-modal-header-layout">
           <div class="lunar-modal-image-container">
-            <img id="lunar-modal-img" src="" alt="Fase lunar seleccionada">
+            <img id="lunar-modal-img" src="" alt="Fase lunar seleccionada" loading="lazy">
           </div>
           <div class="lunar-modal-title-container">
             <h2 id="lunar-modal-title" class="gold">Luna Llena</h2>
@@ -262,6 +268,13 @@
             <label for="high-contrast-toggle" class="control-label">Alto Contraste 👁️</label>
             <label class="toggle-switch">
               <input type="checkbox" id="high-contrast-toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="settings-control-row">
+            <label for="reduced-motion-toggle" class="control-label">Ahorro Energía (Movimiento) 🍃</label>
+            <label class="toggle-switch">
+              <input type="checkbox" id="reduced-motion-toggle">
               <span class="toggle-slider"></span>
             </label>
           </div>
