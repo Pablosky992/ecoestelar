@@ -700,7 +700,8 @@ const initDreams = () => {
       'Animales': '🦅',
       'Cuerpo y Salud': '🧘',
       'Acciones': '✨',
-      'Lugares y Objetos': '🗝️',
+      'Lugares': '🏰',
+      'Objetos': '🗝️',
       'Figuras y Personas': '👤'
     };
     return icons[category] || '💤';
@@ -716,7 +717,8 @@ const initDreams = () => {
       'animales': 'Animales',
       'cuerpo y salud': 'Cuerpo y Salud',
       'acciones': 'Acciones y Movimiento',
-      'lugares y objetos': 'Lugares y Objetos',
+      'lugares': 'Lugares',
+      'objetos': 'Objetos',
       'figuras y personas': 'Figuras y Personas'
     };
     return names[category] || category;
