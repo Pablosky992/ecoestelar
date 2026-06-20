@@ -1315,10 +1315,10 @@ function calculateYesNo(type) {
         </li>
       `;
       });
-}
-    
-    listHTML += `</ul>`;
-    explanation.innerHTML = listHTML;
+      
+      listHTML += `</ul>`;
+      explanation.innerHTML = listHTML;
+    }
   }
 }
 
