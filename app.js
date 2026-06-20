@@ -1982,10 +1982,111 @@ function initConstellations() {
     }
   }
 
+  // ShootingStar definition for occasional shooting stars background effect
+  class ShootingStar {
+    constructor() {
+      this.x = 0;
+      this.y = 0;
+      this.vx = 0;
+      this.vy = 0;
+      this.length = 0;
+      this.alpha = 0;
+      this.active = false;
+      this.fadeSpeed = 0;
+      this.lineWidth = 0;
+      this.shadowBlur = 0;
+      this.isBright = false;
+    }
+
+    trigger() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * (height * 0.4); // Start in top 40% of screen
+      const angle = Math.PI / 4 + (Math.random() - 0.5) * 0.2; // roughly 45 degrees downward
+      const speed = Math.random() * 8 + 6; // fast motion
+      
+      // Randomize diagonal direction (left-to-right or right-to-left downward)
+      if (Math.random() < 0.5) {
+        this.vx = Math.cos(angle) * speed;
+        this.vy = Math.sin(angle) * speed;
+      } else {
+        this.vx = -Math.cos(angle) * speed;
+        this.vy = Math.sin(angle) * speed;
+      }
+      
+      // 25% chance to be a highly visible, bright shooting star
+      this.isBright = Math.random() < 0.25;
+
+      if (this.isBright) {
+        this.length = Math.random() * 100 + 130; // Longer trail
+        this.lineWidth = Math.random() * 1.5 + 2.2; // Thicker line
+        this.shadowBlur = Math.random() * 8 + 14; // Greater glow
+        this.fadeSpeed = Math.random() * 0.008 + 0.007; // Fades slower (stays longer)
+      } else {
+        this.length = Math.random() * 60 + 50; // Standard trail
+        this.lineWidth = Math.random() * 0.8 + 1.0; // Standard line thickness
+        this.shadowBlur = Math.random() * 4 + 6; // Standard glow
+        this.fadeSpeed = Math.random() * 0.018 + 0.012; // Fades faster
+      }
+
+      this.alpha = 1;
+      this.active = true;
+    }
+
+    update() {
+      if (!this.active) return;
+      if (document.body.classList.contains('reduced-motion')) {
+        this.active = false;
+        return;
+      }
+      this.x += this.vx;
+      this.y += this.vy;
+      this.alpha -= this.fadeSpeed;
+      if (this.alpha <= 0 || this.x < -100 || this.x > width + 100 || this.y > height + 100) {
+        this.active = false;
+      }
+    }
+
+    draw() {
+      if (!this.active) return;
+      ctx.beginPath();
+      // Draw tail backwards
+      const trailX = this.x - this.vx * (this.length / 10);
+      const trailY = this.y - this.vy * (this.length / 10);
+
+      const grad = ctx.createLinearGradient(this.x, this.y, trailX, trailY);
+      grad.addColorStop(0, `rgba(255, 255, 255, ${this.alpha})`);
+      if (this.isBright) {
+        grad.addColorStop(0.2, `rgba(229, 193, 88, ${this.alpha * 0.95})`); // Extra bright gold stop
+        grad.addColorStop(0.6, `rgba(139, 92, 246, ${this.alpha * 0.5})`); // Vibrant purple stop
+      } else {
+        grad.addColorStop(0.2, `rgba(229, 193, 88, ${this.alpha * 0.75})`); // Standard gold tint
+      }
+      grad.addColorStop(1, 'rgba(139, 92, 246, 0)'); // Fades to purple/transparent
+
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = this.lineWidth;
+      ctx.lineCap = 'round';
+      ctx.moveTo(this.x, this.y);
+      ctx.lineTo(trailX, trailY);
+      
+      ctx.shadowBlur = this.shadowBlur;
+      ctx.shadowColor = this.isBright ? 'rgba(229, 193, 88, 0.7)' : 'rgba(229, 193, 88, 0.4)';
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+    }
+  }
+
   // Create particles
   for (let i = 0; i < particleCount; i++) {
     particles.push(new Star());
   }
+
+  const shootingStars = [];
+  const maxShootingStars = 2;
+  for (let i = 0; i < maxShootingStars; i++) {
+    shootingStars.push(new ShootingStar());
+  }
+  let nextShootingStarTime = Date.now() + Math.random() * 12000 + 8000; // Trigger first one in 8-20 seconds
 
   // Capture mouse coordinates
   window.addEventListener('mousemove', (e) => {
@@ -2022,6 +2123,21 @@ function initConstellations() {
       p.update();
       p.draw();
     });
+
+    // Update and draw shooting stars
+    shootingStars.forEach(s => {
+      s.update();
+      s.draw();
+    });
+
+    // Random trigger check for shooting stars
+    if (!document.body.classList.contains('reduced-motion') && Date.now() > nextShootingStarTime) {
+      const inactive = shootingStars.find(s => !s.active);
+      if (inactive) {
+        inactive.trigger();
+        nextShootingStarTime = Date.now() + Math.random() * 12000 + 8000; // Next one in 8-20 seconds
+      }
+    }
 
     const maxDist = 95;
     for (let i = 0; i < particles.length; i++) {
@@ -5724,7 +5840,9 @@ function initNatalCard() {
     3: 'horoscope',
     4: 'lunar',
     5: 'numerology',
-    6: 'book'
+    6: 'book',
+    7: 'dreams',
+    8: 'shop'
   };
 
   function showStep(step) {

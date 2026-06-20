@@ -6040,6 +6040,69 @@ body.high-contrast .lunar-cal-day.selected-day {
   }
 }
 
+/* Paginación de Sueños */
+.dream-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.dream-pagination.hidden {
+  display: none !important;
+}
+
+.pagination-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0.5rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.2rem;
+  height: 2.2rem;
+  text-decoration: none;
+}
+
+.pagination-btn:hover:not(.disabled) {
+  background: rgba(229, 193, 88, 0.08);
+  border-color: var(--gold-color);
+  color: var(--gold-color);
+  box-shadow: 0 0 8px rgba(229, 193, 88, 0.2);
+}
+
+.pagination-btn.active {
+  background: rgba(229, 193, 88, 0.15) !important;
+  border-color: var(--gold-color) !important;
+  color: var(--gold-color) !important;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(229, 193, 88, 0.3);
+}
+
+.pagination-btn.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.pagination-ellipsis {
+  color: var(--text-muted);
+  font-size: 1rem;
+  padding: 0 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  height: 2.2rem;
+}
 
 
 /* Reduced Motion / Energy Saver Mode */

@@ -39,6 +39,7 @@ const initDreams = () => {
   const shareDreamAnalysisBtn = document.getElementById('share-dream-analysis-btn');
   const resetDreamAnalysisBtn = document.getElementById('reset-dream-analysis-btn');
   const toast = document.getElementById('share-toast');
+  const dreamPaginationContainer = document.getElementById('dream-pagination-container');
 
   // Estado del Buscador y Analizador
   let activeMode = 'search'; // 'search' o 'analyze'
@@ -46,6 +47,8 @@ const initDreams = () => {
   let currentCategory = 'populares';
   let searchDebounceTimeout = null;
   let detectedDreams = []; // Guarda los sueños detectados en el último análisis
+  let currentPage = 1;
+  const itemsPerPage = 22;
 
   // Inicializar todo
   function init() {
@@ -74,6 +77,7 @@ const initDreams = () => {
         clearTimeout(searchDebounceTimeout);
         searchDebounceTimeout = setTimeout(() => {
           currentSearchQuery = e.target.value;
+          currentPage = 1;
           toggleClearButton();
           renderDreams();
         }, 200);
@@ -84,6 +88,7 @@ const initDreams = () => {
       clearSearchBtn.addEventListener('click', () => {
         searchInput.value = '';
         currentSearchQuery = '';
+        currentPage = 1;
         toggleClearButton();
         renderDreams();
         searchInput.focus();
@@ -96,6 +101,7 @@ const initDreams = () => {
         categoryButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         currentCategory = btn.dataset.category;
+        currentPage = 1;
         renderDreams();
       });
     });
@@ -518,30 +524,44 @@ const initDreams = () => {
         statusDesc.textContent = 'Ningún símbolo coincide con tu búsqueda. Intenta con términos más generales (ej: mar, volar, fuego).';
       }
       dreamGrid.classList.add('hidden');
+      if (dreamPaginationContainer) {
+        dreamPaginationContainer.classList.add('hidden');
+      }
       return;
     }
+
+    const totalItems = filtered.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    // Asegurar que la página actual está en rango
+    if (currentPage > totalPages) currentPage = totalPages;
+    if (currentPage < 1) currentPage = 1;
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const paginatedItems = filtered.slice(startIndex, endIndex);
 
     if (statusTitle && statusDesc) {
       if (currentSearchQuery) {
         const count = filtered.length;
         statusTitle.textContent = `${count} símbolo${count > 1 ? 's' : ''} revelado${count > 1 ? 's' : ''}`;
-        statusDesc.textContent = `Mostrando resultados para tu búsqueda astral.`;
+        statusDesc.textContent = `Mostrando resultados para tu búsqueda astral. Página ${currentPage} de ${totalPages}.`;
       } else if (currentCategory === 'populares') {
         statusTitle.textContent = 'Los más buscados';
         statusDesc.textContent = 'Los símbolos oníricos más comunes y sus misterios revelados.';
       } else if (currentCategory === 'todos') {
         statusTitle.textContent = 'El Libro de la Noche';
-        statusDesc.textContent = 'Explora la interpretación mística de todos los símbolos.';
+        statusDesc.textContent = `Explora la interpretación mística de todos los símbolos. Página ${currentPage} de ${totalPages}.`;
       } else {
         const count = filtered.length;
         statusTitle.textContent = `${count} símbolo${count > 1 ? 's' : ''} revelado${count > 1 ? 's' : ''}`;
-        statusDesc.textContent = `Mostrando símbolos de la categoría ${getCategoryName(currentCategory)}.`;
+        statusDesc.textContent = `Mostrando símbolos de la categoría ${getCategoryName(currentCategory)}. Página ${currentPage} de ${totalPages}.`;
       }
     }
 
     dreamGrid.classList.remove('hidden');
 
-    filtered.forEach(dream => {
+    paginatedItems.forEach(dream => {
       const card = document.createElement('article');
       card.className = 'dream-card glass-card';
       card.setAttribute('tabindex', '0');
@@ -571,6 +591,102 @@ const initDreams = () => {
 
       dreamGrid.appendChild(card);
     });
+
+    // Renderizar controles de paginación
+    renderPagination(totalPages);
+  }
+
+  // Renderizar controles de paginación
+  function renderPagination(totalPages) {
+    if (!dreamPaginationContainer) return;
+    dreamPaginationContainer.innerHTML = '';
+
+    if (totalPages <= 1) {
+      dreamPaginationContainer.classList.add('hidden');
+      return;
+    }
+    dreamPaginationContainer.classList.remove('hidden');
+
+    // Anterior
+    const prevBtn = document.createElement('button');
+    prevBtn.type = 'button';
+    prevBtn.className = `pagination-btn ${currentPage === 1 ? 'disabled' : ''}`;
+    prevBtn.innerHTML = '‹';
+    prevBtn.setAttribute('aria-label', 'Página anterior');
+    if (currentPage > 1) {
+      prevBtn.addEventListener('click', () => {
+        currentPage--;
+        renderDreams();
+        scrollToGridTop();
+      });
+    }
+    dreamPaginationContainer.appendChild(prevBtn);
+
+    // Determinar qué páginas mostrar (rango a los lados de la actual)
+    const range = [];
+    const delta = 2; // Número de páginas a mostrar a cada lado
+    
+    for (let i = 1; i <= totalPages; i++) {
+      if (i === 1 || i === totalPages || (i >= currentPage - delta && i <= currentPage + delta)) {
+        range.push(i);
+      }
+    }
+
+    let l;
+    for (const i of range) {
+      if (l) {
+        if (i - l === 2) {
+          const numBtn = createPageBtn(l + 1);
+          dreamPaginationContainer.appendChild(numBtn);
+        } else if (i - l > 2) {
+          const ellipsis = document.createElement('span');
+          ellipsis.className = 'pagination-ellipsis';
+          ellipsis.textContent = '...';
+          dreamPaginationContainer.appendChild(ellipsis);
+        }
+      }
+      const numBtn = createPageBtn(i);
+      dreamPaginationContainer.appendChild(numBtn);
+      l = i;
+    }
+
+    // Siguiente
+    const nextBtn = document.createElement('button');
+    nextBtn.type = 'button';
+    nextBtn.className = `pagination-btn ${currentPage === totalPages ? 'disabled' : ''}`;
+    nextBtn.innerHTML = '›';
+    nextBtn.setAttribute('aria-label', 'Página siguiente');
+    if (currentPage < totalPages) {
+      nextBtn.addEventListener('click', () => {
+        currentPage++;
+        renderDreams();
+        scrollToGridTop();
+      });
+    }
+    dreamPaginationContainer.appendChild(nextBtn);
+  }
+
+  function createPageBtn(pageNumber) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = `pagination-btn ${currentPage === pageNumber ? 'active' : ''}`;
+    btn.textContent = pageNumber;
+    btn.setAttribute('aria-label', `Ir a página ${pageNumber}`);
+    if (currentPage !== pageNumber) {
+      btn.addEventListener('click', () => {
+        currentPage = pageNumber;
+        renderDreams();
+        scrollToGridTop();
+      });
+    }
+    return btn;
+  }
+
+  function scrollToGridTop() {
+    const target = document.getElementById('dream-status-title') || dreamGrid;
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   // Obtener icono para la categoría
