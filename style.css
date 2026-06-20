@@ -186,10 +186,14 @@ body {
 /* Main Layout Grid */
 .main-layout {
   display: grid;
-  grid-template-columns: 420px 1fr;
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
   gap: 2rem;
   margin-bottom: 2rem;
   align-items: start;
+}
+
+.main-layout > * {
+  min-width: 0;
 }
 
 @media (max-width: 1024px) {
@@ -6131,10 +6135,14 @@ body.reduced-motion .glass-card:hover {
 
 .mystical-calendar-layout {
   display: grid;
-  grid-template-columns: 420px 1fr;
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
   gap: 2rem;
   margin-bottom: 3rem;
   align-items: start;
+}
+
+.mystical-calendar-layout > * {
+  min-width: 0;
 }
 
 @media (max-width: 1024px) {
