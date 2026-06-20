@@ -5604,10 +5604,6 @@ body.high-contrast .lunar-cal-day.selected-day {
     flex-wrap: wrap !important;
   }
   
-  .nav-tab:nth-child(7) {
-    grid-column: span 3 !important;
-  }
-  
   .nav-tab {
     display: flex !important;
     flex-direction: column !important;
