@@ -210,11 +210,14 @@ const initDreams = () => {
   function normalizeText(text) {
     if (!text) return '';
     return text.toLowerCase()
+      .replace(/ñ/g, '##n##')
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
+      .replace(/##n##/g, 'ñ')
       .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?¿¡]/g, ' ') // Reemplazar puntuaciones por espacios
       .trim();
   }
+
 
   // Actualizar contador de caracteres
   function updateCharCount() {
@@ -234,10 +237,11 @@ const initDreams = () => {
   function matchesKeyword(normalizedText, cleanKeyword) {
     // Escapar caracteres regex si los hay
     const escaped = cleanKeyword.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-    // Coincidencia con límites de caracteres no alfanuméricos a-z0-9
-    const regex = new RegExp('(?:^|[^a-z0-9])' + escaped + '(?:$|[^a-z0-9])', 'i');
+    // Coincidencia con límites de caracteres no alfanuméricos a-z0-9ñ
+    const regex = new RegExp('(?:^|[^a-z0-9ñ])' + escaped + '(?:$|[^a-z0-9ñ])', 'i');
     return regex.test(normalizedText);
   }
+
 
   // Analizar sueño escrito
   function analyzeWrittenDream() {
@@ -694,13 +698,14 @@ const initDreams = () => {
     const icons = {
       'Naturaleza': '🌲',
       'Animales': '🦅',
-      'Cuerpo y Salud': '🩸',
+      'Cuerpo y Salud': '🧘',
       'Acciones': '✨',
       'Lugares y Objetos': '🗝️',
       'Figuras y Personas': '👤'
     };
     return icons[category] || '💤';
   }
+
 
   // Obtener nombre formateado de la categoría
   function getCategoryName(category) {
