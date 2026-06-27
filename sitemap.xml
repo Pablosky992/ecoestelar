@@ -19,6 +19,42 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.ecoestelar.com/articulos.html</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ecoestelar.com/articulos.html?art=numerologia-destino</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ecoestelar.com/articulos.html?art=astrologia-basica</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ecoestelar.com/articulos.html?art=espejo-del-tarot</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ecoestelar.com/articulos.html?art=secreto-arcanos-menores</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ecoestelar.com/articulos.html?art=guia-fases-lunares</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.ecoestelar.com/fase-lunar.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>weekly</changefreq>
