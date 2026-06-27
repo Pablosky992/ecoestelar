@@ -5582,47 +5582,33 @@ function initNatalCard() {
   triggerBtn.addEventListener('click', () => {
     panel.classList.toggle('hidden');
   });
-
   closeBtn.addEventListener('click', () => {
     panel.classList.add('hidden');
-  });  const contactBtn = document.getElementById('contact-email-btn');
-  if (contactBtn) {
-    contactBtn.addEventListener('click', (e) => {
-      e.preventDefault(); // Evitar que el mailto interrumpa o falle en sistemas sin cliente
-      
-      const email = 'expondudas@yahoo.com';
-      
-      // Método de copia compatible con HTTPS (navigator.clipboard) y HTTP (execCommand)
-      const executeCopy = (text) => {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          return navigator.clipboard.writeText(text);
-        } else {
-          const textarea = document.createElement('textarea');
-          textarea.value = text;
-          textarea.style.position = 'fixed';
-          textarea.style.opacity = '0';
-          document.body.appendChild(textarea);
-          textarea.select();
-          try {
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            return Promise.resolve();
-          } catch (err) {
-            document.body.removeChild(textarea);
-            return Promise.reject(err);
-          }
-        }
-      };
+  });
 
-      executeCopy(email).then(() => {
-        const originalText = contactBtn.innerHTML;
-        contactBtn.innerHTML = '✉️ ¡Copiado!';
-        setTimeout(() => {
-          contactBtn.innerHTML = originalText;
-        }, 2000);
-      }).catch(err => {
-        console.error('Error al copiar: ', err);
-      });
+  const contactBtn = document.getElementById('contact-email-btn');
+  const contactModal = document.getElementById('contact-modal');
+  const contactCloseBtn = document.getElementById('contact-modal-close-btn');
+
+  if (contactBtn && contactModal && contactCloseBtn) {
+    contactBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      // Ocultar el panel de ajustes primero
+      panel.classList.add('hidden');
+      // Mostrar el modal de contacto
+      contactModal.classList.remove('hidden');
+    });
+
+    contactCloseBtn.addEventListener('click', () => {
+      contactModal.classList.add('hidden');
+    });
+
+    // Cerrar si se hace clic fuera del modal
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) {
+        contactModal.classList.add('hidden');
+      }
     });
   }
 
