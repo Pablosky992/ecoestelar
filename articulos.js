@@ -9,7 +9,7 @@ const ARTICULOS_DB = [
     title: "Guía Completa de Numerología: Calcula tu Sendero de Vida y Número de Destino",
     badge: "Numerología",
     image: "assets/numerologia_cabala.png",
-    date: "24 de Junio, 2026",
+    date: "12 de Mayo, 2026",
     author: "El Eco de las Estrellas",
     excerpt: "Descubre cómo los números determinan tu personalidad y misión en la Tierra. Paso a paso para realizar la Gematría pitagórica del nombre y el misterio de los Números Maestros.",
     body: `
@@ -96,7 +96,7 @@ const ARTICULOS_DB = [
     title: "Introducción al Zodiaco: Elementos, Planetas y Casas Astrológicas",
     badge: "Astrología",
     image: "assets/luna_hero_banner.png",
-    date: "25 de Junio, 2026",
+    date: "20 de Mayo, 2026",
     author: "El Eco de las Estrellas",
     excerpt: "Aprende los fundamentos para leer tu mapa natal. Qué significan las 12 casas de la experiencia humana, las regencias planetarias y la fuerza arquetípica de los 4 elementos.",
     body: `
@@ -151,7 +151,7 @@ const ARTICULOS_DB = [
     title: "El Tarot como Espejo del Alma: Filosofía de Consulta y Métodos de Limpieza",
     badge: "Tarot",
     image: "assets/tarot_marsella_wide.png",
-    date: "26 de Junio, 2026",
+    date: "28 de Mayo, 2026",
     author: "El Eco de las Estrellas",
     excerpt: "Desmitificando el tarot. Aprende por qué el oráculo es una guía para el crecimiento personal, cómo formular preguntas empoderadoras y limpiar las energías de tu mazo.",
     body: `
@@ -210,7 +210,7 @@ const ARTICULOS_DB = [
     title: "El Secreto del Tarot de Marsella: Cómo leer los Arcanos Menores sin perderte",
     badge: "Tarot",
     image: "assets/arcanos_menores_banner.jpg",
-    date: "27 de Junio, 2026",
+    date: "5 de Junio, 2026",
     author: "El Eco de las Estrellas",
     excerpt: "Desvela el código místico que une los elementos naturales y la numerología para leer las 56 cartas de los Arcanos Menores con total precisión y fluidez.",
     body: `
@@ -284,7 +284,7 @@ const ARTICULOS_DB = [
     title: "Guía de Fases Lunares: Cómo influyen en tus emociones y decisiones",
     badge: "La Luna",
     image: "assets/luna_llena.webp",
-    date: "27 de Junio, 2026",
+    date: "12 de Junio, 2026",
     author: "El Eco de las Estrellas",
     excerpt: "Aprende cómo sincronizar tus planes, rituales y decisiones con el ciclo de 29.5 días de la Luna para dejar de nadar a contracorriente.",
     body: `
@@ -351,6 +351,398 @@ const ARTICULOS_DB = [
       <p>Vivimos en una sociedad que nos exige ser productivos, alegres y activos las 24 horas del día, los 7 días de la semana. Sin embargo, la naturaleza nos demuestra que todo en el universo tiene un proceso de expansión y otro de contracción. La Luna no brilla siempre con la misma intensidad, y tú tampoco tienes por qué hacerlo.</p>
       <p>A partir de hoy, te invitamos a mirar al cielo (o a consultar el widget interactivo de nuestra web). Cuando aprendes a planificar tu vida respetando las fases de la luna, dejas de nadar a contracorriente y empiezas a surfear la energía del cosmos.</p>
     `
+  },
+  {
+    id: "guia-interpretacion-suenos",
+    title: "Guía Esencial de Interpretación de Sueños: Cómo descifrar los mensajes de tu subconsciente",
+    badge: "Sueños",
+    image: "assets/interpretacion_suenos_banner.jpg",
+    date: "19 de Junio, 2026",
+    author: "El Eco de las Estrellas",
+    excerpt: "Aprende cómo cruzar la simbología universal de tus visiones nocturnas con tus emociones para comprender los mensajes del subconsciente.",
+    body: `
+      <p>Cada noche, al cerrar los ojos, nos adentramos en un territorio donde las leyes de la física, el tiempo y la lógica dejan de existir. El plano de los sueños es una dimensión fascinante donde nuestra mente consciente se retira para dar paso al subconsciente, un motor creativo y profundamente intuitivo que procesa nuestros miedos más ocultos, anhelos silenciados y verdades espirituales que a menudo ignoramos durante el día.</p>
+
+      <img src="assets/interpretacion_suenos_banner.jpg" alt="Portal cósmico de sueños con libros esotéricos, cartas de tarot y astrolabio bajo un cielo estrellado">
+
+      <p>Para muchos, un sueño no es más que una película caótica provocada por el cansancio. Sin embargo, desde la psicología profunda hasta las tradiciones místicas más antiguas, sabemos que soñar es un acto de comunicación sagrada. Tu mente no se limita a proyectar imágenes al azar; te está hablando en un lenguaje puramente simbólico. Aprender a descifrar este código no solo te otorga un autoconocimiento brutal, sino que te ofrece una brújula perfecta para tomar decisiones en tu vida consciente.</p>
+
+      <h3>El lenguaje del subconsciente: ¿Por qué soñamos en metáforas?</h3>
+      <p>Si el subconsciente quisiera decirnos que estamos sufriendo un nivel de estrés intolerable en nuestra rutina, no nos proyectaría un gráfico de rendimiento bajo o una agenda llena de tareas pendientes. En su lugar, es muy probable que nos haga soñar que caemos al vacío, que estamos atrapados en un laberinto sin salida o que intentamos gritar y no nos sale la voz.</p>
+      <p>El cerebro profundo no utiliza el lenguaje verbal estructurado; utiliza arquetipos y emociones. Una imagen en un sueño es un contenedor de múltiples significados. Por ejemplo, el agua no es solo un líquido; representa la fluidez de tus emociones. Si sueñas con un mar en calma y cristalino, tu mundo interior goza de una paz y claridad excepcionales. Si, por el contrario, te encuentras frente a una ola gigante de agua turbia, tu subconsciente te advierte de que te sientes desbordado por una situación emocional que no sabes cómo gestionar.</p>
+      <p>Aprender a interpretar los sueños no consiste en abrir un manual rígido y aplicar la misma definición para todo el mundo. La clave reside en cruzar el significado universal del símbolo con la emoción exacta que sentiste durante la experiencia onírica.</p>
+
+      <h3>Los 4 sueños más comunes del ser humano y sus verdaderos significados</h3>
+      <p>A pesar de que cada vida es única, la experiencia humana comparte ciertos patrones. Existen temáticas universales que se repiten en todas las culturas y épocas. Analicemos qué significan realmente las cuatro visiones nocturnas más frecuentes:</p>
+      
+      <h4>1. Soñar que te persiguen</h4>
+      <p>Es, sin duda, una de las experiencias más angustiantes. Te encuentras corriendo por un callejón oscuro o un entorno desconocido, sintiendo la presencia inminente de alguien o algo que te pisa los talones.</p>
+      <p><strong>La interpretación:</strong> Este sueño rara vez habla de un peligro físico real. En la inmensa mayoría de los casos, aquello que te persigue es una situación, un problema o una emoción de la que estás intentando huir en tu vida real. Puede ser una conversación difícil que estás posponiendo, una decisión importante que te da pánico tomar o una parte de tu propio pasado que no has querido sanar. Tu mente te está diciendo: deja de correr y date la vuelta para solucionarlo.</p>
+
+      <h4>2. Soñar que caes al vacío</h4>
+      <p>Te despiertas de golpe, con el corazón acelerado y la sensación física real de haber tropezado o caído desde una gran altura.</p>
+      <p><strong>La interpretación:</strong> La caída está directamente vinculada al control y la inseguridad. Suele aparecer en periodos de grandes cambios donde sientes que el suelo firme bajo tus pies se desvanece temporalmente. También refleja el miedo al fracaso o la incapacidad de cumplir con las expectativas que te has impuesto a ti mismo o que tu entorno ha depositado en ti.</p>
+
+      <h4>3. Soñar que vuelas</h4>
+      <p>Una de las sensaciones más liberadoras y lúcidas que existen. Te elevas por encima de las ciudades, los árboles o las montañas con total ligereza y control.</p>
+      <p><strong>La interpretación:</strong> Volar representa la liberación de cargas y la ganancia de perspectiva. Indica que has logrado superar un obstáculo que te atormentaba o que estás experimentando una profunda expansión mental. Te estás elevando por encima de los problemas terrenales para ver las cosas desde arriba, con mayor claridad.</p>
+
+      <h4>4. Soñar que pierdes los dientes</h4>
+      <p>Te miras en un espejo o simplemente notas en la boca que tus dientes comienzan a aflojarse, a romperse en pedazos o a caerse uno a uno.</p>
+      <p><strong>La interpretación:</strong> En el misticismo antiguo, este sueño se asociaba erróneamente a augurios negativos. Hoy en día, la interpretación evolutiva sabe que los dientes son nuestra herramienta de defensa, poder y seguridad. Soñar que se caen refleja miedo al paso del tiempo, pérdida de seguridad o una profunda sensación de vulnerabilidad e impotencia frente a una situación donde sientes que has perdido tu autoridad o tu capacidad de decisión.</p>
+
+      <h3>Pasos prácticos para entrenar tu mente y recordar tus sueños</h3>
+      <p>Uno de los mayores obstáculos para quienes desean explorar este mundo es la famosa frase: <em>"Es que yo nunca sueño"</em>. Científicamente, todo el mundo sueña varias veces cada noche durante la fase REM. Lo que ocurre es que borramos los recuerdos al despertar. El cerebro desecha esa información si no le damos la orden consciente de que es importante para nosotros.</p>
+      <p>Si quieres activar tu memoria onírica, sigue este sencillo protocolo durante una semana:</p>
+      <ul>
+        <li><strong>Declara tu intención antes de dormir:</strong> Al acostarte, mientras cierras los ojos, repite mentalmente tres veces: <em>“Mañana al despertar recordaré mis sueños con total claridad”</em>. Puede sonar simple, pero prepara al subconsciente para mantener el canal abierto.</li>
+        <li><strong>No te muevas al despertar:</strong> El movimiento físico activa las funciones motrices del cerebro consciente y borra instantáneamente la memoria volátil del sueño. Cuando abras los ojos por la mañana, quédate completamente quieto durante un minuto y trata de "tirar del hilo" de la última imagen o emoción que recuerdes.</li>
+        <li><strong>Mantén un registro inmediato:</strong> Ten siempre un bloc de notas o una libreta dedicada exclusivamente a esto en tu mesita de noche. Anota todo, por muy absurdo, fragmentado o caótico que parezca. Con el tiempo, verás que esos fragmentos empiezan a formar historias coherentes.</li>
+      </ul>
+
+      <h3>Conclusión: El mapa de tu alma</h3>
+      <p>Los sueños no son un misterio indescifrable ni un capricho cerebral; son el mapa de navegación que tu propia mente dibuja cada noche para ayudarte a comprender tu presente. Aprender a escucharlos es el acto de introspección más profundo que puedes realizar, un puente directo hacia tu paz mental y tu evolución personal.</p>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--purple-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>🔮 Continúa explorando tu subconsciente:</strong> Si esta noche has tenido una experiencia onírica intensa y quieres profundizar en las imágenes que has visto, te invitamos a consultar nuestro buscador interactivo en la sección de <a href="significado-suenos.html" style="color: var(--purple-color); text-decoration: underline;">Sueños</a>. Introduce el elemento principal de tu visión y descubre qué mensaje está intentando transmitirte tu voz interior hoy mismo.
+      </div>
+    `
+  },
+  {
+    id: "shadow-work-tarot",
+    title: "El Arte del Shadow Work (Trabajo de Sombra): Cómo usar el Tarot para sanar tus bloqueos inconscientes",
+    badge: "Tarot",
+    image: "assets/shadow_work_tarot.png",
+    date: "24 de Junio, 2026",
+    author: "El Eco de las Estrellas",
+    excerpt: "Descubre cómo integrar la psicología de Carl Jung y la sabiduría del Tarot para revelar, aceptar y liberar tus bloqueos mentales ocultos.",
+    body: `
+      <p>A lo largo de nuestra vida, la mente consciente hace un trabajo fantástico filtrando la realidad. Nos esforzamos por proyectar una imagen agradable, segura e integrada ante la sociedad. Sin embargo, ¿qué ocurre con todo aquello que rechazamos de nosotros mismos? ¿Dónde van a parar la rabia reprimida, las inseguridades infantiles, los miedos a no ser suficientes o los deseos que nos avergüenza confesar? La respuesta psicológica es clara: se hunden en el subconsciente, formando lo que el psiquiatra Carl Jung llamó <strong>la Sombra</strong>.</p>
+
+      <img src="assets/shadow_work_tarot.png" alt="Persona realizando una lectura de Tarot orientada al Shadow Work con vela y un espejo que refleja la sombra del inconsciente">
+
+      <p>El <strong>Shadow Work</strong> (o Trabajo de Sombra) es el proceso consciente de adentrarse en esa zona a oscuras para rescatar, aceptar e integrar esos fragmentos perdidos de nuestra psique. No se trata de destruir o juzgar la sombra, sino de iluminarla. Y en esta labor de arqueología mental, el Tarot tradicional no es una herramienta de adivinación pasiva; es un espejo perfecto diseñado para reflejar el subconsciente.</p>
+
+      <h3>¿Por qué el Tarot es el espejo de la Sombra?</h3>
+      <p>El Tarot funciona a través de <strong>arquetipos universales</strong> (los Arcanos). Cada carta representa un estado mental, un tránsito o una energía latente de la experiencia humana. Cuando realizamos una lectura tradicional de futuro, delegamos el control fuera de nosotros. Pero en el Tarot evolutivo enfocado al Shadow Work, las cartas no nos dicen qué va a pasar; nos revelan <em>quiénes estamos siendo y qué estamos ocultándonos a nosotros mismos</em>.</p>
+      <p>Al seleccionar una carta de forma intuitiva, tu subconsciente conecta inmediatamente con la imagen. Si una carta te genera un rechazo profundo o te incomoda visualmente, ahí es donde reside tu sombra. La incomodidad en el Tarot no es un mal augurio, es una flecha dorada apuntando directamente hacia tu bloqueo pendiente de sanar.</p>
+
+      <h3>El código junguiano en los Arcanos del Tarot</h3>
+      <p>Para entender cómo dialogan los Arcanos con tu parte oculta, analicemos el mensaje de sombra de tres cartas fundamentales de la baraja:</p>
+      
+      <h4>1. El Diablo (Arcano XV): El espejo de tus ataduras voluntarias</h4>
+      <p>Visualmente, el Diablo nos muestra a dos pequeños demonios encadenados al cuello de un ser cornudo en un pedestal. Sin embargo, si miras con atención, verás que las cadenas son lo suficientemente holgadas como para que puedan sacárselas por la cabeza en cualquier momento.</p>
+      <p><strong>El mensaje de sombra:</strong> El Diablo no habla de maldiciones externas. Representa tus propias adicciones mentales, codependencias afectivas, hábitos autodestructivos o la comodidad de culpar a otros de tu infelicidad para no asumir la responsabilidad de tu libertad. Te pregunta directamente: <em>¿Qué beneficio oculto obtienes al seguir encadenado a ese dolor o situación?</em></p>
+
+      <h4>2. La Sacerdotisa (Arcano II): El cofre de los secretos y la intuición bloqueada</h4>
+      <p>Sentada entre dos columnas que representan la dualidad, la Sacerdotisa sostiene un libro entreabierto que solo revela a medias. Rige el silencio, la intuición pura y el misterio.</p>
+      <p><strong>El mensaje de sombra:</strong> Cuando esta carta vibra en su polo oscuro, nos advierte sobre el miedo a escuchar nuestra propia verdad. Representa el autosabotaje intuitivo: sabes perfectamente qué decisión debes tomar, pero prefieres saturar tu mente con ruido exterior, opiniones de terceros o distracciones para no enfrentarte al silencio donde reside tu sabiduría. Te interroga: <em>¿Qué verdad obvia estás intentando ignorar?</em></p>
+
+      <h4>3. El Colgado (Arcano XII): El autosacrificio innecesario</h4>
+      <p>Un personaje suspendido de un pie bocabajo, con las manos atadas a la espalda pero con un halo luminoso alrededor de su cabeza. Indica pausa, cambio de perspectiva y renuncia.</p>
+      <p><strong>El mensaje de sombra:</strong> En su aspecto de sombra, el Colgado refleja el victimismo cómodo o el complejo de mártir. Habla de esas situaciones donde decides sufrir o postergar tus propias necesidades en pos de 'salvar' a otros, esperando en secreto su reconocimiento o afecto. Te confronta: <em>¿Estás sacrificando tu felicidad real solo para mantener el papel de víctima buena ante los demás?</em></p>
+
+      <h3>Cómo realizar tu sesión de Shadow Work con el Tarot</h3>
+      <p>Si deseas iniciar este proceso en casa, es fundamental que crees un espacio seguro, silencioso y libre de interrupciones. Enciende una vela, quema un poco de incienso de sándalo o romero para limpiar el magnetismo y ten a mano tu diario personal.</p>
+      <p>Mezcla las cartas concentrándote en tu respiración. En lugar de preguntar: <em>"¿Cuándo conseguiré trabajo?"</em>, utiliza preguntas abiertas de confrontación. Saca una carta por cada una de estas tres posiciones esenciales:</p>
+      
+      <ol>
+        <li><strong>Carta 1: ¿Qué parte de mí estoy rechazando o negándome a ver hoy?</strong> (La máscara o el bloqueo inconsciente).</li>
+        <li><strong>Carta 2: ¿Cuál es el origen de este miedo o limitación?</strong> (La raíz infantil o el detonante de la sombra).</li>
+        <li><strong>Carta 3: ¿Cómo puedo integrar y sanar esta energía a partir de ahora?</strong> (El camino de la reconciliación y la acción).</li>
+      </ol>
+
+      <p>Al revelar cada carta, no corras a buscar la definición en un libro de inmediato. Mírala fijamente durante un minuto. Observa qué personaje te llama la atención, qué color te incomoda y qué emoción física brota en tu cuerpo. Escribe en tu libreta todo lo que sientas sin censurar tus palabras. La escritura terapéutica libre es el canal por el cual la sombra se hace consciente.</p>
+
+      <h3>Conclusión: La luz nace en la oscuridad</h3>
+      <p>El Trabajo de Sombra puede resultar incómodo y desafiante al inicio. Requiere una honestidad brutal con uno mismo. Sin embargo, es el único camino real hacia la libertad interna. Cuando dejas de temer a tus monstruos del subconsciente y te sientas a dialogar con ellos a través de los símbolos del Tarot, descubres que la Sombra no es tu enemiga, sino una mina de oro llena de vitalidad, talento reprimido y sabiduría evolutiva esperando ser rescatada.</p>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--gold-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>🔮 Ponlo en práctica ahora mismo:</strong> Concentra tu mente en tu mayor bloqueo emocional actual, formula tu pregunta con sinceridad y realiza tu tirada en nuestro <a href="index.html" style="color: var(--gold-color); text-decoration: underline;">Oráculo de Tarot Online</a>. Observa las cartas con la mirada del Shadow Work y permite que el cosmos te muestre la verdad oculta.
+      </div>
+    `
+  },
+  {
+    id: "numeros-karmicos-destino",
+    title: "Los Números Kármicos: Lecciones y deudas pendientes de tus vidas pasadas",
+    badge: "Numerología",
+    image: "assets/numeros_karmicos.png",
+    date: "28 de Junio, 2026",
+    author: "El Eco de las Estrellas",
+    excerpt: "Descubre si llevas los números 13, 14, 16 o 19 en tu fecha de nacimiento y cómo transmutar las deudas de tus encarnaciones pasadas.",
+    body: `
+      <p>¿Te has preguntado alguna vez por qué ciertas dificultades parecen repetirse en tu vida de forma persistente, casi como si siguieran un guión invisible? En el estudio místico de los números, esta repetición no es una casualidad desafortunada. La numerología pitagórica sostiene que el alma realiza un viaje de múltiples reencarnaciones para aprender y evolucionar. En ese trayecto, cuando cometemos transgresiones graves contra las leyes del amor, la libertad o el orden, o cuando dejamos tareas evolutivas incompletas, generamos lo que conocemos como una <strong>deuda kármica</strong>.</p>
+
+      <img src="assets/numeros_karmicos.png" alt="Altar de numerología con números sagrados 13, 14, 16 y 19 grabados en piedra, balanza de la justicia kármica y cuaderno de fórmulas cósmicas">
+
+      <p>Estas deudas se registran en nuestro mapa natal bajo la forma de cuatro números muy específicos: **el 13, el 14, el 16 y el 19**. Identificar si posees alguno de estos números kármicos y comprender su vibración es el primer paso para liberar al alma de ataduras invisibles y transmutar la energía densa en sabiduría luminosa.</p>
+
+      <h3>¿Cómo descubrir tus Números Kármicos?</h3>
+      <p>Los números kármicos pueden aparecer en diferentes áreas de tu mapa numerológico. La forma más directa de localizarlos es a través de tu **día de nacimiento** o de los cálculos de tus números esenciales (como el Sendero de Vida, la personalidad o el alma):</p>
+      <ul>
+        <li><strong>Por día de nacimiento directo:</strong> Si naciste un día 13, 14, 16 o 19 de cualquier mes, llevas esta deuda kármica de forma directa en tu vibración de personalidad exterior.</li>
+        <li><strong>Por reducción de sumas intermedias:</strong> Al calcular tu **Sendero de Vida** (sumando día + mes + año de nacimiento), presta atención a los resultados antes de la reducción final a un solo dígito. Por ejemplo, si tu fecha de nacimiento suma un total de 13, 14, 16 o 19 que luego reduces a 4, 5, 7 o 1, llevas esa deuda latente en tu misión de vida.</li>
+      </ul>
+
+      <h3>El análisis profundo de los 4 Números Kármicos</h3>
+      <p>Cada una de estas cifras describe una deuda específica adquirida en encarnaciones previas y la tarea correctora que debes realizar hoy:</p>
+
+      <h4>1. Número Kármico 13 (La Deuda del Trabajo y la Constancia) - Se reduce a 4</h4>
+      <p>En vidas pasadas, la persona con vibración 13 abusó de la pereza, delegó sus responsabilidades en otros o actuó de forma inconstante y caótica, dejando proyectos vitales a medias y viviendo a costa del esfuerzo ajeno.</p>
+      <ul>
+        <li><strong>Cómo se manifiesta hoy:</strong> La persona suele encontrarse con obstáculos recurrentes que le exigen trabajar el doble que a los demás para conseguir el mismo resultado. Puede sentir frustración, ganas de abandonar ante el primer obstáculo o una sensación de que todo le cuesta un esfuerzo titánico.</li>
+        <li><strong>Cómo transmutarlo:</strong> La clave de sanación es el orden, la disciplina férrea y la constancia. El 13 exige aprender a disfrutar del esfuerzo constructivo, erradicar la procrastinación y comprender que el éxito real es el resultado de bases firmes y honestas.</li>
+      </ul>
+
+      <h4>2. Número Kármico 14 (La Deuda del Abuso de Libertad) - Se reduce a 5</h4>
+      <p>Esta deuda se genera al haber tenido vidas pasadas caracterizadas por el libertinaje absoluto, la irresponsabilidad, el abuso de los placeres físicos a costa del dolor ajeno o la huida constante ante el menor compromiso afectivo o social.</p>
+      <ul>
+        <li><strong>Cómo se manifiesta hoy:</strong> La persona experimenta cambios bruscos e inesperados en su vida (pérdidas de empleo, mudanzas imprevistas, rupturas amorosas súbitas). Hay una tendencia a buscar escapes rápidos a través de excesos o a vivir con un miedo constante a perder la libertad, lo que impide crear raíces sanas.</li>
+        <li><strong>Cómo transmutarlo:</strong> Exige aprender a experimentar la libertad con responsabilidad y autocontrol. La persona debe comprender que la verdadera libertad no es hacer lo que uno quiere en cada instante, sino la capacidad de comprometerse con un propósito superior sin sentirse prisionero. La templanza es su mayor medicina.</li>
+      </ul>
+
+      <h4>3. Número Kármico 16 (La Deuda del Orgullo y el Ego) - Se reduce a 7</h4>
+      <p>Esta es una de las deudas más complejas. Se origina al haber utilizado el poder, la belleza, el intelecto o el estatus en encarnaciones previas para humillar, manipular o mirar por encima del hombro a los demás, viviendo desde un ego inflado y egocéntrico.</p>
+      <ul>
+        <li><strong>Cómo se manifiesta hoy:</strong> Se asocia con la carta de La Torre en el Tarot. El individuo experimenta 'caídas' espectaculares o destrucciones repentinas de aquello que ha construido desde el orgullo (negocios exitosos que quiebran, relaciones idílicas que se desmoronan de golpe). El universo destruye lo falso para obligar al alma a mirar lo esencial.</li>
+        <li><strong>Cómo transmutarlo:</strong> Requiere el desarrollo de la humildad absoluta y la introspección espiritual. La persona debe aprender a construir su vida sobre valores invisibles y eternos, desapegándose de la necesidad de aprobación social y del brillo puramente superficial.</li>
+      </ul>
+
+      <h4>4. Número Kármico 19 (La Deuda del Abuso de Poder y Egoísmo) - Se reduce a 1</h4>
+      <p>En el pasado, el alma del 19 ocupó puestos de gran autoridad o liderazgo pero actuó con tiranía, egoísmo ciego y desprecio absoluto por los derechos y necesidades de quienes dependían de él, buscando únicamente el beneficio propio.</p>
+      <ul>
+        <li><strong>Cómo se manifiesta hoy:</strong> La persona suele encontrarse en situaciones de profunda soledad o aislamiento donde nadie parece acudir en su ayuda, obligándole a resolverlo todo por su cuenta. Puede sentir que el entorno le rechaza o que sus opiniones no son valoradas por los demás.</li>
+        <li><strong>Cómo transmutarlo:</strong> La misión de este número es aprender a liderar desde el servicio incondicional. La persona debe utilizar su gran fuerza de voluntad e independencia para guiar, proteger y empoderar a otros, desterrando cualquier atisbo de soberbia y egoísmo.</li>
+      </ul>
+
+      <h3>El ritual de liberación kármica numérica</h3>
+      <p>Si has descubierto que llevas un número kármico, no te asustes. El karma no es un castigo divino; es una ley universal de causa y efecto diseñada para el aprendizaje. Para iniciar tu liberación y transmutación energética, te aconsejamos realizar este sencillo ritual en una noche de <strong>Luna Menguante</strong>:</p>
+      <ol>
+        <li>Escribe tu número kármico en un papel blanco con tinta negra. A su lado, escribe la deudora o patrón que reconoces en ti hoy (ej. *'Procrastinación y abandono de metas'* para el 13).</li>
+        <li>Enciende una vela morada (el color de la transmutación espiritual) y quema un sahumerio de romero o lavanda.</li>
+        <li>Sostén el papel y repite con voz firme: *“Reconozco el aprendizaje de mi pasado y libero con amor esta deuda. Asumo la responsabilidad de mi presente en luz y armonía. Quedo libre.”*</li>
+        <li>Quema el papel en la llama de la vela morada y deja que las cenizas se vayan con el aire o la tierra exterior de tu hogar.</li>
+      </ol>
+
+      <h3>Conclusión: De la Deuda a la Maestría</h3>
+      <p>Los números kármicos que portamos no son una condena inalterable. Al contrario: cuando los reconocemos y trabajamos en su polo de luz, se transforman en nuestros mayores talentos y fortalezas espirituales. Quien transmuta un 13 se convierte en un constructor incansable; el 14 en un guía sabio de la libertad; el 16 en un faro de espiritualidad profunda; y el 19 en un líder compasivo ejemplar.</p>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--gold-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>🔮 Calcula tu vibración exacta:</strong> ¿Quieres saber cuál es tu Sendero de Vida y si tu fecha de nacimiento oculta alguna vibración kármica latente? Introduce tus datos en nuestra sección interactiva de <a href="numerologia.html" style="color: var(--gold-color); text-decoration: underline;">Numerología Astral</a> y recibe tu lectura numerológica personalizada al instante.
+      </div>
+    `
+  },
+  {
+    id: "guia-gemoterapia-cristales",
+    title: "La Guía Definitiva de Gemoterapia: Cómo limpiar, cargar y programar tus cristales",
+    badge: "Cristales",
+    image: "assets/gemoterapia_cristales.png",
+    date: "27 de Mayo, 2026",
+    author: "El Eco de las Estrellas",
+    excerpt: "Aprende el arte de sintonizar con la energía mineral. Métodos seguros para limpiar tus piedras, cargarlas bajo la luna y programarlas con intenciones claras.",
+    body: `
+      <p>Desde tiempos inmemoriales, las civilizaciones más antiguas —desde los sabios del antiguo Egipto y los alquimistas medievales hasta las culturas chamánicas americanas— han venerado a los minerales no solo por su indudable belleza física, sino por sus excepcionales propiedades energéticas. En el plano de la sanación vibracional, la <strong>Gemoterapia</strong> es la disciplina mística y terapéutica que utiliza la frecuencia energética de las piedras y cristales para restaurar la armonía en nuestros cuerpos físico, mental, emocional y espiritual.</p>
+
+      <img src="assets/gemoterapia_cristales.png" alt="Preciosa colección de cristales sobre terciopelo oscuro: amatista, turmalina, cuarzos y pirita junto a sahumerio de salvia humeante">
+
+      <p>Cada gema posee una estructura cristalina molecular perfecta y estable que, a diferencia de la fluctuante energía humana, vibra siempre a una frecuencia constante. Al entrar en contacto con nuestro campo electromagnético (el aura), los cristales actúan por resonancia, absorbiendo, canalizando o amplificando las energías del entorno. Sin embargo, para que un cristal actúe como un verdadero aliado energético, es fundamental saber interactuar con él. En esta guía te enseñaremos detalladamente las tres fases del trabajo con cristales: <strong>limpiar, cargar y programar</strong>.</p>
+
+      <h3>Fase 1: La Limpieza Energética (Purificación)</h3>
+      <p>Cuando adquieres un cristal o después de utilizarlo en una sesión de meditación o tras una jornada tensa, este actúa como una esponja absorbiendo la densidad energética a su alrededor. Por ello, la limpieza es crucial para devolver al cristal su vibración neutra original. Existen diversos métodos de limpieza, y debes elegir el adecuado según la dureza y composición química de tu gema:</p>
+      
+      <h4>1. El Baño de Humo Sagrado (Sahumerio) - Apto para TODOS los cristales</h4>
+      <p>Es el método más seguro, tradicional y respetuoso con la materia del mineral. Consiste en encender un atado de <strong>Salvia Blanca</strong>, hojas de romero o una madera de <strong>Palo Santo</strong>.</p>
+      <ul>
+        <li><strong>Procedimiento:</strong> Pasa tu gema repetidamente a través de la corriente de humo aromático que emite el sahumerio durante aproximadamente un minuto, visualizando cómo la densidad acumulada se desprende y disuelve en el aire. Es el idóneo para piedras porosas o blandas como la selenita, la malaquita o la pirita, que podrían dañarse con el agua.</li>
+      </ul>
+
+      <h4>2. El Agua Corriente y la Sal Marina - Solo para cristales duros y no solubles</h4>
+      <p>La sal es un neutralizador energético por excelencia y el agua limpia las vibraciones residuales al instante.</p>
+      <ul>
+        <li><strong>Procedimiento:</strong> Coloca tus cristales en un recipiente de vidrio (nunca de metal) con agua templada y una cucharada de sal marina durante unas 2 a 3 horas. Al retirarlos, enjuágalos bajo el grifo de agua corriente.</li>
+        <li><strong>⚠️ ADVERTENCIA CRÍTICA:</strong> Jamás uses este método con gemas blandas o con alto contenido de metales (hierro, cobre). Minerales como la <strong>Selenita</strong> (se disuelve en agua), la <strong>Malaquita</strong> (puede volverse tóxica al humedecerse) o la <strong>Pirita</strong> (se oxida por el hierro) deben mantenerse estrictamente secos.</li>
+      </ul>
+
+      <h4>3. Purificación con Selenita o Drusas de Cuarzo</h4>
+      <p>La selenita y el cuarzo transparente poseen una vibración tan alta y pura que no acumulan negatividad y tienen la propiedad única de limpiar a otros minerales por proximidad.</p>
+      <ul>
+        <li><strong>Procedimiento:</strong> Simplemente reposa tus piedras sobre una barra o plato de selenita, o en el interior de una drusa o geoda de amatista durante toda la noche. Las gemas se purificarán de forma pasiva y sin riesgo alguno de desgaste físico.</li>
+      </ul>
+
+      <h3>Fase 2: La Carga Energética (Vitalización)</h3>
+      <p>Una vez que el cristal está limpio de interferencias, se encuentra en un estado pasivo y receptivo. Para devolverle su vitalidad y activar su fuerza activa de transmutación, debemos exponerlo a fuentes naturales de luz y magnetismo elemental:</p>
+      <ul>
+        <li><strong>El Baño de Luz Lunar (Poder Intuitivo y Femenino):</strong> Coloca tus cristales en una ventana o directamente en el exterior bajo el influjo de la <strong>Luna Llena</strong> o Creciente durante toda la noche. Esta energía es suave, magnética y espiritual, ideal para piedras como la Piedra Luna, la Amatista, el Cuarzo Rosa y la Labradorita.</li>
+        <li><strong>El Baño de Luz Solar (Fuerza Vital y Acción Directa):</strong> Expón tus cristales al sol directo durante el amanecer o las primeras horas de la mañana por un máximo de 2 horas. El sol aporta una vibración cálida de éxito, abundancia y vitalidad, excelente para la Pirita, el Ojo de Tigre, el Citrino y la Cornalina. *(Nota: Evita exponer la Amatista y el Cuarzo Rosa al sol intenso, ya que la radiación prolongada decolora sus hermosos tonos).*</li>
+        <li><strong>El Retorno a la Madre Tierra (Arraigo y Estabilidad):</strong> Entierra tus cristales en una maceta con tierra fértil o directamente en tu jardín durante un ciclo completo de 24 horas. La energía telúrica limpia y descarga el magnetismo estático del mineral, devolviéndole su fuerza de enraizamiento. Ideal para el Jaspe Rojo, la Obsidiana y la Turmalina Negra.</li>
+      </ul>
+
+      <h3>Fase 3: La Programación (Consagración e Intención)</h3>
+      <p>Este es el paso que la mayoría de las personas olvida, pero es el más importante. Programar un cristal significa sintonizar su vibración estable con tu voluntad mental y espiritual para un propósito concreto. Los cristales actúan como 'computadoras energéticas': graban la intención que les confías y la emiten de forma constante a tu aura.</p>
+      
+      <p><strong>Paso a paso para programar tu cristal:</strong></p>
+      <ol>
+        <li>Toma el cristal limpio y cargado con tu mano dominante (con la que escribes, que es la mano proyectora de energía) y llévalo al centro de tu pecho, a la altura del corazón.</li>
+        <li>Cierra los ojos, respira profundamente tres veces y enfoca tu mente de forma exclusiva en el propósito que deseas otorgar al mineral. Debe ser un objetivo claro y constructivo. Por ejemplo: *'Protección energética personal'*, *'Apertura mental al estudio'*, o *'Paz interior y calma en momentos de ansiedad'*.</li>
+        <li>Visualiza cómo un haz de luz dorada desciende desde tu mente y tu corazón, envolviendo al cristal en tu mano. Con voz firme o mentalmente, pronuncia la fórmula de consagración:
+          <br><em>“Consagro esta piedra para que me acompañe en mi propósito de [menciona tu meta]. Que su energía resuene en luz, amor y armonía para el mayor bien de todos. Gracias.”</em></li>
+        <li>A partir de ese instante, mantén el cristal cerca de ti: llévalo en el bolso, colócalo bajo la almohada o manténlo sobre tu mesa de trabajo para que interactúe de forma ininterrumpida con tu campo energético.</li>
+      </ol>
+
+      <h3>Breve diccionario de cristales imprescindibles para iniciar tu altar</h3>
+      <p>Si quieres construir tu primer set de gemoterapia, te recomendamos contar con estas cuatro piedras fundamentales por sus amplios beneficios:</p>
+      <ul>
+        <li><strong>Amatista (El Transmutador):</strong> De color violeta intenso. Calma el sistema nervioso, ayuda a conciliar el sueño y transmuta cualquier pensamiento o vibración negativa en amor puro. Es la piedra por excelencia para la meditación y el desarrollo intuitivo.</li>
+        <li><strong>Turmalina Negra (El Escudo Protector):</strong> El mineral de protección más poderoso de la naturaleza. Absorbe la radiación electromagnética de los dispositivos y actúa como un imán para las densidades ajenas, impidiendo que afecten a tu energía vital.</li>
+        <li><strong>Citrino (El Imán de Abundancia):</strong> De un brillante tono amarillo. No requiere limpieza porque no acumula negatividad. Atrae el éxito profesional, la buena suerte financiera y aporta alegría y autoestima al portador.</li>
+        <li><strong>Cuarzo Rosa (La Piedra del Amor):</strong> Rige el chakra del corazón. Sana las heridas sentimentales del pasado, atrae relaciones honestas basadas en la empatía y fomenta el amor propio incondicional.</li>
+      </ul>
+
+      <h3>Conclusión: Un puente hacia la naturaleza</h3>
+      <p>Interactuar con el reino mineral es una de las formas más hermosas de reconectar con la sabiduría primigenia de la Tierra. Al respetar los ciclos de tus piedras y tratarlas con consciencia, creas un puente de sintonía armónica que eleva tu vibración diaria y te acompaña en tu camino de crecimiento interior.</p>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--gold-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>🔮 Adquiere tus herramientas sagradas:</strong> Si deseas incorporar cristales consagrados de alta vibración y sahumerios naturales a tus meditaciones, te invitamos a visitar nuestra <a href="tienda.html" style="color: var(--gold-color); text-decoration: underline;">Tienda Mágica</a>. Encuentra selenitas, lámparas de sal del Himalaya y conjuntos de minerales seleccionados especialmente para tu altar hoy mismo.
+      </div>
+    `
+  },
+  {
+    id: "guia-quiromancia-manos",
+    title: "El Lenguaje Oculto de las Manos: Fundamentos de Quiromancia para principiantes",
+    badge: "Quiromancia",
+    image: "assets/quiromancia_manos.png",
+    date: "1 de Junio, 2026",
+    author: "El Eco de las Estrellas",
+    excerpt: "Descubre el arte de descifrar las líneas de tu palma. Guía práctica para interpretar la Línea de la Vida, de la Cabeza, del Corazón y los montes planetarios.",
+    body: `
+      <p>Nuestras manos son herramientas extraordinarias de creación, expresión y contacto. Sin embargo, en el plano esotérico, también son consideradas un mapa detallado y viviente de nuestra alma. La <strong>Quiromancia</strong> (del griego <em>kheir</em>, mano, y <em>manteia</em>, adivinación) es la disciplina ancestral que estudia el relieve, la forma, los montes y las líneas de la palma de la mano para revelar el carácter, los talentos innatos, las tendencias emocionales y el mapa de ruta evolutivo de un individuo.</p>
+
+      <img src="assets/quiromancia_manos.png" alt="Lectura de manos de quiromancia con las líneas principales de la palma trazadas en luz dorada sobre mesa de madera rústica con candelabro">
+
+      <p>A diferencia de lo que comúnmente se cree, la quiromancia no predice un futuro rígido o inalterable. Tus manos son dinámicas y cambian con el tiempo; las líneas pueden desvanecerse, bifurcarse o intensificarse a medida que modificas tus hábitos, tus pensamientos y tu nivel de conciencia. En esta guía práctica te enseñamos los fundamentos básicos para comenzar a leer tus propias manos o las de tus seres queridos hoy mismo.</p>
+
+      <h3>¿Qué mano se debe leer?</h3>
+      <p>Para realizar una lectura completa, es fundamental observar ambas manos, ya que cada una revela un plano diferente de tu existencia:</p>
+      <ul>
+        <li><strong>Tu mano pasiva (generalmente la izquierda):</strong> Representa tu mapa de nacimiento, tu potencial genético, las lecciones kármicas heredadas, tu subconsciente y el yo privado. Describe quién eres en tu interior más profundo.</li>
+        <li><strong>Tu mano activa (generalmente la derecha):</strong> Representa el yo público, las decisiones conscientes, lo que has hecho con tu potencial inicial, tu realidad física actual y el futuro que estás construyendo activamente.</li>
+      </ul>
+      <p><em>Regla general:</em> Lee la mano izquierda para descubrir tus herramientas de nacimiento y la mano derecha para ver cómo las estás aplicando en tu vida real.</p>
+
+      <h3>Las 4 Líneas Principales: El mapa del destino</h3>
+      <p>Al abrir la palma de la mano, verás un entramado de líneas. Centra tu atención en las cuatro líneas más gruesas y profundas, que describen los pilares de la experiencia humana:</p>
+
+      <h4>1. La Línea del Corazón (El plano emocional)</h4>
+      <p>Se localiza en la parte superior de la palma, justo debajo de los dedos. Rige tu vida afectiva, tu capacidad de amar, tu empatía y tu estabilidad emocional.</p>
+      <ul>
+        <li><strong>Si es larga y curva (termina bajo el dedo índice):</strong> Eres una persona idealista en el amor, apasionada y que expresa sus sentimientos con facilidad, aunque propensa a desilusiones por tus altas expectativas.</li>
+        <li><strong>Si es recta y corta (termina bajo el dedo medio):</strong> Valoras la lógica por encima del impulso pasional. Eres reservado en el afecto y prefieres la estabilidad práctica a los dramas románticos.</li>
+        <li><strong>Bifurcaciones al final:</strong> Indican un temperamento equilibrado entre el romanticismo y el sentido común.</li>
+      </ul>
+
+      <h4>2. La Línea de la Cabeza (El plano mental)</h4>
+      <p>Comienza en el borde de la mano (junto a la línea de la vida) y cruza la palma de forma horizontal. Rige tu intelecto, tu estilo de aprendizaje, tu creatividad y la forma en que tomas decisiones.</p>
+      <ul>
+        <li><strong>Línea recta y profunda:</strong> Mentalidad sumamente analítica, pragmática, concentrada y lógica. Eres realista y resuelves problemas con eficacia fría.</li>
+        <li><strong>Línea curva (que desciende hacia el monte de la Luna):</strong> Posees una imaginación desbordante, talento artístico y gran intuición. Prefieres las respuestas creativas y confías plenamente en tus corazonadas.</li>
+        <li><strong>Si es muy corta:</strong> Indica un pensamiento rápido, impulsivo y orientado a la acción inmediata más que a la planificación teórica.</li>
+      </ul>
+
+      <h4>3. La Línea de la Vida (La fuerza vital y energía)</h4>
+      <p>Rodea la base del pulgar en forma de semicírculo. Contrario al mito popular, su longitud **no determina cuántos años vas a vivir**, sino la calidad de tu energía vital, tu salud física y tu capacidad de resiliencia frente a los cambios.</p>
+      <ul>
+        <li><strong>Larga, nítida y semicircular:</strong> Gran vitalidad, fuerte sistema inmunológico, entusiasmo por vivir y facilidad para adaptarte a transiciones físicas o geográficas.</li>
+        <li><strong>Corta o difusa:</strong> Energía física fluctuante. Propensión a sufrir cansancio o estrés mental. Te aconseja cuidar tu rutina y evitar excesos corporales.</li>
+        <li><strong>Cortes o roturas:</strong> Rara vez hablan de desgracias físicas. Representan giros radicales en tu estilo de vida, mudanzas al extranjero o cambios drásticos de creencias.</li>
+      </ul>
+
+      <h4>4. La Línea del Destino (El sendero profesional)</h4>
+      <p>Es una línea vertical que sube desde la base de la muñeca hacia el dedo medio (el monte de Saturno). No todo el mundo la tiene marcada de forma visible.</p>
+      <ul>
+        <li><strong>Fuerte y marcada desde el inicio:</strong> Tienes un propósito o vocación clara desde una edad temprana. Tu trayectoria laboral tiende a ser estable y definida.</li>
+        <li><strong>Difusa, cortada o inexistente:</strong> Estás experimentando un periodo de búsqueda, cambios recurrentes de profesión o prefieres vivir con flexibilidad sin atarte a una carrera corporativa tradicional.</li>
+      </ul>
+
+      <h3>Los Montes Planetarios: Las antenas del carácter</h3>
+      <p>Las pequeñas elevaciones o 'almohadillas' de carne situadas en la palma de la mano se denominan montes y actúan como receptores de las energías de los planetas correspondientes:</p>
+      <ul>
+        <li><strong>Monte de Venus (Base del pulgar):</strong> Rige la pasión, el amor físico, la sensualidad y la energía vital. Si es prominente y firme, indica carisma, entusiasmo y amor por los placeres de la vida.</li>
+        <li><strong>Monte de Júpiter (Bajo el dedo índice):</strong> Rige la ambición, el liderazgo, el orgullo y la espiritualidad organizadora. Si destaca, habla de un carácter noble, seguro de sí mismo y con dotes de mando.</li>
+        <li><strong>Monte de Saturno (Bajo el dedo medio):</strong> Rige la responsabilidad, el deber, la prudencia y la búsqueda de sabiduría. Si es plano o equilibrado, indica sobriedad y constancia.</li>
+        <li><strong>Monte del Sol o Apolo (Bajo el dedo anular):</strong> Rige el arte, la belleza, el éxito público y el brillo social. Si es elevado, otorga talentos artísticos y gran sentido de la estética.</li>
+        <li><strong>Monte de Mercurio (Bajo el dedo meñique):</strong> Rige el comercio, la elocuencia oral, la inteligencia rápida y la astucia. Si es prominente, indica dotes excepcionales para la comunicación y los negocios.</li>
+        <li><strong>Monte de la Luna (Borde inferior opuesto al pulgar):</strong> Rige el subconsciente, la imaginación, la empatía psíquica y los sueños. Si está muy desarrollado, la persona es sumamente intuitiva y soñadora.</li>
+      </ul>
+
+      <h3>Conclusión: El mapa en tus manos</h3>
+      <p>Mirar tus manos con la mirada de la quiromancia es un ejercicio fascinante de autoconocimiento. Te invita a reflexionar sobre la íntima conexión que existe entre tus decisiones conscientes, tu salud mental y el relieve físico de tu cuerpo. Al final del día, las líneas de tu palma te recuerdan una verdad sagrada: tú eres el escritor de tu propio destino, y el mapa de tu camino está, literalmente, en tus manos.</p>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--purple-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>🔮 Profundiza en tus tránsitos:</strong> Si después de examinar las líneas de tu palma quieres descubrir qué energías celestes marcan tus pasos en esta etapa de tu vida, te invitamos a consultar el estado de tu signo en nuestro <a href="horoscopo.html" style="color: var(--purple-color); text-decoration: underline;">Horóscopo Diario</a> hoy mismo.
+      </div>
+    `
+  },
+  {
+    id: "rituales-limpieza-hogar",
+    title: "Rituales de Limpieza Energética para el Hogar: Cómo despejar la vibración de tu espacio",
+    badge: "Rituales",
+    image: "assets/limpieza_hogar.png",
+    date: "9 de Junio, 2026",
+    author: "El Eco de las Estrellas",
+    excerpt: "Descubre cómo purificar la atmósfera de tu casa. Guía de sahumerios, uso de sal marina y frecuencias armónicas para atraer paz y protección.",
+    body: `
+      <p>Nuestra casa es mucho más que un refugio físico contra el viento y la lluvia; es un contenedor energético. Cada discusión, periodo de estrés, visita con carga densa, enfermedad o preocupación familiar deja una huella invisible en la atmósfera de las habitaciones. Con el tiempo, este residuo vibratorio se acumula, manifestándose en sensaciones físicas reales: plantas que se marchitan sin motivo, electrodomésticos que se rompen seguidos, insomnio recurrente o discusiones constantes por nimiedades. Es lo que en el esoterismo conocemos como <strong>energía estancada</strong>.</p>
+
+      <img src="assets/limpieza_hogar.png" alt="Habitación armonizada y soleada con plato de cerámica donde humea un sahumerio de salvia blanca y cristales de cuarzo y obsidiana en el alféizar de la ventana">
+
+      <p>Realizar una limpieza energética en el hogar no es un acto supersticioso; es una práctica de higiene espiritual que renueva el flujo de energía vital (el <em>Chi</em> o <em>Prana</em>), atrayendo calma, armonía y abundancia a quienes lo habitan. En esta guía práctica te enseñamos a realizar un ritual completo de purificación de forma sencilla y segura.</p>
+
+      <h3>Paso 1: La Preparación Física (El orden de la materia)</h3>
+      <p>El plano energético y el plano físico están íntimamente entrelazados. No se puede realizar una limpieza espiritual efectiva en una casa sucia o desordenada. El polvo y los objetos rotos actúan como imanes para el estancamiento de la vibración.</p>
+      <ul>
+        <li><strong>Despeja y limpia:</strong> Antes de iniciar tu ritual místico, barre y limpia el suelo con agua templada y un chorro de vinagre blanco (un potente purificador natural).</li>
+        <li><strong>Dona o tira:</strong> Deshazte de todo aquello que esté roto, agrietado o que lleve meses en desuso. Dejar ir lo viejo abre las compuertas para que el universo traiga lo nuevo.</li>
+        <li><strong>Abre las ventanas:</strong> Ventila todas las estancias durante al menos 15 minutos para que la corriente de aire natural comience a movilizar la energía estancada.</li>
+      </ul>
+
+      <h3>Paso 2: El Ritual de Humo Sagrado (Sahumerio)</h3>
+      <p>El sahumerio es el método de purificación más antiguo de la humanidad. El fuego transmuta la materia densa y el humo herbal eleva la vibración de los espacios.</p>
+      
+      <h4>Las hierbas recomendadas para tu hogar:</h4>
+      <ul>
+        <li><strong>Salvia Blanca:</strong> Excelente para neutralizar y eliminar cualquier tipo de energía pesada, larvas astrales o vibraciones negativas. Limpia a fondo el espacio de forma neutra.</li>
+        <li><strong>Copal o Incienso Puro:</strong> Atrae la luz espiritual, abre portales de conexión con guías protectores y consagra el espacio.</li>
+        <li><strong>Romero o Canela:</strong> Aportan una vibración cálida de felicidad, amor familiar y abundancia. Son ideales para sahumar inmediatamente después de haber limpiado con Salvia.</li>
+      </ul>
+
+      <h4>Cómo realizar la tirada de humo:</h4>
+      <ol>
+        <li>Enciende tu atado herbal o pastilla de carbón con cerillas de madera en un cuenco resistente al calor. Deja que arda unos segundos y sopla suavemente para que humee de forma constante.</li>
+        <li>Inicia el recorrido en la **habitación más alejada de la puerta principal** y ve avanzando estancia por estancia.</li>
+        <li>Recorre cada habitación en el sentido de las agujas del reloj, prestando especial atención a las **esquinas**, las partes traseras de las puertas y debajo de los muebles, que es donde el flujo energético tiende a estancarse y volverse denso. Puedes usar una pluma o tu propia mano para dirigir el humo.</li>
+        <li>Mientras esparces el humo, mantén tu mente enfocada en tu intención. Puedes recitar mentalmente: *“Limpio esta casa de toda densidad y oscuridad. Que solo el amor, la salud y la luz habiten en este hogar.”*</li>
+        <li>Termina el recorrido en la puerta principal de la casa. Deja que el sahumerio termine de consumirse en un plato seguro.</li>
+      </ol>
+
+      <h3>Paso 3: El Escudo Protector de Sal Gruesa</h3>
+      <p>Una vez purificado el aire, debemos sellar los accesos de la casa para evitar que entren vibraciones densas del exterior.</p>
+      <ul>
+        <li><strong>El procedimiento:</strong> Coloca un pequeño cuenco de vidrio con **sal marina gruesa** detrás de la puerta principal y en las esquinas de las habitaciones donde sientas mayor pesadez. La sal actúa como una esponja seca que absorbe la negatividad estática. Cambia esta sal cada 15 días, tirándola directamente por el inodoro sin tocarla con las manos.</li>
+      </ul>
+
+      <h3>Paso 4: Frecuencias Armónicas y Vibración Sutil</h3>
+      <p>La energía responde de forma maravillosa al sonido. Después del humo y la sal, puedes elevar la frecuencia molecular de tu casa utilizando sonidos armónicos:</p>
+      <ul>
+        <li>Haz sonar una campana de metal, un **cuenco tibetano** de cuarzo o simplemente reproduce música de **frecuencia Solfeggio a 528 Hz** (la frecuencia de la transformación y reparación energética) en los altavoces de tu salón. El sonido disuelve cualquier cristalización energética restante.</li>
+      </ul>
+
+      <h3>Conclusión: Tu Hogar es tu Templo</h3>
+      <p>Realizar este ritual una vez al mes (o después de una mudanza, discusión familiar fuerte o cuando sientas el ambiente cargado) te ayudará a mantener un espacio armónico, pacífico y lleno de luz. Tu hogar debe ser tu santuario espiritual; protégelo y cuídalo con el mismo respeto con el que cuidas tu propia energía.</p>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--gold-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>🔮 Sincroniza tus rituales con el Cosmos:</strong> Recuerda que la fuerza de purificación se multiplica enormemente cuando se realiza en sintonía con las fases lunares propicias. Consulta nuestro <a href="calendario.html" style="color: var(--gold-color); text-decoration: underline;">Calendario de Rituales</a> y descubre la fecha idónea del mes para realizar tus limpiezas energéticas de forma exitosa.
+      </div>
+    `
   }
 ];
 
@@ -374,7 +766,33 @@ function initBlog() {
   // Renderizar Tarjetas de la Lista
   function renderBlogList() {
     blogGrid.innerHTML = '';
-    ARTICULOS_DB.forEach(post => {
+    
+    // Mapeo de nombres de mes en español a índices numéricos para ordenación precisa
+    const monthsMap = {
+      "enero": 0, "febrero": 1, "marzo": 2, "abril": 3, "mayo": 4, "junio": 5,
+      "julio": 6, "agosto": 7, "septiembre": 8, "octubre": 9, "noviembre": 10, "diciembre": 11
+    };
+
+    // Crear una copia ordenada descendentemente (los más recientes primero)
+    const sortedPosts = [...ARTICULOS_DB].sort((a, b) => {
+      // Formato esperado: "d de Mes, Año" o similar (ej. "28 de Junio, 2026")
+      const parseDate = (dateStr) => {
+        try {
+          const cleaned = dateStr.toLowerCase().replace(',', '').trim();
+          const parts = cleaned.split(/\s+de\s+|\s+/);
+          const day = parseInt(parts[0], 10);
+          const monthName = parts[1];
+          const year = parseInt(parts[2], 10);
+          const monthIndex = monthsMap[monthName] || 0;
+          return new Date(year, monthIndex, day);
+        } catch (e) {
+          return new Date(0); // Fecha por defecto si falla el parseo
+        }
+      };
+      return parseDate(b.date) - parseDate(a.date);
+    });
+
+    sortedPosts.forEach(post => {
       const card = document.createElement('div');
       card.className = 'glass-card blog-post-card';
       card.style.cssText = 'display:flex; flex-direction:column; justify-content:space-between; padding:1.5rem; transition:var(--transition-smooth);';

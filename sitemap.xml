@@ -55,6 +55,42 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.ecoestelar.com/articulos.html?art=guia-interpretacion-suenos</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ecoestelar.com/articulos.html?art=shadow-work-tarot</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ecoestelar.com/articulos.html?art=numeros-karmicos-destino</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ecoestelar.com/articulos.html?art=guia-gemoterapia-cristales</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ecoestelar.com/articulos.html?art=guia-quiromancia-manos</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ecoestelar.com/articulos.html?art=rituales-limpieza-hogar</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.ecoestelar.com/fase-lunar.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>weekly</changefreq>
