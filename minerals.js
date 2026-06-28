@@ -97,7 +97,7 @@ const initMinerals = () => {
     document.body.style.overflow = 'hidden';
 
     if (push) {
-      history.pushState({ mineral: slug }, '', `minerales/${slug}.html`);
+      history.pushState({ mineral: slug }, '', `/minerales/${slug}.html`);
     }
   }
 
@@ -110,7 +110,7 @@ const initMinerals = () => {
     document.body.style.overflow = '';
 
     if (push) {
-      history.pushState(null, '', 'propiedades-minerales.html');
+      history.pushState(null, '', '/propiedades-minerales.html');
     }
   }
 
