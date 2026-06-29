@@ -1915,13 +1915,23 @@ function initMoonPhaseHeader() {
   const moonIcon = document.getElementById('moon-icon');
   const moonName = document.getElementById('moon-name');
   const moonDesc = document.getElementById('moon-phase-description');
+  const moonWidget = document.getElementById('moon-phase-widget');
+  
   if (moonIcon && moonName) {
     const details = getMoonPhaseDetails();
+    const illum = Math.round(100 * (1 - Math.abs(1 - 2 * details.phase)));
     moonIcon.innerHTML = getMoonSvg(details.phase, localStorage.getItem('lunar_hemisphere') || 'north');
-    moonName.textContent = details.phaseName;
+    moonName.textContent = `${details.phaseName} (${illum}%)`;
     if (moonDesc) {
       moonDesc.innerHTML = details.description;
     }
+  }
+
+  if (moonWidget) {
+    moonWidget.addEventListener('click', () => {
+      const isInsideSubfolder = window.location.pathname.includes('/minerales/');
+      window.location.href = isInsideSubfolder ? '../fase-lunar.html' : 'fase-lunar.html';
+    });
   }
 }
 initMoonPhaseHeader();

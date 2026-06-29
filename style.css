@@ -1462,11 +1462,11 @@ body {
   background: linear-gradient(135deg, rgba(20, 16, 45, 0.75) 0%, rgba(13, 11, 26, 0.85) 100%);
   border: 1px solid rgba(229, 193, 88, 0.15);
   border-radius: 20px;
-  padding: 1.25rem 1.85rem;
+  padding: 0.65rem 1.5rem;
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   margin: 1.5rem auto 0 auto;
-  max-width: 650px;
+  max-width: 320px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), 
               inset 0 1px 0 rgba(255, 255, 255, 0.05), 
               0 0 25px rgba(139, 92, 246, 0.06);
@@ -1515,14 +1515,7 @@ body {
 }
 
 .moon-phase-description {
-  font-size: 0.82rem;
-  line-height: 1.55;
-  color: var(--text-muted);
-  text-align: center;
-  margin-top: 0.15rem;
-  border-top: 1px dashed rgba(212, 175, 55, 0.18);
-  padding-top: 0.5rem;
-  width: 100%;
+  display: none !important;
 }
 
 .moon-icon {
@@ -6887,6 +6880,42 @@ body.reduced-motion .glass-card:hover {
   background: rgba(157, 141, 241, 0.08) !important;
   box-shadow: 0 0 10px rgba(157, 141, 241, 0.2) !important;
 }
+
+/* Ampliar textos introductorios globales en ordenador (desktop) */
+@media (min-width: 769px) {
+  .app-container > div.glass-card[style*="max-width: 1200px"] h2,
+  .app-container > .glass-card[style*="max-width: 1200px"] h2 {
+    font-size: 1.6rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .app-container > div.glass-card[style*="max-width: 1200px"] p,
+  .app-container > .glass-card[style*="max-width: 1200px"] p {
+    font-size: 1.05rem !important;
+    line-height: 1.65 !important;
+  }
+}
+
+/* Ampliar textos de respuestas y predicciones (.narrative-box) en desktop */
+@media (min-width: 769px) {
+  .narrative-box {
+    font-size: 1.05rem !important;
+    line-height: 1.75 !important;
+  }
+  .narrative-box p,
+  .narrative-box li,
+  #astro-forecast-text,
+  #destiny-synthesis-text {
+    font-size: 1.05rem !important;
+    line-height: 1.75 !important;
+  }
+  .narrative-box span,
+  .narrative-box [style*="font-size: 0.9rem"] {
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+  }
+}
+
+
 
 
 
