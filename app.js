@@ -1659,10 +1659,21 @@ function loadHistory() {
 // Restore a past reading
 function restoreReading(id) {
   const history = JSON.parse(localStorage.getItem('tarot_reading_history') || '[]');
-  const reading = history.find(item => item.id === id);
+  // Find matching reading (support both string and numeric IDs)
+  const reading = history.find(item => String(item.id) === String(id));
   if (!reading) return;
   
-  const isAstro = reading.spreadType === 'astro_daily' || reading.spreadType === 'astro_weekly';
+  const isAstro = reading.spreadType === 'astro_daily' || reading.spreadType === 'astro_weekly' || reading.spreadType === 'astro_houses';
+  const currentPath = window.location.pathname.toLowerCase();
+  
+  // Redireccionar si el usuario está en la página equivocada para esta lectura
+  if (isAstro && !currentPath.includes('horoscopo.html')) {
+    window.location.href = 'horoscopo.html?reading=' + id;
+    return;
+  } else if (!isAstro && !currentPath.includes('index.html') && currentPath !== '/' && currentPath !== '' && !currentPath.endsWith('/')) {
+    window.location.href = 'index.html?reading=' + id;
+    return;
+  }
   
   if (isAstro) {
     isAstroFromHistory = true;
@@ -1679,9 +1690,12 @@ function restoreReading(id) {
         t.classList.remove('active');
       }
     });
-    document.getElementById('oracle-tab-content').classList.add('hidden');
-    document.getElementById('book-tab-content').classList.add('hidden');
-    document.getElementById('horoscope-tab-content').classList.remove('hidden');
+    const oracleTab = document.getElementById('oracle-tab-content');
+    if (oracleTab) oracleTab.classList.add('hidden');
+    const bookTab = document.getElementById('book-tab-content');
+    if (bookTab) bookTab.classList.add('hidden');
+    const horoscopeTab = document.getElementById('horoscope-tab-content');
+    if (horoscopeTab) horoscopeTab.classList.remove('hidden');
     const numTab = document.getElementById('numerology-tab-content');
     if (numTab) numTab.classList.add('hidden');
     const dailyTab = document.getElementById('daily-tab-content');
@@ -1784,8 +1798,10 @@ function restoreReading(id) {
       t.classList.remove('active');
     }
   });
-  document.getElementById('oracle-tab-content').classList.remove('hidden');
-  document.getElementById('book-tab-content').classList.add('hidden');
+  const oracleTab = document.getElementById('oracle-tab-content');
+  if (oracleTab) oracleTab.classList.remove('hidden');
+  const bookTab = document.getElementById('book-tab-content');
+  if (bookTab) bookTab.classList.add('hidden');
   if (document.getElementById('horoscope-tab-content')) document.getElementById('horoscope-tab-content').classList.add('hidden');
   if (document.getElementById('numerology-tab-content')) document.getElementById('numerology-tab-content').classList.add('hidden');
   if (document.getElementById('daily-tab-content')) document.getElementById('daily-tab-content').classList.add('hidden');
@@ -6115,12 +6131,23 @@ window.addEventListener('popstate', (e) => {
 window.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     const urlParams = new URLSearchParams(window.location.search);
+    
+    // Abrir carta del día desde URL si procede
     const carta = urlParams.get('carta');
     if (carta && window.tarotDb) {
        const card = window.tarotDb.find(c => createSlug(c.name) === carta);
        if (card) {
           openCardDetailModal(card.id);
        }
+    }
+    
+    // Restaurar lectura antigua de Tarot/Horóscopo desde URL si procede
+    const readingId = urlParams.get('reading');
+    if (readingId) {
+      restoreReading(readingId);
+      // Limpiar el parámetro de la URL
+      const cleanUrl = window.location.pathname;
+      window.history.replaceState({}, document.title, cleanUrl);
     }
   }, 500);
 });
