@@ -6114,3 +6114,44 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }, 500);
 });
+
+// Scan and tag mineral category cards dynamically for aesthetic glowing effects
+(function initMineralCategoryTags() {
+  function tagCards() {
+    document.querySelectorAll('.dream-card').forEach(card => {
+      const catEl = card.querySelector('.dream-card-cat');
+      if (catEl) {
+        const catText = catEl.textContent.trim().toLowerCase();
+        if (catText.includes('paz')) card.classList.add('cat-paz-y-calma');
+        else if (catText.includes('protección') || catText.includes('proteccion') || catText.includes('limpieza')) card.classList.add('cat-proteccion-y-limpieza');
+        else if (catText.includes('amor') || catText.includes('emociones')) card.classList.add('cat-amor-y-emociones');
+        else if (catText.includes('abundancia') || catText.includes('acción') || catText.includes('accion')) card.classList.add('cat-abundancia-y-accion');
+        else if (catText.includes('intuición') || catText.includes('intuicion') || catText.includes('consciencia')) card.classList.add('cat-intuicion-y-consciencia');
+      }
+    });
+  }
+
+  // Run on load
+  if (document.readyState !== 'loading') {
+    tagCards();
+  } else {
+    document.addEventListener('DOMContentLoaded', tagCards);
+  }
+
+  // Observe page mutations (useful when page changes or grid re-renders)
+  const targetNode = document.body;
+  if (targetNode) {
+    const observer = new MutationObserver((mutationsList) => {
+      let run = false;
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+          run = true;
+          break;
+        }
+      }
+      if (run) tagCards();
+    });
+    observer.observe(targetNode, { childList: true, subtree: true });
+  }
+})();
+

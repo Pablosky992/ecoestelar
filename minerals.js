@@ -138,7 +138,7 @@ const initMinerals = () => {
   function getFilteredMinerals() {
     const queryNormalized = normalizeText(currentSearchQuery);
 
-    return window.mineralsDb.filter(m => {
+    const filtered = window.mineralsDb.filter(m => {
       let matchesCategory = currentCategory === 'todos' || m.category.toLowerCase() === currentCategory;
       if (!matchesCategory) return false;
 
@@ -156,6 +156,8 @@ const initMinerals = () => {
              propertiesNormalized.includes(queryNormalized) ||
              usesNormalized.includes(queryNormalized);
     });
+
+    return filtered.sort((a, b) => a.name.localeCompare(b.name, 'es', { sensitivity: 'base' }));
   }
 
   function renderMinerals() {

@@ -6783,4 +6783,110 @@ body.reduced-motion .glass-card:hover {
   box-shadow: 0 12px 30px rgba(229, 193, 88, 0.2);
 }
 
+/* ==========================================================================
+   Premium Crystal Shine & Glow Effects
+   ========================================================================== */
+.dream-card {
+  position: relative;
+  overflow: hidden !important; /* Ensure sheen doesn't overflow outside rounded corners */
+}
+
+/* Shimmer sheen reflection */
+.dream-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 30%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.15) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  transition: left 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.dream-card:hover::after {
+  left: 150%;
+}
+
+/* Category Glow Themes */
+.dream-card.cat-paz-y-calma:hover {
+  border-color: #87cedf !important;
+  box-shadow: 0 8px 25px rgba(135, 206, 223, 0.3) !important;
+}
+.dream-card.cat-paz-y-calma .dream-card-btn {
+  border-color: rgba(135, 206, 223, 0.5) !important;
+  color: #87cedf !important;
+}
+.dream-card.cat-paz-y-calma:hover .dream-card-btn {
+  border-color: #87cedf !important;
+  background: rgba(135, 206, 223, 0.08) !important;
+  box-shadow: 0 0 10px rgba(135, 206, 223, 0.2) !important;
+}
+
+.dream-card.cat-proteccion-y-limpieza:hover {
+  border-color: #a0a0a0 !important;
+  box-shadow: 0 8px 25px rgba(160, 160, 160, 0.3) !important;
+}
+.dream-card.cat-proteccion-y-limpieza .dream-card-btn {
+  border-color: rgba(160, 160, 160, 0.5) !important;
+  color: #a0a0a0 !important;
+}
+.dream-card.cat-proteccion-y-limpieza:hover .dream-card-btn {
+  border-color: #a0a0a0 !important;
+  background: rgba(160, 160, 160, 0.08) !important;
+  box-shadow: 0 0 10px rgba(160, 160, 160, 0.2) !important;
+}
+
+.dream-card.cat-amor-y-emociones:hover {
+  border-color: #ffb6c1 !important;
+  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.3) !important;
+}
+.dream-card.cat-amor-y-emociones .dream-card-btn {
+  border-color: rgba(255, 182, 193, 0.5) !important;
+  color: #ffb6c1 !important;
+}
+.dream-card.cat-amor-y-emociones:hover .dream-card-btn {
+  border-color: #ffb6c1 !important;
+  background: rgba(255, 182, 193, 0.08) !important;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.2) !important;
+}
+
+.dream-card.cat-abundancia-y-accion:hover {
+  border-color: #e5c158 !important;
+  box-shadow: 0 8px 25px rgba(229, 193, 88, 0.3) !important;
+}
+.dream-card.cat-abundancia-y-accion .dream-card-btn {
+  border-color: rgba(229, 193, 88, 0.5) !important;
+  color: #e5c158 !important;
+}
+.dream-card.cat-abundancia-y-accion:hover .dream-card-btn {
+  border-color: #e5c158 !important;
+  background: rgba(229, 193, 88, 0.08) !important;
+  box-shadow: 0 0 10px rgba(229, 193, 88, 0.2) !important;
+}
+
+.dream-card.cat-intuicion-y-consciencia:hover {
+  border-color: #9d8df1 !important;
+  box-shadow: 0 8px 25px rgba(157, 141, 241, 0.3) !important;
+}
+.dream-card.cat-intuicion-y-consciencia .dream-card-btn {
+  border-color: rgba(157, 141, 241, 0.5) !important;
+  color: #9d8df1 !important;
+}
+.dream-card.cat-intuicion-y-consciencia:hover .dream-card-btn {
+  border-color: #9d8df1 !important;
+  background: rgba(157, 141, 241, 0.08) !important;
+  box-shadow: 0 0 10px rgba(157, 141, 241, 0.2) !important;
+}
+
+
 
