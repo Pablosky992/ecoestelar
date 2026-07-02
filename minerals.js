@@ -138,14 +138,11 @@ const initMinerals = () => {
   function getFilteredMinerals() {
     const queryNormalized = normalizeText(currentSearchQuery);
 
-    const filtered = window.mineralsDb.filter(m => {
-      // Si hay una búsqueda activa, se ignora el filtro de categoría y se busca de forma global.
-      // Si no hay búsqueda, se filtra por la categoría actual seleccionada.
-      if (!queryNormalized) {
-        let matchesCategory = currentCategory === 'todos' || m.category.toLowerCase() === currentCategory;
-        if (!matchesCategory) return false;
-        return true;
-      }
+    return window.mineralsDb.filter(m => {
+      let matchesCategory = currentCategory === 'todos' || m.category.toLowerCase() === currentCategory;
+      if (!matchesCategory) return false;
+
+      if (!queryNormalized) return true;
 
       const nameNormalized = normalizeText(m.name);
       const subtitleNormalized = normalizeText(m.subtitle);
@@ -159,9 +156,6 @@ const initMinerals = () => {
              propertiesNormalized.includes(queryNormalized) ||
              usesNormalized.includes(queryNormalized);
     });
-
-    // Ordenar alfabéticamente (A-Z) en español, gestionando acentos correctamente
-    return filtered.sort((a, b) => a.name.localeCompare(b.name, 'es', { sensitivity: 'base' }));
   }
 
   function renderMinerals() {
