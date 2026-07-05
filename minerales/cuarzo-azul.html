@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propiedades del Mineral Cuarzo Azul — El Eco de las Estrellas</title>
+  
+  <script>
+    // Detectar si está cargado dentro de un iframe para ocultar menús
+    if (window.self !== window.top) {
+      document.documentElement.classList.add('in-iframe');
+    }
+  </script>
+  
+  <style>
+    /* Estilos para modo iframe */
+    html.in-iframe .app-header,
+    html.in-iframe .app-nav,
+    html.in-iframe .app-footer,
+    html.in-iframe #back-to-dictionary-container,
+    html.in-iframe #astral-settings-btn {
+      display: none !important;
+    }
+    html.in-iframe .app-container {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      min-height: auto !important;
+    }
+    html.in-iframe main {
+      margin-bottom: 0 !important;
+      padding-top: 1rem !important;
+    }
+    html.in-iframe body {
+      background: transparent !important;
+      overflow-x: hidden;
+    }
+    html.in-iframe .stars-container {
+      display: none !important;
+    }
+  </style>
+
+  <!-- Favicon / Icono de la pestaña -->
+  <link class="favicon-icon" rel="icon" type="image/png" href="../assets/logo_luna_v2.webp">
+  <link rel="apple-touch-icon" href="../assets/logo_luna_v2.webp">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Para cuando sufres de agitación verbal, estrés por sobrecarga intelectual o cuando notas que tu comunicación con el entorno es tensa y te cuesta expresarte...">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ecoestelar.com/minerales/cuarzo-azul.html">
+  <meta property="og:title" content="Propiedades del Mineral Cuarzo Azul — El Eco de las Estrellas">
+  <meta property="og:description" content="Para cuando sufres de agitación verbal, estrés por sobrecarga intelectual o cuando notas que tu comunicación con el entorno es tensa y te cuesta expresarte...">
+  <meta property="og:image" content="../assets/minerales/cuarzo-azul.jpg">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.ecoestelar.com/minerales/cuarzo-azul.html">
+  <meta name="twitter:title" content="Propiedades del Mineral Cuarzo Azul — El Eco de las Estrellas">
+  <meta name="twitter:description" content="Para cuando sufres de agitación verbal, estrés por sobrecarga intelectual o cuando notas que tu comunicación con el entorno es tensa y te cuesta expresarte...">
+  <meta name="twitter:image" content="../assets/minerales/cuarzo-azul.jpg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="../style.css">
+  
+  <!-- SEO Optimization -->
+  <link rel="canonical" href="https://www.ecoestelar.com/minerales/cuarzo-azul.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Propiedades de Cuarzo Azul - El Eco de las Estrellas",
+    "url": "https://www.ecoestelar.com/minerales/cuarzo-azul.html",
+    "description": "Para cuando sufres de agitación verbal, estrés por sobrecarga intelectual o cuando notas que tu comunicación con el entorno es tensa y te cuesta expresarte...",
+    "image": "https://www.ecoestelar.com/assets/minerales/cuarzo-azul.jpg",
+    "inLanguage": "es"
+  }
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9370167145239765"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Mystical Stars Background -->
+  <div class="stars-container">
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <canvas id="constellations-canvas"></canvas>
+  </div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo" onclick="location.href='../index.html'" style="cursor: pointer;">
+        <img src="../assets/logo_luna_v2.webp" class="logo-img" alt="Luna llena mística - El Eco de las estrellas">
+      </div>
+      <h1 class="main-title" onclick="location.href='../index.html'" style="cursor: pointer;">EL ECO DE LAS ESTRELLAS</h1>
+      <p class="subtitle">Sintoniza con tu vibración astral y el tarot</p>
+      
+      <!-- Widget de Fase Lunar -->
+      <div class="moon-phase-widget" id="moon-phase-widget">
+        <div class="moon-phase-main">
+          <div class="moon-icon-container" id="moon-icon"></div>
+          <div class="moon-text-content">
+            <span class="moon-label">Fase Lunar de Hoy</span>
+            <span class="moon-name" id="moon-name">Luna Nueva</span>
+          </div>
+        </div>
+        <div class="moon-phase-description" id="moon-phase-description">
+          Calculando la influencia lunar para el día de hoy...
+        </div>
+      </div>
+    </header>
+
+    <!-- Menú de Pestañas -->
+    <nav class="app-nav" aria-label="Navegación principal">
+      <a href="../index.html" class="nav-tab">
+        <span class="tab-icon">🔮</span> El Oráculo
+      </a>
+      <a href="../carta-del-dia.html" class="nav-tab">
+        <span class="tab-icon">🌟</span> Carta del Día
+      </a>
+      <a href="../horoscopo.html" class="nav-tab">
+        <span class="tab-icon">✨</span> Tu Horóscopo
+      </a>
+      <a href="../fase-lunar.html" class="nav-tab">
+        <span class="tab-icon">🌙</span> La Luna
+      </a>
+      <a href="../calendario.html" class="nav-tab">
+        <span class="tab-icon">🕯️</span> Rituales
+      </a>
+      <a href="../numerologia.html" class="nav-tab">
+        <span class="tab-icon">🔢</span> Numerología
+      </a>
+      <a href="../grimorio.html" class="nav-tab">
+        <span class="tab-icon">📖</span> El Libro del Tarot
+      </a>
+      <a href="../significado-suenos.html" class="nav-tab">
+        <span class="tab-icon">💤</span> Sueños
+      </a>
+      <a href="../propiedades-minerales.html" class="nav-tab active">
+        <span class="tab-icon">💎</span> Minerales
+      </a>
+      <a href="../articulos.html" class="nav-tab">
+        <span class="tab-icon">📰</span> Artículos
+      </a>
+      <a href="../tienda.html" class="nav-tab">
+        <span class="tab-icon">🛍️</span> Tienda
+      </a>
+    </nav>
+
+    <!-- Volver al Buscador -->
+    <div id="back-to-dictionary-container" style="max-width: 800px; margin: 1rem auto 0 auto; width: 100%; box-sizing: border-box; padding: 0 1rem; text-align: left;">
+      <a href="../propiedades-minerales.html" class="secondary-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-serif); font-size: 0.9rem;">
+        ← Volver al Diccionario de Minerales
+      </a>
+    </div>
+
+    <!-- AdSense Banner Superior -->
+    <div class="glass-card" style="margin: 1rem auto; padding: 0.5rem; max-width: 800px; text-align: center; border: 1px dashed rgba(229,193,88,0.2);">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-9370167145239765"
+           data-ad-slot="9012345678"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+    <!-- Contenido del Mineral -->
+    <main style="max-width: 800px; margin: 0 auto 3rem auto; padding: 0 1rem; box-sizing: border-box;">
+      <div class="glass-card" style="padding: 2.5rem; text-align: left;">
+        
+        <!-- Cabecera de Ficha -->
+        <div class="lunar-modal-header-layout" style="display: flex; gap: 1.5rem; align-items: center; margin-bottom: 2rem;">
+          <div class="lunar-modal-image-container" style="width: 140px; height: 140px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); flex-shrink: 0; box-shadow: 0 0 15px rgba(0,0,0,0.3);">
+            <img src="../assets/minerales/cuarzo-azul.jpg" alt="Cuarzo Azul" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lunar-modal-title-container">
+            <h2 class="gold" style="margin: 0; font-family: var(--font-serif); font-size: 2.2rem; letter-spacing: 0.05em; text-shadow: 0 0 10px rgba(229,193,88,0.1);">Cuarzo Azul</h2>
+            <p class="purple" style="margin: 0.35rem 0 0 0; font-size: 1rem; font-weight: 500; font-style: italic; color: var(--gold-light);">
+              la palabra del pensamiento calmado
+            </p>
+            <span class="dream-card-cat" style="display: inline-block; margin-top: 0.5rem; background: rgba(229,193,88,0.08); border: 1px solid var(--border-color); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-family: var(--font-serif); color: var(--gold-color);">
+              Categoría: Paz y Calma
+            </span>
+          </div>
+        </div>
+
+        <div class="mystical-divider" style="margin: 1.5rem 0;">
+          <svg viewBox="0 0 100 8" fill="none" style="width: 100%; height: 8px;" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 4H42M58 4H100" stroke="var(--border-color)" stroke-width="0.75" />
+            <polygon points="50,0.5 51.5,3.5 55,3.5 52.5,5.5 54,8.5 50,6.8 46,8.5 47.5,5.5 45,3.5 48.5,3.5" fill="var(--gold-color)" />
+          </svg>
+        </div>
+
+        <!-- Descripción Poética -->
+        <div style="margin-bottom: 2rem;">
+          <p style="line-height: 1.8; font-size: 1.1rem; color: var(--text-color); text-align: justify;">
+            Para cuando sufres de agitación verbal, estrés por sobrecarga intelectual o cuando notas que tu comunicación con el entorno es tensa y te cuesta expresarte desde la serenidad. El cuarzo azul, con su tono celeste opaco, funciona como un pacificador del chakra de la garganta. Alinea el intelecto con la expresión verbal sincera, disuelve el miedo a la crítica ajena y te permite hablar con una calma absoluta.
+          </p>
+        </div>
+
+        <!-- Ficha de Propiedades Espirituales -->
+        <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+          <h4 class="gold" style="margin: 0 0 0.75rem 0; font-family: var(--font-serif); font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span>✨</span> Propiedades Energéticas y Metafísicas
+          </h4>
+          <p style="line-height: 1.7; font-size: 1rem; color: var(--text-muted); margin: 0;">
+            Calma la agitación mental, promueve la comunicación serena y lógica, disuelve el miedo a la opinión externa y pacifica el pecho.
+          </p>
+        </div>
+
+        <!-- Conexiones y Chakras -->
+        <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+          <h4 class="gold" style="margin: 0 0 0.75rem 0; font-family: var(--font-serif); font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span>🌌</span> Conexión Interna y Correspondencias
+          </h4>
+          <p style="line-height: 1.7; font-size: 1rem; color: var(--text-muted); margin: 0;">
+            Abre y equilibra el Chakra de la Garganta. Resuena de forma preciosa con Géminis, Libra y Acuario.
+          </p>
+        </div>
+
+        <!-- AdSense Banner Medio -->
+        <div style="margin: 2rem auto; text-align: center; border: 1px dashed rgba(229,193,88,0.2); padding: 0.5rem;">
+          <ins class="adsbygoogle"
+               style="display:block; text-align:center;"
+               data-ad-layout="in-article"
+               data-ad-format="fluid"
+               data-ad-client="ca-pub-9370167145239765"
+               data-ad-slot="9012345679"></ins>
+          <script>
+               (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+
+        <!-- Usos Recomendados -->
+        <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+          <h4 class="gold" style="margin: 0 0 0.75rem 0; font-family: var(--font-serif); font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span>🕯️</span> Usos Sugeridos y Aplicación Práctica
+          </h4>
+          <p style="line-height: 1.7; font-size: 1rem; color: var(--text-muted); margin: 0;">
+            Colócalo cerca de tu garganta durante tus momentos de meditación diaria para liberar tensiones al expresarte.
+          </p>
+        </div>
+
+        <!-- Lore y Leyendas -->
+        <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+          <h4 class="gold" style="margin: 0 0 0.75rem 0; font-family: var(--font-serif); font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span>📖</span> Sabiduría Ancestral y Leyendas (Cuentan por ahí...)
+          </h4>
+          <p style="line-height: 1.7; font-size: 1rem; color: var(--text-muted); margin: 0;">
+            Ampliamente valorado en la cristaloterapia clásica para calmar a las mentes muy impulsivas antes de reuniones importantes, actuando como un puente que aporta lógica y calma a la voz.
+          </p>
+        </div>
+
+        <!-- Ciencia y Geología -->
+        <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+          <h4 class="gold" style="margin: 0 0 0.75rem 0; font-family: var(--font-serif); font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span>🔬</span> Propiedades Científicas y Geológicas
+          </h4>
+          <p style="line-height: 1.7; font-size: 1rem; color: var(--text-muted); margin: 0;">
+            Variedad de cuarzo macrocristalino que obtiene su color azul debido a inclusiones microscópicas de minerales fibrosos como la crocidolita o el rutilo. Dureza de 7 en la escala de Mohs.
+          </p>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Recomendados -->
+    <section style="max-width: 1200px; margin: 0 auto 3rem auto; padding: 0 1rem; box-sizing: border-box;">
+      <h3 class="gold" style="font-family: var(--font-serif); font-size: 1.6rem; text-align: left; margin-bottom: 1.5rem; padding-left: 0.5rem; border-left: 3px solid var(--gold-color);">
+        💎 Otros Minerales de la misma Vibración
+      </h3>
+      <div class="dream-grid">
+        
+    <article class="dream-card glass-card" tabindex="0" role="button" onclick="location.href='amatista.html'" aria-label="Significado de Amatista" style="overflow: hidden;">
+      <div style="margin-top: -1.5rem; margin-left: -1.5rem; margin-right: -1.5rem; width: calc(100% + 3rem); height: 130px; overflow: hidden; border-radius: 15px 15px 0 0; border-bottom: 1px solid var(--border-color); margin-bottom: 1rem;">
+        <img src="../assets/minerales/amatista.jpg" alt="Amatista" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85);" loading="lazy">
+      </div>
+      <div class="dream-card-header">
+        <span class="dream-card-cat">Paz y Calma</span>
+        <span class="dream-card-icon">🌸</span>
+      </div>
+      <h3 class="dream-card-title">Amatista</h3>
+      <p class="dream-card-preview">la quietud que transforma el ruido</p>
+      <button type="button" class="dream-card-btn" style="margin-top: auto;">Ver Propiedades ✦</button>
+    </article>
+  
+    <article class="dream-card glass-card" tabindex="0" role="button" onclick="location.href='calcita-optica-espato-de-islandia.html'" aria-label="Significado de Calcita Óptica (Espato de Islandia)" style="overflow: hidden;">
+      <div style="margin-top: -1.5rem; margin-left: -1.5rem; margin-right: -1.5rem; width: calc(100% + 3rem); height: 130px; overflow: hidden; border-radius: 15px 15px 0 0; border-bottom: 1px solid var(--border-color); margin-bottom: 1rem;">
+        <img src="../assets/minerales/calcita-optica-espato-de-islandia.jpg" alt="Calcita Óptica (Espato de Islandia)" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85);" loading="lazy">
+      </div>
+      <div class="dream-card-header">
+        <span class="dream-card-cat">Paz y Calma</span>
+        <span class="dream-card-icon">🌸</span>
+      </div>
+      <h3 class="dream-card-title">Calcita Óptica (Espato de Islandia)</h3>
+      <p class="dream-card-preview">la doble visión</p>
+      <button type="button" class="dream-card-btn" style="margin-top: auto;">Ver Propiedades ✦</button>
+    </article>
+  
+    <article class="dream-card glass-card" tabindex="0" role="button" onclick="location.href='lepidolita.html'" aria-label="Significado de Lepidolita" style="overflow: hidden;">
+      <div style="margin-top: -1.5rem; margin-left: -1.5rem; margin-right: -1.5rem; width: calc(100% + 3rem); height: 130px; overflow: hidden; border-radius: 15px 15px 0 0; border-bottom: 1px solid var(--border-color); margin-bottom: 1rem;">
+        <img src="../assets/minerales/lepidolita.jpg" alt="Lepidolita" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85);" loading="lazy">
+      </div>
+      <div class="dream-card-header">
+        <span class="dream-card-cat">Paz y Calma</span>
+        <span class="dream-card-icon">🌸</span>
+      </div>
+      <h3 class="dream-card-title">Lepidolita</h3>
+      <p class="dream-card-preview">el abrazo de litio contra el estrés</p>
+      <button type="button" class="dream-card-btn" style="margin-top: auto;">Ver Propiedades ✦</button>
+    </article>
+  
+      </div>
+    </section>
+
+    <!-- AdSense Banner Inferior -->
+    <div class="glass-card" style="margin: 2rem auto; padding: 0.5rem; max-width: 800px; text-align: center; border: 1px dashed rgba(229,193,88,0.2);">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-9370167145239765"
+           data-ad-slot="9012345680"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+  </div> <!-- Cierre de .app-container -->
+
+  <!-- Floating Settings Button -->
+  <button type="button" id="astral-settings-btn" class="astral-settings-btn" aria-label="Ajustes Astrales y Accesibilidad" title="Ajustes Astrales">
+    ✨
+  </button>
+
+  <!-- Footer Legal -->
+  <footer class="app-footer">
+    <div class="footer-links">
+      <a href="#" class="legal-link" data-legal="aviso">Aviso Legal</a>
+      <span class="footer-separator">•</span>
+      <a href="#" class="legal-link" data-legal="privacidad">Política de Privacidad</a>
+      <span class="footer-separator">•</span>
+      <a href="#" class="legal-link" data-legal="cookies">Política de Cookies</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 El Eco de las Estrellas. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Sliding Settings Panel -->
+  <div id="astral-settings-panel" class="astral-settings-panel hidden" role="dialog" aria-labelledby="settings-panel-title" aria-modal="true">
+    <div class="settings-panel-content glass-card">
+      <div class="settings-panel-header">
+        <h3 id="settings-panel-title" class="gold">✦ Ajustes Astrales ✦</h3>
+        <button type="button" id="settings-close-btn" class="settings-close-btn" aria-label="Cerrar Ajustes">&times;</button>
+      </div>
+      
+      <div class="settings-panel-body">
+        <!-- Audio Section -->
+        <div class="settings-section">
+          <h4 class="settings-section-title">🔮 Armonía Celestial</h4>
+          <div class="settings-control-row">
+            <label for="audio-toggle" class="control-label">Música ambiente</label>
+            <label class="toggle-switch">
+              <input type="checkbox" id="audio-toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="settings-control-row volume-row">
+            <label for="audio-volume" class="control-label">Volumen astral</label>
+            <input type="range" id="audio-volume" min="0" max="1" step="0.05" value="0.5" class="premium-slider" aria-label="Volumen de música ambiente">
+          </div>
+        </div>
+
+        <!-- Appearance Section -->
+        <div class="settings-section">
+          <h4 class="settings-section-title">🌙 Apariencia Cósmica</h4>
+          <div class="settings-control-row">
+            <span class="control-label">Tema del Templo</span>
+            <div class="theme-toggle-group">
+              <button type="button" class="theme-btn active" id="theme-dark-btn" title="Modo Noche">🌙 Noche</button>
+              <button type="button" class="theme-btn" id="theme-light-btn" title="Modo Día">☀️ Día</button>
+            </div>
+          </div>
+          <div class="settings-control-row">
+            <label for="high-contrast-toggle" class="control-label">Alto Contraste 👁️</label>
+            <label class="toggle-switch">
+              <input type="checkbox" id="high-contrast-toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="settings-control-row">
+            <label for="reduced-motion-toggle" class="control-label">Ahorro Energía (Movimiento) 🍃</label>
+            <label class="toggle-switch">
+              <input type="checkbox" id="reduced-motion-toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Accessibility Section -->
+        <div class="settings-section">
+          <h4 class="settings-section-title">✍️ Tamaño del Texto</h4>
+          <div class="settings-control-row">
+            <span class="control-label">Ajuste de lectura</span>
+            <div class="font-size-group">
+              <button type="button" class="font-btn" data-size="small" title="Texto Pequeño">A-</button>
+              <button type="button" class="font-btn active" data-size="medium" title="Texto Normal">A</button>
+              <button type="button" class="font-btn" data-size="large" title="Texto Grande">A+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Onboarding/Help Section -->
+        <div class="settings-section">
+          <h4 class="settings-section-title">📖 Sabiduría y Guía</h4>
+          <button type="button" id="replay-onboarding-btn" class="settings-action-btn">
+            🌌 Iniciar Guía del Oráculo
+          </button>
+        </div>
+
+        <!-- Donation Section -->
+        <div class="settings-section">
+          <h4 class="settings-section-title">❤️ Apoyo al Templo</h4>
+          <a href="https://www.paypal.com/donate/?hosted_button_id=J3VBYA6JEMJZS" target="_blank" rel="noopener noreferrer" class="settings-action-btn donation-action-btn" style="display: block; text-decoration: none; text-align: center; font-weight: 700; border: none; padding: 0.8rem 1rem; border-radius: 8px;">
+            ☕ Ofrenda / Donación PayPal
+          </a>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="settings-section" style="margin-top: 0.5rem; text-align: center;">
+          <a href="mailto:expondudas@yahoo.com" id="contact-email-btn" class="settings-action-btn" style="display: inline-block; text-decoration: none; font-size: 0.8rem; opacity: 0.6; padding: 0.5rem; width: auto; min-width: 120px; text-align: center; line-height: 1.5;">
+            ✉️ expondudas@yahoo.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript Logic -->
+  <script src="../tarotDb.js" defer></script>
+  <script src="../app.js" defer></script>
+</body>
+</html>
