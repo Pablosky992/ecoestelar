@@ -138,24 +138,28 @@ const initMinerals = () => {
   function getFilteredMinerals() {
     const queryNormalized = normalizeText(currentSearchQuery);
 
-    return window.mineralsDb.filter(m => {
-      let matchesCategory = currentCategory === 'todos' || m.category.toLowerCase() === currentCategory;
-      if (!matchesCategory) return false;
+    const filtered = window.mineralsDb.filter(m => {
+      // Si hay una búsqueda activa, se ignora el filtro de categoría y se busca de forma global
+      if (queryNormalized) {
+        const nameNormalized = normalizeText(m.name);
+        const subtitleNormalized = normalizeText(m.subtitle);
+        const descriptionNormalized = normalizeText(m.description);
+        const propertiesNormalized = normalizeText(m.properties);
+        const usesNormalized = normalizeText(m.uses);
+        
+        return nameNormalized.includes(queryNormalized) ||
+               subtitleNormalized.includes(queryNormalized) ||
+               descriptionNormalized.includes(queryNormalized) ||
+               propertiesNormalized.includes(queryNormalized) ||
+               usesNormalized.includes(queryNormalized);
+      }
 
-      if (!queryNormalized) return true;
-
-      const nameNormalized = normalizeText(m.name);
-      const subtitleNormalized = normalizeText(m.subtitle);
-      const descriptionNormalized = normalizeText(m.description);
-      const propertiesNormalized = normalizeText(m.properties);
-      const usesNormalized = normalizeText(m.uses);
-      
-      return nameNormalized.includes(queryNormalized) ||
-             subtitleNormalized.includes(queryNormalized) ||
-             descriptionNormalized.includes(queryNormalized) ||
-             propertiesNormalized.includes(queryNormalized) ||
-             usesNormalized.includes(queryNormalized);
+      // Si no hay búsqueda activa, se filtra por la categoría actual seleccionada
+      return currentCategory === 'todos' || m.category.toLowerCase() === currentCategory;
     });
+
+    // Ordenar alfabéticamente (A-Z) en español, gestionando acentos correctamente
+    return filtered.sort((a, b) => a.name.localeCompare(b.name, 'es', { sensitivity: 'base' }));
   }
 
   function renderMinerals() {
