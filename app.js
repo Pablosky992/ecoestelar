@@ -1952,7 +1952,7 @@ function initMoonPhaseHeader() {
 }
 initMoonPhaseHeader();
 
-// Interactive Constellations Background (Canvas HTML5)
+// Interactive Constellations Background (Canvas HTML5 - Mobile Optimized)
 function initConstellations() {
   const canvas = document.getElementById('constellations-canvas');
   if (!canvas) return;
@@ -1964,19 +1964,22 @@ function initConstellations() {
   canvas.width = width;
   canvas.height = height;
 
+  const isMobile = width <= 768 || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   const particles = [];
-  const particleCount = Math.min(120, Math.max(40, Math.floor((width * height) / 16000)));
+  const particleCount = isMobile 
+    ? Math.min(25, Math.max(15, Math.floor((width * height) / 32000)))
+    : Math.min(90, Math.max(35, Math.floor((width * height) / 16000)));
   const mouse = { x: 0, y: 0, active: false };
 
   class Star {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.15;
-      this.vy = (Math.random() - 0.5) * 0.15;
-      this.radius = Math.random() * 1.5 + 0.8;
+      this.vx = (Math.random() - 0.5) * (isMobile ? 0.1 : 0.15);
+      this.vy = (Math.random() - 0.5) * (isMobile ? 0.1 : 0.15);
+      this.radius = Math.random() * 1.4 + 0.7;
       this.alpha = Math.random();
-      this.twinkleSpeed = Math.random() * 0.02 + 0.005;
+      this.twinkleSpeed = Math.random() * 0.015 + 0.005;
       this.twinkleDir = Math.random() < 0.5 ? 1 : -1;
     }
 
@@ -2001,8 +2004,10 @@ function initConstellations() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(229, 193, 88, ${this.alpha * 0.75})`;
-      ctx.shadowBlur = this.radius * 2;
-      ctx.shadowColor = 'rgba(229, 193, 88, 0.4)';
+      if (!isMobile) {
+        ctx.shadowBlur = this.radius * 2;
+        ctx.shadowColor = 'rgba(229, 193, 88, 0.4)';
+      }
       ctx.fill();
       ctx.shadowBlur = 0;
     }
@@ -2030,7 +2035,6 @@ function initConstellations() {
       const angle = Math.PI / 4 + (Math.random() - 0.5) * 0.2; // roughly 45 degrees downward
       const speed = Math.random() * 8 + 6; // fast motion
       
-      // Randomize diagonal direction (left-to-right or right-to-left downward)
       if (Math.random() < 0.5) {
         this.vx = Math.cos(angle) * speed;
         this.vy = Math.sin(angle) * speed;
@@ -2039,19 +2043,18 @@ function initConstellations() {
         this.vy = Math.sin(angle) * speed;
       }
       
-      // 25% chance to be a highly visible, bright shooting star
       this.isBright = Math.random() < 0.25;
 
       if (this.isBright) {
-        this.length = Math.random() * 100 + 130; // Longer trail
-        this.lineWidth = Math.random() * 1.5 + 2.2; // Thicker line
-        this.shadowBlur = Math.random() * 8 + 14; // Greater glow
-        this.fadeSpeed = Math.random() * 0.008 + 0.007; // Fades slower (stays longer)
+        this.length = Math.random() * 80 + 100;
+        this.lineWidth = Math.random() * 1.2 + 1.8;
+        this.shadowBlur = isMobile ? 0 : (Math.random() * 8 + 14);
+        this.fadeSpeed = Math.random() * 0.008 + 0.007;
       } else {
-        this.length = Math.random() * 60 + 50; // Standard trail
-        this.lineWidth = Math.random() * 0.8 + 1.0; // Standard line thickness
-        this.shadowBlur = Math.random() * 4 + 6; // Standard glow
-        this.fadeSpeed = Math.random() * 0.018 + 0.012; // Fades faster
+        this.length = Math.random() * 50 + 40;
+        this.lineWidth = Math.random() * 0.8 + 1.0;
+        this.shadowBlur = isMobile ? 0 : (Math.random() * 4 + 6);
+        this.fadeSpeed = Math.random() * 0.018 + 0.012;
       }
 
       this.alpha = 1;
@@ -2075,19 +2078,18 @@ function initConstellations() {
     draw() {
       if (!this.active) return;
       ctx.beginPath();
-      // Draw tail backwards
       const trailX = this.x - this.vx * (this.length / 10);
       const trailY = this.y - this.vy * (this.length / 10);
 
       const grad = ctx.createLinearGradient(this.x, this.y, trailX, trailY);
       grad.addColorStop(0, `rgba(255, 255, 255, ${this.alpha})`);
       if (this.isBright) {
-        grad.addColorStop(0.2, `rgba(229, 193, 88, ${this.alpha * 0.95})`); // Extra bright gold stop
-        grad.addColorStop(0.6, `rgba(139, 92, 246, ${this.alpha * 0.5})`); // Vibrant purple stop
+        grad.addColorStop(0.2, `rgba(229, 193, 88, ${this.alpha * 0.95})`);
+        grad.addColorStop(0.6, `rgba(139, 92, 246, ${this.alpha * 0.5})`);
       } else {
-        grad.addColorStop(0.2, `rgba(229, 193, 88, ${this.alpha * 0.75})`); // Standard gold tint
+        grad.addColorStop(0.2, `rgba(229, 193, 88, ${this.alpha * 0.75})`);
       }
-      grad.addColorStop(1, 'rgba(139, 92, 246, 0)'); // Fades to purple/transparent
+      grad.addColorStop(1, 'rgba(139, 92, 246, 0)');
 
       ctx.strokeStyle = grad;
       ctx.lineWidth = this.lineWidth;
@@ -2095,8 +2097,10 @@ function initConstellations() {
       ctx.moveTo(this.x, this.y);
       ctx.lineTo(trailX, trailY);
       
-      ctx.shadowBlur = this.shadowBlur;
-      ctx.shadowColor = this.isBright ? 'rgba(229, 193, 88, 0.7)' : 'rgba(229, 193, 88, 0.4)';
+      if (!isMobile) {
+        ctx.shadowBlur = this.shadowBlur;
+        ctx.shadowColor = this.isBright ? 'rgba(229, 193, 88, 0.7)' : 'rgba(229, 193, 88, 0.4)';
+      }
       ctx.stroke();
       ctx.shadowBlur = 0;
     }
@@ -2108,31 +2112,33 @@ function initConstellations() {
   }
 
   const shootingStars = [];
-  const maxShootingStars = 2;
+  const maxShootingStars = isMobile ? 1 : 2;
   for (let i = 0; i < maxShootingStars; i++) {
     shootingStars.push(new ShootingStar());
   }
-  let nextShootingStarTime = Date.now() + Math.random() * 12000 + 8000; // Trigger first one in 8-20 seconds
+  let nextShootingStarTime = Date.now() + Math.random() * 12000 + 8000;
 
-  // Capture mouse coordinates
-  window.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-    mouse.active = true;
-  });
+  if (!isMobile) {
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      mouse.active = true;
+    });
 
-  window.addEventListener('mouseleave', () => {
-    mouse.active = false;
-  });
+    window.addEventListener('mouseleave', () => {
+      mouse.active = false;
+    });
+  }
 
-  // Handle window resizing
   window.addEventListener('resize', () => {
     width = window.innerWidth;
     height = window.innerHeight;
     canvas.width = width;
     canvas.height = height;
     
-    const targetCount = Math.min(120, Math.max(40, Math.floor((width * height) / 16000)));
+    const targetCount = isMobile
+      ? Math.min(25, Math.max(15, Math.floor((width * height) / 32000)))
+      : Math.min(90, Math.max(35, Math.floor((width * height) / 16000)));
     if (particles.length < targetCount) {
       const diff = targetCount - particles.length;
       for (let i = 0; i < diff; i++) particles.push(new Star());
@@ -2141,8 +2147,18 @@ function initConstellations() {
     }
   });
 
-  // Main animation frame loop
+  let isAnimating = true;
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      isAnimating = false;
+    } else if (!isAnimating) {
+      isAnimating = true;
+      requestAnimationFrame(animate);
+    }
+  });
+
   function animate() {
+    if (!isAnimating) return;
     ctx.clearRect(0, 0, width, height);
 
     particles.forEach(p => {
@@ -2150,22 +2166,20 @@ function initConstellations() {
       p.draw();
     });
 
-    // Update and draw shooting stars
     shootingStars.forEach(s => {
       s.update();
       s.draw();
     });
 
-    // Random trigger check for shooting stars
     if (!document.body.classList.contains('reduced-motion') && Date.now() > nextShootingStarTime) {
       const inactive = shootingStars.find(s => !s.active);
       if (inactive) {
         inactive.trigger();
-        nextShootingStarTime = Date.now() + Math.random() * 12000 + 8000; // Next one in 8-20 seconds
+        nextShootingStarTime = Date.now() + Math.random() * 14000 + 10000;
       }
     }
 
-    const maxDist = 95;
+    const maxDist = isMobile ? 65 : 95;
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const p1 = particles[i];
@@ -2187,7 +2201,7 @@ function initConstellations() {
       }
     }
 
-    if (mouse.active) {
+    if (mouse.active && !isMobile) {
       const mouseMaxDist = 135;
       particles.forEach(p => {
         const dx = p.x - mouse.x;
@@ -2214,6 +2228,37 @@ function initConstellations() {
 
 // Initialize constellations background
 initConstellations();
+
+/* ==========================================================================
+   INSTANT PAGE PREFETCHING FOR ULTRA-FAST MOBILE NAVIGATION
+   ========================================================================== */
+(function initInstantNavigation() {
+  const prefetched = new Set();
+
+  function prefetchUrl(url) {
+    if (!url || prefetched.has(url) || url.startsWith('#') || url.startsWith('javascript:')) return;
+    prefetched.add(url);
+
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.href = url;
+    link.as = 'document';
+    document.head.appendChild(link);
+  }
+
+  function handleInteraction(e) {
+    const anchor = e.target.closest('a');
+    if (!anchor) return;
+    const href = anchor.getAttribute('href');
+    if (href && !href.startsWith('http') && !href.startsWith('mailto:') && !href.startsWith('#')) {
+      prefetchUrl(href);
+    }
+  }
+
+  document.addEventListener('mouseover', handleInteraction, { passive: true });
+  document.addEventListener('touchstart', handleInteraction, { passive: true });
+})();
+
 
 const LUNAR_RITUALS = {
   "Luna Nueva": "Excelente momento para meditar en silencio y establecer propósitos. Escribe en un papel tus intenciones para este ciclo y visualízalas bajo el cielo oscuro.",
@@ -5970,7 +6015,7 @@ const LEGAL_TEXTS = {
     title: "Aviso Legal",
     content: `
       <p><strong>1. DATOS IDENTIFICATIVOS</strong></p>
-      <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSICE), a continuación se reflejan los siguientes datos: el titular de este dominio web es Pablo, con dirección a estos efectos en Barcelona (España) y correo electrónico de contacto: expondudas@yahoo.com.</p>
+      <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSICE), a continuación se reflejan los siguientes datos: el titular de este dominio web es Pablo, con dirección a estos efectos en Barcelona (España) y correo electrónico de contacto: Consultasydudasvarias@hotmail.com.</p>
       <p><strong>2. USUARIOS</strong></p>
       <p>El acceso y/o uso de este portal atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas.</p>
       <p><strong>3. USO DEL PORTAL</strong></p>
@@ -5988,7 +6033,7 @@ const LEGAL_TEXTS = {
       <p><strong>2. DATOS ALMACENADOS LOCALMENTE</strong></p>
       <p>Toda la información introducida en la web (como tu signo del zodiaco, preferencias de volumen, modo oscuro o datos temporales de las lecturas de tarot) se almacena exclusivamente de forma local en tu propio dispositivo utilizando la tecnología <code>localStorage</code> de tu navegador web. <strong>Nosotros no transferimos, leemos ni almacenamos esta información en nuestros servidores.</strong> Eres dueño absoluto de tus datos y puedes eliminarlos en cualquier momento borrando el historial/datos de tu navegador.</p>
       <p><strong>3. CORREOS DE CONTACTO</strong></p>
-      <p>Si decides contactarnos a través del correo electrónico expondudas@yahoo.com, los datos personales que nos facilites (tu email y nombre) serán tratados única y exclusivamente para responder a tu consulta, no siendo cedidos a terceros ni añadidos a listas de marketing sin tu consentimiento explícito.</p>
+      <p>Si decides contactarnos a través del correo electrónico Consultasydudasvarias@hotmail.com, los datos personales que nos facilites (tu email y nombre) serán tratados única y exclusivamente para responder a tu consulta, no siendo cedidos a terceros ni añadidos a listas de marketing sin tu consentimiento explícito.</p>
       <p><strong>4. DERECHOS DEL USUARIO</strong></p>
       <p>Puedes ejercer tus derechos de acceso, rectificación, limitación y suprimir los datos escribiendo a nuestro correo de contacto.</p>
     `

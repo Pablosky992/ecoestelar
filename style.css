@@ -6922,6 +6922,40 @@ body.reduced-motion .glass-card:hover {
   }
 }
 
+/* ==========================================================================
+   MOBILE PERFORMANCE & ACCESSIBILITY OPTIMIZATIONS
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Prevent forced auto-zoom on iOS/Android inputs */
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="date"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* Improve touch targets for mobile accessibility */
+  button,
+  .nav-tab,
+  .calendar-filter-chip,
+  .book-filter-chip,
+  .settings-action-btn {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  /* GPU Hardware acceleration hint for smoother scrolling */
+  .app-container,
+  .glass-card,
+  .tapete-mat {
+    -webkit-overflow-scrolling: touch;
+    transform: translateZ(0);
+  }
+}
+
+
 
 
 
