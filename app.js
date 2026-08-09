@@ -1332,7 +1332,7 @@ function getCardNarrativeDetails(card) {
   return { name, themes, meaning };
 }
 
-// Generate the narrative synthesis for past-present-future predictions
+// Generate the narrative synthesis for past-present-future predictions (Continuous Story)
 function generateDestinySynthesis(question) {
   const textContainer = document.getElementById('destiny-synthesis-text');
   
@@ -1344,33 +1344,23 @@ function generateDestinySynthesis(question) {
   const d2 = getCardNarrativeDetails(c2);
   const d3 = getCardNarrativeDetails(c3);
 
-  // Connective structures to weave a continuous narrative
-  let categoryIntro = '';
-  switch(selectedCategory) {
-    case 'love':
-      categoryIntro = 'la esfera sentimental y afectiva';
-      break;
-    case 'work':
-      categoryIntro = 'tu panorama laboral, profesional o económico';
-      break;
-    case 'health':
-      categoryIntro = 'tu bienestar físico, mental y energético';
-      break;
-    default:
-      categoryIntro = 'los senderos generales de tu destino';
-  }
+  const categoryIntro = getCategoryIntroText();
 
-  // Síntesis narrativa mística cálida y cercana, con párrafos bien separados
   textContainer.innerHTML = `
-    <p>Siento en tus palabras la inquietud sincera que traes al oráculo sobre <strong>${categoryIntro}</strong> y tu pregunta: <em>"${question}"</em>. Deja que estas tres cartas susurren a tu oído la sabiduría de su viaje.</p>
-    <p>Mirando hacia atrás, veo que en tu <strong>pasado</strong> se alza la figura de <strong>${d1.name}</strong>. ${d1.meaning} Todo lo que viviste fue necesario para traerte hasta este portal.</p>
-    <p>Hoy, en tu <strong>presente</strong>, te acompaña la presencia de <strong>${d2.name}</strong>. ${d2.meaning} Escucha con atención este mensaje, porque es el latido del ahora que te pide ser integrado.</p>
-    <p>Y al dar el siguiente paso, hacia el <strong>futuro</strong> que ya se está dibujando, se enciende la luz de <strong>${d3.name}</strong>. ${d3.meaning}</p>
-    <p>Como una vieja amistad que te conoce en profundidad, el oráculo te recuerda que el puente entre lo que fuiste con <em>${d1.name}</em> y lo que vas a ser con <em>${d3.name}</em> se construye con la decisión y la entrega que tomes hoy bajo la guía de <em>${d2.name}</em>. Confía en tu propio caminar.</p>
+    <p>El hilo invisible del tiempo se despliega ante tu inquietud sobre <strong>${categoryIntro}</strong>: <em>"${question}"</em>. Las cartas no hablan de sucesos aislados, sino del viaje continuo e ininterrumpido de tu alma.</p>
+    <p>Todo comenzó en tu <strong>pasado</strong> bajo la impronta de <strong>${d1.name}</strong>, una vibración donde ${d1.meaning} Aquellas vivencias no fueron en vano; sembraron la experiencia necesaria que dio forma a tus cimientos emocionales y mentales.</p>
+    <p>De esa semilla previa germina de manera natural tu <strong>presente</strong>, ahora bajo la tutela de <strong>${d2.name}</strong>. Esta presencia te revela que ${d2.meaning} Al integrar este aprendizaje del ahora, abres la corriente vital hacia lo que está por venir.</p>
+    <p>Y es precisamente esa corriente del presente la que desemboca con fuerza en el <strong>futuro</strong> que ya se dibuja en tu horizonte, marcado por <strong>${d3.name}</strong>. Allí, el oráculo presagia que ${d3.meaning}</p>
+    <div style="background: rgba(229, 193, 88, 0.06); border-left: 3px solid var(--gold-color); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin-top: 1.5rem;">
+      <p style="margin: 0; font-family: var(--font-serif); color: var(--gold-color); font-weight: 600; font-size: 0.95rem;">✦ Síntesis Alquímica del Oráculo:</p>
+      <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
+        El puente que conecta la lección pasada de <em>${d1.name}</em> con el horizonte futuro de <em>${d3.name}</em> lo estás construyendo en este instante preciso con la sabiduría de <em>${d2.name}</em>. Confía en la continuidad de tu proceso y camina con firmeza.
+      </p>
+    </div>
   `;
 }
 
-// Generate narrative synthesis for 5-card cross spread
+// Generate narrative synthesis for 5-card cross spread (Continuous Story)
 function generateCrossSynthesis(question) {
   const textContainer = document.getElementById('destiny-synthesis-text');
   
@@ -1386,32 +1376,23 @@ function generateCrossSynthesis(question) {
   const d4 = getCardNarrativeDetails(c4);
   const d5 = getCardNarrativeDetails(c5);
 
-  let categoryIntro = '';
-  switch(selectedCategory) {
-    case 'love':
-      categoryIntro = 'tu situación sentimental';
-      break;
-    case 'work':
-      categoryIntro = 'tu dilema laboral o económico';
-      break;
-    case 'health':
-      categoryIntro = 'tu bienestar y equilibrio físico';
-      break;
-    default:
-      categoryIntro = 'las fuerzas activas en tu vida';
-  }
+  const categoryIntro = getCategoryIntroText();
 
   textContainer.innerHTML = `
-    <p>Para dar respuesta a tu inquietud sobre <strong>${categoryIntro}</strong>: <em>"${question}"</em>, hemos abierto los senderos del oráculo. Una cruz de luz se dibuja en tu lectura para guiar tus pasos con claridad y cercanía.</p>
-    <p>Tienes de tu lado una gran bendición: a tu <strong>favor</strong> cuentas con la fuerza de <strong>${d1.name}</strong>. ${d1.meaning} Confía en este aliado interno.</p>
-    <p>Al mismo tiempo, la vida te invita a crecer a través de un <strong>desafío</strong> encarnado por <strong>${d2.name}</strong>. ${d2.meaning} No lo mires como una piedra en el camino, sino como un aprendizaje que te fortalecerá.</p>
-    <p>Como una guía cariñosa, el <strong>consejo</strong> del cosmos llega hoy con <strong>${d3.name}</strong>. ${d3.meaning}</p>
-    <p>Si acoges esta sabiduría, el <strong>desenlace</strong> que se abre ante ti estará guiado por la maravillosa vibración de <strong>${d4.name}</strong>. ${d4.meaning}</p>
-    <p>En el centro de todo este viaje, como el latido esencial de la lectura, la vibración profunda de <strong>${d5.name}</strong> nos recuerda el sentido último de lo que estás viviendo. Esta carta sintetiza tu camino y te susurra: ${d5.meaning}</p>
+    <p>Una cruz de luz mística se dibuja ante tu consulta sobre <strong>${categoryIntro}</strong>: <em>"${question}"</em>. Las fuerzas en juego dialogan entre sí para mostrarte la dinámica completa de tu situación.</p>
+    <p>En el plano de tus <strong>fortalezas y apoyos</strong> resplandece la energía de <strong>${d1.name}</strong>, la cual te recuerda que ${d1.meaning} Esta luz es tu principal ancla y recurso sagrado.</p>
+    <p>Sin embargo, esta fuerza encuentra su contrapartida y su terreno de prueba en el <strong>desafío</strong> que te plantea <strong>${d2.name}</strong>, advirtiéndote que ${d2.meaning}. No lo percibas como un obstáculo insuperable, sino como el contrapeso necesario para tu maduración.</p>
+    <p>Para equilibrar ambas fuerzas y superar la encrucijada, el oráculo te entrega como <strong>consejo de acción</strong> la vibración de <strong>${d3.name}</strong>, guiándote a que ${d3.meaning}. Al acoger con determinación esta actitud, desbloqueas el camino hacia el <strong>desenlace o solución</strong> encarnado por <strong>${d4.name}</strong>, donde ${d4.meaning}</p>
+    <div style="background: rgba(139, 92, 246, 0.08); border-left: 3px solid var(--purple-color); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin-top: 1.5rem;">
+      <p style="margin: 0; font-family: var(--font-serif); color: var(--gold-color); font-weight: 600; font-size: 0.95rem;">✦ El Eje Central de la Lectura:</p>
+      <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
+        En la intersección misma de esta cruz, como la verdad esencial que unifica toda tu vivencia, resuena la carta de <em>${d5.name}</em>: ${d5.meaning}
+      </p>
+    </div>
   `;
 }
 
-// Generate narrative synthesis for Inverted Pyramid spread
+// Generate narrative synthesis for Inverted Pyramid spread (Continuous Story)
 function generatePyramidSynthesis(question) {
   const textContainer = document.getElementById('destiny-synthesis-text');
   
@@ -1429,29 +1410,13 @@ function generatePyramidSynthesis(question) {
   const d5 = getCardNarrativeDetails(c5);
   const d6 = getCardNarrativeDetails(c6);
 
-  let categoryIntro = '';
-  switch(selectedCategory) {
-    case 'love':
-      categoryIntro = 'la esfera sentimental';
-      break;
-    case 'work':
-      categoryIntro = 'tus proyectos y economía';
-      break;
-    case 'health':
-      categoryIntro = 'tu salud y vitalidad';
-      break;
-    default:
-      categoryIntro = 'tu camino de vida';
-  }
+  const categoryIntro = getCategoryIntroText();
 
   textContainer.innerHTML = `
-    <p>Al mirar tu pregunta sobre <strong>${categoryIntro}</strong> —<em>"${question}"</em>—, el oráculo traza una pirámide de estrellas que desciende hacia tu interior. Son seis fuerzas que hablan con cariño y claridad sobre tu realidad presente.</p>
-    <p>En tu plano <strong>mental</strong>, la energía de <strong>${d1.name}</strong> reina con claridad. ${d1.meaning}</p>
-    <p>Tu <strong>corazón</strong> late hoy al compás de <strong>${d2.name}</strong>. ${d2.meaning}</p>
-    <p>En tu vida <strong>material y cotidiana</strong>, la influencia de <strong>${d3.name}</strong> marca el camino. ${d3.meaning}</p>
-    <p>El <strong>obstáculo</strong> que el cosmos te invita a integrar y superar es <strong>${d4.name}</strong>. ${d4.meaning}</p>
-    <p>Pero no estás en soledad frente a este reto. Tu fortaleza aliada, tu <strong>apoyo</strong> más auténtico, es <strong>${d5.name}</strong>. ${d5.meaning}</p>
-    <p>Finalmente, todo este fluir de energías confluye en el <strong>desenlace</strong> marcado por <strong>${d6.name}</strong>. Su mensaje de cierre es una verdad luminosa: ${d6.meaning} Sigue ese sendero con confianza.</p>
+    <p>La Pirámide del Destino se despliega para decantar paso a paso tu consulta sobre <strong>${categoryIntro}</strong>: <em>"${question}"</em>. Observamos cómo se entrelazan tus tres planos de vida hacia la resolución.</p>
+    <p>La base de tu realidad se compone de tres corrientes vivas: en tu <strong>plano mental</strong> rige <strong>${d1.name}</strong> (${d1.meaning}), mientras tu <strong>corazón y emociones</strong> responden a <strong>${d2.name}</strong> (${d2.meaning}), y tu <strong>plano material y práctico</strong> se sostiene en <strong>${d3.name}</strong> (${d3.meaning}).</p>
+    <p>Al elevarse y buscar síntesis, estas tres corrientes chocan con el <strong>filtro de prueba o bloqueo</strong> manifestado por <strong>${d4.name}</strong>, el cual exige que ${d4.meaning}. Pero no estás a solas en la travesía: tu <strong>palanca de apoyo incondicional</strong> despierta con <strong>${d5.name}</strong>, recordándote que ${d5.meaning}.</p>
+    <p>Finalmente, al pasar por este proceso de purificación y alquimia, la pirámide decanta en la <strong>cúspide y resultado victorioso</strong> representados por <strong>${d6.name}</strong>. El oráculo culmina revelando que ${d6.meaning}</p>
   `;
 }
 
@@ -4376,16 +4341,20 @@ function generateCelticSynthesis(question) {
   const d9 = getCardNarrativeDetails(c9);
   const d10 = getCardNarrativeDetails(c10);
 
-  let categoryIntro = getCategoryIntroText();
+  const categoryIntro = getCategoryIntroText();
 
   textContainer.innerHTML = `
-    <p>Nos adentramos en el mandala sagrado de la Cruz Celta para explorar lo que te inquieta en <strong>${categoryIntro}</strong> y tu pregunta: <em>"${question}"</em>. Diez arcanos se entrelazan en una conversación sincera y reveladora sobre tu alma.</p>
-    <p>En el <strong>centro de todo</strong> te encuentras tú, bajo la influencia de <strong>${d1.name}</strong>. ${d1.meaning}</p>
-    <p>Cruzando tu camino inmediato, la carta de <strong>${d2.name}</strong> se presenta como la prueba o el desafío que te invita a madurar y superarte. ${d2.meaning}</p>
-    <p>Tu mente y tus <strong>sueños más elevados</strong> miran con anhelo hacia <strong>${d3.name}</strong>. ${d3.meaning} En las <strong>raíces</strong> más profundas de tu ser, en cambio, se asienta la sabiduría de <strong>${d4.name}</strong>, dándote una base sólida sobre la cual sostenerte. ${d4.meaning}</p>
-    <p>El fluir del tiempo nos muestra que en tu <strong>pasado</strong> aún resuena la impronta de <strong>${d5.name}</strong>, que te preparó para el hoy. ${d5.meaning} Y si miramos hacia el <strong>futuro cercano</strong>, la energía que ya se avecina es la de <strong>${d6.name}</strong>. ${d6.meaning}</p>
-    <p>Tu <strong>actitud interior</strong> está moldeada por <strong>${d7.name}</strong>. ${d7.meaning} Tu <strong>entorno</strong> y los que te rodean responden con la vibración de <strong>${d8.name}</strong>. ${d8.meaning} Tus <strong>esperanzas y temores</strong> más íntimos vibran con la presencia de <strong>${d9.name}</strong>. ${d9.meaning}</p>
-    <p>Finalmente, todo este mar de influencias confluye en el <strong>resultado</strong> que corona tu tirada, guiado por <strong>${d10.name}</strong>. El oráculo culmina su guía revelándote con amor: ${d10.meaning} Acoge esta sabiduría y deja que guíe tu sendero.</p>
+    <p>Nos adentramos en el sagrado mandala de la Cruz Celta para explorar en profundidad <strong>${categoryIntro}</strong> y tu pregunta: <em>"${question}"</em>. Diez arcanos tejen un relato continuo e integrado de tu alma.</p>
+    <p><strong>Acto I — El Núcleo del Ahora:</strong> En el centro te encuentras tú, impregnado por la energía de <strong>${d1.name}</strong> (${d1.meaning}). Esta vibración se encuentra directamente cruzada por <strong>${d2.name}</strong>, señalando la prueba concreta que te desafía a madurar (${d2.meaning}).</p>
+    <p><strong>Acto II — Eje de Raíces y Aspiraciones:</strong> Tu mente y tus <strong>metas más elevadas</strong> anhelan la luz de <strong>${d3.name}</strong> (${d3.meaning}), mientras que tus <strong>fundamentos profundos y subconscientes</strong> se afianzan en la sabiduría de <strong>${d4.name}</strong> (${d4.meaning}).</p>
+    <p><strong>Acto III — La Corriente del Tiempo:</strong> Tu <strong>pasado reciente</strong> aún resuena con la lección de <strong>${d5.name}</strong> (${d5.meaning}), la cual impulsa de forma natural el <strong>futuro inminente</strong> que se abre paso con <strong>${d6.name}</strong> (${d6.meaning}).</p>
+    <p><strong>Acto IV — Alquimia Interior y Entorno:</strong> Tu <strong>postura interna</strong> ante la vida está moldeada por <strong>${d7.name}</strong> (${d7.meaning}), mientras que las energías de tu <strong>entorno exterior</strong> responden a <strong>${d8.name}</strong> (${d8.meaning}). En lo más íntimo, tus <strong>esperanzas y temores</strong> laten con <strong>${d9.name}</strong> (${d9.meaning}).</p>
+    <div style="background: rgba(229, 193, 88, 0.06); border-left: 3px solid var(--gold-color); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin-top: 1.5rem;">
+      <p style="margin: 0; font-family: var(--font-serif); color: var(--gold-color); font-weight: 600; font-size: 0.95rem;">✦ Culminación y Destino Revelado:</p>
+      <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
+        Todas estas corrientes confluyen armónicamente en el resultado final guiado por <em>${d10.name}</em>, recordándote que: ${d10.meaning} Acoge este mensaje y camina con la serenidad de quien se sabe guiado por las estrellas.
+      </p>
+    </div>
   `;
 }
 
@@ -4402,15 +4371,18 @@ function generateMirrorSynthesis(question) {
   const d3 = getCardNarrativeDetails(c3);
   const d4 = getCardNarrativeDetails(c4);
 
-  let categoryIntro = getCategoryIntroText();
+  const categoryIntro = getCategoryIntroText();
 
   textContainer.innerHTML = `
-    <p>El espejo del oráculo se abre ante tu pregunta sobre <strong>${categoryIntro}</strong>: <em>"${question}"</em>. Cuatro cartas actúan como portales para comprender las verdaderas corrientes invisibles que fluyen entre tú y la otra persona.</p>
-    <p>Al mirarte a ti, descubrimos que tu <strong>mundo interior</strong> resuena con la energía de <strong>${d1.name}</strong>. ${d1.meaning}</p>
-    <p>Al dirigir la mirada al <strong>mundo interior de la otra persona</strong>, aparece la energía de <strong>${d2.name}</strong>. ${d2.meaning}</p>
-    <p>Lo que tú <strong>proyectas</strong> sobre la relación está influenciado por <strong>${d3.name}</strong>. ${d3.meaning}</p>
-    <p>Por su parte, lo que la otra persona <strong>proyecta</strong> sobre ti vibra con <strong>${d4.name}</strong>. ${d4.meaning}</p>
-    <p>Como una voz comprensiva que busca tu paz, el oráculo te invita a ver este reflejo mutuo sin juzgar, sino con ternura. Al integrar las enseñanzas de <em>${d1.name}</em> y <em>${d2.name}</em>, y observar de frente las proyecciones de <em>${d3.name}</em> y <em>${d4.name}</em>, encontrarás el camino de comprensión y cercanía que tu alma tanto anhela.</p>
+    <p>El espejo místico del oráculo se abre ante tu pregunta sobre <strong>${categoryIntro}</strong>: <em>"${question}"</em>, revelando la danza invisible de energías que se refleja entre ambas almas.</p>
+    <p>En tu <strong>mundo interior</strong> resuena con fuerza la vibración de <strong>${d1.name}</strong> (${d1.meaning}). Esta postura interna se encuentra de frente con el <strong>estado del alma de la otra persona</strong>, guiada por <strong>${d2.name}</strong> (${d2.meaning}).</p>
+    <p>A partir de esta dinámica esencial nacen las proyecciones: lo que tú <strong>anhelas o proyectas</strong> sobre el vínculo viene teñido por <strong>${d3.name}</strong> (${d3.meaning}), mientras que lo que la otra persona <strong>proyecta o espera</strong> de ti vibra en la frecuencia de <strong>${d4.name}</strong> (${d4.meaning}).</p>
+    <div style="background: rgba(139, 92, 246, 0.08); border-left: 3px solid var(--purple-color); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin-top: 1.5rem;">
+      <p style="margin: 0; font-family: var(--font-serif); color: var(--gold-color); font-weight: 600; font-size: 0.95rem;">✦ Sabiduría del Espejo Relacional:</p>
+      <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
+        Al comprender las verdaderas necesidades de <em>${d1.name}</em> e integrar la realidad de <em>${d2.name}</em>, disipas la niebla de las proyecciones marcadas por <em>${d3.name}</em> y <em>${d4.name}</em>. El amor auténtico florece en el espacio donde dos almas se ven con absoluta verdad.
+      </p>
+    </div>
   `;
 }
 
@@ -4427,16 +4399,22 @@ function generateClaritySynthesis(question) {
   const d3 = getCardNarrativeDetails(c3);
   const d4 = getCardNarrativeDetails(c4);
 
-  let categoryIntro = getCategoryIntroText();
+  const categoryIntro = getCategoryIntroText();
 
   textContainer.innerHTML = `
-    <p>El oráculo acoge tu búsqueda de respuestas sobre <strong>${categoryIntro}</strong>: <em>"${question}"</em>. Cuatro arcanos abren sus puertas para disipar la niebla y devolver el equilibrio y la luz a tu situación.</p>
-    <p>Empecemos por ver aquello que hoy nubla tu mirada: el <strong>bloqueo</strong> que encarna <strong>${d1.name}</strong>. Nombrar esta sombra es el primer paso de tu liberación. ${d1.meaning}</p>
-    <p>Para ayudarte, el universo despierta tu <strong>fuerza mágica interna</strong> a través de <strong>${d2.name}</strong>. Apóyate sin dudar en este recurso íntimo. ${d2.meaning}</p>
-    <p>La <strong>acción</strong> concreta que el cosmos te propone dar viene marcada por <strong>${d3.name}</strong>. Un pequeño paso puede cambiarlo todo. ${d3.meaning}</p>
-    <p>Y cuando integres estas energías y avances, te aguarda una hermosa <strong>revelación</strong> de la mano de <strong>${d4.name}</strong>. El oráculo te susurra con gozo: ${d4.meaning}</p>
+    <p>El oráculo acoge tu búsqueda de luz y respuestas sobre <strong>${categoryIntro}</strong>: <em>"${question}"</em>. Cuatro arcanos abren una vía de transmutación para disipar la niebla y devolver la armonía a tu camino.</p>
+    <p>Comenzamos por reconocer el <strong>bloqueo u sombra actual</strong> encarnado por <strong>${d1.name}</strong> (${d1.meaning}). Nombrar y comprender esta resistencia es el primer paso indispensable hacia tu liberación.</p>
+    <p>Para disolver esta atadura, el cosmos despierta en ti una <strong>fuerza mágica e íntima</strong> a través de <strong>${d2.name}</strong> (${d2.meaning}). Este es el don interior en el que debes apoyarte sin dudar.</p>
+    <p>La <strong>acción transformadora</strong> que te corresponde emprender hoy viene señalada por <strong>${d3.name}</strong> (${d3.meaning}). Un movimiento consciente desencadena la magia.</p>
+    <div style="background: rgba(16, 185, 129, 0.08); border-left: 3px solid var(--success-color); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin-top: 1.5rem;">
+      <p style="margin: 0; font-family: var(--font-serif); color: var(--success-color); font-weight: 600; font-size: 0.95rem;">✦ La Revelación y Claridad Final:</p>
+      <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
+        Al dar este paso con valentía, la niebla se disipa por completo revelando la luz de <em>${d4.name}</em>: ${d4.meaning} Acoge esta victoria interior y permite que la serenidad reine en tu ser.
+      </p>
+    </div>
   `;
 }
+
 
 // Initialize everything on page load
 initTabNavigation();
@@ -5648,11 +5626,22 @@ function initNatalCard() {
   const panel = document.getElementById('astral-settings-panel');
   const closeBtn = document.getElementById('settings-close-btn');
 
-  if (!triggerBtn || !panel || !closeBtn) return;
+  if (!panel || !closeBtn) return;
 
-  triggerBtn.addEventListener('click', () => {
-    panel.classList.toggle('hidden');
+  if (triggerBtn) {
+    triggerBtn.addEventListener('click', () => {
+      panel.classList.toggle('hidden');
+    });
+  }
+
+  // Allow any additional button with .open-settings-trigger to open settings
+  document.querySelectorAll('.open-settings-trigger').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      panel.classList.remove('hidden');
+    });
   });
+
   closeBtn.addEventListener('click', () => {
     panel.classList.add('hidden');
   });

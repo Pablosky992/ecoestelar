@@ -4710,33 +4710,59 @@ html[data-font-size="large"] {
   font-size: 18px;
 }
 
-/* Botón flotante del Panel Astral */
+/* Botón flotante del Panel Astral (Pastilla de Máxima Visibilidad) */
 .astral-settings-btn {
   position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(229, 193, 88, 0.18), rgba(139, 92, 246, 0.18));
-  border: 1px solid var(--border-color);
-  color: var(--gold-color);
-  font-size: 1.5rem;
+  top: 1.25rem;
+  right: 1.25rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(229, 193, 88, 0.28), rgba(139, 92, 246, 0.38));
+  border: 1.5px solid var(--gold-color);
+  color: #ffffff;
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.45rem;
   cursor: pointer;
   z-index: 999;
-  transition: var(--transition-smooth);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(229, 193, 88, 0.25);
+  backdrop-filter: blur(12px);
   outline: none;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: settings-pulse 3.5s infinite alternate ease-in-out;
+}
+
+@keyframes settings-pulse {
+  0% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(229, 193, 88, 0.2);
+    border-color: rgba(229, 193, 88, 0.6);
+  }
+  100% {
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5), 0 0 22px rgba(229, 193, 88, 0.6);
+    border-color: var(--gold-color);
+  }
 }
 
 .astral-settings-btn:hover {
-  transform: scale(1.1) rotate(30deg);
-  border-color: var(--gold-color);
-  box-shadow: 0 0 15px var(--gold-glow);
+  transform: translateY(-2px) scale(1.05);
+  background: linear-gradient(135deg, var(--gold-color), #c59b27);
+  color: #0b091a;
+  border-color: #ffffff;
+  box-shadow: 0 0 25px rgba(229, 193, 88, 0.6);
+}
+
+.astral-settings-btn .settings-btn-icon {
+  font-size: 1.1rem;
+  transition: transform 0.4s ease;
+}
+
+.astral-settings-btn:hover .settings-btn-icon {
+  transform: rotate(90deg);
 }
 
 .astral-settings-btn:focus-visible {
@@ -6954,6 +6980,129 @@ body.reduced-motion .glass-card:hover {
     transform: translateZ(0);
   }
 }
+
+/* ==========================================================================
+   ASTRAL DATE & NUMBER INPUT & FORM CONTROLS DESIGN SYSTEM
+   ========================================================================== */
+
+input[type="date"],
+input[type="number"],
+input[type="text"],
+input[type="email"],
+.small-input,
+.premium-input {
+  color-scheme: dark !important;
+  background: rgba(13, 11, 26, 0.75) !important;
+  color: var(--gold-light, #f3e5ab) !important;
+  border: 1px solid rgba(229, 193, 88, 0.35) !important;
+  border-radius: 10px !important;
+  padding: 0.65rem 0.9rem !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.92rem !important;
+  font-weight: 500 !important;
+  outline: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4), 0 0 10px rgba(0, 0, 0, 0.2) !important;
+  box-sizing: border-box !important;
+}
+
+input[type="date"]:hover,
+input[type="number"]:hover,
+input[type="text"]:hover,
+input[type="email"]:hover,
+.small-input:hover,
+.premium-input:hover {
+  border-color: var(--gold-color) !important;
+  background: rgba(22, 17, 42, 0.85) !important;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4), 0 0 12px rgba(229, 193, 88, 0.25) !important;
+}
+
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+.small-input:focus,
+.premium-input:focus {
+  border-color: var(--gold-color) !important;
+  background: rgba(28, 21, 55, 0.9) !important;
+  box-shadow: 0 0 15px rgba(229, 193, 88, 0.4), inset 0 0 10px rgba(139, 92, 246, 0.2) !important;
+}
+
+/* Custom Gold Calendar Picker Icon for Chromium / WebKit */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(75%) sepia(85%) saturate(450%) hue-rotate(5deg) brightness(105%) contrast(100%) !important;
+  cursor: pointer !important;
+  opacity: 0.85 !important;
+  transition: transform 0.25s ease, opacity 0.25s ease !important;
+  padding: 2px !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1 !important;
+  transform: scale(1.15) !important;
+}
+
+/* Custom Gold Spinners for Number Inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  filter: invert(75%) sepia(85%) saturate(450%) hue-rotate(5deg) brightness(105%) contrast(100%) !important;
+  cursor: pointer !important;
+  opacity: 0.85 !important;
+}
+
+/* Astral Consult Button Style */
+.astral-consult-btn,
+#lunar-search-date-btn {
+  background: linear-gradient(135deg, rgba(229, 193, 88, 0.18), rgba(139, 92, 246, 0.25)) !important;
+  border: 1px solid var(--gold-color) !important;
+  color: var(--gold-color) !important;
+  border-radius: 10px !important;
+  padding: 0.65rem 1.25rem !important;
+  font-family: var(--font-serif) !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.4rem !important;
+  white-space: nowrap !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.astral-consult-btn:hover,
+#lunar-search-date-btn:hover {
+  background: linear-gradient(135deg, var(--gold-color), #c59b27) !important;
+  color: #0b091a !important;
+  border-color: var(--gold-color) !important;
+  box-shadow: 0 0 18px rgba(229, 193, 88, 0.4) !important;
+  transform: translateY(-2px) !important;
+}
+
+.astral-consult-btn:active,
+#lunar-search-date-btn:active {
+  transform: translateY(0) !important;
+}
+
+/* Light Mode Overrides for Date & Number Inputs */
+body.light-mode input[type="date"],
+body.light-mode input[type="number"],
+body.light-mode input[type="text"],
+body.light-mode input[type="email"] {
+  color-scheme: light !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #1a162b !important;
+  border: 1px solid rgba(184, 147, 45, 0.5) !important;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-mode input[type="date"]::-webkit-calendar-picker-indicator,
+body.light-mode input[type="number"]::-webkit-inner-spin-button {
+  filter: none !important;
+}
+
 
 
 

@@ -743,6 +743,148 @@ const ARTICULOS_DB = [
         <strong>🔮 Sincroniza tus rituales con el Cosmos:</strong> Recuerda que la fuerza de purificación se multiplica enormemente cuando se realiza en sintonía con las fases lunares propicias. Consulta nuestro <a href="calendario.html" style="color: var(--gold-color); text-decoration: underline;">Calendario de Rituales</a> y descubre la fecha idónea del mes para realizar tus limpiezas energéticas de forma exitosa.
       </div>
     `
+  },
+  {
+    id: "eclipses-de-sol-energia-astrologia",
+    title: "El Poder Transformador de los Eclipses de Sol: Influjo Energético, Astrología y su Impacto en el Tarot",
+    badge: "Astrología",
+    image: "assets/eclipse_solar_banner.png",
+    date: "9 de Agosto, 2026",
+    author: "El Eco de las Estrellas",
+    excerpt: "Guía definitiva sobre los Eclipses Solares: su profundo impacto en la astrología evolutiva, los Nodos Lunares, las mareas emocionales, el trabajo de sombra con el Tarot y los rituales de alquimia espiritual para transmutar tu energía.",
+    body: `
+      <p>Los <strong>eclipses de Sol</strong> son, sin lugar a dudas, los eventos astronómicos, esotéricos y astrológicos más imponentes, magnéticos y transformadores de todo el firmamento. Desde la más remota antigüedad, el instante preciso en que la Luna se interpone directamente entre la Tierra y el Sol —ocultando momentáneamente el fulgor del astro rey en pleno día— ha sido contemplado por diversas civilizaciones con sagrado temor, fascinación profunda y, sobre todo, como un portal cósmico de reseteo e ineludible transmutación.</p>
+
+      <img src="assets/eclipse_solar_banner.png" alt="Eclipse Solar místico con ráfagas de luz dorada y geometría sagrada en el universo">
+
+      <p>En el terreno de la astrología evolutiva y la filosofía del Tarot, un eclipse solar jamás debe interpretarse como una desgracia o una condena funesta. Por el contrario, representa una <strong>aceleración brusca e ineludible del destino</strong>. La luz radiante del Sol (que simboliza el Ego consciente, la mente lógica, la voluntad terrenal y la máscara cotidiana) queda eclipsada momentáneamente por la sombra del cuerpo lunar (que encarna el subconsciente más profundo, la memoria de las almas, las aguas emocionales y las verdades ocultas). Durante unos valiosos instantes, el universo apaga el ruido externo para obligarnos a mirar de frente nuestra propia verdad y reorientar el rumbo de nuestra vida.</p>
+
+      <h3>1. La Dinámica Astrológica: Los Nodos Lunares y el Eje del Destino</h3>
+      <p>Para comprender por qué un eclipse solar es infinitamente más trascendental y conmovedor que una Luna Nueva convencional, es imprescindible analizar su vínculo directo con los <strong>Nodos Lunares de la Luna (Nodo Norte y Nodo Sur)</strong>:</p>
+      <ul>
+        <li><strong>Un Reseteo del Karma Colectivo e Individual:</strong> Un eclipse solar solo puede manifestarse cuando la conjunción del Sol y la Luna ocurre en el mismo grado matemático o muy cerca de uno de los Nodos Lunares. El <em>Nodo Norte</em> representa nuestro futuro evolutivo, el destino al que estamos llamados a avanzar y las virtudes que debemos integrar a pesar del miedo; mientras que el <em>Nodo Sur</em> encarna el pasado, la zona de confort aprendida, las lecciones ya superadas y el karma que debemos soltar definitivamente.</li>
+        <li><strong>La Diferencia entre Eclipses de Nodo Norte y Nodo Sur:</strong> Cuando el eclipse solar ocurre en el Nodo Norte, el universo nos empuja con fuerza hacia oportunidades inéditas, puertas que se abren de forma inesperada y llamados vocacionales. Cuando ocurre en el Nodo Sur, se manifiesta como una purga acelerada: relaciones, empleos o patrones de pensamiento que ya no sirven a nuestra evolución se disuelven para dejar espacio a lo nuevo.</li>
+        <li><strong>Impacto en tu Carta Natal (Tránsito por Casas Astrológicas):</strong> La casa astrológica de tu mapa natal donde cae el grado exacto del eclipse solar sufrirá un <strong>proceso de reseteo y siembra que durará entre 6 meses y 2 años</strong>. Por ejemplo:
+          <ul>
+            <li><strong>Casas I / VII:</strong> Grandes giros en tu identidad personal, tu cuerpo o en tus contratos y relaciones de pareja.</li>
+            <li><strong>Casas II / VIII:</strong> Transmutación de tu economía, finanzas compartidas, autovaloración y gestión del poder personal.</li>
+            <li><strong>Casas III / IX:</strong> Nuevos horizontes intelectuales, estudios superiores, viajes trascendentes y cambios de filosofía de vida.</li>
+            <li><strong>Casas IV / X:</strong> Reestructuración del hogar, la familia, las raíces emocionales y la proyección profesional o estatus público.</li>
+            <li><strong>Casas V / XI:</strong> Despertar de proyectos creativos, fertilidad, círculos de amistades y visión del futuro colectivo.</li>
+            <li><strong>Casas VI / XII:</strong> Cambios en tus hábitos de salud física, rutina laboral cotidiana y sanación del inconsciente profundo.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--gold-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>✦ Sabiduría Astral en Tiempo Real:</strong> Si deseas conocer en qué fase se encuentra la Luna en este instante y cuál es su tránsito actual por las constelaciones, recuerda que puedes consultar nuestra sección interactiva de <a href="fase-lunar.html" style="color: var(--gold-color); text-decoration: underline;">La Luna y su Energía</a>.
+      </div>
+
+      <h3>2. Efectos Energéticos, Físicos y Emocionales en las Personas</h3>
+      <p>Durante la denominada "temporada de eclipses" (que abarca habitualmente las dos semanas previas y las dos semanas posteriores al alineamiento), el campo electromagnético de la Tierra y nuestra propia estructura sutil experimentan variaciones de gran intensidad. Es muy común registrar una serie de síntomas físicos y psicológicos característicos:</p>
+
+      <h4>A) El "Efecto Dominó" y la Aceleración Temporal</h4>
+      <p>Los eclipses actúan como <strong>catalizadores de acontecimientos</strong>. Situaciones, conversaciones o proyectos que llevaban meses o incluso años estancados en la indecisión suelen precipitarse de golpe en cuestión de días. Aparecen revelaciones que hacen imposible seguir fingiendo ignorancia. Lo que se cae durante un eclipse solar ya había muerto internamente; el evento astronómico simplemente retira el velo.</p>
+
+      <h4>B) Manifestaciones Físicas y Emocionales Frecuentes</h4>
+      <ul>
+        <li><strong>Fatiga Intensa o Espasmos de Hiperactividad:</strong> El sistema nervioso asimila la gran descarga electromagnética. Es vital respetar los descansos, reducir el consumo de estimulantes y beber abundante agua mineral.</li>
+        <li><strong>Migrañas y Presión Ocular:</strong> Asociadas a la resistencia mental ante los cambios inminentes que el alma ya percibe.</li>
+        <li><strong>Sueños Vívidos y Premonitorios:</strong> Al apagarse la luz del Sol, la barrera del inconsciente se vuelve porosa. Los sueños nocturnos traen mensajes directos de guías o del propio subconsciente. Puedes analizar los símbolos de tus visiones en nuestro <a href="significado-suenos.html" style="color: var(--purple-color); text-decoration: underline;">Diccionario de Sueños</a>.</li>
+        <li><strong>Necesidad Imperiosa de Limpieza:</strong> Un impulso irrefrenable de hacer espacio en armarios, eliminar archivos digitales obsoletos o distanciarte de entornos cargados.</li>
+      </ul>
+
+      <h3>3. Eclipses de Sol y la Lectura del Tarot: Desmitificando el Oráculo</h3>
+      <p>Existe una antigua creencia popular que desaconseja consultar las cartas del Tarot durante los eclipses por miedo a "energías oscuras". Desde la óptica del Tarot evolutivo, esta idea es completamente errónea: el eclipse no altera ni corrompe el mazo; al contrario, **magnifica la potencia reveladora del oráculo** y abre una ventana directa hacia el trabajo de sombra (*Shadow Work*).</p>
+
+      <img src="assets/tarot_eclipse_lectura.png" alt="Lectura mística de cartas del Tarot bajo el destello de un eclipse solar y velas sagradas">
+
+      <p>Sin embargo, al ser una etapa de alta volatilidad energética, no es recomendable hacer preguntas predictivas ansiosas sobre decisiones ajenas. El Tarot durante un eclipse debe utilizarse como una linterna de autoindagación para alinearte con el nuevo ciclo.</p>
+
+      <h4>Tirada Mística del Eclipse Solar (5 Cartas de Transmutación)</h4>
+      <p>Te proponemos esta tirada especial de 5 arcanos para realizar durante la ventana del eclipse, ya sea con tu baraja de Tarot o en nuestro tapete digital:</p>
+
+      <div class="table-container" style="overflow-x:auto; margin: 1.5rem 0;">
+        <table style="width:100%; border-collapse:collapse; border:1px solid var(--border-color); font-family:var(--font-sans); font-size:0.9rem;">
+          <thead>
+            <tr style="background:rgba(139,92,246,0.15); color:var(--gold-color); font-family:var(--font-serif);">
+              <th style="padding:0.75rem; border:1px solid var(--border-color); text-align:center; width:20%;">POSICIÓN</th>
+              <th style="padding:0.75rem; border:1px solid var(--border-color); text-align:left;">CONCEPTO Y PREGUNTA CLAVE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Carta 1</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Sol Eclipsado:</strong> ¿Qué aspecto de mi Ego, orgullo o control consciente debo pausar y entregar al universo?</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Carta 2</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>La Sombra Revelada:</strong> ¿Qué verdad reprimida o temor inconsciente sale hoy a la luz para ser sanado?</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Carta 3</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Nodo del Destino:</strong> ¿Hacia qué dirección evolutiva me empuja el cosmos en los próximos 6 meses?</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Carta 4</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Anclaje de la Virtud:</strong> ¿Qué fortaleza íntima o don debo cultivar para mantener la paz mental durante la transición?</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Carta 5</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Nuevo Amanecer:</strong> ¿Qué bendición o fruto inesperado florecerá una vez que se disipe la penumbra?</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--purple-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>🔮 Pon a prueba la tirada en directo:</strong> Tómate un instante para concentrarte, respira profundo y realiza tu consulta en <a href="index.html" style="color: var(--purple-color); text-decoration: underline;">El Oráculo del Destino</a> para recibir tu interpretación completa.
+      </div>
+
+      <h3>4. Guía Práctica de Alquimia Espiritual: Qué Hacer y Qué Evitar</h3>
+      <p>En el esoterismo clásico se enseña que la energía de un eclipse solar es de **purga, corte y reordenamiento**, no de manifestación o carga pasiva. Por ello, conviene seguir una serie de pautas éticas y de higiene energética:</p>
+
+      <div class="table-container" style="overflow-x:auto; margin: 1.5rem 0;">
+        <table style="width:100%; border-collapse:collapse; border:1px solid var(--border-color); text-align:left; font-family:var(--font-sans); font-size:0.9rem;">
+          <thead>
+            <tr style="background:rgba(229,193,88,0.12); color:var(--gold-color); font-family:var(--font-serif);">
+              <th style="padding:0.75rem; border:1px solid var(--border-color); width:50%;">✨ QUÉ SÍ HACER</th>
+              <th style="padding:0.75rem; border:1px solid var(--border-color); width:50%;">🚫 QUÉ EVITAR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); vertical-align:top;">
+                • Meditar en silencio y practicar la observación serena.<br>
+                • Sahumar tu espacio con Palo Santo, Salvia o Romero para limpiar el aire estancado.<br>
+                • Tomar baños de sal marina o sales de Epsom para descargar la electricidad estática del cuerpo.<br>
+                • Escribir tus pensamientos en un diario sin juzgarte.<br>
+                • Agradecer las etapas que llegan a su fin natural.
+              </td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); vertical-align:top;">
+                • <strong>NO cargues tus cristales o cuarzos</strong> bajo la luz del eclipse (la energía es caótica y puede desprogramarlos).<br>
+                • <strong>NO prepares "Agua de Luna o Sol"</strong> durante el eclipse.<br>
+                • Evita discusiones dramáticas o tomar decisiones impulsivas e irreversibles durante el pico del evento.<br>
+                • No intentes retener por la fuerza a personas o situaciones que se están alejando.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>5. Ritual Recomendado de Sahumado y Purificación Aura</h3>
+      <p>Durante la ventana de un eclipse solar, el mejor ritual es la **simplificación y purificación**. Te proponemos este ejercicio de sahumado de 4 pasos:</p>
+      <ol>
+        <li><strong>Enciende un ramillete de Salvia Blanca o madera de Palo Santo</strong> con cerillas de madera hasta que emita un humo denso y aromático.</li>
+        <li><strong>Limpia tu cuerpo sutil:</strong> Pasa el humo a unos centímetros de tu cuerpo, comenzando desde los pies hasta la coronilla, visualizando cómo la densidad energética se disuelve.</li>
+        <li><strong>Recita el Mantra de Rendición:</strong> Mentalmente o en voz alta, di: <em>“Suelto el control del Ego y confío en la sabiduría del universo. Que la luz vuelva a mí en perfecta armonía.”</em></li>
+        <li><strong>Permanece en silencio durante 10 minutos</strong> sintiendo el latido de tu corazón y la quietud de tu mente.</li>
+      </ol>
+
+      <h3>Conclusión: La Luz Siempre Renace</h3>
+      <p>Un eclipse de Sol es la lección magistral más hermosa que nos regala el firmamento: nos demuestra de forma tajante que la oscuridad es solo una sombra pasajera. La Luna tapa momentáneamente al Sol únicamente para recordarnos que, tras la penumbra, la luz renace renovada, más viva y más brillante que nunca.</p>
+      <p>Confía en los giros que este ciclo astral traiga a tu vida. Suelta lo que deba irse, abraza la verdad de tu alma y camina con la certeza de que las estrellas siempre guían tus pasos hacia tu verdadero destino.</p>
+    `
   }
 ];
 
@@ -807,8 +949,8 @@ function initBlog() {
           <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5; margin-bottom:1.5rem; text-align:left;">${post.excerpt}</p>
         </div>
         <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:0.85rem; margin-top:auto;">
-          <span style="font-size:0.75rem; color:var(--text-muted);">${post.date}</span>
-          <button type="button" class="read-more-btn" data-id="${post.id}" style="background:transparent; border:1px solid var(--gold-color); color:var(--gold-color); padding:0.35rem 0.85rem; border-radius:15px; font-size:0.8rem; cursor:pointer; font-weight:600; transition:var(--transition-smooth);">Leer Artículo &rarr;</button>
+          <span style="font-size:0.75rem; color:var(--text-muted);">${post.author}</span>
+          <a href="${post.id}.html" class="read-more-btn" data-id="${post.id}" style="background:transparent; border:1px solid var(--gold-color); color:var(--gold-color); padding:0.35rem 0.85rem; border-radius:15px; font-size:0.8rem; cursor:pointer; font-weight:600; text-decoration:none; transition:var(--transition-smooth);">Leer Artículo &rarr;</a>
         </div>
       `;
       blogGrid.appendChild(card);
@@ -816,36 +958,20 @@ function initBlog() {
 
     // Agregar Eventos a los Botones e Imagenes
     document.querySelectorAll('.blog-post-card').forEach(card => {
-      card.querySelectorAll('.read-more-btn, .blog-card-img-wrapper').forEach(el => {
+      card.querySelectorAll('.blog-card-img-wrapper').forEach(el => {
         el.addEventListener('click', () => {
           const id = card.querySelector('.read-more-btn').getAttribute('data-id');
-          openArticle(id);
+          window.location.href = `${id}.html`;
         });
       });
     });
   }
 
-  // Abrir un Artículo
-  function openArticle(id, pushState = true) {
+  // Abrir un Artículo (Redirección limpia a HTML estático)
+  function openArticle(id) {
     const post = ARTICULOS_DB.find(a => a.id === id);
     if (!post) return;
-
-    articleTitle.textContent = post.title;
-    articleBadge.textContent = post.badge;
-    articleDate.textContent = post.date;
-    articleAuthor.textContent = post.author;
-    articleBody.innerHTML = post.body;
-
-    listView.classList.add('hidden');
-    postView.classList.remove('hidden');
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    if (pushState) {
-      const url = new URL(window.location);
-      url.searchParams.set('art', id);
-      window.history.pushState({ artId: id }, '', url);
-    }
+    window.location.href = `${id}.html`;
   }
 
   // Volver a la Lista
