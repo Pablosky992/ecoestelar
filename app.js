@@ -5480,13 +5480,13 @@ function initNatalCard() {
       return label ? label.textContent.trim() : '';
     }).filter(Boolean);
     
-    let text = `✨ El Eco de las Estrellas — Mi lectura del ${new Date().toLocaleDateString('es-ES')}\n\n`;
+    let text = `✨ Eco Estelar — Mi lectura del ${new Date().toLocaleDateString('es-ES')}\n\n`;
     text += `📍 Categoría: ${category}\n`;
     text += `❓ Pregunta: ${question}\n\n`;
     if (synthesisText) {
       text += `🔮 Síntesis del Oráculo:\n${synthesisText.substring(0, 600)}${synthesisText.length > 600 ? '...' : ''}\n\n`;
     }
-    text += `🃏 Descubre tu lectura en El Eco de las Estrellas`;
+    text += `🃏 Descubre tu lectura en Eco Estelar`;
     
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(() => showShareToast());
@@ -6036,7 +6036,7 @@ const LEGAL_TEXTS = {
       <p><strong>2. USUARIOS</strong></p>
       <p>El acceso y/o uso de este portal atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas.</p>
       <p><strong>3. USO DEL PORTAL</strong></p>
-      <p>El Eco de las Estrellas proporciona el acceso a multitud de informaciones, servicios, programas o datos (en adelante, "los contenidos") en Internet pertenecientes a Pablo o a sus licenciantes a los que el USUARIO pueda tener acceso. El USUARIO asume la responsabilidad del uso del portal. Dicha responsabilidad se extiende al registro que fuese necesario para acceder a determinados servicios o contenidos.</p>
+      <p>Eco Estelar proporciona el acceso a multitud de informaciones, servicios, programas o datos (en adelante, "los contenidos") en Internet pertenecientes a Pablo o a sus licenciantes a los que el USUARIO pueda tener acceso. El USUARIO asume la responsabilidad del uso del portal. Dicha responsabilidad se extiende al registro que fuese necesario para acceder a determinados servicios o contenidos.</p>
       <p><strong>4. EXCLUSIÓN DE GARANTÍAS Y RESPONSABILIDAD</strong></p>
       <p>Pablo no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos o lesivos en los contenidos, a pesar de haber adoptado todas las medidas tecnológicas necesarias para evitarlo.</p>
       <p>El contenido astrológico y de tarot del portal tiene fines de entretenimiento y ocio. Las lecturas no deben sustituir asesoramiento profesional, médico, psicológico, legal o financiero.</p>
@@ -6046,7 +6046,7 @@ const LEGAL_TEXTS = {
     title: "Política de Privacidad",
     content: `
       <p><strong>1. TRATAMIENTO DE DATOS PERSONALES</strong></p>
-      <p>En cumplimiento de lo dispuesto en el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), te informamos que "El Eco de las Estrellas" está diseñado bajo el principio de <strong>Privacidad por Diseño</strong>. Esto significa que nuestra aplicación <strong>no requiere registro de usuario, no recopila nombres, direcciones de correo ni información de pago</strong> para funcionar.</p>
+      <p>En cumplimiento de lo dispuesto en el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), te informamos que "Eco Estelar" está diseñado bajo el principio de <strong>Privacidad por Diseño</strong>. Esto significa que nuestra aplicación <strong>no requiere registro de usuario, no recopila nombres, direcciones de correo ni información de pago</strong> para funcionar.</p>
       <p><strong>2. DATOS ALMACENADOS LOCALMENTE</strong></p>
       <p>Toda la información introducida en la web (como tu signo del zodiaco, preferencias de volumen, modo oscuro o datos temporales de las lecturas de tarot) se almacena exclusivamente de forma local en tu propio dispositivo utilizando la tecnología <code>localStorage</code> de tu navegador web. <strong>Nosotros no transferimos, leemos ni almacenamos esta información en nuestros servidores.</strong> Eres dueño absoluto de tus datos y puedes eliminarlos en cualquier momento borrando el historial/datos de tu navegador.</p>
       <p><strong>3. CORREOS DE CONTACTO</strong></p>

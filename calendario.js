@@ -1,5 +1,5 @@
 // Calendario Místico y de Rituales — Lógica de la Página
-// El Eco de las Estrellas
+// Eco Estelar
 
 // Estado de la Aplicación para el Calendario
 let activeCalendarMonth = new Date().getMonth();

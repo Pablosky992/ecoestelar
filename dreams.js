@@ -1,5 +1,5 @@
 // Lógica del Buscador y Analizador de Sueños
-// El Eco de las Estrellas — voz mística, empática y poética
+// Eco Estelar — voz mística, empática y poética
 
 const initDreams = () => {
   // Asegurarnos de que dreamDb está cargado
@@ -413,7 +413,7 @@ const initDreams = () => {
     
     // Formatear párrafos con saltos de línea
     const paragraphs = tempDiv.querySelectorAll('p');
-    let textToCopy = '✦ LECTURA DE SUEÑOS - EL ECO DE LAS ESTRELLAS ✦\n\n';
+    let textToCopy = '✦ LECTURA DE SUEÑOS - ECO ESTELAR ✦\n\n';
     paragraphs.forEach(p => {
       textToCopy += p.textContent + '\n\n';
     });
@@ -437,7 +437,7 @@ const initDreams = () => {
     tempDiv.innerHTML = dreamAnalysisText.innerHTML;
     
     const paragraphs = tempDiv.querySelectorAll('p');
-    let textToShare = '✦ LECTURA DE SUEÑOS - EL ECO DE LAS ESTRELLAS ✦\n\n';
+    let textToShare = '✦ LECTURA DE SUEÑOS - ECO ESTELAR ✦\n\n';
     paragraphs.forEach(p => {
       textToShare += p.textContent + '\n\n';
     });

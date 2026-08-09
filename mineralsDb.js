@@ -1,4 +1,4 @@
-// Base de datos de Minerales - El Eco de las Estrellas
+// Base de datos de Minerales - Eco Estelar
 window.mineralsDb = [
   {
     "name": "Amatista",

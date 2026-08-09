@@ -1,5 +1,5 @@
 /**
- * El Eco de las Estrellas - Lógica del Blog y Sabiduría Cósmica (Edición Ilustrada)
+ * Eco Estelar - Lógica del Blog y Sabiduría Cósmica (Edición Ilustrada)
  */
 
 // Base de Datos Estática de Artículos
@@ -10,7 +10,7 @@ const ARTICULOS_DB = [
     badge: "Numerología",
     image: "assets/numerologia_cabala.png",
     date: "12 de Mayo, 2026",
-    author: "El Eco de las Estrellas",
+    author: "Eco Estelar",
     excerpt: "Descubre cómo los números determinan tu personalidad y misión en la Tierra. Paso a paso para realizar la Gematría pitagórica del nombre y el misterio de los Números Maestros.",
     body: `
       <p>La numerología es una disciplina ancestral que se fundamenta en principios matemáticos e intuitivos que datan de la antigüedad. No es una técnica puramente adivinatoria del futuro, sino una herramienta de autoayuda, introspección personal y orientación espiritual para sintonizar con la vibración cósmica.</p>
@@ -97,7 +97,7 @@ const ARTICULOS_DB = [
     badge: "Astrología",
     image: "assets/luna_hero_banner.png",
     date: "20 de Mayo, 2026",
-    author: "El Eco de las Estrellas",
+    author: "Eco Estelar",
     excerpt: "Aprende los fundamentos para leer tu mapa natal. Qué significan las 12 casas de la experiencia humana, las regencias planetarias y la fuerza arquetípica de los 4 elementos.",
     body: `
       <p>La astrología es el lenguaje simbólico del cielo. El zodiaco comprende 12 signos que representan el recorrido anual del Sol a través de las constelaciones terrestres, permaneciendo un mes en cada una de ellas y simbolizando el desarrollo completo de la conciencia humana.</p>
@@ -152,7 +152,7 @@ const ARTICULOS_DB = [
     badge: "Tarot",
     image: "assets/tarot_marsella_wide.png",
     date: "28 de Mayo, 2026",
-    author: "El Eco de las Estrellas",
+    author: "Eco Estelar",
     excerpt: "Desmitificando el tarot. Aprende por qué el oráculo es una guía para el crecimiento personal, cómo formular preguntas empoderadoras y limpiar las energías de tu mazo.",
     body: `
       <p>El tarot ha sido malinterpretado históricamente como una herramienta de adivinación pasiva o fatalista. Sin embargo, su verdadero propósito es esotérico y evolutivo: actuar como un <strong>espejo del alma</strong>. Es un instrumento de desarrollo personal, meditación y autoconocimiento diseñado para hacer consciente lo inconsciente y ayudarnos a tomar decisiones conscientes dueñas de nuestro propio destino.</p>
@@ -211,7 +211,7 @@ const ARTICULOS_DB = [
     badge: "Tarot",
     image: "assets/arcanos_menores_banner.jpg",
     date: "5 de Junio, 2026",
-    author: "El Eco de las Estrellas",
+    author: "Eco Estelar",
     excerpt: "Desvela el código místico que une los elementos naturales y la numerología para leer las 56 cartas de los Arcanos Menores con total precisión y fluidez.",
     body: `
       <p>El Tarot de Marsella es la baraja madre de la cartomancia occidental. Sus Arcanos Mayores —como El Mago, La Emperatriz o El Mundo— son fácilmente reconocibles por sus ricas ilustraciones llenas de personajes y detalles medievales. Sin embargo, cuando nos adentramos en el territorio de los Arcanos Menores, la cosa cambia.</p>
@@ -285,7 +285,7 @@ const ARTICULOS_DB = [
     badge: "La Luna",
     image: "assets/luna_llena.webp",
     date: "12 de Junio, 2026",
-    author: "El Eco de las Estrellas",
+    author: "Eco Estelar",
     excerpt: "Aprende cómo sincronizar tus planes, rituales y decisiones con el ciclo de 29.5 días de la Luna para dejar de nadar a contracorriente.",
     body: `
       <p>¿Te has fijado en cómo algunos días desbordas energía y optimismo, mientras que otros solo te apetece retirarte del mundo y sumergirte en tus pensamientos? No estás a solas en este vaivén emocional. Desde tiempos ancestrales, la humanidad ha sabido que la Luna no solo gobierna las mareas de nuestros océanos, sino también nuestras propias mareas internas: las emociones, la intuición y la energía vital.</p>
@@ -358,7 +358,7 @@ const ARTICULOS_DB = [
     badge: "Sueños",
     image: "assets/interpretacion_suenos_banner.jpg",
     date: "19 de Junio, 2026",
-    author: "El Eco de las Estrellas",
+    author: "Eco Estelar",
     excerpt: "Aprende cómo cruzar la simbología universal de tus visiones nocturnas con tus emociones para comprender los mensajes del subconsciente.",
     body: `
       <p>Cada noche, al cerrar los ojos, nos adentramos en un territorio donde las leyes de la física, el tiempo y la lógica dejan de existir. El plano de los sueños es una dimensión fascinante donde nuestra mente consciente se retira para dar paso al subconsciente, un motor creativo y profundamente intuitivo que procesa nuestros miedos más ocultos, anhelos silenciados y verdades espirituales que a menudo ignoramos durante el día.</p>
@@ -414,7 +414,7 @@ const ARTICULOS_DB = [
     badge: "Tarot",
     image: "assets/shadow_work_tarot.png",
     date: "24 de Junio, 2026",
-    author: "El Eco de las Estrellas",
+    author: "Eco Estelar",
     excerpt: "Descubre cómo integrar la psicología de Carl Jung y la sabiduría del Tarot para revelar, aceptar y liberar tus bloqueos mentales ocultos.",
     body: `
       <p>A lo largo de nuestra vida, la mente consciente hace un trabajo fantástico filtrando la realidad. Nos esforzamos por proyectar una imagen agradable, segura e integrada ante la sociedad. Sin embargo, ¿qué ocurre con todo aquello que rechazamos de nosotros mismos? ¿Dónde van a parar la rabia reprimida, las inseguridades infantiles, los miedos a no ser suficientes o los deseos que nos avergüenza confesar? La respuesta psicológica es clara: se hunden en el subconsciente, formando lo que el psiquiatra Carl Jung llamó <strong>la Sombra</strong>.</p>
@@ -468,7 +468,7 @@ const ARTICULOS_DB = [
     badge: "Numerología",
     image: "assets/numeros_karmicos.png",
     date: "28 de Junio, 2026",
-    author: "El Eco de las Estrellas",
+    author: "Eco Estelar",
     excerpt: "Descubre si llevas los números 13, 14, 16 o 19 en tu fecha de nacimiento y cómo transmutar las deudas de tus encarnaciones pasadas.",
     body: `
       <p>¿Te has preguntado alguna vez por qué ciertas dificultades parecen repetirse en tu vida de forma persistente, casi como si siguieran un guión invisible? En el estudio místico de los números, esta repetición no es una casualidad desafortunada. La numerología pitagórica sostiene que el alma realiza un viaje de múltiples reencarnaciones para aprender y evolucionar. En ese trayecto, cuando cometemos transgresiones graves contra las leyes del amor, la libertad o el orden, o cuando dejamos tareas evolutivas incompletas, generamos lo que conocemos como una <strong>deuda kármica</strong>.</p>
@@ -538,7 +538,7 @@ const ARTICULOS_DB = [
     badge: "Cristales",
     image: "assets/gemoterapia_cristales.png",
     date: "27 de Mayo, 2026",
-    author: "El Eco de las Estrellas",
+    author: "Eco Estelar",
     excerpt: "Aprende el arte de sintonizar con la energía mineral. Métodos seguros para limpiar tus piedras, cargarlas bajo la luna y programarlas con intenciones claras.",
     body: `
       <p>Desde tiempos inmemoriales, las civilizaciones más antiguas —desde los sabios del antiguo Egipto y los alquimistas medievales hasta las culturas chamánicas americanas— han venerado a los minerales no solo por su indudable belleza física, sino por sus excepcionales propiedades energéticas. En el plano de la sanación vibracional, la <strong>Gemoterapia</strong> es la disciplina mística y terapéutica que utiliza la frecuencia energética de las piedras y cristales para restaurar la armonía en nuestros cuerpos físico, mental, emocional y espiritual.</p>
@@ -612,7 +612,7 @@ const ARTICULOS_DB = [
     badge: "Quiromancia",
     image: "assets/quiromancia_manos.png",
     date: "1 de Junio, 2026",
-    author: "El Eco de las Estrellas",
+    author: "Eco Estelar",
     excerpt: "Descubre el arte de descifrar las líneas de tu palma. Guía práctica para interpretar la Línea de la Vida, de la Cabeza, del Corazón y los montes planetarios.",
     body: `
       <p>Nuestras manos son herramientas extraordinarias de creación, expresión y contacto. Sin embargo, en el plano esotérico, también son consideradas un mapa detallado y viviente de nuestra alma. La <strong>Quiromancia</strong> (del griego <em>kheir</em>, mano, y <em>manteia</em>, adivinación) es la disciplina ancestral que estudia el relieve, la forma, los montes y las líneas de la palma de la mano para revelar el carácter, los talentos innatos, las tendencias emocionales y el mapa de ruta evolutivo de un individuo.</p>
@@ -688,7 +688,7 @@ const ARTICULOS_DB = [
     badge: "Rituales",
     image: "assets/limpieza_hogar.png",
     date: "9 de Junio, 2026",
-    author: "El Eco de las Estrellas",
+    author: "Eco Estelar",
     excerpt: "Descubre cómo purificar la atmósfera de tu casa. Guía de sahumerios, uso de sal marina y frecuencias armónicas para atraer paz y protección.",
     body: `
       <p>Nuestra casa es mucho más que un refugio físico contra el viento y la lluvia; es un contenedor energético. Cada discusión, periodo de estrés, visita con carga densa, enfermedad o preocupación familiar deja una huella invisible en la atmósfera de las habitaciones. Con el tiempo, este residuo vibratorio se acumula, manifestándose en sensaciones físicas reales: plantas que se marchitan sin motivo, electrodomésticos que se rompen seguidos, insomnio recurrente o discusiones constantes por nimiedades. Es lo que en el esoterismo conocemos como <strong>energía estancada</strong>.</p>
@@ -750,7 +750,7 @@ const ARTICULOS_DB = [
     badge: "Astrología",
     image: "assets/eclipse_solar_banner.png",
     date: "9 de Agosto, 2026",
-    author: "El Eco de las Estrellas",
+    author: "Eco Estelar",
     excerpt: "Guía definitiva sobre los Eclipses Solares: su profundo impacto en la astrología evolutiva, los Nodos Lunares, las mareas emocionales, el trabajo de sombra con el Tarot y los rituales de alquimia espiritual para transmutar tu energía.",
     body: `
       <p>Los <strong>eclipses de Sol</strong> son, sin lugar a dudas, los eventos astronómicos, esotéricos y astrológicos más imponentes, magnéticos y transformadores de todo el firmamento. Desde la más remota antigüedad, el instante preciso en que la Luna se interpone directamente entre la Tierra y el Sol —ocultando momentáneamente el fulgor del astro rey en pleno día— ha sido contemplado por diversas civilizaciones con sagrado temor, fascinación profunda y, sobre todo, como un portal cósmico de reseteo e ineludible transmutación.</p>

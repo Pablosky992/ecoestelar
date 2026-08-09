@@ -1,5 +1,5 @@
 // Lógica del Buscador de Minerales
-// El Eco de las Estrellas
+// Eco Estelar
 
 const initMinerals = () => {
   if (!window.mineralsDb) {

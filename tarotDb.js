@@ -1,5 +1,5 @@
 // Base de datos de los 78 Arcanos del Tarot (22 Mayores y 56 Menores)
-// El Eco de las Estrellas — voz mística, empática y poética
+// Eco Estelar — voz mística, empática y poética
 
 window.tarotDb = [
   {
