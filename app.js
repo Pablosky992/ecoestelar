@@ -5672,6 +5672,34 @@ function initNatalCard() {
     });
   }
 
+  // Modal de Ofrenda / Donaciones
+  const donationBtns = document.querySelectorAll('.donation-action-btn');
+  const donationModal = document.getElementById('donation-modal');
+  const donationCloseBtn = document.getElementById('donation-modal-close-btn');
+
+  if (donationModal) {
+    donationBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        panel.classList.add('hidden');
+        donationModal.classList.remove('hidden');
+      });
+    });
+
+    if (donationCloseBtn) {
+      donationCloseBtn.addEventListener('click', () => {
+        donationModal.classList.add('hidden');
+      });
+    }
+
+    donationModal.addEventListener('click', (e) => {
+      if (e.target === donationModal) {
+        donationModal.classList.add('hidden');
+      }
+    });
+  }
+
   document.addEventListener('click', (e) => {
     if (!panel.classList.contains('hidden') && 
         !panel.contains(e.target) && 
