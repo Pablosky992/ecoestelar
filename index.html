@@ -3,27 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>El Oráculo del Destino — Eco Estelar</title>
+  <title>Eco Estelar — Santuario de Tarot, Astrología y Sabiduría Cósmica</title>
   
   <!-- Favicon / Icono de la pestaña -->
   <link rel="icon" type="image/png" href="assets/logo_luna_v2.webp">
   <link rel="apple-touch-icon" href="assets/logo_luna_v2.webp">
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Consulta el oráculo interactivo de Eco Estelar. Realiza tiradas de 1 y 3 cartas para Sí/No, o una tirada completa del destino con síntesis narrativa explicativa.">
+  <meta name="description" content="Explora Eco Estelar: tu portal esotérico e interactivo de Tarot, Horóscopo diario, Fase Lunar, Numerología Pitagórica, Diccionario de Minerales y Guías Astrales.">
+  <meta name="keywords" content="Tarot, Horóscopo, Astrología, Numerología, Fase Lunar, Cristales, Sueños, Eco Estelar">
+  <meta name="author" content="Eco Estelar">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Eco Estelar">
+  <meta property="og:locale" content="es_ES">
   <meta property="og:url" content="https://ecoestelar.com/">
-  <meta property="og:title" content="Eco Estelar — Sintoniza con tu vibración astral y el tarot">
-  <meta property="og:description" content="Consulta el oráculo interactivo. Realiza tiradas de tarot, horóscopos diarios, perfil numerológico y consulta la fase lunar actual.">
+  <meta property="og:title" content="Eco Estelar — Santuario de Tarot, Astrología y Sabiduría Cósmica">
+  <meta property="og:description" content="Explora nuestro portal místico: Oráculo de Tarot, Horóscopos diarios, Fase Lunar, Perfil Numerológico, Interpretación de Sueños y Minerales.">
   <meta property="og:image" content="assets/logo_luna_v2.webp">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://ecoestelar.com/">
-  <meta name="twitter:title" content="Eco Estelar — Sintoniza con tu vibración astral y el tarot">
-  <meta name="twitter:description" content="Consulta el oráculo interactivo. Realiza tiradas de tarot, horóscopos diarios, perfil numerológico y consulta la fase lunar actual.">
+  <meta name="twitter:title" content="Eco Estelar — Santuario de Tarot, Astrología y Sabiduría Cósmica">
+  <meta name="twitter:description" content="Explora nuestro portal místico: Oráculo de Tarot, Horóscopos diarios, Fase Lunar, Perfil Numerológico, Interpretación de Sueños y Minerales.">
   <meta name="twitter:image" content="assets/logo_luna_v2.webp">
   
   <!-- Google Fonts -->
@@ -34,20 +38,28 @@
   <!-- CSS Styles -->
   <link rel="stylesheet" href="style.css">
   
-    <!-- SEO Optimization -->
+  <!-- SEO Optimization & Schema.org Structured Data -->
   <link rel="canonical" href="https://ecoestelar.com/">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Eco Estelar",
-    "url": "https://ecoestelar.com/",
-    "description": "Sintoniza con tu vibración astral. Consulta tu oráculo interactivo de Tarot, horóscopos diarios, cálculo de perfil numerológico y la fase lunar actual con rituales.",
-    "applicationCategory": "LifestyleApplication",
-    "operatingSystem": "All",
-    "browserRequirements": "Requires HTML5/JavaScript",
-    "genre": "Esotericism",
-    "inLanguage": "es"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://ecoestelar.com/#website",
+        "name": "Eco Estelar",
+        "url": "https://ecoestelar.com/",
+        "description": "Santuario Místico de Tarot, Astrología y Sabiduría Cósmica.",
+        "inLanguage": "es"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://ecoestelar.com/#organization",
+        "name": "Eco Estelar",
+        "url": "https://ecoestelar.com/",
+        "logo": "https://ecoestelar.com/assets/logo_luna_v2.webp"
+      }
+    ]
   }
   </script>
 
@@ -68,10 +80,11 @@
     <!-- Header -->
     <header class="app-header">
       <div class="logo">
-        <img src="assets/logo_luna_v2.webp" class="logo-img" alt="Luna llena mística - Eco Estelar">
+        <a href="index.html">
+          <img src="assets/logo_luna_v2.webp" class="logo-img" alt="Luna llena mística - Eco Estelar">
+        </a>
       </div>
       <h1 class="main-title">ECO ESTELAR</h1>
-
       <p class="subtitle">Sintoniza con tu vibración astral y el tarot</p>
       
       <!-- Widget de Fase Lunar -->
@@ -90,8 +103,11 @@
     </header>
 
     <!-- Menú de Pestañas -->
-        <nav class="app-nav" aria-label="Navegación principal">
+    <nav class="app-nav" aria-label="Navegación principal">
       <a href="index.html" class="nav-tab active">
+        <span class="tab-icon">🏠</span> Inicio
+      </a>
+      <a href="oraculo.html" class="nav-tab">
         <span class="tab-icon">🔮</span> El Oráculo
       </a>
       <a href="carta-del-dia.html" class="nav-tab">
@@ -112,285 +128,282 @@
       <a href="grimorio.html" class="nav-tab">
         <span class="tab-icon">📖</span> El Libro del Tarot
       </a>
-          <a href="significado-suenos.html" class="nav-tab">
+      <a href="significado-suenos.html" class="nav-tab">
         <span class="tab-icon">💤</span> Sueños
       </a>
       <a href="propiedades-minerales.html" class="nav-tab">
         <span class="tab-icon">💎</span> Minerales
       </a>
-          <a href="articulos.html" class="nav-tab">
-
-            <span class="tab-icon">📰</span> Artículos
-
-          </a>
-
-          <a href="tienda.html" class="nav-tab">
+      <a href="articulos.html" class="nav-tab">
+        <span class="tab-icon">📰</span> Artículos
+      </a>
+      <a href="tienda.html" class="nav-tab">
         <span class="tab-icon">🛍️</span> Tienda
       </a>
     </nav>
 
-    <!-- Intro Explicativa de la Sección -->
-    <div class="glass-card" style="margin: 0.5rem auto 1.5rem auto; padding: 1.25rem 2rem; max-width: 1200px; text-align: left; box-sizing: border-box;">
-      <h2 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold-color); margin: 0 0 0.5rem 0;">🔮 El Oráculo del Destino</h2>
-      <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin: 0 0 0.5rem 0;">
-        Bienvenido al <strong>Oráculo del Destino</strong>, un espacio sagrado diseñado para sintonizar con la sabiduría oculta del Tarot de Marsella. Formula tus inquietudes al cosmos con sinceridad y permite que los Arcanos guíen tus pasos en el amor, el trabajo, la salud o tu destino general.
-      </p>
-      <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
-        Elige el tipo de tirada que mejor se adapte a tu duda: desde una respuesta directa de Sí o No hasta lecturas complejas de síntesis narrativa que analizan a fondo el pasado, presente y futuro de tus energías vitales.
-      </p>
+    <!-- Hero Banner del Portal -->
+    <div class="glass-card" style="margin: 0.5rem auto 2.5rem auto; padding: 2.5rem 2.2rem; max-width: 1200px; text-align: center; box-sizing: border-box; border: 1.5px solid var(--border-color); box-shadow: 0 0 35px rgba(229, 193, 88, 0.15);">
+      <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-color); font-weight: 600; display: block; margin-bottom: 0.6rem;">✦ Santuario Místico de Sabiduría Cósmica ✦</span>
+      <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--gold-color); margin: 0 0 1.2rem 0; text-shadow: 0 0 15px rgba(229, 193, 88, 0.3);">
+        Bienvenido a Eco Estelar
+      </h2>
+      <div style="font-size: 1rem; color: var(--text-color); line-height: 1.75; max-width: 960px; margin: 0 auto; text-align: justify; display: flex; flex-direction: column; gap: 1rem;">
+        <p style="margin: 0;">
+          Bienvenido a <strong>Eco Estelar</strong>, un santuario místico e independiente concebido para acompañar a las almas en su búsqueda de autoconocimiento, paz interior y dirección espiritual. Desde tiempos inmemoriales, la humanidad ha contemplado el firmamento buscando respuestas en los ritmos astrales y la simetría sagrada del universo. Aquí, la sabiduría ancestral del Tarot, la Astrología tradicional y la Geometría Sagrada se unen para ofrecerte un espacio de serenidad y reflexión profunda.
+        </p>
+        <p style="margin: 0;">
+          En este portal podrás consultar el Oráculo interactivo del Tarot de Marsella, revelar tu Carta del Día, explorar las predicciones del Horóscopo Astral, sincronizarte con el porcentaje de iluminación de la Fase Lunar y calcular tu perfil en la Numerología Pitagórica. Además, ponemos a tu disposición un completo Grimorio del Tarot, un buscador de interpretación de Sueños Oníricos, un diccionario de Cristales y Minerales terapéuticos, y guías de estudio esotérico.
+        </p>
+        <p style="margin: 0; text-align: center; font-style: italic; color: var(--gold-color); margin-top: 0.5rem; font-weight: 500;">
+          ✨ Todas nuestras herramientas son de acceso libre. Te invitamos a explorar las secciones del santuario a continuación y permitir que la luz de las estrellas ilumine tu camino.
+        </p>
+      </div>
     </div>
 
-    <!-- Contenido de Pestañas -->
+    <!-- Portal Hub Cards Grid -->
+    <main class="main-layout" style="display: block;">
+      <h2 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--gold-color); text-align: center; margin-bottom: 1.8rem; letter-spacing: 1px;">
+        ✦ Secciones del Santuario ✦
+      </h2>
 
-    <div id="oracle-tab-content" class="tab-content">
-      <main class="main-layout">
-      <!-- Configuration Panel -->
-      <section class="config-panel" aria-label="Configuración de la consulta">
-        <div class="glass-card">
-          <h2 class="panel-title">Prepara tu Consulta</h2>
-          
-          <!-- Question Input -->
-          <div class="form-group">
-            <label for="question-input">Escribe tu pregunta para el oráculo:</label>
-            <input type="text" id="question-input" placeholder="Ej: ¿Conseguiré el trabajo al que postulé?" autocomplete="off">
+      <div class="hub-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; width: 100%; box-sizing: border-box;">
+        
+        <!-- Card 1: Oráculo -->
+        <article class="glass-card hub-card" style="display: flex; flex-direction: column; padding: 1.5rem; gap: 1rem; position: relative; overflow: hidden; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <a href="oraculo.html" style="display: block; height: 180px; width: 100%; border-radius: 12px; overflow: hidden; position: relative;">
+            <img src="assets/hub_oraculo.png" alt="Oráculo del Destino - Eco Estelar" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8, 7, 17, 0.85); color: var(--gold-color); font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; border: 1px solid var(--border-color); backdrop-filter: blur(4px);">
+              Tiradas Interactivas
+            </span>
+          </a>
+          <div>
+            <h3 style="font-family: var(--font-serif); color: var(--gold-color); font-size: 1.35rem; margin: 0 0 0.4rem 0;">🔮 El Oráculo del Tarot</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+              Realiza tiradas interactivas de 1, 3 cartas o la Cruz Celta con síntesis narrativas poéticas que analizan tus energías de pasado, presente y futuro.
+            </p>
           </div>
-
-          <!-- Category Selection -->
-          <div class="form-group">
-            <label for="category-select">Selecciona la categoría de tu pregunta:</label>
-            <div class="select-wrapper">
-              <select id="category-select" class="premium-select">
-                <option value="general">✦ General (Destino y vida)</option>
-                <option value="love">✦ Amor (Afecto y sentimientos)</option>
-                <option value="work">✦ Trabajo (Profesión y economía)</option>
-                <option value="health">✦ Salud (Bienestar y energía)</option>
-              </select>
-            </div>
+          <div style="margin-top: auto; padding-top: 0.5rem;">
+            <a href="oraculo.html" class="consult-button" style="display: block; text-decoration: none; text-align: center; padding: 0.75rem 1rem; font-size: 0.95rem; font-weight: 600; border-radius: 8px;">
+              Entrar al Oráculo →
+            </a>
           </div>
+        </article>
 
-          <!-- Spread Selection -->
-          <div class="form-group">
-            <label for="spread-select">Elige el tipo de tirada:</label>
-            <div class="select-wrapper">
-              <select id="spread-select" class="premium-select">
-                <option value="yesno1">✦ Sí o No (1 carta)</option>
-                <option value="yesno3">✦ Sí o No (3 cartas)</option>
-                <option value="destiny">✦ Tirada del Destino (3 cartas - Pasado/Presente/Futuro)</option>
-                <option value="cross5">✦ Tirada en Cruz (5 cartas - Pros/Contras/Central)</option>
-                <option value="pyramid6">✦ Pirámide Invertida (6 cartas - Decantación evolutiva)</option>
-                <option value="celtic10">✦ La Cruz Celta (10 cartas - Lectura Completa Evolutiva)</option>
-                <option value="mirror4">✦ El Espejo Relacional (4 cartas - Pareja y Proyecciones)</option>
-                <option value="clarity4">✦ Hechizo de Claridad (4 cartas - Bloqueo y Solución)</option>
-              </select>
-            </div>
+        <!-- Card 2: Carta del Día -->
+        <article class="glass-card hub-card" style="display: flex; flex-direction: column; padding: 1.5rem; gap: 1rem; position: relative; overflow: hidden; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <a href="carta-del-dia.html" style="display: block; height: 180px; width: 100%; border-radius: 12px; overflow: hidden; position: relative;">
+            <img src="assets/hub_carta_dia.png" alt="Carta del Día - Eco Estelar" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8, 7, 17, 0.85); color: var(--gold-color); font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; border: 1px solid var(--border-color); backdrop-filter: blur(4px);">
+              Sintonía Diaria
+            </span>
+          </a>
+          <div>
+            <h3 style="font-family: var(--font-serif); color: var(--gold-color); font-size: 1.35rem; margin: 0 0 0.4rem 0;">🌟 Carta del Día</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+              Descubre el arcano que rige la frecuencia de tu jornada y recibe un consejo filosófico profundo para tomar decisiones con serenidad.
+            </p>
           </div>
-
-          <!-- Reversals Toggle -->
-          <div class="form-group" style="margin-bottom: 1.5rem;">
-            <div class="toggle-container" style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.02); border: 1.5px solid var(--border-color); padding: 0.75rem 1rem; border-radius: 8px;">
-              <span class="toggle-label" style="font-size: 0.9rem; color: var(--text-muted); letter-spacing: 0.05em;">Permitir cartas invertidas</span>
-              <label class="toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px; cursor: pointer;">
-                <input type="checkbox" id="reversals-toggle" style="opacity: 0; width: 0; height: 0;">
-                <span class="toggle-slider"></span>
-              </label>
-            </div>
+          <div style="margin-top: auto; padding-top: 0.5rem;">
+            <a href="carta-del-dia.html" class="consult-button" style="display: block; text-decoration: none; text-align: center; padding: 0.75rem 1rem; font-size: 0.95rem; font-weight: 600; border-radius: 8px;">
+              Revelar tu Carta →
+            </a>
           </div>
+        </article>
 
-          <!-- Action Button -->
-          <button type="button" id="consult-btn" class="consult-button">
-            CONSULTAR EL ORÁCULO
-          </button>
-
-          <!-- MEJORA 4: Guided Questions Panel -->
-          <div id="guided-questions-panel" class="guided-questions-panel">
-            <p class="guided-q-title">&#x2728; Sugerencias de preguntas:</p>
-            <!-- Chips will be injected by JS based on category -->
+        <!-- Card 3: Horóscopo -->
+        <article class="glass-card hub-card" style="display: flex; flex-direction: column; padding: 1.5rem; gap: 1rem; position: relative; overflow: hidden; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <a href="horoscopo.html" style="display: block; height: 180px; width: 100%; border-radius: 12px; overflow: hidden; position: relative;">
+            <img src="assets/hub_horoscopo.png" alt="Horóscopo Astral - Eco Estelar" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8, 7, 17, 0.85); color: var(--gold-color); font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; border: 1px solid var(--border-color); backdrop-filter: blur(4px);">
+              Predicción Zodiacal
+            </span>
+          </a>
+          <div>
+            <h3 style="font-family: var(--font-serif); color: var(--gold-color); font-size: 1.35rem; margin: 0 0 0.4rem 0;">✨ Tu Horóscopo Astral</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+              Predicciones detalladas en amor, salud, trabajo y finanzas adaptadas a tu signo del zodiaco con consejo del arcano guía.
+            </p>
           </div>
-        </div>
-      </section>
-
-      <!-- Reading Table (Tapete) -->
-      <section class="reading-table" aria-label="Tapete de lectura de cartas">
-        <div class="tapete-mat">
-          <div class="tapete-header">
-            <h2 id="reading-status-title">Prepara tu mente y formula tu pregunta...</h2>
-            <p id="reading-status-desc">Selecciona tus opciones en el panel lateral y pulsa el botón dorado.</p>
+          <div style="margin-top: auto; padding-top: 0.5rem;">
+            <a href="horoscopo.html" class="consult-button" style="display: block; text-decoration: none; text-align: center; padding: 0.75rem 1rem; font-size: 0.95rem; font-weight: 600; border-radius: 8px;">
+              Ver tu Horóscopo →
+            </a>
           </div>
+        </article>
 
-          <!-- Cards Deal Board -->
-          <div class="cards-board" id="cards-board">
-            <!-- Dynamic placeholders and card elements will be generated here -->
+        <!-- Card 4: Fase Lunar -->
+        <article class="glass-card hub-card" style="display: flex; flex-direction: column; padding: 1.5rem; gap: 1rem; position: relative; overflow: hidden; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <a href="fase-lunar.html" style="display: block; height: 180px; width: 100%; border-radius: 12px; overflow: hidden; position: relative;">
+            <img src="assets/hub_fase_lunar.png" alt="Fase Lunar - Eco Estelar" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8, 7, 17, 0.85); color: var(--gold-color); font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; border: 1px solid var(--border-color); backdrop-filter: blur(4px);">
+              Ritmos Cósmicos
+            </span>
+          </a>
+          <div>
+            <h3 style="font-family: var(--font-serif); color: var(--gold-color); font-size: 1.35rem; margin: 0 0 0.4rem 0;">🌙 La Fase Lunar</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+              Consulta en tiempo real el porcentaje de iluminación y la influencia del tránsito lunar sobre tus emociones y rituales.
+            </p>
           </div>
+          <div style="margin-top: auto; padding-top: 0.5rem;">
+            <a href="fase-lunar.html" class="consult-button" style="display: block; text-decoration: none; text-align: center; padding: 0.75rem 1rem; font-size: 0.95rem; font-weight: 600; border-radius: 8px;">
+              Consultar la Luna →
+            </a>
+          </div>
+        </article>
 
-          <!-- Instructions or Deck display -->
-          <div class="deck-container" id="deck-container">
-            <div class="mystical-deck" id="mystical-deck">
-              <!-- Animated deck cards -->
-              <div class="deck-card"></div>
-              <div class="deck-card"></div>
-              <div class="deck-card"></div>
-              <div class="deck-card"></div>
-            </div>
-            <button type="button" id="shuffle-btn" class="shuffle-button">Barajar Mazo</button>
+        <!-- Card 5: Rituales -->
+        <article class="glass-card hub-card" style="display: flex; flex-direction: column; padding: 1.5rem; gap: 1rem; position: relative; overflow: hidden; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <a href="calendario.html" style="display: block; height: 180px; width: 100%; border-radius: 12px; overflow: hidden; position: relative;">
+            <img src="assets/hub_rituales.png" alt="Calendario de Rituales - Eco Estelar" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8, 7, 17, 0.85); color: var(--gold-color); font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; border: 1px solid var(--border-color); backdrop-filter: blur(4px);">
+              Hechizos & Limpias
+            </span>
+          </a>
+          <div>
+            <h3 style="font-family: var(--font-serif); color: var(--gold-color); font-size: 1.35rem; margin: 0 0 0.4rem 0;">🕯️ Calendario de Rituales</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+              Guía de rituales ancestrales para la prosperidad, el amor y la limpieza de espacios según el calendario selenita.
+            </p>
           </div>
-        </div>
-      </section>
+          <div style="margin-top: auto; padding-top: 0.5rem;">
+            <a href="calendario.html" class="consult-button" style="display: block; text-decoration: none; text-align: center; padding: 0.75rem 1rem; font-size: 0.95rem; font-weight: 600; border-radius: 8px;">
+              Ver Rituales →
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 6: Numerología -->
+        <article class="glass-card hub-card" style="display: flex; flex-direction: column; padding: 1.5rem; gap: 1rem; position: relative; overflow: hidden; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <a href="numerologia.html" style="display: block; height: 180px; width: 100%; border-radius: 12px; overflow: hidden; position: relative;">
+            <img src="assets/hub_numerologia.png" alt="Numerología Pitagórica - Eco Estelar" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8, 7, 17, 0.85); color: var(--gold-color); font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; border: 1px solid var(--border-color); backdrop-filter: blur(4px);">
+              Código del Destino
+            </span>
+          </a>
+          <div>
+            <h3 style="font-family: var(--font-serif); color: var(--gold-color); font-size: 1.35rem; margin: 0 0 0.4rem 0;">🔢 Numerología Pitagórica</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+              Calcula tu Número de Camino de Vida, Número de Destino y Año Personal a partir de tu fecha de nacimiento.
+            </p>
+          </div>
+          <div style="margin-top: auto; padding-top: 0.5rem;">
+            <a href="numerologia.html" class="consult-button" style="display: block; text-decoration: none; text-align: center; padding: 0.75rem 1rem; font-size: 0.95rem; font-weight: 600; border-radius: 8px;">
+              Calcular Números →
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 7: El Libro del Tarot -->
+        <article class="glass-card hub-card" style="display: flex; flex-direction: column; padding: 1.5rem; gap: 1rem; position: relative; overflow: hidden; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <a href="grimorio.html" style="display: block; height: 180px; width: 100%; border-radius: 12px; overflow: hidden; position: relative;">
+            <img src="assets/hub_grimorio.png" alt="El Libro del Tarot - Eco Estelar" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8, 7, 17, 0.85); color: var(--gold-color); font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; border: 1px solid var(--border-color); backdrop-filter: blur(4px);">
+              Grimorio Sagrado
+            </span>
+          </a>
+          <div>
+            <h3 style="font-family: var(--font-serif); color: var(--gold-color); font-size: 1.35rem; margin: 0 0 0.4rem 0;">📖 El Libro del Tarot</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+              Diccionario exhaustivo con la simbología, interpretación esotérica y palabras clave de los 78 Arcanos Mayores y Menores.
+            </p>
+          </div>
+          <div style="margin-top: auto; padding-top: 0.5rem;">
+            <a href="grimorio.html" class="consult-button" style="display: block; text-decoration: none; text-align: center; padding: 0.75rem 1rem; font-size: 0.95rem; font-weight: 600; border-radius: 8px;">
+              Abrir el Libro →
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 8: Sueños -->
+        <article class="glass-card hub-card" style="display: flex; flex-direction: column; padding: 1.5rem; gap: 1rem; position: relative; overflow: hidden; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <a href="significado-suenos.html" style="display: block; height: 180px; width: 100%; border-radius: 12px; overflow: hidden; position: relative;">
+            <img src="assets/hub_suenos.png" alt="Interpretación de Sueños - Eco Estelar" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8, 7, 17, 0.85); color: var(--gold-color); font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; border: 1px solid var(--border-color); backdrop-filter: blur(4px);">
+              Buscador Onírico
+            </span>
+          </a>
+          <div>
+            <h3 style="font-family: var(--font-serif); color: var(--gold-color); font-size: 1.35rem; margin: 0 0 0.4rem 0;">💤 Significado de Sueños</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+              Descifra los símbolos y mensajes ocultos que tu inconsciente te transmite durante el descanso con nuestro diccionario onírico.
+            </p>
+          </div>
+          <div style="margin-top: auto; padding-top: 0.5rem;">
+            <a href="significado-suenos.html" class="consult-button" style="display: block; text-decoration: none; text-align: center; padding: 0.75rem 1rem; font-size: 0.95rem; font-weight: 600; border-radius: 8px;">
+              Interpretar Sueños →
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 9: Minerales -->
+        <article class="glass-card hub-card" style="display: flex; flex-direction: column; padding: 1.5rem; gap: 1rem; position: relative; overflow: hidden; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <a href="propiedades-minerales.html" style="display: block; height: 180px; width: 100%; border-radius: 12px; overflow: hidden; position: relative;">
+            <img src="assets/hub_minerales.png" alt="Diccionario de Minerales - Eco Estelar" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8, 7, 17, 0.85); color: var(--gold-color); font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; border: 1px solid var(--border-color); backdrop-filter: blur(4px);">
+              Gemas & Chakras
+            </span>
+          </a>
+          <div>
+            <h3 style="font-family: var(--font-serif); color: var(--gold-color); font-size: 1.35rem; margin: 0 0 0.4rem 0;">💎 Diccionario de Minerales</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+              Propiedades esotéricas, curativas y mágicas de los cristales, así como su correspondencia con tus chakras y signo zodiacal.
+            </p>
+          </div>
+          <div style="margin-top: auto; padding-top: 0.5rem;">
+            <a href="propiedades-minerales.html" class="consult-button" style="display: block; text-decoration: none; text-align: center; padding: 0.75rem 1rem; font-size: 0.95rem; font-weight: 600; border-radius: 8px;">
+              Explorar Minerales →
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 10: Artículos -->
+        <article class="glass-card hub-card" style="display: flex; flex-direction: column; padding: 1.5rem; gap: 1rem; position: relative; overflow: hidden; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <a href="articulos.html" style="display: block; height: 180px; width: 100%; border-radius: 12px; overflow: hidden; position: relative;">
+            <img src="assets/hub_articulos.png" alt="Artículos y Guías - Eco Estelar" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8, 7, 17, 0.85); color: var(--gold-color); font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; border: 1px solid var(--border-color); backdrop-filter: blur(4px);">
+              Sabiduría Ancestral
+            </span>
+          </a>
+          <div>
+            <h3 style="font-family: var(--font-serif); color: var(--gold-color); font-size: 1.35rem; margin: 0 0 0.4rem 0;">📰 Artículos y Sabiduría</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+              Guías completas de estudio astrológico, magia de las sombras, influjo de eclipses solares y desarrollo de la intuición.
+            </p>
+          </div>
+          <div style="margin-top: auto; padding-top: 0.5rem;">
+            <a href="articulos.html" class="consult-button" style="display: block; text-decoration: none; text-align: center; padding: 0.75rem 1rem; font-size: 0.95rem; font-weight: 600; border-radius: 8px;">
+              Leer Artículos →
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 11: Tienda Mágica -->
+        <article class="glass-card hub-card" style="display: flex; flex-direction: column; padding: 1.5rem; gap: 1rem; position: relative; overflow: hidden; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <a href="tienda.html" style="display: block; height: 180px; width: 100%; border-radius: 12px; overflow: hidden; position: relative;">
+            <img src="assets/hub_tienda.png" alt="Tienda Mágica - Eco Estelar" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8, 7, 17, 0.85); color: var(--gold-color); font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; border: 1px solid var(--border-color); backdrop-filter: blur(4px);">
+              Objetos Sagrados
+            </span>
+          </a>
+          <div>
+            <h3 style="font-family: var(--font-serif); color: var(--gold-color); font-size: 1.35rem; margin: 0 0 0.4rem 0;">🛍️ Tienda Mágica</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+              Selección recomendada de barajas de tarot, minerales naturales, inciensos artesanales y herramientas rituales para tu altar.
+            </p>
+          </div>
+          <div style="margin-top: auto; padding-top: 0.5rem;">
+            <a href="tienda.html" class="consult-button" style="display: block; text-decoration: none; text-align: center; padding: 0.75rem 1rem; font-size: 0.95rem; font-weight: 600; border-radius: 8px;">
+              Visitar Tienda →
+            </a>
+          </div>
+        </article>
+
+      </div>
     </main>
 
-    <!-- Interpretation Panel (Results) -->
-    <section class="results-panel hidden" id="results-panel" aria-label="Resultados de la lectura">
-      <div class="glass-card result-container">
-        
-        <!-- Results Header -->
-        <div class="result-header">
-          <span class="category-badge" id="result-category-badge">Amor</span>
-          <h2 class="result-title">El veredicto del Oráculo</h2>
-          <p class="user-question-text" id="result-question-text">¿Pregunta?</p>
-          <!-- MEJORA 2: Share Button -->
-          <button type="button" class="share-reading-btn" id="share-reading-btn">
-            💫 Compartir esta lectura
-          </button>
-        </div>
-
-        <!-- Yes/No Verdict Section (For yesno1 and yesno3) -->
-        <div class="yesno-verdict-section hidden" id="yesno-verdict-section">
-          <div class="verdict-display">
-            <span class="verdict-label">Respuesta del Tarot:</span>
-            <div class="verdict-badge" id="verdict-badge">SÍ</div>
-          </div>
-          <p class="verdict-explanation" id="verdict-explanation">Explicación del sí o no...</p>
-        </div>
-
-        <!-- Lunar Influence Section -->
-        <div class="lunar-influence-section hidden" id="lunar-influence-section">
-          <div class="lunar-influence-header">
-            <span class="lunar-symbol" id="lunar-influence-symbol">🌕</span>
-            <h4>Sinergia Lunar de la Lectura</h4>
-          </div>
-          <p id="lunar-influence-text">Cargando influencia lunar...</p>
-        </div>
-
-        <!-- MEJORA 9: Oracle Loader (shown briefly before synthesis) -->
-        <div class="destiny-synthesis-section hidden" id="oracle-loader-section">
-          <div id="oracle-loader-overlay">
-            <div class="oracle-loader-crystal">🔮</div>
-            <p class="oracle-loader-text">El oráculo está hablando<span class="oracle-loader-dots">...</span></p>
-          </div>
-        </div>
-
-        <!-- Narrative Synthesis Section (For destiny) -->
-        <div class="destiny-synthesis-section hidden" id="destiny-synthesis-section">
-          <h3 class="section-title">Síntesis Narrativa del Destino</h3>
-          <div class="narrative-box">
-            <p id="destiny-synthesis-text">La narrativa que conecta pasado, presente y futuro aparecerá aquí...</p>
-          </div>
-        </div>
-
-        <!-- Divisor Místico -->
-        <div class="mystical-divider">
-          <svg viewBox="0 0 100 8" class="divider-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 4H42M58 4H100" stroke="var(--border-color)" stroke-width="0.75" />
-            <polygon points="50,0.5 51.5,3.5 55,3.5 52.5,5.5 54,8.5 50,6.8 46,8.5 47.5,5.5 45,3.5 48.5,3.5" fill="var(--gold-color)" />
-          </svg>
-        </div>
-
-        <!-- Individual Card Detail Breakdown -->
-        <div class="cards-breakdown">
-          <h3 class="section-title">Detalle de las Cartas Reveladas</h3>
-          <div class="breakdown-grid" id="breakdown-grid">
-            <!-- Dynamic card cards will be inserted here -->
-          </div>
-        </div>
-
-        <!-- Divisor Místico -->
-        <div class="mystical-divider">
-          <svg viewBox="0 0 100 8" class="divider-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 4H42M58 4H100" stroke="var(--border-color)" stroke-width="0.75" />
-            <polygon points="50,0.5 51.5,3.5 55,3.5 52.5,5.5 54,8.5 50,6.8 46,8.5 47.5,5.5 45,3.5 48.5,3.5" fill="var(--gold-color)" />
-          </svg>
-        </div>
-
-        <!-- Reset Button -->
-        <div class="reset-container">
-          <button type="button" id="reset-btn" class="reset-button">
-            REALIZAR OTRA CONSULTA
-          </button>
-        </div>
-        
-    </section>
-
-    <!-- Reading History Panel (Diario del Destino) -->
-    <section class="history-panel" id="history-panel" aria-label="Historial de consultas">
-      <div class="glass-card history-container">
-        <div class="history-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1.5rem;">
-          <h3 class="section-title" style="margin-bottom: 0; border: none; font-size: 1.4rem;">Tu Diario del Destino</h3>
-          <button type="button" id="clear-history-btn" class="clear-history-button" style="background: transparent; border: 1px solid var(--error-color); color: var(--error-color); border-radius: 20px; padding: 0.35rem 1rem; font-size: 0.8rem; cursor: pointer; transition: var(--transition-smooth);">Borrar Diario</button>
-        </div>
-        
-        <div id="history-list" class="history-list">
-          <!-- History items will be generated here -->
-          <p class="no-history-text" style="color: var(--text-muted); text-align: center; font-style: italic; padding: 2rem 0;">Aún no has registrado lecturas en tu diario de destino. Las consultas que realices aparecerán aquí.</p>
-        </div>
-      </div>
-    </section>
-    </div> <!-- Cierre de #oracle-tab-content -->
-
-
   </div> <!-- Cierre de .app-container -->
-
-  <!-- Modal de Detalles (Grimorio) -->
-  <div class="mystical-modal hidden" id="card-detail-modal">
-    <div class="modal-overlay" id="modal-overlay"></div>
-    <div class="modal-content glass-card">
-      <button type="button" class="close-modal-btn" id="close-modal-btn" aria-label="Cerrar modal">&times;</button>
-      <div class="modal-body" id="modal-body">
-        <!-- El contenido detallado de la carta se inyectará dinámicamente aquí -->
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Místico para Detalle de Fases Lunares -->
-  <div id="lunar-modal" class="lunar-modal hidden" aria-hidden="true" role="dialog">
-    <div class="lunar-modal-backdrop" id="lunar-modal-backdrop"></div>
-    <div class="glass-card lunar-modal-content">
-      <button type="button" class="lunar-modal-close" id="lunar-modal-close" aria-label="Cerrar ventana">&times;</button>
-      <div class="lunar-modal-body">
-        <div class="lunar-modal-header-layout">
-          <div class="lunar-modal-image-container">
-            <img id="lunar-modal-img" src="" alt="Fase lunar seleccionada" loading="lazy">
-          </div>
-          <div class="lunar-modal-title-container">
-            <h2 id="lunar-modal-title" class="gold">Luna Llena</h2>
-            <p id="lunar-modal-subtitle" class="purple">Fase de Plenitud e Intuición Máxima</p>
-          </div>
-        </div>
-        
-        <div class="mystical-divider" style="margin: 1.5rem 0;">
-          <svg viewBox="0 0 100 8" class="divider-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 4H42M58 4H100" stroke="var(--border-color)" stroke-width="0.75" />
-            <polygon points="50,0.5 51.5,3.5 55,3.5 52.5,5.5 54,8.5 50,6.8 46,8.5 47.5,5.5 45,3.5 48.5,3.5" fill="var(--gold-color)" />
-          </svg>
-        </div>
-
-        <div class="lunar-modal-info-grid">
-          <div class="lunar-modal-section">
-            <h4 class="gold"><span class="icon">🌌</span> Influencia Espiritual y Energías</h4>
-            <p id="lunar-modal-influence">Explicación extendida de la fase lunar...</p>
-          </div>
-
-          <div class="lunar-modal-section">
-            <h4 class="gold"><span class="icon">🕯️</span> Ritual Recomendado</h4>
-            <p id="lunar-modal-ritual">Ritual detallado paso a paso...</p>
-          </div>
-
-          <div class="lunar-modal-section">
-            <h4 class="gold"><span class="icon">🃏</span> Correspondencia con el Tarot y Cuidado del Mazo</h4>
-            <p id="lunar-modal-tarot">Cómo influye en las cartas y cómo limpiarlas...</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Floating Settings Button -->
   <button type="button" id="astral-settings-btn" class="astral-settings-btn" aria-label="Ajustes Astrales y Accesibilidad" title="Ajustes Astrales">
@@ -398,18 +411,17 @@
     <span class="settings-btn-text">Ajustes</span>
   </button>
 
-    <!-- Footer Legal -->
-    <footer class="app-footer">
-      <div class="footer-links">
-        <a href="#" class="legal-link" data-legal="aviso">Aviso Legal</a>
-        <span class="footer-separator">•</span>
-        <a href="#" class="legal-link" data-legal="privacidad">Política de Privacidad</a>
-        <span class="footer-separator">•</span>
-        <a href="#" class="legal-link" data-legal="cookies">Política de Cookies</a>
-      </div>
-      <p class="footer-copy">&copy; 2026 Eco Estelar. Todos los derechos reservados.</p>
-    </footer>
-  </div> <!-- Fin de .app-container -->
+  <!-- Footer Legal -->
+  <footer class="app-footer">
+    <div class="footer-links">
+      <a href="#" class="legal-link" data-legal="aviso">Aviso Legal</a>
+      <span class="footer-separator">•</span>
+      <a href="#" class="legal-link" data-legal="privacidad">Política de Privacidad</a>
+      <span class="footer-separator">•</span>
+      <a href="#" class="legal-link" data-legal="cookies">Política de Cookies</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Eco Estelar. Todos los derechos reservados.</p>
+  </footer>
 
   <!-- Sliding Settings Panel -->
   <div id="astral-settings-panel" class="astral-settings-panel hidden" role="dialog" aria-labelledby="settings-panel-title" aria-modal="true">
@@ -483,10 +495,10 @@
           </button>
         </div>
 
-                <!-- Donation Section -->
+        <!-- Donation Section -->
         <div class="settings-section">
           <h4 class="settings-section-title">🌟 Apoyo a Eco Estelar</h4>
-                    <button type="button" class="settings-action-btn donation-action-btn" style="display: block; width: 100%; text-align: center; font-weight: 700; border: none; padding: 0.8rem 1rem; border-radius: 8px; cursor: pointer;">
+          <button type="button" class="settings-action-btn donation-action-btn" style="display: block; width: 100%; text-align: center; font-weight: 700; border: none; padding: 0.8rem 1rem; border-radius: 8px; cursor: pointer;">
             ☕ Ofrenda / Donación PayPal
           </button>
         </div>
@@ -501,102 +513,9 @@
     </div>
   </div>
 
-  <!-- Onboarding Modal -->
-  <div id="onboarding-modal" class="onboarding-modal hidden" role="dialog" aria-labelledby="onboarding-title" aria-modal="true">
-    <div class="onboarding-content glass-card">
-      <div class="onboarding-header">
-        <h3 id="onboarding-title" class="gold">✦ Guía del Oráculo ✦</h3>
-        <button type="button" id="onboarding-close-btn" class="onboarding-close-btn" aria-label="Cerrar Guía">&times;</button>
-      </div>
-      
-      <div class="onboarding-body">
-        <div class="onboarding-slide-container">
-          <!-- Slide 1 -->
-          <div class="onboarding-slide active" data-step="1">
-            <div class="onboarding-icon">🔮</div>
-            <h4>El Oráculo del Destino</h4>
-            <p>Bienvenido a <strong>Eco Estelar</strong>. En esta pestaña, puedes formular tus dudas al cosmos. Elige tu tirada (desde un Sí/No rápido hasta la profunda Cruz Celta), escribe tu pregunta con el corazón abierto y revela las cartas en el tapete místico.</p>
-          </div>
-          <!-- Slide 2 -->
-          <div class="onboarding-slide" data-step="2">
-            <div class="onboarding-icon">🌟</div>
-            <h4>Carta del Día e Identidad Astral</h4>
-            <p>En la sección <strong>Carta del Día</strong> encontrarás tu Arcano protector de hoy con su afirmación y ritual. También podrás calcular tu <strong>Carta Natal de Tarot</strong> vitalicia y tu <strong>Tirada del Año</strong> completa mes a mes.</p>
-          </div>
-          <!-- Slide 3 -->
-          <div class="onboarding-slide" data-step="3">
-            <div class="onboarding-icon">✨</div>
-            <h4>Tu Horóscopo y Tránsitos</h4>
-            <p>Descubre el mensaje de las cartas para tu signo en el <strong>Horóscopo</strong> diario, o bien cambia al modo de <strong>Tránsitos Celestes</strong> para contemplar las influencias astronómicas reales del cielo sobre tu signo.</p>
-          </div>
-          <!-- Slide 4 -->
-          <div class="onboarding-slide" data-step="4">
-            <div class="onboarding-icon">🌙</div>
-            <h4>Ciclo Lunar y Rituales</h4>
-            <p>La Luna guía nuestras mareas internas. Sigue la <strong>Fase Lunar</strong> actual, consulta sus rituales sugeridos y siembra tus anhelos en la <strong>Siembra de Intenciones</strong> interactiva para cargarlos con la energía de la lunación.</p>
-          </div>
-          <!-- Slide 5 -->
-          <div class="onboarding-slide" data-step="5">
-            <div class="onboarding-icon">🔢</div>
-            <h4>Numerología y Destino</h4>
-            <p>Los números guardan vibraciones secretas. Calcula tu <strong>Sendero de Vida</strong>, tu <strong>Año Personal</strong> actual, y explora tu <strong>Vínculo y Compatibilidad</strong> amorosa o laboral con las vibraciones de otra alma.</p>
-          </div>
-          <!-- Slide 6 -->
-          <div class="onboarding-slide" data-step="6">
-            <div class="onboarding-icon">📖</div>
-            <h4>El Libro del Tarot</h4>
-            <p>Un grimorio completo a tu disposición. Explora los <strong>22 Arcanos Mayores</strong>, sus planetas, elementos y significados al derecho e invertidos. Usa los filtros rápidos y alterna entre vista de cuadrícula o lista.</p>
-          </div>
-          <!-- Slide 7 -->
-          <div class="onboarding-slide" data-step="7">
-            <div class="onboarding-icon">💤</div>
-            <h4>El Diccionario de Sueños</h4>
-            <p>Explora el significado de tus visiones nocturnas. Utiliza el <strong>Buscador</strong> de símbolos o escribe la descripción de tu sueño en el <strong>Analizador</strong> para descifrar los mensajes del subconsciente.</p>
-          </div>
-          <!-- Slide 8 -->
-          <div class="onboarding-slide" data-step="8">
-            <div class="onboarding-icon">🛍️</div>
-            <h4>Tienda del Templo</h4>
-            <p>Visita la <strong>Tienda</strong> para adquirir barajas de Tarot exclusivas, velas aromáticas consagradas, cristales energéticos y solicitar lecturas personalizadas detalladas.</p>
-          </div>
-          <!-- Slide 9 -->
-          <div class="onboarding-slide" data-step="9">
-            <div class="onboarding-icon">⚡</div>
-            <h4>Rendimiento Astral</h4>
-            <p>Para una experiencia óptima con las constelaciones animadas, recomendamos usar un ordenador. Si utilizas el móvil, te aconsejamos activar el <strong>Ahorro Energía (Movimiento)</strong> en los Ajustes Astrales (icono ✨) para mayor fluidez.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="onboarding-footer">
-        <button type="button" id="onboarding-prev-btn" class="onboarding-nav-btn disabled" disabled>Atrás</button>
-        <div class="onboarding-dots">
-          <span class="dot active" data-step="1"></span>
-          <span class="dot" data-step="2"></span>
-          <span class="dot" data-step="3"></span>
-          <span class="dot" data-step="4"></span>
-          <span class="dot" data-step="5"></span>
-          <span class="dot" data-step="6"></span>
-          <span class="dot" data-step="7"></span>
-          <span class="dot" data-step="8"></span>
-          <span class="dot" data-step="9"></span>
-        </div>
-        <button type="button" id="onboarding-next-btn" class="onboarding-nav-btn">Siguiente</button>
-      </div>
-      <div class="onboarding-skip-container">
-        <label class="onboarding-dont-show">
-          <input type="checkbox" id="onboarding-dont-show-checkbox"> No volver a mostrar al inicio
-        </label>
-        <button type="button" id="onboarding-skip-btn" class="onboarding-skip-btn">Omitir</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Contact Modal (Web3Forms) -->
-        <!-- Donation Info Modal -->
+  <!-- Donation Info Modal -->
   <div id="donation-modal" class="onboarding-modal hidden" role="dialog" aria-labelledby="donation-modal-title" aria-modal="true">
     <div class="onboarding-content glass-card" style="max-width: 540px; padding: 2.2rem 2rem; text-align: center; gap: 1.35rem; border: 1.5px solid var(--border-color); box-shadow: 0 0 40px rgba(229, 193, 88, 0.25);">
-      
       <div class="onboarding-header" style="justify-content: center; position: relative;">
         <div>
           <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold-color); font-weight: 600; display: block; margin-bottom: 0.2rem;">✦ Espacio Libre e Independiente ✦</span>
@@ -644,71 +563,18 @@
       <div style="border-top: 1px dashed var(--border-color); padding-top: 0.85rem; font-size: 0.88rem; color: var(--gold-color); font-style: italic;">
         ✨ <strong>Gracias por acompañarnos en este viaje estrellado.</strong><br>
         <span style="color: var(--text-muted); font-size: 0.82rem; font-style: normal;">Que tu generosidad regrese a ti multiplicada en luz, paz y abundancia.</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Contact Modal (Web3Forms) -->
-  <div id="contact-modal" class="onboarding-modal hidden" role="dialog" aria-labelledby="contact-modal-title" aria-modal="true">
-    <div class="onboarding-content glass-card" style="max-width: 480px; gap: 1rem;">
-      <div class="onboarding-header">
-        <h3 id="contact-modal-title" class="gold" style="font-family: 'Cinzel', serif;">✉️ Contactar al Templo</h3>
-        <button type="button" id="contact-modal-close-btn" class="onboarding-close-btn" aria-label="Cerrar Formulario">&times;</button>
-      </div>
-      
-      <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem;">
-        <!-- ConfiguraciÃ³n de Web3Forms -->
-        <input type="hidden" name="access_key" value="5b11b9c8-2c61-4abb-9527-6a288d7c50bb">
-        <input type="hidden" name="subject" value="Nuevo mensaje desde Eco Estelar">
-        
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 0.4rem; text-align: left;">
-          <label for="contact-name" style="font-size: 0.88rem; color: var(--gold-color); font-weight: 500;">Tu Nombre o Signo:</label>
-          <input type="text" name="name" id="contact-name" class="dream-search-input" placeholder="Ej. Leo Lunar o María" required style="padding: 0.7rem 1rem;">
-        </div>
-        
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 0.4rem; text-align: left;">
-          <label for="contact-email" style="font-size: 0.88rem; color: var(--gold-color); font-weight: 500;">Correo Electrónico:</label>
-          <input type="email" name="email" id="contact-email" class="dream-search-input" placeholder="tu-correo@servidor.com" required style="padding: 0.7rem 1rem;">
-        </div>
-        
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 0.4rem; text-align: left;">
-          <label for="contact-message" style="font-size: 0.88rem; color: var(--gold-color); font-weight: 500;">Mensaje Astral:</label>
-          <textarea name="message" id="contact-message" class="dream-search-input" rows="4" placeholder="Escribe aquí tu consulta, duda o sugerencia para las estrellas..." required style="padding: 0.7rem 1rem; resize: none; font-family: var(--font-sans);"></textarea>
-        </div>
-        
-        <button type="submit" class="consult-button" style="margin-top: 0.5rem; width: 100%; padding: 0.75rem; font-size: 1rem;">
-          ENVIAR MENSAJE
-        </button>
-      </form>
+      </a>
     </div>
   </div>
 
   <!-- Legal Modal -->
-  <div id="legal-modal" class="onboarding-modal hidden" role="dialog" aria-modal="true">
-    <div class="onboarding-content glass-card" style="max-width: 800px;">
+  <div id="legal-modal" class="onboarding-modal hidden" role="dialog" aria-labelledby="legal-modal-title" aria-modal="true">
+    <div class="onboarding-content glass-card" style="max-width: 650px; padding: 2rem;">
       <div class="onboarding-header">
-        <h3 id="legal-modal-title" class="gold">Términos Legales</h3>
+        <h3 id="legal-modal-title" class="gold" style="font-family: 'Cinzel', serif;">Términos Legales</h3>
         <button type="button" id="legal-close-btn" class="onboarding-close-btn" aria-label="Cerrar">&times;</button>
       </div>
-      <div class="onboarding-body" id="legal-modal-body" style="text-align: left; max-height: 60vh; overflow-y: auto; padding: 1rem 2rem; line-height: 1.6; font-size: 0.9rem;">
-        <!-- El texto legal se inyectará aquí -->
-      </div>
-    </div>
-  </div>
-
-  <!-- Cookies Banner -->
-  <div id="cookies-banner" class="cookies-banner hidden" role="dialog" aria-live="polite">
-    <div class="cookies-content">
-      <div class="cookies-text">
-        <h4 class="gold" style="margin:0 0 0.5rem 0; font-family:'Cinzel',serif;">Galletas del Destino (Cookies)</h4>
-        <p style="margin:0; font-size:0.85rem; line-height:1.4;">
-          Utilizamos cookies técnicas locales para guardar tus preferencias astrales y mejorar la experiencia. También podríamos incluir cookies de terceros en el futuro para mostrar contenido o anuncios relevantes. 
-          <a href="#" class="legal-link" data-legal="cookies" style="color:var(--gold-light); text-decoration:underline;">Saber más</a>.
-        </p>
-      </div>
-      <div class="cookies-actions">
-        <button type="button" id="btn-accept-cookies" class="primary-btn pulse-button" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Aceptar Todas</button>
-        <button type="button" id="btn-reject-cookies" class="secondary-btn" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Solo Técnicas</button>
+      <div id="legal-modal-body" style="font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); text-align: left; max-height: 60vh; overflow-y: auto; padding-right: 0.5rem; margin-top: 1rem;">
       </div>
     </div>
   </div>
@@ -716,10 +582,5 @@
   <!-- Javascript Logic -->
   <script src="tarotDb.js" defer></script>
   <script src="app.js" defer></script>
-
-  <!-- MEJORA 2: Share Toast -->
-  <div id="share-toast" class="share-toast" role="status" aria-live="polite">
-    📋 ¡Lectura copiada al portapapeles! Compártela donde quieras ✨
-  </div>
 </body>
 </html>
