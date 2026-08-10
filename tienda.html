@@ -115,77 +115,103 @@
         <!-- Contenedor de Productos (Grid) -->
         <div id="product-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; text-align: left;">
           <!-- Los productos se añadirán aquí -->
+
+          <!-- Producto Especial (Primero): Ofrenda al Templo -->
+          <div class="product-card glass-card" style="display: flex; flex-direction: column; height: 100%; padding: 1.5rem; border: 1.5px solid var(--gold-color); box-shadow: 0 0 25px rgba(229, 193, 88, 0.25); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: center; position: relative; background: rgba(18, 16, 34, 0.85);">
+            <span style="position: absolute; top: 12px; right: 12px; background: var(--gold-color); color: #000; font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.65rem; border-radius: 12px; letter-spacing: 0.5px;">OFRENDA</span>
+            <div class="product-image donation-action-btn" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer;">
+              <img src="assets/hub_ofrenda.png" alt="Apoyo a Eco Estelar" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            </div>
+            <h3 class="gold" style="font-size: 1.15rem; margin-bottom: 0.4rem; color: var(--gold-color); font-weight: 700; font-family: 'Cinzel', serif;">☕ Apoyo Voluntario a Eco Estelar</h3>
+            <p style="font-size: 0.88rem; color: #e2e8f0; line-height: 1.5; margin: 0 0 1.2rem 0; flex-grow: 1;">
+              Mantén viva la magia y el mantenimiento del santuario con una pequeña ofrenda voluntaria en PayPal.
+            </p>
+            <button type="button" class="consult-button donation-action-btn" style="text-align: center; padding: 0.85rem; margin-top: auto; font-size: 0.95rem; font-weight: 700; width: 100%; box-sizing: border-box; border: none; cursor: pointer; border-radius: 8px; box-shadow: 0 0 15px rgba(229, 193, 88, 0.3);">☕ Realizar Ofrenda</button>
+          </div>
+
           <!-- Producto 1 -->
           <div class="product-card glass-card" style="display: flex; flex-direction: column; height: 100%; padding: 1.5rem; border: 1px solid var(--border-color); transition: transform 0.3s ease; text-align: center;">
-            <div class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color);">
+            <a href="https://amzn.to/4ejRZ5t" target="_blank" rel="noopener noreferrer" class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color); display: flex; cursor: pointer;">
               <img src="assets/tarot_marsella_wide.png" alt="Cartas de El Tarot de Marsella" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-            </div>
+            </a>
             <h3 class="gold" style="font-size: 1.1rem; margin-bottom: 0.5rem; flex-grow: 1; display: flex; align-items: center; justify-content: center;">Cartas de El Tarot de Marsella</h3>
             <a href="https://amzn.to/4ejRZ5t" target="_blank" rel="noopener noreferrer" class="consult-button" style="text-align: center; text-decoration: none; padding: 0.8rem; margin-top: 1rem; font-size: 0.9rem; width: 100%; box-sizing: border-box;">Ver en Amazon</a>
           </div>
 
           <!-- Producto 2 -->
           <div class="product-card glass-card" style="display: flex; flex-direction: column; height: 100%; padding: 1.5rem; border: 1px solid var(--border-color); transition: transform 0.3s ease; text-align: center;">
-            <div class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color);">
+            <a href="https://amzn.to/4emDttS" target="_blank" rel="noopener noreferrer" class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color); display: flex; cursor: pointer;">
               <img src="assets/tapete_adivinacion.jpg" alt="Tapete de adivinación" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-            </div>
+            </a>
             <h3 class="gold" style="font-size: 1.1rem; margin-bottom: 0.5rem; flex-grow: 1; display: flex; align-items: center; justify-content: center;">Tapete de adivinación</h3>
             <a href="https://amzn.to/4emDttS" target="_blank" rel="noopener noreferrer" class="consult-button" style="text-align: center; text-decoration: none; padding: 0.8rem; margin-top: 1rem; font-size: 0.9rem; width: 100%; box-sizing: border-box;">Ver en Amazon</a>
           </div>
 
           <!-- Producto 3 -->
           <div class="product-card glass-card" style="display: flex; flex-direction: column; height: 100%; padding: 1.5rem; border: 1px solid var(--border-color); transition: transform 0.3s ease; text-align: center;">
-            <div class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color);">
+            <a href="https://amzn.to/3QbJ3WH" target="_blank" rel="noopener noreferrer" class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color); display: flex; cursor: pointer;">
               <img src="assets/tarot_principiantes.jpg" alt="Tarot para principiantes" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-            </div>
+            </a>
             <h3 class="gold" style="font-size: 1.1rem; margin-bottom: 0.5rem; flex-grow: 1; display: flex; align-items: center; justify-content: center;">Tarot para principiantes: Guía para la lectura psíquica</h3>
             <a href="https://amzn.to/3QbJ3WH" target="_blank" rel="noopener noreferrer" class="consult-button" style="text-align: center; text-decoration: none; padding: 0.8rem; margin-top: 1rem; font-size: 0.9rem; width: 100%; box-sizing: border-box;">Ver en Amazon</a>
           </div>
 
           <!-- Producto 4 -->
           <div class="product-card glass-card" style="display: flex; flex-direction: column; height: 100%; padding: 1.5rem; border: 1px solid var(--border-color); transition: transform 0.3s ease; text-align: center;">
-            <div class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color);">
+            <a href="https://amzn.to/4uToY5D" target="_blank" rel="noopener noreferrer" class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color); display: flex; cursor: pointer;">
               <img src="assets/palo_santo.jpg" alt="Palo Santo" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-            </div>
+            </a>
             <h3 class="gold" style="font-size: 1.1rem; margin-bottom: 0.5rem; flex-grow: 1; display: flex; align-items: center; justify-content: center;">Palo Santo Premium</h3>
             <a href="https://amzn.to/4uToY5D" target="_blank" rel="noopener noreferrer" class="consult-button" style="text-align: center; text-decoration: none; padding: 0.8rem; margin-top: 1rem; font-size: 0.9rem; width: 100%; box-sizing: border-box;">Ver en Amazon</a>
           </div>
 
           <!-- Producto 5 -->
           <div class="product-card glass-card" style="display: flex; flex-direction: column; height: 100%; padding: 1.5rem; border: 1px solid var(--border-color); transition: transform 0.3s ease; text-align: center;">
-            <div class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color);">
+            <a href="https://amzn.to/4oFHKMb" target="_blank" rel="noopener noreferrer" class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color); display: flex; cursor: pointer;">
               <img src="assets/lampara_selenita.jpg" alt="Lámpara de Selenita Natural" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-            </div>
+            </a>
             <h3 class="gold" style="font-size: 1.1rem; margin-bottom: 0.5rem; flex-grow: 1; display: flex; align-items: center; justify-content: center;">Lámpara de Selenita Natural</h3>
             <a href="https://amzn.to/4oFHKMb" target="_blank" rel="noopener noreferrer" class="consult-button" style="text-align: center; text-decoration: none; padding: 0.8rem; margin-top: 1rem; font-size: 0.9rem; width: 100%; box-sizing: border-box;">Ver en Amazon</a>
           </div>
 
           <!-- Producto 6 -->
           <div class="product-card glass-card" style="display: flex; flex-direction: column; height: 100%; padding: 1.5rem; border: 1px solid var(--border-color); transition: transform 0.3s ease; text-align: center;">
-            <div class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color);">
+            <a href="https://amzn.to/4ehxoic" target="_blank" rel="noopener noreferrer" class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color); display: flex; cursor: pointer;">
               <img src="assets/cuaderno_vintage.png" alt="Cuaderno Vintage" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-            </div>
+            </a>
             <h3 class="gold" style="font-size: 1.1rem; margin-bottom: 0.5rem; flex-grow: 1; display: flex; align-items: center; justify-content: center;">Diario Místico Vintage</h3>
             <a href="https://amzn.to/4ehxoic" target="_blank" rel="noopener noreferrer" class="consult-button" style="text-align: center; text-decoration: none; padding: 0.8rem; margin-top: 1rem; font-size: 0.9rem; width: 100%; box-sizing: border-box;">Ver en Amazon</a>
           </div>
 
           <!-- Producto 7 -->
           <div class="product-card glass-card" style="display: flex; flex-direction: column; height: 100%; padding: 1.5rem; border: 1px solid var(--border-color); transition: transform 0.3s ease; text-align: center;">
-            <div class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color);">
+            <a href="https://amzn.to/4w1ESMg" target="_blank" rel="noopener noreferrer" class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color); display: flex; cursor: pointer;">
               <img src="assets/cartas_witches.jpg" alt="Conjunto Cartas de Tarot" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-            </div>
+            </a>
             <h3 class="gold" style="font-size: 1.1rem; margin-bottom: 0.5rem; flex-grow: 1; display: flex; align-items: center; justify-content: center;">Conjunto Cartas Witches Tarot</h3>
             <a href="https://amzn.to/4w1ESMg" target="_blank" rel="noopener noreferrer" class="consult-button" style="text-align: center; text-decoration: none; padding: 0.8rem; margin-top: 1rem; font-size: 0.9rem; width: 100%; box-sizing: border-box;">Ver en Amazon</a>
           </div>
 
           <!-- Producto 8 -->
           <div class="product-card glass-card" style="display: flex; flex-direction: column; height: 100%; padding: 1.5rem; border: 1px solid var(--border-color); transition: transform 0.3s ease; text-align: center;">
-            <div class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color);">
+            <a href="https://amzn.to/4eB1pZm" target="_blank" rel="noopener noreferrer" class="product-image" style="height: 180px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-color); display: flex; cursor: pointer;">
               <img src="assets/lampara_sal.jpg" alt="Lámpara de Sal del Himalaya" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-            </div>
+            </a>
             <h3 class="gold" style="font-size: 1.1rem; margin-bottom: 0.5rem; flex-grow: 1; display: flex; align-items: center; justify-content: center;">Lámpara de Sal del Himalaya</h3>
             <a href="https://amzn.to/4eB1pZm" target="_blank" rel="noopener noreferrer" class="consult-button" style="text-align: center; text-decoration: none; padding: 0.8rem; margin-top: 1rem; font-size: 0.9rem; width: 100%; box-sizing: border-box;">Ver en Amazon</a>
           </div>
+        </div>
+        
+        <!-- Banner Místico de Ofrenda -->
+        <div class="glass-card" style="margin-top: 3rem; padding: 2rem; border: 1px dashed var(--gold-color); text-align: center; background: rgba(229, 193, 88, 0.03);">
+          <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">☕✨</span>
+          <h3 class="gold" style="font-family: 'Cinzel', serif; font-size: 1.4rem; margin-bottom: 0.5rem;">¿Prefieres hacer una aportación directa?</h3>
+          <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; max-width: 750px; margin: 0 auto 1.5rem auto;">
+            Si valoras nuestro contenido y prefieres apoyar el proyecto directamente en lugar de adquirir productos, tu ofrenda nos permite mantener los servidores activos y seguir desarrollando herramientas astrales gratuitas para toda la comunidad.
+          </p>
+          <button type="button" class="consult-button donation-action-btn" style="padding: 0.85rem 2rem; font-size: 1rem; font-weight: 700; border-radius: 30px; box-shadow: 0 0 25px rgba(229, 193, 88, 0.3); border: none; cursor: pointer;">
+            ☕ REALIZAR UNA OFRENDA EN PAYPAL
+          </button>
         </div>
         
       </section>
@@ -199,6 +225,8 @@
         <a href="#" class="legal-link" data-legal="privacidad">Política de Privacidad</a>
         <span class="footer-separator">•</span>
         <a href="#" class="legal-link" data-legal="cookies">Política de Cookies</a>
+      <span class="footer-separator">•</span>
+      <a href="#" class="legal-link donation-action-btn" style="color: var(--gold-color); font-weight: 500;">☕ Apoyo a Eco Estelar</a>
       </div>
       <p class="footer-copy">&copy; 2026 Eco Estelar. Todos los derechos reservados.</p>
     </footer>

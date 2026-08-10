@@ -5157,13 +5157,28 @@ html[data-font-size="large"] {
 }
 
 /* Responsividad general para panel y settings */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .astral-settings-btn {
-    top: 0.75rem;
-    right: 0.75rem;
+    top: 0.85rem;
+    right: 0.85rem;
     width: 44px;
     height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 15px rgba(229, 193, 88, 0.35);
+  }
+  
+  .astral-settings-btn .settings-btn-text {
+    display: none !important;
+  }
+
+  .astral-settings-btn .settings-btn-icon {
     font-size: 1.25rem;
+    margin: 0;
+    line-height: 1;
   }
   
   .astral-settings-panel {
