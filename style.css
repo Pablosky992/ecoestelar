@@ -2186,34 +2186,42 @@ body {
 
 /* Mode Toggle Pill */
 .numerology-mode-toggle {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
   background: rgba(8, 7, 17, 0.65);
   border: 1.5px solid var(--border-color);
-  border-radius: 24px;
-  padding: 4px;
-  margin-bottom: 2rem;
+  border-radius: 14px;
+  padding: 6px;
+  margin-bottom: 1.5rem;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
 }
 
 .mode-btn {
-  flex: 1;
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   color: var(--text-muted);
-  padding: 0.6rem 1rem;
+  padding: 0.65rem 0.4rem;
   font-family: var(--font-sans);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 500;
-  letter-spacing: 0.05em;
-  border-radius: 20px;
+  letter-spacing: 0.02em;
+  border-radius: 10px;
   cursor: pointer;
   transition: var(--transition-smooth);
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 38px;
+  white-space: nowrap;
 }
 
 .mode-btn:hover {
   color: var(--text-main);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .mode-btn.active {
@@ -2222,6 +2230,28 @@ body {
   border: 1px solid var(--gold-color);
   font-weight: 600;
   box-shadow: 0 0 12px rgba(229, 193, 88, 0.2);
+}
+
+body.light-mode .numerology-mode-toggle {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(184, 147, 45, 0.3);
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .mode-btn {
+  color: #55506a;
+}
+
+body.light-mode .mode-btn:hover {
+  color: #1a162b;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+body.light-mode .mode-btn.active {
+  background: linear-gradient(135deg, rgba(229, 193, 88, 0.25), rgba(197, 155, 39, 0.15));
+  color: #8c6307;
+  border-color: var(--gold-color);
+  box-shadow: 0 0 10px rgba(229, 193, 88, 0.25);
 }
 
 /* Form Sections */
@@ -7001,6 +7031,7 @@ body.reduced-motion .glass-card:hover {
    ========================================================================== */
 
 input[type="date"],
+input[type="time"],
 input[type="number"],
 input[type="text"],
 input[type="email"],
@@ -7022,6 +7053,7 @@ input[type="email"],
 }
 
 input[type="date"]:hover,
+input[type="time"]:hover,
 input[type="number"]:hover,
 input[type="text"]:hover,
 input[type="email"]:hover,
@@ -7033,6 +7065,7 @@ input[type="email"]:hover,
 }
 
 input[type="date"]:focus,
+input[type="time"]:focus,
 input[type="number"]:focus,
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -7043,8 +7076,9 @@ input[type="email"]:focus,
   box-shadow: 0 0 15px rgba(229, 193, 88, 0.4), inset 0 0 10px rgba(139, 92, 246, 0.2) !important;
 }
 
-/* Custom Gold Calendar Picker Icon for Chromium / WebKit */
-input[type="date"]::-webkit-calendar-picker-indicator {
+/* Custom Gold Calendar & Time Picker Icon for Chromium / WebKit */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
   filter: invert(75%) sepia(85%) saturate(450%) hue-rotate(5deg) brightness(105%) contrast(100%) !important;
   cursor: pointer !important;
   opacity: 0.85 !important;
@@ -7052,7 +7086,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding: 2px !important;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator:hover {
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="time"]::-webkit-calendar-picker-indicator:hover {
   opacity: 1 !important;
   transform: scale(1.15) !important;
 }
@@ -7103,6 +7138,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* Light Mode Overrides for Date & Number Inputs */
 body.light-mode input[type="date"],
+body.light-mode input[type="time"],
 body.light-mode input[type="number"],
 body.light-mode input[type="text"],
 body.light-mode input[type="email"] {
@@ -7114,8 +7150,111 @@ body.light-mode input[type="email"] {
 }
 
 body.light-mode input[type="date"]::-webkit-calendar-picker-indicator,
+body.light-mode input[type="time"]::-webkit-calendar-picker-indicator,
 body.light-mode input[type="number"]::-webkit-inner-spin-button {
   filter: none !important;
+}
+
+/* ==========================================================================
+   MIRROR HOURS (HORAS ESPEJO) STYLES
+   ========================================================================== */
+
+.mirror-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0.35rem 0.65rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: var(--font-sans);
+}
+
+.mirror-chip:hover {
+  background: rgba(229, 193, 88, 0.15);
+  border-color: var(--gold-color);
+  color: var(--gold-color);
+  transform: translateY(-1px);
+}
+
+.mirror-chip.active {
+  background: linear-gradient(135deg, var(--gold-color), #c59b27);
+  border-color: var(--gold-color);
+  color: #0b091a;
+  box-shadow: 0 0 10px rgba(229, 193, 88, 0.4);
+}
+
+.catalog-mirror-pill {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.6rem 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: var(--text-color);
+}
+
+.catalog-mirror-pill .pill-time {
+  font-family: 'Cinzel', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gold-color);
+}
+
+.catalog-mirror-pill .pill-type {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.catalog-mirror-pill:hover {
+  background: rgba(229, 193, 88, 0.12);
+  border-color: var(--gold-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(229, 193, 88, 0.2);
+}
+
+.catalog-mirror-pill.active {
+  background: rgba(229, 193, 88, 0.2);
+  border-color: var(--gold-color);
+  box-shadow: 0 0 15px rgba(229, 193, 88, 0.35);
+}
+
+.catalog-mirror-pill.active .pill-time {
+  text-shadow: 0 0 8px var(--gold-glow);
+}
+
+.catalog-mirror-pill.secondary .pill-time {
+  color: #c084fc;
+}
+
+body.light-mode .mirror-chip {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(184, 147, 45, 0.3);
+  color: #1a162b;
+}
+
+body.light-mode .mirror-chip.active {
+  background: linear-gradient(135deg, var(--gold-color), #aa7c11);
+  color: #ffffff;
+}
+
+body.light-mode .catalog-mirror-pill {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(184, 147, 45, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .catalog-mirror-pill .pill-time {
+  color: var(--gold-color);
 }
 
 

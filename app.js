@@ -4186,15 +4186,134 @@ function renderYearTimeline(activeYear) {
   }
 }
 
+function calculateMirrorHour(selectedTime) {
+  const timeInput = document.getElementById('num-mirror-time-input');
+  const selectElem = document.getElementById('num-mirror-select');
+  
+  let time = selectedTime;
+  if (!time) {
+    time = (timeInput && timeInput.value) ? timeInput.value : '11:11';
+  }
+  
+  if (typeof getMirrorHourData !== 'function') return;
+  const data = getMirrorHourData(time);
+  if (!data) return;
+  
+  // Sync input and select
+  if (timeInput) timeInput.value = data.time;
+  if (selectElem) {
+    const opt = selectElem.querySelector(`option[value="${data.time}"]`);
+    if (opt) selectElem.value = data.time;
+  }
+  
+  // Sync active chip
+  const chips = document.querySelectorAll('#num-mirror-form .mirror-chip');
+  chips.forEach(chip => {
+    if (chip.getAttribute('data-time') === data.time) {
+      chip.classList.add('active');
+    } else {
+      chip.classList.remove('active');
+    }
+  });
+
+  const resultsPanel = document.getElementById('num-results-panel');
+  const personalResults = document.getElementById('num-personal-results');
+  const compatResults = document.getElementById('num-compat-results');
+  const yearResults = document.getElementById('num-year-results');
+  const mirrorResults = document.getElementById('num-mirror-results');
+  
+  const readingTitle = document.getElementById('num-reading-status-title');
+  const readingDesc = document.getElementById('num-reading-status-desc');
+
+  if (personalResults) personalResults.classList.add('hidden');
+  if (compatResults) compatResults.classList.add('hidden');
+  if (yearResults) yearResults.classList.add('hidden');
+  if (mirrorResults) mirrorResults.classList.remove('hidden');
+  if (resultsPanel) resultsPanel.classList.remove('hidden');
+
+  if (readingTitle) readingTitle.textContent = `Sincronicidad Revelada: ${data.time}`;
+  if (readingDesc) readingDesc.textContent = "El cosmos y tus guías espirituales te transmiten el siguiente mensaje:";
+
+  // Fill in content
+  const typeBadge = document.getElementById('num-mirror-type-badge');
+  const displayTime = document.getElementById('num-mirror-display-time');
+  const displayTitle = document.getElementById('num-mirror-display-title');
+  const displayAngel = document.getElementById('num-mirror-display-angel');
+  const displaySpiritual = document.getElementById('num-mirror-display-spiritual');
+  const angelDesc = document.getElementById('num-mirror-angel-desc');
+  const numerologyDesc = document.getElementById('num-mirror-numerology-desc');
+  const tarotName = document.getElementById('num-mirror-tarot-name');
+  const tarotDesc = document.getElementById('num-mirror-tarot-desc');
+  const adviceDesc = document.getElementById('num-mirror-advice-desc');
+  const affirmationBox = document.getElementById('num-mirror-affirmation-box');
+
+  let typeLabel = "HORA ESPEJO";
+  if (data.type === 'master') typeLabel = "HORA MAESTRA";
+  else if (data.type === 'sequential') typeLabel = "SECUENCIA CÓSMICA";
+  else if (data.type === 'inverted') typeLabel = "HORA INVERTIDA";
+  else if (data.type === 'triple') typeLabel = "HORA TRIPLE";
+  else if (data.type === 'custom') typeLabel = "HORA SINCRÓNICA";
+
+  if (typeBadge) typeBadge.textContent = typeLabel;
+  if (displayTime) displayTime.textContent = data.time;
+  if (displayTitle) displayTitle.textContent = data.title;
+  if (displayAngel) displayAngel.textContent = `Ángel Custodio: ${data.angelName} (${data.angelMeaning})`;
+  if (displaySpiritual) displaySpiritual.textContent = data.spiritualMessage;
+  if (angelDesc) angelDesc.textContent = `${data.angelName} es el regente de esta sincronía. ${data.angelMeaning}`;
+  if (numerologyDesc) numerologyDesc.textContent = data.numerology;
+  if (tarotName) tarotName.textContent = data.tarotCard;
+  if (tarotDesc) tarotDesc.textContent = data.tarotMeaning;
+  if (adviceDesc) adviceDesc.textContent = data.advice;
+  if (affirmationBox) affirmationBox.innerHTML = `"${data.affirmation}"`;
+
+  renderMirrorHoursCatalog(data.time);
+}
+
+function renderMirrorHoursCatalog(activeTime) {
+  const catalogGrid = document.getElementById('mirror-hours-catalog-grid');
+  if (!catalogGrid || typeof MIRROR_HOURS_DB === 'undefined') return;
+
+  catalogGrid.innerHTML = '';
+  const times = Object.keys(MIRROR_HOURS_DB);
+
+  times.forEach(t => {
+    const item = MIRROR_HOURS_DB[t];
+    let typeName = 'Espejo';
+    let isSpecial = false;
+    if (item.type === 'master') { typeName = 'Maestra'; isSpecial = true; }
+    else if (item.type === 'sequential') { typeName = 'Secuencia'; isSpecial = true; }
+    else if (item.type === 'inverted') { typeName = 'Invertida'; isSpecial = true; }
+    else if (item.type === 'triple') { typeName = 'Triple'; isSpecial = true; }
+
+    const pill = document.createElement('button');
+    pill.type = 'button';
+    pill.className = `catalog-mirror-pill${t === activeTime ? ' active' : ''}${isSpecial ? ' secondary' : ''}`;
+    pill.innerHTML = `
+      <span class="pill-time">${t}</span>
+      <span class="pill-type">${typeName}</span>
+    `;
+    pill.addEventListener('click', () => {
+      calculateMirrorHour(t);
+      const resultsMat = document.querySelector('.reading-table');
+      if (resultsMat && window.innerWidth <= 768) {
+        resultsMat.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+    catalogGrid.appendChild(pill);
+  });
+}
+
 function toggleNumerologyMode(mode) {
   const modeBtns = document.querySelectorAll('#numerology-tab-content .numerology-mode-toggle .mode-btn');
   const personalForm = document.getElementById('num-personal-form');
   const compatForm = document.getElementById('num-compat-form');
   const yearForm = document.getElementById('num-year-form');
+  const mirrorForm = document.getElementById('num-mirror-form');
   
   const personalResults = document.getElementById('num-personal-results');
   const compatResults = document.getElementById('num-compat-results');
   const yearResults = document.getElementById('num-year-results');
+  const mirrorResults = document.getElementById('num-mirror-results');
   const resultsPanel = document.getElementById('num-results-panel');
   const readingTitle = document.getElementById('num-reading-status-title');
   const readingDesc = document.getElementById('num-reading-status-desc');
@@ -4212,6 +4331,7 @@ function toggleNumerologyMode(mode) {
   personalForm.classList.add('hidden');
   compatForm.classList.add('hidden');
   yearForm.classList.add('hidden');
+  if (mirrorForm) mirrorForm.classList.add('hidden');
   
   if (mode === 'personal') {
     personalForm.classList.remove('hidden');
@@ -4219,12 +4339,17 @@ function toggleNumerologyMode(mode) {
     compatForm.classList.remove('hidden');
   } else if (mode === 'year') {
     yearForm.classList.remove('hidden');
+  } else if (mode === 'mirror') {
+    if (mirrorForm) mirrorForm.classList.remove('hidden');
+    calculateMirrorHour('11:11');
+    return;
   }
   
   if (resultsPanel) resultsPanel.classList.add('hidden');
   if (personalResults) personalResults.classList.add('hidden');
   if (compatResults) compatResults.classList.add('hidden');
   if (yearResults) yearResults.classList.add('hidden');
+  if (mirrorResults) mirrorResults.classList.add('hidden');
   
   if (readingTitle) readingTitle.textContent = "Descubre las vibraciones de tu destino...";
   if (readingDesc) readingDesc.textContent = "Introduce los datos en el panel lateral para iniciar el cálculo.";
@@ -4234,6 +4359,11 @@ function initNumerology() {
   const calculateBtn = document.getElementById('num-calculate-btn');
   const compatBtn = document.getElementById('num-compat-btn');
   const yearBtn = document.getElementById('num-year-btn');
+  const mirrorBtn = document.getElementById('num-mirror-btn');
+  const mirrorSelect = document.getElementById('num-mirror-select');
+  const mirrorNowBtn = document.getElementById('num-mirror-now-btn');
+  const mirrorChips = document.querySelectorAll('#num-mirror-form .mirror-chip');
+  const mirrorTimeInput = document.getElementById('num-mirror-time-input');
   const resetBtn = document.getElementById('num-reset-btn');
   const nameInput = document.getElementById('num-name-input');
   
@@ -4256,6 +4386,37 @@ function initNumerology() {
   if (yearBtn) {
     yearBtn.addEventListener('click', calculatePersonalYear);
   }
+
+  if (mirrorBtn) {
+    mirrorBtn.addEventListener('click', () => {
+      const val = mirrorTimeInput ? mirrorTimeInput.value : (mirrorSelect ? mirrorSelect.value : '11:11');
+      calculateMirrorHour(val);
+    });
+  }
+
+  if (mirrorSelect) {
+    mirrorSelect.addEventListener('change', () => {
+      calculateMirrorHour(mirrorSelect.value);
+    });
+  }
+
+  if (mirrorNowBtn) {
+    mirrorNowBtn.addEventListener('click', () => {
+      const now = new Date();
+      const hh = String(now.getHours()).padStart(2, '0');
+      const mm = String(now.getMinutes()).padStart(2, '0');
+      const currentTime = `${hh}:${mm}`;
+      if (mirrorTimeInput) mirrorTimeInput.value = currentTime;
+      calculateMirrorHour(currentTime);
+    });
+  }
+
+  mirrorChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const t = chip.getAttribute('data-time');
+      calculateMirrorHour(t);
+    });
+  });
   
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
@@ -4280,6 +4441,10 @@ function initNumerology() {
       const targetYearInput = document.getElementById('num-year-target-input');
       if (birthYearInput) birthYearInput.value = '';
       if (targetYearInput) targetYearInput.value = '2026';
+
+      // Clear mirror inputs
+      if (mirrorTimeInput) mirrorTimeInput.value = '11:11';
+      if (mirrorSelect) mirrorSelect.value = '11:11';
       
       const resultsPanel = document.getElementById('num-results-panel');
       if (resultsPanel) resultsPanel.classList.add('hidden');
