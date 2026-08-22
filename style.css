@@ -6095,21 +6095,57 @@ body.high-contrast .lunar-cal-day.selected-day {
 
 @media (max-width: 768px) {
   .dream-categories-list {
+    display: flex !important;
     flex-direction: row !important;
     overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
     white-space: nowrap !important;
-    padding-bottom: 0.5rem !important;
-    margin-bottom: 1rem !important;
+    gap: 0.5rem !important;
+    padding: 4px 4px 10px 4px !important;
+    margin-bottom: 0.75rem !important;
     width: 100% !important;
-    scrollbar-width: thin;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  .dream-categories-list::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
   
   .dream-cat-btn {
     width: auto !important;
     display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     flex-shrink: 0 !important;
-    padding: 0.6rem 0.9rem !important;
-    font-size: 0.85rem !important;
+    padding: 0.55rem 0.95rem !important;
+    font-size: 0.84rem !important;
+    border-radius: 20px !important;
+    background: rgba(18, 14, 36, 0.75) !important;
+    border: 1px solid rgba(229, 193, 88, 0.25) !important;
+    color: var(--text-muted) !important;
+    white-space: nowrap !important;
+    touch-action: pan-x !important;
+    transition: all 0.25s ease !important;
+  }
+
+  .dream-cat-btn:hover {
+    border-color: var(--gold-color) !important;
+    color: var(--text-main) !important;
+  }
+
+  .dream-cat-btn.active {
+    background: rgba(229, 193, 88, 0.18) !important;
+    border-color: var(--gold-color) !important;
+    color: var(--gold-color) !important;
+    font-weight: 600 !important;
+    box-shadow: 0 0 12px rgba(229, 193, 88, 0.3) !important;
+  }
+
+  .dream-cat-btn .cat-icon {
+    font-size: 1rem !important;
   }
 }
 
@@ -7255,6 +7291,173 @@ body.light-mode .catalog-mirror-pill {
 
 body.light-mode .catalog-mirror-pill .pill-time {
   color: var(--gold-color);
+}
+
+/* ==========================================================================
+   MINERALS DICTIONARY & DETAIL MODAL / TEMPLATE SYSTEM
+   ========================================================================== */
+
+/* Mineral Iframe Modal Container */
+.mineral-iframe-modal-content,
+#mineral-iframe-modal .modal-content {
+  max-width: 860px !important;
+  width: 95% !important;
+  height: 90vh !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  border: 1.5px solid rgba(229, 193, 88, 0.35) !important;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(229, 193, 88, 0.15) !important;
+  border-radius: 20px !important;
+  background: rgba(12, 10, 24, 0.96) !important;
+  position: relative !important;
+}
+
+/* Close Button for Mineral Modal */
+.mineral-iframe-close-btn,
+#close-mineral-iframe-btn {
+  position: absolute !important;
+  top: 12px !important;
+  right: 14px !important;
+  z-index: 200 !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background: rgba(13, 11, 26, 0.88) !important;
+  border: 1.5px solid var(--gold-color) !important;
+  color: var(--gold-color) !important;
+  font-size: 1.5rem !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7), 0 0 10px rgba(229, 193, 88, 0.3) !important;
+  backdrop-filter: blur(8px) !important;
+  transition: all 0.25s ease !important;
+  padding: 0 !important;
+}
+
+.mineral-iframe-close-btn:hover,
+#close-mineral-iframe-btn:hover {
+  transform: scale(1.1) rotate(90deg) !important;
+  background: rgba(229, 193, 88, 0.25) !important;
+  box-shadow: 0 0 18px rgba(229, 193, 88, 0.6) !important;
+}
+
+/* Styles when Mineral Page is loaded inside Iframe */
+html.in-iframe {
+  overflow-x: hidden !important;
+}
+
+html.in-iframe body {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow-x: hidden !important;
+}
+
+html.in-iframe .app-container {
+  padding: 0.5rem 0.5rem 2rem 0.5rem !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  min-height: auto !important;
+}
+
+html.in-iframe .app-header,
+html.in-iframe .app-nav,
+html.in-iframe .app-footer,
+html.in-iframe #back-to-dictionary-container,
+html.in-iframe #astral-settings-btn,
+html.in-iframe .stars-container {
+  display: none !important;
+}
+
+/* Hide ads and dashed ad containers inside iframe modal */
+html.in-iframe ins.adsbygoogle,
+html.in-iframe div[style*="dashed"],
+html.in-iframe div[style*="border: 1px dashed"],
+html.in-iframe div[style*="border:1px dashed"] {
+  display: none !important;
+}
+
+/* Responsive Mineral Detail Layout (Mobile & Tablet) */
+@media (max-width: 768px) {
+  /* Main Mineral Container */
+  main > .glass-card,
+  html.in-iframe main > .glass-card {
+    padding: 1.25rem 1rem !important;
+    border-radius: 16px !important;
+  }
+
+  /* Mineral Header in Ficha */
+  .lunar-modal-header-layout {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .lunar-modal-image-container {
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 auto !important;
+    border-radius: 16px !important;
+  }
+
+  .lunar-modal-title-container {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .lunar-modal-title-container h2 {
+    font-size: 1.65rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0.35rem !important;
+    text-align: center !important;
+  }
+
+  .lunar-modal-title-container p {
+    text-align: center !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Property cards inside mineral detail */
+  main .glass-card > div[style*="border: 1px solid"],
+  main .glass-card > div[style*="border:1px solid"] {
+    padding: 1rem 0.9rem !important;
+    margin-bottom: 1rem !important;
+    border-radius: 12px !important;
+  }
+
+  /* Fix Headings: prevent awkward line breaks on mobile */
+  main .glass-card h4.gold,
+  main .glass-card h4 {
+    font-size: 1.05rem !important;
+    line-height: 1.4 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    flex-wrap: wrap !important;
+    word-break: normal !important;
+    letter-spacing: 0.02em !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  main .glass-card h4 span:first-child {
+    font-size: 1.2rem !important;
+    flex-shrink: 0 !important;
+    line-height: 1 !important;
+  }
+
+  /* Text inside property cards */
+  main .glass-card p {
+    font-size: 0.92rem !important;
+    line-height: 1.65 !important;
+    text-align: left !important;
+  }
 }
 
 

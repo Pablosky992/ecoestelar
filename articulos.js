@@ -270,7 +270,7 @@ const ARTICULOS_DB = [
       <p>El Tarot de Marsella no necesita disfraces ni dibujos complejos para hablarte. Su belleza reside en su pureza geométrica y abstracta. Cuando dejas de ver los Arcanos Menores como simples dibujos repetitivos y empiezas a verlos como un mapa numérico vivo, la lectura fluye de forma natural y directa desde tu subconsciente.</p>
 
       <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--purple-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
-        <strong>Ponlo en práctica:</strong> ¿Quieres ver cómo interactúan los números y los elementos en una respuesta real? Despeja tu mente de dudas, formula tu pregunta en nuestro <a href="index.html" style="color: var(--purple-color); text-decoration: underline;">Oráculo Interactivo</a> y observa con nuevos ojos el patrón de las cartas que el destino elija para ti hoy.
+        <strong>Ponlo en práctica:</strong> ¿Quieres ver cómo interactúan los números y los elementos en una respuesta real? Despeja tu mente de dudas, formula tu pregunta en nuestro <a href="oraculo.html" style="color: var(--purple-color); text-decoration: underline;">Oráculo Interactivo</a> y observa con nuevos ojos el patrón de las cartas que el destino elija para ti hoy.
       </div>
 
       <h3 style="border-left-color: var(--purple-color);">Lecturas Recomendadas</h3>
@@ -458,7 +458,7 @@ const ARTICULOS_DB = [
       <p>El Trabajo de Sombra puede resultar incómodo y desafiante al inicio. Requiere una honestidad brutal con uno mismo. Sin embargo, es el único camino real hacia la libertad interna. Cuando dejas de temer a tus monstruos del subconsciente y te sientas a dialogar con ellos a través de los símbolos del Tarot, descubres que la Sombra no es tu enemiga, sino una mina de oro llena de vitalidad, talento reprimido y sabiduría evolutiva esperando ser rescatada.</p>
 
       <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--gold-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
-        <strong>🔮 Ponlo en práctica ahora mismo:</strong> Concentra tu mente en tu mayor bloqueo emocional actual, formula tu pregunta con sinceridad y realiza tu tirada en nuestro <a href="index.html" style="color: var(--gold-color); text-decoration: underline;">Oráculo de Tarot Online</a>. Observa las cartas con la mirada del Shadow Work y permite que el cosmos te muestre la verdad oculta.
+        <strong>🔮 Ponlo en práctica ahora mismo:</strong> Concentra tu mente en tu mayor bloqueo emocional actual, formula tu pregunta con sinceridad y realiza tu tirada en nuestro <a href="oraculo.html" style="color: var(--gold-color); text-decoration: underline;">Oráculo de Tarot Online</a>. Observa las cartas con la mirada del Shadow Work y permite que el cosmos te muestre la verdad oculta.
       </div>
     `
   },
@@ -838,7 +838,7 @@ const ARTICULOS_DB = [
       </div>
 
       <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--purple-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
-        <strong>🔮 Pon a prueba la tirada en directo:</strong> Tómate un instante para concentrarte, respira profundo y realiza tu consulta en <a href="index.html" style="color: var(--purple-color); text-decoration: underline;">El Oráculo del Destino</a> para recibir tu interpretación completa.
+        <strong>🔮 Pon a prueba la tirada en directo:</strong> Tómate un instante para concentrarte, respira profundo y realiza tu consulta en <a href="oraculo.html" style="color: var(--purple-color); text-decoration: underline;">El Oráculo del Destino</a> para recibir tu interpretación completa.
       </div>
 
       <h3>4. Guía Práctica de Alquimia Espiritual: Qué Hacer y Qué Evitar</h3>
