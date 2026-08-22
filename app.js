@@ -2122,8 +2122,27 @@ function initConstellations() {
     }
   });
 
+  let isScrolling = false;
+  let scrollTimeout = null;
+  if (isMobile) {
+    window.addEventListener('scroll', () => {
+      isScrolling = true;
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isScrolling = false;
+      }, 100);
+    }, { passive: true });
+  }
+
   function animate() {
     if (!isAnimating) return;
+
+    // Skip heavy redraw during active mobile scroll to ensure 60/120fps native touch scrolling
+    if (isMobile && isScrolling) {
+      requestAnimationFrame(animate);
+      return;
+    }
+
     ctx.clearRect(0, 0, width, height);
 
     particles.forEach(p => {
@@ -2144,7 +2163,7 @@ function initConstellations() {
       }
     }
 
-    const maxDist = isMobile ? 65 : 95;
+    const maxDist = isMobile ? 50 : 95;
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const p1 = particles[i];

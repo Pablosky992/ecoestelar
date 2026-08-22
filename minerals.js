@@ -213,7 +213,7 @@ const initMinerals = () => {
 
       card.innerHTML = `
         <div style="margin-top: -1.5rem; margin-left: -1.5rem; margin-right: -1.5rem; width: calc(100% + 3rem); height: 130px; overflow: hidden; border-radius: 15px 15px 0 0; border-bottom: 1px solid var(--border-color); margin-bottom: 1rem;">
-          <img src="${m.image}" alt="${m.name}" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85);" loading="lazy">
+          <img src="${m.image}" alt="${m.name}" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85);" loading="lazy" decoding="async" width="280" height="130">
         </div>
         <div class="dream-card-header">
           <span class="dream-card-cat">${m.category}</span>
