@@ -36,7 +36,7 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: 'Método no permitido. Utiliza POST.' });
   }
 
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY || process.env.GENINI_API_KEY;
   if (!apiKey) {
     console.warn('GEMINI_API_KEY no está configurada en las variables de entorno de Vercel.');
     return res.status(200).json({
@@ -124,10 +124,13 @@ Por favor, genera la lectura onírica completa y elaborada siguiendo la estructu
 
     for (const model of modelsToTry) {
       try {
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
         const response = await fetch(url, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'application/json',
+            'x-goog-api-key': apiKey
+          },
           body: JSON.stringify({
             contents: [
               {
