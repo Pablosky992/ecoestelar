@@ -117,57 +117,126 @@ ${symbolsContext ? `SÍMBOLOS OFICIALES IDENTIFICADOS EN ECO ESTELAR:\n${symbols
 
 Por favor, genera la lectura onírica completa y elaborada siguiendo la estructura HTML indicada.`;
 
-    // Intentar primero con gemini-2.0-flash, con fallback a gemini-1.5-flash
-    const modelsToTry = ['gemini-2.0-flash', 'gemini-1.5-flash'];
     let rawResultText = '';
     let lastError = null;
 
-    for (const model of modelsToTry) {
+    // Si la clave es de Groq (gsk_...)
+    if (apiKey.startsWith('gsk_')) {
       try {
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
-        const response = await fetch(url, {
+        const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
           method: 'POST',
-          headers: { 
+          headers: {
             'Content-Type': 'application/json',
-            'x-goog-api-key': apiKey
+            'Authorization': `Bearer ${apiKey}`
           },
           body: JSON.stringify({
-            contents: [
-              {
-                role: 'user',
-                parts: [{ text: `${systemPrompt}\n\n${userMessage}` }]
-              }
+            model: 'llama-3.3-70b-versatile',
+            messages: [
+              { role: 'system', content: systemPrompt },
+              { role: 'user', content: userMessage }
             ],
-            generationConfig: {
-              temperature: 0.7,
-              maxOutputTokens: 2048
-            }
+            temperature: 0.7,
+            max_tokens: 2048
           })
         });
 
         if (!response.ok) {
           const errData = await response.text();
-          throw new Error(`Gemini API HTTP ${response.status}: ${errData}`);
+          throw new Error(`Groq API HTTP ${response.status}: ${errData}`);
         }
 
         const data = await response.json();
-        const candidateText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (candidateText && candidateText.trim().length > 0) {
-          rawResultText = candidateText;
-          break;
-        }
+        rawResultText = data?.choices?.[0]?.message?.content;
       } catch (err) {
         lastError = err;
-        console.warn(`Fallo con el modelo ${model}:`, err.message);
+        console.warn('Fallo con Groq API:', err.message);
+      }
+    } 
+    // Si la clave es de OpenAI / OpenRouter (sk-...)
+    else if (apiKey.startsWith('sk-')) {
+      try {
+        const isOpenRouter = apiKey.startsWith('sk-or-');
+        const url = isOpenRouter ? 'https://openrouter.ai/api/v1/chat/completions' : 'https://api.openai.com/v1/chat/completions';
+        const model = isOpenRouter ? 'google/gemini-2.0-flash-001' : 'gpt-4o-mini';
+
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+          },
+          body: JSON.stringify({
+            model: model,
+            messages: [
+              { role: 'system', content: systemPrompt },
+              { role: 'user', content: userMessage }
+            ],
+            temperature: 0.7,
+            max_tokens: 2048
+          })
+        });
+
+        if (!response.ok) {
+          const errData = await response.text();
+          throw new Error(`OpenAI/OpenRouter HTTP ${response.status}: ${errData}`);
+        }
+
+        const data = await response.json();
+        rawResultText = data?.choices?.[0]?.message?.content;
+      } catch (err) {
+        lastError = err;
+        console.warn('Fallo con OpenAI/OpenRouter API:', err.message);
+      }
+    }
+    // Google Gemini API por defecto (gemini-3.6-flash, gemini-2.5-flash)
+    else {
+      const modelsToTry = ['gemini-3.6-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-exp', 'gemini-1.5-flash-latest'];
+      for (const model of modelsToTry) {
+        try {
+          const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: { 
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              contents: [
+                {
+                  role: 'user',
+                  parts: [{ text: `${systemPrompt}\n\n${userMessage}` }]
+                }
+              ],
+              generationConfig: {
+                temperature: 0.7,
+                maxOutputTokens: 2048
+              }
+            })
+          });
+
+          if (!response.ok) {
+            const errData = await response.text();
+            throw new Error(`Gemini API HTTP ${response.status}: ${errData}`);
+          }
+
+          const data = await response.json();
+          const candidateText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (candidateText && candidateText.trim().length > 0) {
+            rawResultText = candidateText;
+            break;
+          }
+        } catch (err) {
+          lastError = err;
+          console.warn(`Fallo con el modelo ${model}:`, err.message);
+        }
       }
     }
 
     if (!rawResultText) {
-      console.error('No se pudo obtener respuesta de la API de Gemini:', lastError);
+      console.error('No se pudo obtener respuesta de la API de IA:', lastError);
       return res.status(200).json({
         success: false,
         fallback: true,
-        error: lastError ? lastError.message : 'No candidate returned'
+        error: lastError ? lastError.message : 'No response returned from AI model'
       });
     }
 

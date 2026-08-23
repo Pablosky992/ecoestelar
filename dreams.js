@@ -463,10 +463,10 @@ const initDreams = () => {
         console.warn('🌌 [Eco Estelar] Error HTTP en /api/interpret-dream:', response.status);
       }
     } catch (apiErr) {
-      console.warn('🌌 [Eco Estelar] Oráculo Serverless no disponible o error de red:', apiErr.message);
+      console.warn('🌌 [Eco Estelar] Oráculo Serverless no disponible:', apiErr.message);
     }
 
-    // 3. Fallback: Si la API no está configurada o falla, activar motor local estructurado
+    // 3. Fallback local: Si la IA no responde, activar motor local estructurado
     renderLocalAnalysisResults(rawText);
   }
 
