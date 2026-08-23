@@ -506,6 +506,33 @@ const initDreams = () => {
     const symbolNames = detectedDreams.map(d => `<strong>${d.name}</strong>`);
     let analysisHtml = '';
 
+    // Detección de emociones y figuras en el relato para personalizar la síntesis
+    const normLower = rawText.toLowerCase();
+    let detectedEmotionDesc = '';
+    let detectedFigureDesc = '';
+
+    if (normLower.includes('ansios') || normLower.includes('ansiedad')) {
+      detectedEmotionDesc = 'ansiedad e inquietud';
+    } else if (normLower.includes('nervios')) {
+      detectedEmotionDesc = 'tensión y nerviosismo';
+    } else if (normLower.includes('miedo') || normLower.includes('asustad') || normLower.includes('temor')) {
+      detectedEmotionDesc = 'temor e incertidumbre';
+    } else if (normLower.includes('angust') || normLower.includes('agobi')) {
+      detectedEmotionDesc = 'agobio y sobrecarga emocional';
+    } else if (normLower.includes('triste') || normLower.includes('llor') || normLower.includes('pena')) {
+      detectedEmotionDesc = 'nostalgia y vulnerabilidad';
+    } else if (normLower.includes('feliz') || normLower.includes('paz') || normLower.includes('tranquil')) {
+      detectedEmotionDesc = 'armonía y serenidad';
+    }
+
+    if (normLower.includes('marido') || normLower.includes('esposo') || normLower.includes('pareja') || normLower.includes('novi')) {
+      detectedFigureDesc = 'la dinámica de vida y decisiones compartidas con tu pareja';
+    } else if (normLower.includes('madre') || normLower.includes('padre') || normLower.includes('hijo') || normLower.includes('hija') || normLower.includes('familia')) {
+      detectedFigureDesc = 'tus lazos afectivos y raíces familiares';
+    } else if (normLower.includes('amig')) {
+      detectedFigureDesc = 'tu círculo de confianza y apoyo cercano';
+    }
+
     // 1. Síntesis Holística e Introducción Narrativa
     if (total === 1) {
       analysisHtml += `
@@ -513,9 +540,14 @@ const initDreams = () => {
           <p style="font-size: 1.05rem; color: var(--gold-light); margin-bottom: 0.5rem; font-family: var(--font-serif);">
             ✦ <strong>Mensaje Primordial de tu Visión</strong> ✦
           </p>
-          <p style="margin: 0; font-size: 0.95rem; color: var(--text-main);">
+          <p style="margin: 0; font-size: 0.95rem; color: var(--text-main); line-height: 1.65;">
             Tu inconsciente ha proyectado con gran nitidez el arquetipo de ${symbolNames[0]}. Esta visión refleja un proceso interior decisivo en tu vida consciente, invitándote a integrar el significado de este símbolo como un espejo de tus emociones profundas y tu evolución personal.
           </p>
+          ${detectedEmotionDesc ? `
+            <p style="margin: 0.75rem 0 0 0; font-size: 0.94rem; color: var(--text-main); line-height: 1.65;">
+              La presencia de <strong>${detectedEmotionDesc}</strong> durante el sueño revela que tu mente está procesando dudas o exigencias en relación con <strong>${detectedFigureDesc || 'tu situación actual'}</strong>, invitándote a soltar la necesidad de control y buscar acuerdos desde la calma.
+            </p>
+          ` : ''}
         </div>
       `;
     } else {
@@ -534,9 +566,14 @@ const initDreams = () => {
           <p style="font-size: 1.05rem; color: var(--gold-light); margin-bottom: 0.5rem; font-family: var(--font-serif);">
             ✦ <strong>Síntesis del Inconsciente: ${detectedDreams.length} Fuerzas en Conexión</strong> ✦
           </p>
-          <p style="margin: 0; font-size: 0.95rem; color: var(--text-main);">
-            Tu relato entreteje la energía de ${symbolNames.slice(0, -1).join(', ')} y ${symbolNames[symbolNames.length - 1]}. La interacción entre estos símbolos revela un mensaje dirigido a <strong>${thematicFocus}</strong>. En lugar de elementos aislados, tu mente está combinando el escenario, la acción y los arquetipos para guiar tu despertar consciente.
+          <p style="margin: 0; font-size: 0.95rem; color: var(--text-main); line-height: 1.65;">
+            Tu relato entreteje la energía de ${symbolNames.slice(0, -1).join(', ')} y ${symbolNames[symbolNames.length - 1]}. La interacción entre estos símbolos revela un mensaje dirigido a <strong>${thematicFocus}</strong>${detectedFigureDesc ? `, vinculado especialmente a ${detectedFigureDesc}` : ''}.
           </p>
+          ${detectedEmotionDesc ? `
+            <p style="margin: 0.75rem 0 0 0; font-size: 0.94rem; color: var(--text-main); line-height: 1.65;">
+              El influjo de <strong>${detectedEmotionDesc}</strong> manifestado en la visión señala que tu energía anhela mayor claridad y ligereza frente a las decisiones cotidianas.
+            </p>
+          ` : ''}
         </div>
       `;
     }
@@ -555,7 +592,7 @@ const initDreams = () => {
               ${dream.category}
             </span>
           </div>
-          <p style="font-size: 0.93rem; line-height: 1.6; color: rgba(243, 244, 246, 0.9); margin: 0;">
+          <p style="font-size: 0.93rem; line-height: 1.65; color: rgba(243, 244, 246, 0.92); margin: 0;">
             ${dream.meaning}
           </p>
         </div>
@@ -563,14 +600,19 @@ const initDreams = () => {
     });
     analysisHtml += `</div>`;
 
-    // 3. Consejo Astral y Alquimia Onírica
+    // 3. Consejo Astral y Alquimia Onírica Personalizada
+    let adviceText = 'Medita sobre la interacción de estos arquetipos en tu vida consciente. Las estrellas te recuerdan que los sueños son el espejo de tu vibración interna: permite que estos mensajes guíen tus pasos hacia una mayor serenidad y claridad.';
+    if (detectedEmotionDesc) {
+      adviceText = `Frente a la sensación de <strong>${detectedEmotionDesc}</strong> que sentiste en la visión, el oráculo te aconseja pausar y no cargar con presiones innecesarias. Comunica tus necesidades con apertura ${detectedFigureDesc ? 'a tu pareja' : 'a tu entorno'} y confía en tu criterio para elegir aquello que te brinde paz genuina.`;
+    }
+
     analysisHtml += `
       <div class="dream-alquimia-box">
         <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.5rem 0; font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem;">
           <span>🔮</span> Consejo de Integración y Alquimia Onírica
         </h4>
-        <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-main); margin: 0;">
-          Recuerda que cada elemento del sueño es un aspecto de ti mismo/a. Pregúntate qué emoción predominaba durante la visión y cómo resuena con tus decisiones actuales de vigilia. Al integrar la sabiduría de estos arquetipos, transformas la incertidumbre nocturna en claridad y dirección para tu camino.
+        <p style="font-size: 0.93rem; line-height: 1.65; color: var(--text-main); margin: 0;">
+          ${adviceText}
         </p>
       </div>
     `;
