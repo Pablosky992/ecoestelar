@@ -29504,23 +29504,35 @@ const dreamDb = [
   },
   {
     "id": 2383,
-    "name": "Matrimonio",
-    "category": "Figuras y Personas",
+    "name": "Matrimonio o Boda",
+    "category": "Acciones",
     "keywords": [
       "matrimonio",
-      "marido",
-      "maridos",
-      "pareja",
-      "parejas",
-      "esposo",
-      "esposa",
-      "cónyuge",
       "boda",
       "casamiento",
       "casarse",
-      "nupcias"
+      "nupcias",
+      "alianza boda"
     ],
-    "meaning": "El matrimonio onírico simboliza la alianza mística y la unión alquímica de los opuestos sagrados del ser (la conjunción de tu energía activa y masculina con tu lado intuitivo y receptivo). Sin embargo, en el folclore popular tradicional, soñar con un matrimonio o boda (especialmente si es propia o vistes de blanco) se interpreta de forma inversa: como un presagio de tristeza profunda, disputas familiares o incluso el anuncio de enfermedad o luto cercano en el entorno."
+    "meaning": "Soñar con una boda o ceremonia de matrimonio simboliza la alianza sagrada y la unión de opuestos en tu interior (la conjunción de la razón con la intuición). En el folclore popular tradicional, presenciar o vestirse para una boda advierte sobre compromisos forzados o tensiones que requieren sinceridad con uno mismo."
+  },
+  {
+    "id": 3548,
+    "name": "Pareja (o Marido / Esposa)",
+    "category": "Figuras y Personas",
+    "keywords": [
+      "pareja",
+      "marido",
+      "maridos",
+      "esposo",
+      "esposos",
+      "esposa",
+      "esposas",
+      "cónyuge",
+      "novio",
+      "novia"
+    ],
+    "meaning": "Soñar con tu pareja o marido simboliza el estado íntimo de tu vínculo afectivo, la convivencia cotidiana y el diálogo entre tus deseos individuales y los proyectos compartidos. Si en el sueño sientes tensión, ansiedad o nerviosismo al realizar actividades juntos (como comprar, viajar o hablar), refleja el miedo a desacuerdos materiales, la necesidad de equilibrar responsabilidades o temores no verbalizados en la vigilia."
   },
   {
     "name": "Matrimonio sagrado",

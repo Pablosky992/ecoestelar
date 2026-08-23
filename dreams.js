@@ -253,15 +253,15 @@ const initDreams = () => {
 
   // Diccionario de sinónimos para emparejar figuras y arquetipos comunes
   const synonymMap = {
-    'marido': 'matrimonio',
-    'maridos': 'matrimonio',
-    'esposo': 'matrimonio',
-    'esposos': 'matrimonio',
-    'esposa': 'matrimonio',
-    'esposas': 'matrimonio',
-    'pareja': 'matrimonio',
-    'parejas': 'matrimonio',
-    'conyuge': 'matrimonio',
+    'marido': 'pareja (o marido / esposa)',
+    'maridos': 'pareja (o marido / esposa)',
+    'esposo': 'pareja (o marido / esposa)',
+    'esposos': 'pareja (o marido / esposa)',
+    'esposa': 'pareja (o marido / esposa)',
+    'esposas': 'pareja (o marido / esposa)',
+    'pareja': 'pareja (o marido / esposa)',
+    'parejas': 'pareja (o marido / esposa)',
+    'conyuge': 'pareja (o marido / esposa)',
     'mama': 'madre',
     'papa': 'padre',
     'hijos': 'hijo',
@@ -443,6 +443,7 @@ const initDreams = () => {
         }))
       };
 
+      console.log('🌌 [Eco Estelar] Consultando Oráculo con Gemini AI...');
       const response = await fetch('/api/interpret-dream', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -451,13 +452,18 @@ const initDreams = () => {
 
       if (response.ok) {
         const data = await response.json();
+        console.log('🌌 [Eco Estelar] Respuesta del Oráculo:', data);
         if (data && data.success && data.analysisHtml) {
           renderAiAnalysisResults(data.analysisHtml);
           return;
+        } else if (data && data.fallback) {
+          console.warn('🌌 [Eco Estelar] Oráculo en modo fallback:', data.reason || data.error);
         }
+      } else {
+        console.warn('🌌 [Eco Estelar] Error HTTP en /api/interpret-dream:', response.status);
       }
     } catch (apiErr) {
-      console.warn('Oráculo Serverless no disponible o en entorno local. Activando motor de respaldo:', apiErr.message);
+      console.warn('🌌 [Eco Estelar] Oráculo Serverless no disponible o error de red:', apiErr.message);
     }
 
     // 3. Fallback: Si la API no está configurada o falla, activar motor local estructurado

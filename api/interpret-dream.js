@@ -6,16 +6,15 @@
 module.exports = async (req, res) => {
   // Lista de orígenes permitidos
   const origin = req.headers.origin || req.headers.referer || '';
-  const allowedOrigins = [
-    'https://www.ecoestelar.com',
-    'https://ecoestelar.com',
-    'http://localhost',
-    'http://127.0.0.1'
+  const allowedPatterns = [
+    'ecoestelar.com',
+    'www.ecoestelar.com',
+    'localhost',
+    '127.0.0.1',
+    '.vercel.app'
   ];
 
-  const isAllowed = allowedOrigins.some(domain => origin.startsWith(domain)) ||
-                    origin.includes('.vercel.app') ||
-                    !origin; // Permite peticiones directas del mismo servidor
+  const isAllowed = !origin || allowedPatterns.some(pattern => origin.includes(pattern));
 
   // Configurar cabeceras CORS
   res.setHeader('Access-Control-Allow-Credentials', 'true');
