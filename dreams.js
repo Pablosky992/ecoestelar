@@ -251,6 +251,25 @@ const initDreams = () => {
     return regex.test(normalizedText);
   }
 
+  // Diccionario de sinónimos para emparejar figuras y arquetipos comunes
+  const synonymMap = {
+    'marido': 'matrimonio',
+    'maridos': 'matrimonio',
+    'esposo': 'matrimonio',
+    'esposos': 'matrimonio',
+    'esposa': 'matrimonio',
+    'esposas': 'matrimonio',
+    'pareja': 'matrimonio',
+    'parejas': 'matrimonio',
+    'conyuge': 'matrimonio',
+    'mama': 'madre',
+    'papa': 'padre',
+    'hijos': 'hijo',
+    'hijas': 'hija',
+    'abuela': 'anciana',
+    'abuelo': 'anciano'
+  };
+
   // Generador de variantes léxicas (plurales y conjugaciones verbales comunes)
   function getWordVariants(word) {
     const norm = normalizeText(word);
@@ -282,6 +301,12 @@ const initDreams = () => {
       ['llorar', 'lloraba', 'llorando', 'llore', 'lloraban'].forEach(v => variants.add(v));
     } else if (norm === 'morir' || norm === 'muerte') {
       ['morir', 'moria', 'muerto', 'muerta', 'morirse', 'fallecer'].forEach(v => variants.add(v));
+    } else if (norm === 'comprar') {
+      ['comprar', 'comprando', 'comprabamos', 'compre', 'compras', 'compraba'].forEach(v => variants.add(v));
+    } else if (norm === 'vender') {
+      ['vender', 'vendiendo', 'vendiamos', 'vendi'].forEach(v => variants.add(v));
+    } else if (norm === 'buscar') {
+      ['buscar', 'buscando', 'buscaba', 'buscabamos', 'busque'].forEach(v => variants.add(v));
     }
 
     return Array.from(variants);
@@ -300,8 +325,26 @@ const initDreams = () => {
     }
 
     const normalizedText = normalizeText(rawText);
+    const wordsInText = normalizedText.split(' ');
     const claimedWords = new Set();
     const directMatches = [];
+
+    // Paso 0: Mapeo de sinónimos esenciales (ej. marido -> Matrimonio/Pareja)
+    wordsInText.forEach(w => {
+      if (synonymMap[w]) {
+        const targetName = synonymMap[w];
+        const found = window.dreamDb.find(d => normalizeText(d.name) === targetName);
+        if (found && !directMatches.some(m => m.dream.id === found.id)) {
+          directMatches.push({
+            dream: found,
+            matchedWord: w,
+            priority: 150,
+            matchType: 'synonym'
+          });
+          claimedWords.add(w);
+        }
+      }
+    });
 
     // Paso 1: Coincidencias directas por Nombre del Símbolo (Máxima prioridad)
     window.dreamDb.forEach(dream => {
@@ -314,12 +357,14 @@ const initDreams = () => {
         
         for (const variant of variants) {
           if (matchesExactWord(normalizedText, variant)) {
-            directMatches.push({
-              dream,
-              matchedWord: variant,
-              priority: 100 + variant.length,
-              matchType: 'direct'
-            });
+            if (!directMatches.some(m => m.dream.id === dream.id)) {
+              directMatches.push({
+                dream,
+                matchedWord: variant,
+                priority: 100 + variant.length,
+                matchType: 'direct'
+              });
+            }
             claimedWords.add(variant);
             break;
           }

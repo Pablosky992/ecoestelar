@@ -29508,11 +29508,16 @@ const dreamDb = [
     "category": "Figuras y Personas",
     "keywords": [
       "matrimonio",
+      "marido",
+      "maridos",
+      "pareja",
+      "parejas",
+      "esposo",
+      "esposa",
+      "cónyuge",
       "boda",
       "casamiento",
       "casarse",
-      "esposo",
-      "esposa",
       "nupcias"
     ],
     "meaning": "El matrimonio onírico simboliza la alianza mística y la unión alquímica de los opuestos sagrados del ser (la conjunción de tu energía activa y masculina con tu lado intuitivo y receptivo). Sin embargo, en el folclore popular tradicional, soñar con un matrimonio o boda (especialmente si es propia o vistes de blanco) se interpreta de forma inversa: como un presagio de tristeza profunda, disputas familiares o incluso el anuncio de enfermedad o luto cercano en el entorno."
