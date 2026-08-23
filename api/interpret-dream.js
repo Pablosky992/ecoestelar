@@ -46,12 +46,39 @@ module.exports = async (req, res) => {
     });
   }
 
+  // 1. Limitador de peticiones por IP (Anti-Spam / Anti-DDoS: Máximo 10 peticiones por minuto por IP)
+  const ipLimits = global.dreamRateLimits || new Map();
+  global.dreamRateLimits = ipLimits;
+
+  const clientIp = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown').split(',')[0].trim();
+  const now = Date.now();
+  const userRecord = ipLimits.get(clientIp) || { count: 0, resetTime: now + 60000 };
+
+  if (now > userRecord.resetTime) {
+    userRecord.count = 0;
+    userRecord.resetTime = now + 60000;
+  }
+
+  if (userRecord.count >= 10) {
+    console.warn(`Límite de peticiones excedido para la IP: ${clientIp}`);
+    return res.status(429).json({ error: 'Has alcanzado el límite de interpretaciones por minuto. Por favor, aguarda un momento.' });
+  }
+
+  userRecord.count++;
+  ipLimits.set(clientIp, userRecord);
+
   try {
     const { dreamText, detectedSymbols } = req.body || {};
 
     if (!dreamText || typeof dreamText !== 'string' || dreamText.trim().length < 10) {
       return res.status(400).json({ error: 'El relato del sueño es demasiado corto o inválido.' });
     }
+
+    if (dreamText.length > 1500) {
+      return res.status(400).json({ error: 'El relato no puede exceder los 1500 caracteres.' });
+    }
+
+    const cleanDreamText = dreamText.trim().substring(0, 1500);
 
     // Preparar el contexto de la base de datos de Eco Estelar
     let symbolsContext = '';
