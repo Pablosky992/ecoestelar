@@ -233,18 +233,62 @@ const initDreams = () => {
     }
   }
 
-  // Comprobar coincidencia exacta de palabra clave con límites (evita falsos positivos como "sol" en "soldado")
-  function matchesKeyword(normalizedText, cleanKeyword) {
-    // Escapar caracteres regex si los hay
-    const escaped = cleanKeyword.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-    // Coincidencia con límites de caracteres no alfanuméricos a-z0-9ñ
+  // Stop words y palabras hipergenéricas que nunca deben disparar símbolos secundarios
+  const genericWords = new Set([
+    'agua', 'fuego', 'aire', 'tierra', 'casa', 'mar', 'sol', 'luna', 'persona', 'hombre', 
+    'mujer', 'amigo', 'familia', 'camino', 'viaje', 'muerte', 'vida', 'cielo', 'noche', 
+    'dia', 'luz', 'sueño', 'soñar', 'ver', 'mirar', 'estar', 'ser', 'ir', 'caminar',
+    'correr', 'sentir', 'hablar', 'comer', 'beber', 'caer', 'volar', 'morir', 'nacer',
+    'ojo', 'mano', 'pie', 'cabeza', 'cuerpo', 'puerta', 'ventana', 'habitacion', 'mesa',
+    'dinero', 'oro', 'plata', 'blanco', 'negro', 'rojo', 'azul', 'verde', 'pequeño', 'grande'
+  ]);
+
+  // Comprobar coincidencia exacta de palabra con límites léxicos
+  function matchesExactWord(normalizedText, word) {
+    if (!word || word.length < 2) return false;
+    const escaped = word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
     const regex = new RegExp('(?:^|[^a-z0-9ñ])' + escaped + '(?:$|[^a-z0-9ñ])', 'i');
     return regex.test(normalizedText);
   }
 
+  // Generador de variantes léxicas (plurales y conjugaciones verbales comunes)
+  function getWordVariants(word) {
+    const norm = normalizeText(word);
+    const variants = new Set([norm]);
 
-  // Analizar sueño escrito
-  function analyzeWrittenDream() {
+    // Plurales comunes
+    if (norm.endsWith('es') && norm.length > 4) {
+      variants.add(norm.slice(0, -2));
+    } else if (norm.endsWith('s') && norm.length > 3) {
+      variants.add(norm.slice(0, -1));
+    }
+
+    // Flexiones verbales en relatos de sueños
+    if (norm === 'volar') {
+      ['volaba', 'volar', 'volando', 'vuelo', 'volaban', 'vole', 'volamos'].forEach(v => variants.add(v));
+    } else if (norm === 'caer' || norm === 'caida') {
+      ['caer', 'caian', 'caia', 'caen', 'caida', 'caerme', 'cayeron', 'cayendo'].forEach(v => variants.add(v));
+    } else if (norm === 'correr') {
+      ['correr', 'corria', 'corrian', 'corriendo', 'corri'].forEach(v => variants.add(v));
+    } else if (norm === 'nadar') {
+      ['nadar', 'nadaba', 'nadaban', 'nadando', 'nade'].forEach(v => variants.add(v));
+    } else if (norm === 'perseguir' || norm === 'persecucion') {
+      ['perseguia', 'perseguian', 'perseguir', 'persiguen', 'persiguiendo', 'persecucion'].forEach(v => variants.add(v));
+    } else if (norm === 'huir') {
+      ['huir', 'huia', 'huian', 'huyendo', 'hui'].forEach(v => variants.add(v));
+    } else if (norm === 'morder' || norm === 'mordedura') {
+      ['morder', 'mordia', 'mordio', 'mordian', 'mordiendo', 'mordedura'].forEach(v => variants.add(v));
+    } else if (norm === 'llorar') {
+      ['llorar', 'lloraba', 'llorando', 'llore', 'lloraban'].forEach(v => variants.add(v));
+    } else if (norm === 'morir' || norm === 'muerte') {
+      ['morir', 'moria', 'muerto', 'muerta', 'morirse', 'fallecer'].forEach(v => variants.add(v));
+    }
+
+    return Array.from(variants);
+  }
+
+  // Analizar sueño escrito mediante algoritmo jerárquico de precisión y Oráculo con IA
+  async function analyzeWrittenDream() {
     if (!dreamTextarea || !dreamTextareaCount) return;
     const rawText = dreamTextarea.value.trim();
     
@@ -256,120 +300,287 @@ const initDreams = () => {
     }
 
     const normalizedText = normalizeText(rawText);
-    detectedDreams = [];
+    const claimedWords = new Set();
+    const directMatches = [];
 
-    // Buscar correspondencias en la base de datos de 1054 términos
+    // Paso 1: Coincidencias directas por Nombre del Símbolo (Máxima prioridad)
     window.dreamDb.forEach(dream => {
       const cleanName = normalizeText(dream.name);
+      const subNames = cleanName.split(' o ');
       
-      // Comprobar coincidencia con el nombre del símbolo
-      let matches = matchesKeyword(normalizedText, cleanName);
-
-      // Si no coincide por nombre, comprobar palabras clave
-      if (!matches && dream.keywords) {
-        matches = dream.keywords.some(keyword => {
-          const cleanKw = normalizeText(keyword);
-          return matchesKeyword(normalizedText, cleanKw);
-        });
-      }
-
-      if (matches) {
-        detectedDreams.push(dream);
+      for (const sub of subNames) {
+        const trimmed = sub.trim();
+        const variants = getWordVariants(trimmed);
+        
+        for (const variant of variants) {
+          if (matchesExactWord(normalizedText, variant)) {
+            directMatches.push({
+              dream,
+              matchedWord: variant,
+              priority: 100 + variant.length,
+              matchType: 'direct'
+            });
+            claimedWords.add(variant);
+            break;
+          }
+        }
       }
     });
 
-    // Renderizar resultados del análisis
-    renderAnalysisResults(rawText);
+    // Paso 2: Coincidencias por Palabras Clave secundarias (solo si no están reclamadas por nombres directos)
+    const keywordMatches = [];
+    window.dreamDb.forEach(dream => {
+      if (directMatches.some(m => m.dream.id === dream.id)) return;
+
+      if (dream.keywords && Array.isArray(dream.keywords)) {
+        for (const kw of dream.keywords) {
+          const cleanKw = normalizeText(kw);
+          if (cleanKw.length < 4 || genericWords.has(cleanKw)) continue;
+          if (claimedWords.has(cleanKw)) continue;
+
+          const variants = getWordVariants(cleanKw);
+          let matchedVariant = null;
+          for (const variant of variants) {
+            if (matchesExactWord(normalizedText, variant) && !claimedWords.has(variant)) {
+              matchedVariant = variant;
+              break;
+            }
+          }
+
+          if (matchedVariant) {
+            keywordMatches.push({
+              dream,
+              matchedWord: matchedVariant,
+              priority: 50 + matchedVariant.length,
+              matchType: 'keyword'
+            });
+            break;
+          }
+        }
+      }
+    });
+
+    // Combinar y ordenar por relevancia
+    const allMatches = [...directMatches, ...keywordMatches];
+    allMatches.sort((a, b) => b.priority - a.priority);
+
+    // Deduplicar variantes repetidas (ej. no meter 'Fuego sagrado' si ya está 'Fuego')
+    detectedDreams = [];
+    const seenRoots = new Set();
+
+    for (const item of allMatches) {
+      const d = item.dream;
+      const cleanName = normalizeText(d.name);
+      const root = cleanName.split(' ')[0];
+
+      if (seenRoots.has(cleanName) || (cleanName.includes(' ') && seenRoots.has(root))) {
+        continue;
+      }
+
+      seenRoots.add(cleanName);
+      seenRoots.add(root);
+      detectedDreams.push(d);
+
+      if (detectedDreams.length >= 4) break; // Máximo 4 arquetipos principales para una lectura profunda y clara
+    }
+
+    // 1. Mostrar estado de carga místico con animación astral
+    showDreamLoadingState();
+
+    // 2. Intentar consultar al Oráculo con IA (Google Gemini API via Vercel Serverless)
+    try {
+      const payload = {
+        dreamText: rawText,
+        detectedSymbols: detectedDreams.map(d => ({
+          name: d.name,
+          category: d.category,
+          meaning: d.meaning
+        }))
+      };
+
+      const response = await fetch('/api/interpret-dream', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data && data.success && data.analysisHtml) {
+          renderAiAnalysisResults(data.analysisHtml);
+          return;
+        }
+      }
+    } catch (apiErr) {
+      console.warn('Oráculo Serverless no disponible o en entorno local. Activando motor de respaldo:', apiErr.message);
+    }
+
+    // 3. Fallback: Si la API no está configurada o falla, activar motor local estructurado
+    renderLocalAnalysisResults(rawText);
   }
 
-  // Renderizar la interpretación y las tarjetas detectadas
-  function renderAnalysisResults(rawText) {
+  // Mostrar estado de carga cósmica mientras el Oráculo procesa el relato
+  function showDreamLoadingState() {
     if (!dreamAnalysisResults || !dreamAnalysisText || !dreamDetectedGrid) return;
 
     dreamGrid.classList.add('hidden');
     dreamAnalysisResults.classList.remove('hidden');
 
+    if (statusTitle && statusDesc) {
+      statusTitle.textContent = 'Consultando al Oráculo Onírico...';
+      statusDesc.textContent = 'Conectando las estrellas con las corrientes de tu inconsciente.';
+    }
+
+    dreamAnalysisText.innerHTML = `
+      <div class="dream-loading-state">
+        <div class="astral-pulse-spinner">🌌</div>
+        <p style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--gold-color); margin-bottom: 0.4rem; letter-spacing: 0.04em;">
+          ✦ Descifrando el Mensaje de tu Sueño ✦
+        </p>
+        <p style="font-size: 0.9rem; color: var(--text-muted); max-width: 460px; margin: 0 auto; line-height: 1.6;">
+          El oráculo está tejiendo los arquetipos, emociones y escenarios de tu visión bajo la sabiduría cósmica...
+        </p>
+      </div>
+    `;
+
+    dreamDetectedGrid.innerHTML = '';
+    dreamDetectedGrid.parentElement.classList.add('hidden');
+
+    // Desplazar suavemente a los resultados
+    dreamAnalysisResults.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Renderizar la interpretación enriquecida por la IA (Gemini)
+  function renderAiAnalysisResults(analysisHtml) {
+    if (!dreamAnalysisResults || !dreamAnalysisText || !dreamDetectedGrid) return;
+
+    if (statusTitle && statusDesc) {
+      statusTitle.textContent = 'Lectura Onírica Revelada';
+      statusDesc.textContent = detectedDreams.length > 0 
+        ? `Interpretación personalizada con ${detectedDreams.length} arquetipo${detectedDreams.length > 1 ? 's' : ''} cósmico${detectedDreams.length > 1 ? 's' : ''}.`
+        : 'Interpretación arquetípica personalizada por el Oráculo de las Estrellas.';
+    }
+
+    dreamAnalysisText.innerHTML = analysisHtml;
+
+    // Renderizar tarjetas interactivas de los símbolos detectados si existen
+    if (detectedDreams.length > 0) {
+      dreamDetectedGrid.parentElement.classList.remove('hidden');
+      renderDetectedCards();
+    } else {
+      dreamDetectedGrid.parentElement.classList.add('hidden');
+    }
+  }
+
+  // Renderizar la interpretación del motor local estructurado (Fallback seguro)
+  function renderLocalAnalysisResults(rawText) {
+    if (!dreamAnalysisResults || !dreamAnalysisText || !dreamDetectedGrid) return;
+
     if (detectedDreams.length === 0) {
-      // No se detectaron símbolos
       if (statusTitle && statusDesc) {
         statusTitle.textContent = 'El misterio permanece en la sombra...';
         statusDesc.textContent = 'No hemos logrado descifrar símbolos conocidos en tu relato.';
       }
 
       dreamAnalysisText.innerHTML = `
-        <p><em>Las estrellas guardan un prudente silencio frente a tu relato...</em></p>
-        <p>Tu inconsciente ha tejido una visión con códigos muy personales o sutiles. No hemos logrado identificar correspondencias claras con nuestro glosario de 1054 símbolos en las palabras clave introducidas.</p>
-        <p><strong>Consejo del Oráculo:</strong> Intenta reescribir tu sueño detallando con mayor precisión los elementos naturales (agua, fuego, árboles), animales (perros, arañas), partes del cuerpo (dientes, manos), acciones concretas (volar, caer, huir) u objetos específicos que recuerdes claramente.</p>
+        <div class="dream-intro-synthesis" style="border-left-color: var(--text-muted);">
+          <p><em>Las estrellas guardan un prudente silencio frente a tu relato...</em></p>
+          <p>Tu inconsciente ha tejido una visión con códigos muy íntimos o abstractos. No hemos identificado correspondencias directas con nuestro glosario de 1054 símbolos en las palabras clave introducidas.</p>
+          <p><strong>✦ Consejo del Oráculo:</strong> Intenta reescribir tu sueño mencionando con mayor concreción los elementos naturales (agua, fuego, árboles, mar), animales (perros, serpientes, aves), partes del cuerpo (dientes, manos), acciones concretas (volar, caer, huir) u objetos tangibles que recuerdes claramente.</p>
+        </div>
       `;
       
       dreamDetectedGrid.innerHTML = '';
-      dreamDetectedGrid.parentElement.classList.add('hidden'); // Ocultar sección de grid
+      dreamDetectedGrid.parentElement.classList.add('hidden');
       return;
     }
 
-    // Símbolos detectados
+    // Símbolos detectados con éxito
     dreamDetectedGrid.parentElement.classList.remove('hidden');
     if (statusTitle && statusDesc) {
-      statusTitle.textContent = 'Lectura Onírica';
-      statusDesc.textContent = `Hemos identificado ${detectedDreams.length} símbolo${detectedDreams.length > 1 ? 's' : ''} onírico${detectedDreams.length > 1 ? 's' : ''} clave.`;
+      statusTitle.textContent = 'Lectura Onírica Revelada';
+      statusDesc.textContent = `Hemos identificado ${detectedDreams.length} arquetipo${detectedDreams.length > 1 ? 's' : ''} onírico${detectedDreams.length > 1 ? 's' : ''} clave en tu visión.`;
     }
 
-    // Generar la interpretación poética e hilada en español
-    let analysisHtml = '';
-    analysisHtml += `<p>El velo del sueño ha desvelado importantes mensajes para tu evolución álmica. Tu inconsciente te habla mediante <strong>${detectedDreams.length} energías fundamentales</strong>:</p>`;
-
     const total = detectedDreams.length;
-    detectedDreams.forEach((dream, index) => {
-      let transition = '';
-      if (total === 1) {
-        transition = `La presencia de <strong>${dream.name}</strong> en tu visión nos habla de `;
-      } else if (index === 0) {
-        transition = `La presencia primordial de <strong>${dream.name}</strong> en tu visión nos habla de `;
-      } else if (index === total - 1) {
-        const lastTransitions = [
-          `Finalmente, el influjo de <strong>${dream.name}</strong> te advierte o aconseja que `,
-          `Para concluir tu visión, <strong>${dream.name}</strong> te invita a reflexionar sobre el hecho de que `,
-          `Como mensaje de cierre, la energía de <strong>${dream.name}</strong> revela que `,
-          `Por último, el símbolo de <strong>${dream.name}</strong> corona tu sueño indicando que `,
-          `Como epílogo de tu viaje onírico, <strong>${dream.name}</strong> te sugiere que `
-        ];
-        // Seleccionamos uno aleatorio o basado en algún hash simple (aquí aleatorio)
-        transition = lastTransitions[Math.floor(Math.random() * lastTransitions.length)];
-      } else {
-        const middleTransitions = [
-          `Por otro lado, la aparición de <strong>${dream.name}</strong> complementa este mensaje señalando que `,
-          `Asimismo, la energía de <strong>${dream.name}</strong> se manifiesta para indicarte que `,
-          `De igual modo, el símbolo de <strong>${dream.name}</strong> revela que `,
-          `Por otra parte, la vibración de <strong>${dream.name}</strong> evoca que `,
-          `Además, contemplar <strong>${dream.name}</strong> en el plano onírico sugiere que `,
-          `También, el mensaje oculto tras <strong>${dream.name}</strong> señala que `,
-          `En otro aspecto, el influjo de <strong>${dream.name}</strong> te advierte que `
-        ];
-        const middleIndex = (index - 1) % middleTransitions.length;
-        transition = middleTransitions[middleIndex];
+    const symbolNames = detectedDreams.map(d => `<strong>${d.name}</strong>`);
+    let analysisHtml = '';
+
+    // 1. Síntesis Holística e Introducción Narrativa
+    if (total === 1) {
+      analysisHtml += `
+        <div class="dream-intro-synthesis">
+          <p style="font-size: 1.05rem; color: var(--gold-light); margin-bottom: 0.5rem; font-family: var(--font-serif);">
+            ✦ <strong>Mensaje Primordial de tu Visión</strong> ✦
+          </p>
+          <p style="margin: 0; font-size: 0.95rem; color: var(--text-main);">
+            Tu inconsciente ha proyectado con gran nitidez el arquetipo de ${symbolNames[0]}. Esta visión refleja un proceso interior decisivo en tu vida consciente, invitándote a integrar el significado de este símbolo como un espejo de tus emociones profundas y tu evolución personal.
+          </p>
+        </div>
+      `;
+    } else {
+      const categories = detectedDreams.map(d => d.category);
+      let thematicFocus = 'la integración de tus emociones y tu momento evolutivo';
+      if (categories.includes('Animales') && categories.includes('Acciones')) {
+        thematicFocus = 'la gestión de tus instintos, tus temores y la forma en que respondes a los desafíos';
+      } else if (categories.includes('Naturaleza')) {
+        thematicFocus = 'la purificación interior y el fluir de tus corrientes emocionales más profundas';
+      } else if (categories.includes('Lugares') || categories.includes('Objetos')) {
+        thematicFocus = 'la estructura de tu propia psique, tus recursos personales y la seguridad en tu camino';
       }
 
+      analysisHtml += `
+        <div class="dream-intro-synthesis">
+          <p style="font-size: 1.05rem; color: var(--gold-light); margin-bottom: 0.5rem; font-family: var(--font-serif);">
+            ✦ <strong>Síntesis del Inconsciente: ${detectedDreams.length} Fuerzas en Conexión</strong> ✦
+          </p>
+          <p style="margin: 0; font-size: 0.95rem; color: var(--text-main);">
+            Tu relato entreteje la energía de ${symbolNames.slice(0, -1).join(', ')} y ${symbolNames[symbolNames.length - 1]}. La interacción entre estos símbolos revela un mensaje dirigido a <strong>${thematicFocus}</strong>. En lugar de elementos aislados, tu mente está combinando el escenario, la acción y los arquetipos para guiar tu despertar consciente.
+          </p>
+        </div>
+      `;
+    }
 
-      // Convertir primera letra del significado original en minúscula si es adecuado
-      let meaningText = dream.meaning;
-      if (meaningText.startsWith('El ') || meaningText.startsWith('La ') || meaningText.startsWith('Los ') || meaningText.startsWith('Las ')) {
-        // Encontrar primer espacio y poner minúscula a lo que sigue si es apropiado
-        const firstSpace = meaningText.indexOf(' ');
-        const article = meaningText.substring(0, firstSpace).toLowerCase();
-        const rest = meaningText.substring(firstSpace);
-        meaningText = article + rest;
-      } else if (meaningText.charAt(0) === meaningText.charAt(0).toUpperCase()) {
-        meaningText = meaningText.charAt(0).toLowerCase() + meaningText.slice(1);
-      }
-
-      analysisHtml += `<p>${transition}${meaningText}</p>`;
+    // 2. Desglose Estructurado de Símbolos sin Mezclas ni Redundancias
+    analysisHtml += `<div class="dream-symbols-breakdown">`;
+    detectedDreams.forEach(dream => {
+      const icon = getCategoryIcon(dream.category);
+      analysisHtml += `
+        <div class="dream-symbol-card">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+            <h4 style="font-family: var(--font-serif); color: var(--gold-color); margin: 0; font-size: 1.15rem; display: flex; align-items: center; gap: 0.4rem;">
+              <span>${icon}</span> ${dream.name}
+            </h4>
+            <span style="font-size: 0.75rem; background: rgba(229, 193, 88, 0.12); color: var(--gold-light); padding: 0.2rem 0.6rem; border-radius: 12px; border: 1px solid rgba(229, 193, 88, 0.25); text-transform: uppercase;">
+              ${dream.category}
+            </span>
+          </div>
+          <p style="font-size: 0.93rem; line-height: 1.6; color: rgba(243, 244, 246, 0.9); margin: 0;">
+            ${dream.meaning}
+          </p>
+        </div>
+      `;
     });
+    analysisHtml += `</div>`;
 
-    analysisHtml += `<p><strong>✦ Consejo Astral y Alquimia Onírica:</strong> Medita sobre la interacción de estas visiones en tu vida consciente. Las estrellas te recuerdan que los sueños son el espejo de tu vibración interna y el plano vital superior. Permite que estos mensajes guíen tus decisiones cotidianas libres del orgullo del ego. ¡Que la luz cósmica guíe tu despertar!</p>`;
+    // 3. Consejo Astral y Alquimia Onírica
+    analysisHtml += `
+      <div class="dream-alquimia-box">
+        <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.5rem 0; font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span>🔮</span> Consejo de Integración y Alquimia Onírica
+        </h4>
+        <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-main); margin: 0;">
+          Recuerda que cada elemento del sueño es un aspecto de ti mismo/a. Pregúntate qué emoción predominaba durante la visión y cómo resuena con tus decisiones actuales de vigilia. Al integrar la sabiduría de estos arquetipos, transformas la incertidumbre nocturna en claridad y dirección para tu camino.
+        </p>
+      </div>
+    `;
 
     dreamAnalysisText.innerHTML = analysisHtml;
+    renderDetectedCards();
+  }
 
-    // Renderizar tarjetas de los símbolos detectados
+  // Renderizar tarjetas interactivas de símbolos detectados
+  function renderDetectedCards() {
     dreamDetectedGrid.innerHTML = '';
     detectedDreams.forEach(dream => {
       const card = document.createElement('article');
@@ -407,17 +618,15 @@ const initDreams = () => {
   function copyAnalysisToClipboard() {
     if (!dreamAnalysisText || detectedDreams.length === 0) return;
 
-    // Convertir el HTML de la lectura a texto plano limpio
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = dreamAnalysisText.innerHTML;
     
-    // Formatear párrafos con saltos de línea
     const paragraphs = tempDiv.querySelectorAll('p');
     let textToCopy = '✦ LECTURA DE SUEÑOS - ECO ESTELAR ✦\n\n';
     paragraphs.forEach(p => {
-      textToCopy += p.textContent + '\n\n';
+      textToCopy += p.textContent.trim() + '\n\n';
     });
-    textToCopy += 'Consulta tu horóscopo y tarot en: https://elecodelasestrellas.com';
+    textToCopy += 'Consulta tu horóscopo, tarot y sueños en: https://www.ecoestelar.com/significado-suenos.html';
 
     navigator.clipboard.writeText(textToCopy).then(() => {
       if (toast) {
@@ -439,20 +648,19 @@ const initDreams = () => {
     const paragraphs = tempDiv.querySelectorAll('p');
     let textToShare = '✦ LECTURA DE SUEÑOS - ECO ESTELAR ✦\n\n';
     paragraphs.forEach(p => {
-      textToShare += p.textContent + '\n\n';
+      textToShare += p.textContent.trim() + '\n\n';
     });
-    textToShare += 'Consulta tu horóscopo y tarot en: https://elecodelasestrellas.com';
+    textToShare += 'Descifra tus sueños en: https://www.ecoestelar.com/significado-suenos.html';
 
     if (navigator.share && window.location.protocol !== 'file:') {
       navigator.share({
-        title: 'Mi Lectura de Sueños',
+        title: 'Mi Lectura de Sueños - Eco Estelar',
         text: textToShare
       }).catch(err => {
         console.error('Error al compartir:', err);
         copyAnalysisToClipboard();
       });
     } else {
-      // Fallback si no está soportado o estamos en local
       copyAnalysisToClipboard();
     }
   }
