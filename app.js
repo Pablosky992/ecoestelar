@@ -2476,8 +2476,8 @@ function openCardDetailModal(cardId) {
           </div>
           <div class="grimorio-astro-details">
             <div class="card-astro-badge">
-              <span class="card-astro-symbol">${astro.symbol}</span>
-              <span>Regencia: <strong>${astro.ruler}</strong></span>
+              <span class="card-astro-symbol">${astro.symbol || '✦'}</span>
+              <span>Regencia: <strong>${card.astrology || astro.ruler}</strong></span>
             </div>
             <p class="grimorio-themes"><strong>Fuerzas Clave:</strong> ${card.keyThemes}</p>
           </div>
@@ -2488,29 +2488,63 @@ function openCardDetailModal(cardId) {
           <div class="page-ornament"></div>
           
           <div class="grimorio-tabs">
-            <button type="button" class="grimorio-tab active" id="tab-upright-btn">✦ Derecho</button>
-            <button type="button" class="grimorio-tab" id="tab-reversed-btn">✦ Invertido</button>
+            <button type="button" class="grimorio-tab active" id="tab-upright-btn">✦ Senda Luminosa</button>
+            <button type="button" class="grimorio-tab" id="tab-reversed-btn">✦ Senda Sombra</button>
+            <button type="button" class="grimorio-tab" id="tab-symbolism-btn">✦ Simbología</button>
           </div>
           
           <div class="grimorio-meanings-scroll">
+            <!-- PESTAÑA 1: DERECHO -->
             <div class="grimorio-content-section" id="meaning-upright-content">
-              <h4 class="grimorio-section-title upright">✦ Senda Luminosa</h4>
-              <p style="margin-bottom: 0.5rem;"><strong>General:</strong> ${card.meanings.general}</p>
-              <p style="margin-bottom: 0.5rem;"><strong>Amor:</strong> ${card.meanings.love}</p>
-              <p style="margin-bottom: 0.5rem;"><strong>Trabajo:</strong> ${card.meanings.work}</p>
-              <p style="margin-bottom: 0.5rem;"><strong>Salud:</strong> ${card.meanings.health}</p>
+              <h4 class="grimorio-section-title upright">✦ Senda Luminosa (Derecho)</h4>
+              <p><strong>Visión del Alma:</strong> ${card.meanings.general}</p>
+              <p><strong>Amor & Vínculos:</strong> ${card.meanings.love}</p>
+              <p><strong>Trabajo & Prosperidad:</strong> ${card.meanings.work}</p>
+              <p><strong>Salud & Bienestar:</strong> ${card.meanings.health}</p>
+              ${card.meanings.advice ? `
+              <div class="grimorio-advice-box">
+                <div class="box-title">🗝️ Consejo del Oráculo</div>
+                <p style="margin:0; font-size:0.91rem; line-height:1.55;">${card.meanings.advice}</p>
+              </div>` : ''}
             </div>
             
+            <!-- PESTAÑA 2: INVERTIDO -->
             <div class="grimorio-content-section hidden" id="meaning-reversed-content">
-              <h4 class="grimorio-section-title reversed">✦ Senda Sombra</h4>
-              <p style="margin-bottom: 0.5rem;"><strong>General:</strong> ${card.reversed.general}</p>
-              <p style="margin-bottom: 0.5rem;"><strong>Amor:</strong> ${card.reversed.love}</p>
-              <p style="margin-bottom: 0.5rem;"><strong>Trabajo:</strong> ${card.reversed.work}</p>
-              <p style="margin-bottom: 0.5rem;"><strong>Salud:</strong> ${card.reversed.health}</p>
+              <h4 class="grimorio-section-title reversed">✦ Senda Sombra (Invertido)</h4>
+              <p><strong>Retos & Bloqueos:</strong> ${card.reversed.general}</p>
+              <p><strong>Amor en Desequilibrio:</strong> ${card.reversed.love}</p>
+              <p><strong>Trabajo & Finanzas:</strong> ${card.reversed.work}</p>
+              <p><strong>Salud & Cuidado:</strong> ${card.reversed.health}</p>
+              ${card.reversed.alchemy ? `
+              <div class="grimorio-alchemy-box">
+                <div class="box-title">🔮 Alquimia de Transmutación</div>
+                <p style="margin:0; font-size:0.91rem; line-height:1.55;">${card.reversed.alchemy}</p>
+              </div>` : ''}
+            </div>
+
+            <!-- PESTAÑA 3: SIMBOLOGÍA -->
+            <div class="grimorio-content-section hidden" id="meaning-symbolism-content">
+              <h4 class="grimorio-section-title symbolism">✦ Simbología & Misterios</h4>
+              <div class="grimorio-meta-grid">
+                <div class="grimorio-meta-item">
+                  <span class="meta-label">Elemento</span>
+                  <span class="meta-val">${card.element || astro.element || 'Cosmos'}</span>
+                </div>
+                <div class="grimorio-meta-item">
+                  <span class="meta-label">Regente</span>
+                  <span class="meta-val">${card.astrology || astro.ruler}</span>
+                </div>
+                <div class="grimorio-meta-item" style="grid-column: 1 / -1;">
+                  <span class="meta-label">Misterio Sagrado</span>
+                  <span class="meta-val">${card.numerology || (card.id < 22 ? 'Arcano Mayor ' + romanId : 'Arcano Menor')}</span>
+                </div>
+              </div>
+              <p><strong>Iconografía Sagrada:</strong> ${card.symbolism || 'Iconografía sagrada y misterios del Tarot de Marsella y Rider-Waite.'}</p>
+              <p><strong>Respuesta Oracular (Sí / No):</strong> ${card.yesNoText || (card.yesNoScore > 0 ? 'Sí rotundo.' : card.yesNoScore < 0 ? 'No por ahora.' : 'Pausa y reflexión.')}</p>
             </div>
             
             <div class="grimorio-footer-sigil">
-              <span>🜁 🜂 🜃 🜄</span>
+              <span>🜁 🜂 🜃 🜄 🜀</span>
             </div>
           </div>
         </div>
@@ -2523,23 +2557,27 @@ function openCardDetailModal(cardId) {
   // Bind tabs
   const tabUpright = document.getElementById('tab-upright-btn');
   const tabReversed = document.getElementById('tab-reversed-btn');
+  const tabSymbolism = document.getElementById('tab-symbolism-btn');
   const uprightContent = document.getElementById('meaning-upright-content');
   const reversedContent = document.getElementById('meaning-reversed-content');
+  const symbolismContent = document.getElementById('meaning-symbolism-content');
   
-  if (tabUpright && tabReversed && uprightContent && reversedContent) {
-    tabUpright.addEventListener('click', () => {
-      tabUpright.classList.add('active');
-      tabReversed.classList.remove('active');
-      uprightContent.classList.remove('hidden');
-      reversedContent.classList.add('hidden');
-    });
+  function switchGrimorioTab(activeBtn, activeContent) {
+    [tabUpright, tabReversed, tabSymbolism].forEach(btn => btn && btn.classList.remove('active'));
+    [uprightContent, reversedContent, symbolismContent].forEach(cnt => cnt && cnt.classList.add('hidden'));
     
-    tabReversed.addEventListener('click', () => {
-      tabReversed.classList.add('active');
-      tabUpright.classList.remove('active');
-      reversedContent.classList.remove('hidden');
-      uprightContent.classList.add('hidden');
-    });
+    if (activeBtn) activeBtn.classList.add('active');
+    if (activeContent) activeContent.classList.remove('hidden');
+  }
+
+  if (tabUpright) {
+    tabUpright.addEventListener('click', () => switchGrimorioTab(tabUpright, uprightContent));
+  }
+  if (tabReversed) {
+    tabReversed.addEventListener('click', () => switchGrimorioTab(tabReversed, reversedContent));
+  }
+  if (tabSymbolism) {
+    tabSymbolism.addEventListener('click', () => switchGrimorioTab(tabSymbolism, symbolismContent));
   }
   
   // Bind navigation buttons

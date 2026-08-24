@@ -3133,22 +3133,23 @@ body.light-mode .mode-btn.active {
 }
 
 /* ==========================================================================
-   Grimorio 3D Book Styles
+   Grimorio 3D Book Styles (Ampliación y Detalle Enriquecido)
    ========================================================================== */
 #card-detail-modal.book-mode .modal-content {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  max-width: 900px;
-  width: 95%;
+  max-width: 1200px;
+  width: 96%;
   padding: 0;
 }
 
 #card-detail-modal.book-mode .close-modal-btn {
-  top: -30px;
-  right: 10px;
+  top: -36px;
+  right: 6px;
   color: var(--gold-color);
-  font-size: 2rem;
+  font-size: 2.2rem;
+  z-index: 120;
 }
 
 .grimorio-book-container {
@@ -3162,13 +3163,14 @@ body.light-mode .mode-btn.active {
 
 .grimorio-book {
   position: relative;
-  width: 820px;
-  height: 560px;
+  width: 1100px;
+  height: 700px;
+  max-height: 88vh;
   display: flex;
-  background: #3e2a18; /* Leather back cover */
-  border: 6px solid #281b0f;
-  border-radius: 12px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.85), 0 0 50px rgba(139, 92, 246, 0.2);
+  background: #342111; /* Cuero oscuro repujado */
+  border: 8px solid #201309;
+  border-radius: 16px;
+  box-shadow: 0 35px 80px rgba(0,0,0,0.92), 0 0 60px rgba(229, 193, 88, 0.18), 0 0 45px rgba(139, 92, 246, 0.22);
   transition: transform 0.4s ease-in-out;
   perspective: 1500px;
   overflow: hidden;
@@ -3179,55 +3181,68 @@ body.light-mode .mode-btn.active {
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 20px;
-  background: linear-gradient(to right, #1a110a, #302013 30%, #302013 70%, #1a110a);
+  width: 24px;
+  background: linear-gradient(to right, #150c05, #2e1e12 30%, #2e1e12 70%, #150c05);
   transform: translateX(-50%);
   z-index: 10;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 14px rgba(0,0,0,0.65);
 }
 
 .book-page {
   width: 50%;
   height: 100%;
   background-color: #f7eed4;
-  background-image: radial-gradient(circle at center, rgba(255,255,255,0.3) 0%, rgba(0,0,0,0.03) 100%);
-  color: #2e2116;
-  padding: 2.5rem 2.25rem;
+  background-image: radial-gradient(circle at center, rgba(255,255,255,0.4) 0%, rgba(0,0,0,0.03) 100%),
+                    linear-gradient(to bottom, #fdf7e7 0%, #f4e9cb 100%);
+  color: #2b1f13;
+  padding: 2.5rem 2.8rem;
   position: relative;
   display: flex;
   flex-direction: column;
   z-index: 2;
-  box-shadow: inset 0 0 30px rgba(75, 56, 42, 0.15);
+  box-shadow: inset 0 0 35px rgba(75, 56, 42, 0.16);
+  overflow-y: auto;
 }
 
 .book-page.left-page {
-  border-radius: 6px 0 0 6px;
+  border-radius: 8px 0 0 8px;
   border-right: 1px solid rgba(40, 27, 15, 0.25);
-  padding-right: 2.75rem;
+  padding-right: 3rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(43, 31, 19, 0.25) transparent;
 }
 
 .book-page.right-page {
-  border-radius: 0 6px 6px 0;
+  border-radius: 0 8px 8px 0;
   border-left: 1px solid rgba(40, 27, 15, 0.25);
-  padding-left: 2.75rem;
+  padding-left: 3rem;
+}
+
+.book-page::-webkit-scrollbar {
+  width: 4px;
+}
+
+.book-page::-webkit-scrollbar-thumb {
+  background: rgba(43, 31, 19, 0.3);
+  border-radius: 4px;
 }
 
 .page-ornament {
   position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  border: 1px solid rgba(184, 134, 11, 0.25);
+  top: 12px;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  border: 1px solid rgba(184, 134, 11, 0.28);
   pointer-events: none;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 .book-page.left-page .page-ornament {
-  margin-right: 0.5rem;
+  margin-right: 0.6rem;
 }
 .book-page.right-page .page-ornament {
-  margin-left: 0.5rem;
+  margin-left: 0.6rem;
 }
 
 .grimorio-book .grimorio-header {
@@ -3237,96 +3252,97 @@ body.light-mode .mode-btn.active {
   text-align: center !important;
   gap: 0.25rem !important;
   width: 100% !important;
-  margin-bottom: 1rem !important;
+  margin-bottom: 0.85rem !important;
 }
 
 .grimorio-book .grimorio-number {
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: #b8860b;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   font-weight: 700;
   display: block;
   text-align: center;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .grimorio-book .grimorio-title {
-  font-family: 'Garamond', 'Georgia', serif;
-  font-size: 1.85rem;
-  color: #2b1f13;
+  font-family: 'Cinzel', 'Garamond', 'Georgia', serif;
+  font-size: 2.1rem;
+  color: #24170c;
   margin: 0 !important;
-  font-weight: bold;
+  font-weight: 700;
   text-shadow: none !important;
   text-align: center !important;
   width: 100% !important;
+  letter-spacing: 1px;
 }
 
 .grimorio-book .grimorio-card-art-wrapper {
-  margin: 0 auto 1.25rem auto;
-  border: 3px solid #2b1f13;
-  border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  margin: 0 auto 1rem auto;
+  border: 3.5px solid #2b1f13;
+  border-radius: 8px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.35), 0 0 15px rgba(229, 193, 88, 0.2);
   overflow: hidden;
   background: #080711;
   display: inline-block;
 }
 
 .grimorio-book .grimorio-card-art {
-  width: 140px !important;
-  height: 230px !important;
+  width: 175px !important;
+  height: 290px !important;
   background-size: cover;
   background-position: center;
   transition: transform 0.5s ease;
 }
 
 .grimorio-book .grimorio-card-art-wrapper:hover .grimorio-card-art {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .grimorio-book .grimorio-astro-details {
   margin-top: auto;
-  border-top: 1px solid rgba(43, 31, 19, 0.15);
-  padding-top: 0.75rem;
+  border-top: 1.5px solid rgba(43, 31, 19, 0.18);
+  padding-top: 0.85rem;
   width: 100%;
 }
 
 .grimorio-book .grimorio-astro-details .card-astro-badge {
   background: rgba(43, 31, 19, 0.08);
-  border: 1px solid rgba(43, 31, 19, 0.2);
+  border: 1px solid rgba(43, 31, 19, 0.22);
   color: #2e2116;
-  padding: 0.3rem 0.6rem;
-  border-radius: 8px;
+  padding: 0.35rem 0.75rem;
+  border-radius: 10px;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.78rem;
+  gap: 0.45rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .grimorio-book .grimorio-astro-details .card-astro-symbol {
   color: #b8860b;
-  font-size: 1rem;
+  font-size: 1.15rem;
 }
 
 .grimorio-book .grimorio-themes {
-  font-size: 0.82rem !important;
-  color: #4b382a !important;
+  font-size: 0.86rem !important;
+  color: #433123 !important;
   margin: 0 !important;
-  line-height: 1.4 !important;
+  line-height: 1.5 !important;
 }
 
 /* Page Navigation Buttons */
 .book-nav-btn {
-  width: 50px;
-  height: 50px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
-  background: rgba(229, 193, 88, 0.1);
-  border: 1.5px solid rgba(229, 193, 88, 0.4);
+  background: rgba(229, 193, 88, 0.12);
+  border: 1.5px solid rgba(229, 193, 88, 0.45);
   color: var(--gold-color);
-  font-size: 2rem;
+  font-size: 2.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3334,98 +3350,336 @@ body.light-mode .mode-btn.active {
   transition: var(--transition-smooth);
   z-index: 100;
   outline: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
 .book-nav-btn:hover {
   background: var(--gold-color);
   color: #080711;
-  box-shadow: 0 0 15px rgba(229, 193, 88, 0.6);
+  box-shadow: 0 0 20px rgba(229, 193, 88, 0.75);
   transform: scale(1.1);
 }
 
 /* Right Page Tabs */
 .grimorio-tabs {
   display: flex;
-  justify-content: flex-end;
-  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
   margin-bottom: 1.25rem;
-  border-bottom: 1.5px solid rgba(43, 31, 19, 0.15);
-  padding-bottom: 0.5rem;
+  border-bottom: 1.5px solid rgba(43, 31, 19, 0.18);
+  padding-bottom: 0.65rem;
 }
 
 .grimorio-tab {
   background: transparent;
-  border: 1.5px solid rgba(43, 31, 19, 0.3);
+  border: 1.5px solid rgba(43, 31, 19, 0.35);
   color: #4b382a;
-  padding: 0.35rem 0.85rem;
-  border-radius: 14px;
-  font-size: 0.75rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 16px;
+  font-size: 0.78rem;
   font-weight: 700;
   cursor: pointer;
   transition: var(--transition-smooth);
   outline: none;
+  font-family: var(--font-sans);
 }
 
 .grimorio-tab.active {
-  background: #4b382a;
-  color: #f7eed4;
-  border-color: #4b382a;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  background: #3e2816;
+  color: #fcf6e7;
+  border-color: #3e2816;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
 
 /* Meanings Scroll Area */
 .grimorio-meanings-scroll {
   flex: 1;
   overflow-y: auto;
-  padding-right: 0.5rem;
+  padding-right: 0.65rem;
   scrollbar-width: thin;
-  scrollbar-color: rgba(43, 31, 19, 0.3) transparent;
+  scrollbar-color: rgba(43, 31, 19, 0.35) transparent;
 }
 
 .grimorio-meanings-scroll::-webkit-scrollbar {
-  width: 4px;
+  width: 5px;
 }
 
 .grimorio-meanings-scroll::-webkit-scrollbar-thumb {
-  background: rgba(43, 31, 19, 0.3);
-  border-radius: 4px;
+  background: rgba(43, 31, 19, 0.35);
+  border-radius: 5px;
 }
 
 .grimorio-content-section p {
-  font-size: 0.88rem;
-  line-height: 1.55;
+  font-size: 0.94rem;
+  line-height: 1.68;
   color: #2e2116;
-  margin: 0 0 0.85rem 0;
+  margin: 0 0 0.95rem 0;
 }
 
 .grimorio-content-section p strong {
-  color: #2b1f13;
+  color: #24170c;
   font-weight: 700;
 }
 
 .grimorio-section-title {
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   margin-top: 0;
-  margin-bottom: 0.75rem;
-  font-family: 'Garamond', 'Georgia', serif;
+  margin-bottom: 0.85rem;
+  font-family: 'Cinzel', 'Garamond', 'Georgia', serif;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .grimorio-section-title.upright {
   color: #2b1f13;
+  border-bottom: 1px solid rgba(184, 134, 11, 0.3);
+  padding-bottom: 0.4rem;
 }
 
 .grimorio-section-title.reversed {
-  color: #723e20;
+  color: #6d3319;
+  border-bottom: 1px solid rgba(109, 51, 25, 0.3);
+  padding-bottom: 0.4rem;
+}
+
+.grimorio-section-title.symbolism {
+  color: #3b284e;
+  border-bottom: 1px solid rgba(88, 48, 128, 0.3);
+  padding-bottom: 0.4rem;
+}
+
+/* Advice & Alchemy Special Highlight Boxes */
+.grimorio-advice-box {
+  background: rgba(229, 193, 88, 0.15);
+  border: 1.5px solid rgba(184, 134, 11, 0.35);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.grimorio-advice-box .box-title {
+  font-weight: 700;
+  color: #785208;
+  font-size: 0.88rem;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.grimorio-alchemy-box {
+  background: rgba(139, 92, 246, 0.12);
+  border: 1.5px solid rgba(109, 40, 217, 0.3);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.grimorio-alchemy-box .box-title {
+  font-weight: 700;
+  color: #581c87;
+  font-size: 0.88rem;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.grimorio-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.grimorio-meta-item {
+  background: rgba(43, 31, 19, 0.07);
+  border: 1px solid rgba(43, 31, 19, 0.15);
+  border-radius: 8px;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.grimorio-meta-item .meta-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: #8b5cf6;
+  font-weight: 700;
+  display: block;
+  letter-spacing: 1px;
+}
+
+.grimorio-meta-item .meta-val {
+  font-weight: 700;
+  color: #2b1f13;
 }
 
 .grimorio-footer-sigil {
   text-align: center;
-  font-size: 1.25rem;
-  color: rgba(184, 134, 11, 0.35);
+  font-size: 1.35rem;
+  color: rgba(184, 134, 11, 0.4);
   margin-top: 1.5rem;
-  letter-spacing: 8px;
+  letter-spacing: 10px;
   user-select: none;
+}
+
+/* ==========================================================================
+   SEO Educational Section & FAQ Accordions
+   ========================================================================== */
+.tarot-seo-guide {
+  margin: 3rem auto 1rem auto;
+  padding: 2.25rem 2.5rem;
+  max-width: 1200px;
+  text-align: left;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.tarot-seo-guide h2 {
+  font-family: var(--font-serif);
+  color: var(--gold-color);
+  font-size: 1.75rem;
+  margin: 0 0 1.25rem 0;
+  line-height: 1.3;
+}
+
+.tarot-seo-guide h3 {
+  font-family: var(--font-serif);
+  color: var(--gold-light, #f6e05e);
+  font-size: 1.3rem;
+  margin: 2rem 0 0.85rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tarot-seo-guide p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.72;
+  margin: 0 0 1.1rem 0;
+}
+
+.tarot-seo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.tarot-seo-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.25rem 1.35rem;
+  transition: var(--transition-smooth);
+}
+
+.tarot-seo-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-color);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.tarot-seo-card h4 {
+  color: var(--gold-color);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  margin: 0 0 0.45rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tarot-seo-card p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* FAQ Accordion */
+.seo-faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.seo-faq-item {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.seo-faq-item[open] {
+  border-color: rgba(229, 193, 88, 0.4);
+  background: rgba(229, 193, 88, 0.04);
+}
+
+.seo-faq-summary {
+  padding: 1rem 1.25rem;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--text-main);
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.seo-faq-summary:hover {
+  color: var(--gold-color);
+}
+
+.seo-faq-content {
+  padding: 0.5rem 1.25rem 1.25rem 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tarot-interlinking-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+}
+
+.tarot-interlink-btn {
+  background: rgba(229, 193, 88, 0.08);
+  border: 1px solid rgba(229, 193, 88, 0.28);
+  color: var(--gold-color);
+  padding: 0.55rem 1.15rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.tarot-interlink-btn:hover {
+  background: var(--gold-color);
+  color: #080711;
+  box-shadow: 0 0 15px rgba(229, 193, 88, 0.4);
+  transform: translateY(-2px);
 }
 
 /* Page flip 3D animation visual triggers */
@@ -3436,23 +3690,38 @@ body.light-mode .mode-btn.active {
   transform: rotateY(12deg) scale(0.97);
 }
 
-/* Media Query Grimorio */
-@media (max-width: 900px) {
+/* Media Queries Grimorio Responsive */
+@media (max-width: 1024px) {
   #card-detail-modal.book-mode .modal-content {
-    max-width: 500px;
-    width: 90%;
+    max-width: 95%;
+    width: 95%;
+  }
+  .grimorio-book {
+    width: 100%;
+    height: 640px;
+  }
+  .book-page {
+    padding: 2rem 1.8rem;
+  }
+}
+
+@media (max-width: 850px) {
+  #card-detail-modal.book-mode .modal-content {
+    max-width: 520px;
+    width: 92%;
   }
   .grimorio-book-container {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
     padding-bottom: 5rem;
   }
   .grimorio-book {
     width: 100%;
     height: auto;
+    max-height: 80vh;
     flex-direction: column;
     background: #f7eed4;
-    border: 4px solid var(--gold-color);
+    border: 5px solid var(--gold-color);
   }
   .book-spine {
     display: none;
@@ -3460,12 +3729,12 @@ body.light-mode .mode-btn.active {
   .book-page {
     width: 100%;
     height: auto;
-    border-radius: 6px !important;
+    border-radius: 8px !important;
     padding: 1.75rem;
     box-shadow: none;
   }
   .book-page.left-page {
-    border-bottom: 2px dashed rgba(43, 31, 19, 0.2);
+    border-bottom: 2px dashed rgba(43, 31, 19, 0.25);
     border-right: none;
     padding-right: 1.75rem;
     align-items: center;
@@ -3479,9 +3748,9 @@ body.light-mode .mode-btn.active {
     margin: 0 !important;
   }
   .book-nav-btn {
-    width: 44px;
-    height: 44px;
-    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.8rem;
     position: absolute;
     bottom: 0;
   }
