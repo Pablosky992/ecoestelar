@@ -3,28 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tu Horóscopo Diario — Eco Estelar</title>
+  <title>Tu Horóscopo Diario y Semanal: Predicción Astrológica y Tarot — Eco Estelar</title>
   
   <!-- Favicon / Icono de la pestaña -->
   <link rel="icon" type="image/png" href="assets/logo_luna_v2.webp">
   <link rel="apple-touch-icon" href="assets/logo_luna_v2.webp">
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Consulta el oráculo interactivo de Eco Estelar. Realiza tiradas de 1 y 3 cartas para Sí/No, o una tirada completa del destino con síntesis narrativa explicativa.">
+  <meta name="description" content="Consulta tu horóscopo diario y semanal personalizado por signo del zodiaco. Predicciones astrológicas en amor, trabajo, salud, tránsitos planetarios en tiempo real y tiradas de tarot.">
+  <meta name="keywords" content="horoscopo diario, horoscopo semanal, prediccion astrologica, horoscopo hoy, signos del zodiaco, transitos planetarios, tarot horoscopo, rueda 12 casas astrologicas, eco estelar">
+  <meta name="author" content="Eco Estelar">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ecoestelar.com/">
-  <meta property="og:title" content="Eco Estelar — Sintoniza con tu vibración astral y el tarot">
-  <meta property="og:description" content="Consulta el oráculo interactivo. Realiza tiradas de tarot, horóscopos diarios, perfil numerológico y consulta la fase lunar actual.">
-  <meta property="og:image" content="assets/logo_luna_v2.webp">
+  <meta property="og:url" content="https://ecoestelar.com/horoscopo.html">
+  <meta property="og:title" content="Tu Horóscopo Diario y Semanal: Predicción Astrológica y Tarot — Eco Estelar">
+  <meta property="og:description" content="Predicciones astrológicas precisas para tu signo del zodiaco. Descubre tu clima cósmico, tránsitos en tiempo real y lecturas de tarot en amor, trabajo y salud.">
+  <meta property="og:image" content="https://ecoestelar.com/assets/hub_horoscopo.png">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://ecoestelar.com/">
-  <meta name="twitter:title" content="Eco Estelar — Sintoniza con tu vibración astral y el tarot">
-  <meta name="twitter:description" content="Consulta el oráculo interactivo. Realiza tiradas de tarot, horóscopos diarios, perfil numerológico y consulta la fase lunar actual.">
-  <meta name="twitter:image" content="assets/logo_luna_v2.webp">
+  <meta name="twitter:url" content="https://ecoestelar.com/horoscopo.html">
+  <meta name="twitter:title" content="Tu Horóscopo Diario y Semanal: Predicción Astrológica y Tarot — Eco Estelar">
+  <meta name="twitter:description" content="Predicciones astrológicas precisas para tu signo del zodiaco. Descubre tu clima cósmico, tránsitos en tiempo real y lecturas de tarot en amor, trabajo y salud.">
+  <meta name="twitter:image" content="https://ecoestelar.com/assets/hub_horoscopo.png">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,20 +36,92 @@
   <!-- CSS Styles -->
   <link rel="stylesheet" href="style.css">
   
-    <!-- SEO Optimization -->
+  <!-- SEO Canonical -->
   <link rel="canonical" href="https://ecoestelar.com/horoscopo.html">
+
+  <!-- SEO Structured Data Schema.org (ItemPage + BreadcrumbList + FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Eco Estelar",
-    "url": "https://ecoestelar.com/horoscopo.html",
-    "description": "Sintoniza con tu vibración astral. Consulta tu oráculo interactivo de Tarot, horóscopos diarios, cálculo de perfil numerológico y la fase lunar actual con rituales.",
-    "applicationCategory": "LifestyleApplication",
-    "operatingSystem": "All",
-    "browserRequirements": "Requires HTML5/JavaScript",
-    "genre": "Esotericism",
-    "inLanguage": "es"
+    "@graph": [
+      {
+        "@type": "ItemPage",
+        "@id": "https://ecoestelar.com/horoscopo.html",
+        "url": "https://ecoestelar.com/horoscopo.html",
+        "name": "Tu Horóscopo Diario y Semanal: Predicción Astrológica y Tarot",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://ecoestelar.com/#website",
+          "url": "https://ecoestelar.com/",
+          "name": "Eco Estelar",
+          "description": "Santuario esotérico digital de Tarot, Astrología y Sabiduría Cósmica"
+        },
+        "description": "Predicciones astrológicas diarias y semanales, cálculo de tránsitos celestes en tiempo real y lecturas del tarot para los 12 signos del zodiaco.",
+        "inLanguage": "es",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inicio",
+              "item": "https://ecoestelar.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Tu Horóscopo",
+              "item": "https://ecoestelar.com/horoscopo.html"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cómo se calculan las predicciones del horóscopo en Eco Estelar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nuestras predicciones integran dos disciplinas sagradas: el cálculo astronómico de los tránsitos celestes en tiempo real (posiciones exactas del Sol, la Luna y los planetas regentes sobre la eclíptica) y la sincronicidad arquetípica del Tarot, ofreciendo una lectura predictiva personalizada en amor, trabajo, salud y evolución espiritual."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué diferencia hay entre la tirada diaria y la tirada semanal del horóscopo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La tirada diaria se enfoca en las influencias inmediatas de las próximas 24 horas y el tránsito de la Luna. La tirada semanal de 3 cartas traza la evolución kármica de los próximos 7 días mediante una estructura de tres fases: la Energía de Apertura, el Crisol de Desafío de mitad de semana y la Clave de Triunfo o Desenlace."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué representa la Rueda de las 12 Casas Astrológicas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La Rueda de las 12 Casas es una lectura astrológica integral que mapea todos los ámbitos de la existencia: Casa I (Identidad/Ascendente), Casa II (Finanzas), Casa III (Comunicación), Casa IV (Hogar/Raíces), Casa V (Creatividad/Romance), Casa VI (Rutina/Salud), Casa VII (Pareja/Alianzas), Casa VIII (Transformación), Casa IX (Sabiduría), Casa X (Profesión/Destino), Casa XI (Amigos/Proyectos) y Casa XII (Subconsciente y Karma)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo influyen los 4 elementos en los signos del zodiaco?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Los doce signos se agrupan en cuatro elementos esenciales: Fuego (Aries, Leo, Sagitario) aporta pasión y voluntad; Tierra (Tauro, Virgo, Capricornio) brinda estabilidad material y perseverancia; Aire (Géminis, Libra, Acuario) rige el intelecto y la comunicación; y Agua (Cáncer, Escorpio, Piscis) canaliza la intuición y el mundo emocional."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Con qué frecuencia se deben consultar los tránsitos y el horóscopo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Puedes consultar el clima diario cada mañana para alinear tu energía con la fase lunar y el tránsito solar, o bien realizar la tirada semanal al inicio de cada semana para planificar tus decisiones y anticipar desafíos."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 
@@ -431,6 +505,176 @@
           </div>
         </div>
       </section>
+
+      <!-- SECCIÓN SEO: Guía Astrológica y de los 12 Signos del Zodiaco -->
+      <article class="glass-card tarot-seo-guide" style="margin-top: 3.5rem;">
+        <nav aria-label="Ruta de navegación" style="margin-bottom: 1.25rem; font-size: 0.85rem; color: var(--gold-color);">
+          <a href="index.html" style="color: var(--gold-color); text-decoration: none;">Inicio</a>
+          <span style="margin: 0 0.4rem; color: var(--text-muted);">/</span>
+          <span style="color: var(--text-main);">Tu Horóscopo y Tránsitos Celestes</span>
+        </nav>
+
+        <h2>Guía Astrológica: Signos del Zodiaco, Tránsitos Planetarios y Sabiduría Cósmica</h2>
+        <p>
+          La <strong>Astrología</strong> es el lenguaje sagrado que interpreta la danza sincrónica entre los cuerpos celestes y la conciencia humana. A través de la posición del <strong>Sol</strong> (esencia y vitalidad), la <strong>Luna</strong> (mundo emocional y subconsciente) y los <strong>planetas regentes</strong> en las doce constelaciones del zodiaco, el firmamento dibuja un mapa energético que nos orienta en la toma de decisiones, el crecimiento personal y las relaciones humanas.
+        </p>
+        <p>
+          En Eco Estelar combinamos la precisión astronómica de los <strong>tránsitos en tiempo real</strong> con la sabiduría simbólica del <strong>Tarot</strong>, permitiéndote consultar tu clima cósmico diario, lecturas semanales de 3 cartas y la Rueda de las 12 Casas Astrológicas.
+        </p>
+
+        <div class="mystical-divider" style="margin: 2rem 0;">
+          <svg viewBox="0 0 100 8" class="divider-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 4H42M58 4H100" stroke="var(--border-color)" stroke-width="0.75" />
+            <polygon points="50,0.5 51.5,3.5 55,3.5 52.5,5.5 54,8.5 50,6.8 46,8.5 47.5,5.5 45,3.5 48.5,3.5" fill="var(--gold-color)" />
+          </svg>
+        </div>
+
+        <h3><span>♈</span> Los 12 Signos del Zodiaco y sus Regencias Astrales</h3>
+        <p>
+          Cada uno de los doce signos encarna un arquetipo primordial del viaje del alma, definido por su elemento natural, su modalidad y su regente planetario:
+        </p>
+        
+        <div class="tarot-seo-grid">
+          <div class="tarot-seo-card">
+            <h4><span>♈</span> Aries (21 Mar - 19 Abr)</h4>
+            <p><strong>Elemento Fuego</strong> | Regente: Marte. Energía pionera, coraje, liderazgo, iniciativa y pasión vital.</p>
+          </div>
+          <div class="tarot-seo-card">
+            <h4><span>♉</span> Tauro (20 Abr - 20 May)</h4>
+            <p><strong>Elemento Tierra</strong> | Regente: Venus. Estabilidad material, perseverancia, sensualidad, lealtad y disfrute terrenal.</p>
+          </div>
+          <div class="tarot-seo-card">
+            <h4><span>♊</span> Géminis (21 May - 20 Jun)</h4>
+            <p><strong>Elemento Aire</strong> | Regente: Mercurio. Curiosidad intelectual, comunicación, versatilidad, ingenio y adaptabilidad.</p>
+          </div>
+          <div class="tarot-seo-card">
+            <h4><span>♋</span> Cáncer (21 Jun - 22 Jul)</h4>
+            <p><strong>Elemento Agua</strong> | Regente: La Luna. Intuición profunda, protección del hogar, empatía, afecto y memoria emocional.</p>
+          </div>
+          <div class="tarot-seo-card">
+            <h4><span>♌</span> Leo (23 Jul - 22 Ago)</h4>
+            <p><strong>Elemento Fuego</strong> | Regente: El Sol. Creatividad radiante, generosidad, nobleza, autoexpresión y magnetismo.</p>
+          </div>
+          <div class="tarot-seo-card">
+            <h4><span>♍</span> Virgo (23 Ago - 22 Sep)</h4>
+            <p><strong>Elemento Tierra</strong> | Regente: Mercurio. Mente analítica, discernimiento, orden, servicio, salud y refinamiento.</p>
+          </div>
+          <div class="tarot-seo-card">
+            <h4><span>♎</span> Libra (23 Sep - 22 Oct)</h4>
+            <p><strong>Elemento Aire</strong> | Regente: Venus. Búsqueda de armonía, belleza, justicia, diplomacia y equilibrio en los vínculos.</p>
+          </div>
+          <div class="tarot-seo-card">
+            <h4><span>♏</span> Escorpio (23 Oct - 21 Nov)</h4>
+            <p><strong>Elemento Agua</strong> | Regente: Plutón y Marte. Transformación profunda, poder interior, magnetismo, misterio y regeneración.</p>
+          </div>
+          <div class="tarot-seo-card">
+            <h4><span>♐</span> Sagitario (22 Nov - 21 Dic)</h4>
+            <p><strong>Elemento Fuego</strong> | Regente: Júpiter. Expansión de conciencia, optimismo, filosofía, viajes y búsqueda de la verdad.</p>
+          </div>
+          <div class="tarot-seo-card">
+            <h4><span>♑</span> Capricornio (22 Dic - 19 Ene)</h4>
+            <p><strong>Elemento Tierra</strong> | Regente: Saturno. Maestría, disciplina, ambición constructiva, madurez y perseverancia.</p>
+          </div>
+          <div class="tarot-seo-card">
+            <h4><span>♒</span> Acuario (20 Ene - 18 Feb)</h4>
+            <p><strong>Elemento Aire</strong> | Regente: Urano y Saturno. Visión de futuro, originalidad, ideales humanitarios, libertad y fraternidad.</p>
+          </div>
+          <div class="tarot-seo-card">
+            <h4><span>♓</span> Piscis (19 Feb - 20 Mar)</h4>
+            <p><strong>Elemento Agua</strong> | Regente: Neptuno y Júpiter. Misticismo, compasión universal, imaginación poética y conexión con el cosmos.</p>
+          </div>
+        </div>
+
+        <h3><span>🔥</span> Los Cuatro Elementos Sagrados en la Astrología</h3>
+        <p>
+          La rueda zodiacal se sostiene en la interacción de cuatro fuerzas elementales de la naturaleza:
+        </p>
+        <div class="tarot-seo-grid">
+          <div class="tarot-seo-card">
+            <h4><span>🔥</span> Signos de Fuego (Aries, Leo, Sagitario)</h4>
+            <p>Aportan entusiasmo, vitalidad, acción, coraje y el impulso de encender nuevos proyectos en el mundo.</p>
+          </div>
+          <div class="tarot-seo-card">
+            <h4><span>🌿</span> Signos de Tierra (Tauro, Virgo, Capricornio)</h4>
+            <p>Brindan pragmatismo, estabilidad económica, constancia, cuidado del cuerpo físico y concreción tangible.</p>
+          </div>
+          <div class="tarot-seo-card">
+            <h4><span>💨</span> Signos de Aire (Géminis, Libra, Acuario)</h4>
+            <p>Rigen el intelecto, los acuerdos, las relaciones sociales, el intercambio de ideas y la visión conceptual.</p>
+          </div>
+          <div class="tarot-seo-card">
+            <h4><span>💧</span> Signos de Agua (Cáncer, Escorpio, Piscis)</h4>
+            <p>Canalizan el inconsciente, los afectos profundos, la sanación emocional, la sensibilidad psíquica y la empatía.</p>
+          </div>
+        </div>
+
+        <h3><span>🏛️</span> La Rueda de las 12 Casas Astrológicas</h3>
+        <p>
+          En la carta astral, la esfera celeste se divide en 12 sectores o casas que representan todos los escenarios de la vida:
+        </p>
+        <ul>
+          <li style="margin-bottom: 0.5rem; color: var(--text-muted); line-height: 1.6;">
+            <strong style="color: var(--gold-color);">✦ Ejes Angulares Principales:</strong> Casa I (Ascendente / Identidad), Casa IV (Fondo de Cielo / Hogar y Raíces), Casa VII (Descendente / Pareja y Relaciones) y Casa X (Medio Cielo / Vocación y Estatus).
+          </li>
+          <li style="color: var(--text-muted); line-height: 1.6;">
+            <strong style="color: #38bdf8;">✦ Casas Sucedentes y Cadentes:</strong> Casas II (Recursos), III (Comunicación), V (Creatividad), VI (Salud y Trabajo), VIII (Transformación), IX (Filosofía), XI (Amistades y Proyectos) y XII (Subconsciente y Karma).
+          </li>
+        </ul>
+
+        <div class="mystical-divider" style="margin: 2rem 0;">
+          <svg viewBox="0 0 100 8" class="divider-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 4H42M58 4H100" stroke="var(--border-color)" stroke-width="0.75" />
+            <polygon points="50,0.5 51.5,3.5 55,3.5 52.5,5.5 54,8.5 50,6.8 46,8.5 47.5,5.5 45,3.5 48.5,3.5" fill="var(--gold-color)" />
+          </svg>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <h3><span>❓</span> Preguntas Frecuentes sobre el Horóscopo y la Astrología</h3>
+        <div class="seo-faq-accordion">
+          <details class="seo-faq-item">
+            <summary class="seo-faq-summary">¿Cómo se calculan las predicciones del horóscopo en Eco Estelar? <span>+</span></summary>
+            <div class="seo-faq-content">
+              Nuestras predicciones integran el cálculo astronómico en tiempo real de los tránsitos celestes (posiciones exactas del Sol, la Luna y planetas regentes) junto a la sincronicidad arquetípica del Tarot, generando pronósticos personalizados en amor, trabajo, salud y evolución espiritual.
+            </div>
+          </details>
+          <details class="seo-faq-item">
+            <summary class="seo-faq-summary">¿Qué diferencia hay entre la tirada diaria y la tirada semanal? <span>+</span></summary>
+            <div class="seo-faq-content">
+              La tirada diaria se enfoca en las influencias inmediatas de las próximas 24 horas y la fase lunar actual. La tirada semanal de 3 cartas traza la evolución kármica de los próximos 7 días: la Energía de Apertura, el Desafío de mitad de semana y la Clave de Triunfo o Desenlace.
+            </div>
+          </details>
+          <details class="seo-faq-item">
+            <summary class="seo-faq-summary">¿Qué representa la Rueda de las 12 Casas Astrológicas? <span>+</span></summary>
+            <div class="seo-faq-content">
+              La Rueda de las 12 Casas es una lectura astrológica integral que mapea todos los ámbitos vitales: personalidad (Casa I), recursos (Casa II), comunicación (Casa III), hogar (Casa IV), romance (Casa V), trabajo/salud (Casa VI), pareja (Casa VII), transformación (Casa VIII), sabiduría (Casa IX), profesión (Casa X), proyectos (Casa XI) y karma (Casa XII).
+            </div>
+          </details>
+          <details class="seo-faq-item">
+            <summary class="seo-faq-summary">¿Cómo influyen los 4 elementos en los signos del zodiaco? <span>+</span></summary>
+            <div class="seo-faq-content">
+              Los 12 signos se dividen en Fuego (pasión y voluntad), Tierra (estabilidad material y perseverancia), Aire (mente y comunicación) y Agua (intuición y emociones profundas).
+            </div>
+          </details>
+          <details class="seo-faq-item">
+            <summary class="seo-faq-summary">¿Con qué frecuencia conviene consultar los tránsitos y el horóscopo? <span>+</span></summary>
+            <div class="seo-faq-content">
+              Puedes consultar el horóscopo diario cada mañana para sincronizar tu día con el clima celeste, o realizar la tirada semanal al inicio de cada ciclo para anticipar desafíos y tomar decisiones conscientes.
+            </div>
+          </details>
+        </div>
+
+        <!-- Interlinking -->
+        <h3 style="margin-top: 2rem;"><span>🔗</span> Explora Más Sabiduría Cósmica en Eco Estelar</h3>
+        <p>Complementa tu estudio astrológico con nuestras herramientas sagradas y oráculos interactivos:</p>
+        <div class="tarot-interlinking-chips">
+          <a href="carta-del-dia.html" class="tarot-interlink-btn">🌟 Carta del Día</a>
+          <a href="oraculo.html" class="tarot-interlink-btn">🔮 El Oráculo del Destino</a>
+          <a href="fase-lunar.html" class="tarot-interlink-btn">🌙 Fase Lunar y Rituales</a>
+          <a href="numerologia.html" class="tarot-interlink-btn">🔢 Perfil Numerológico</a>
+          <a href="grimorio.html" class="tarot-interlink-btn">📖 El Libro del Tarot</a>
+          <a href="articulos.html" class="tarot-interlink-btn">📰 Artículos de Estudio Astral</a>
+        </div>
+      </article>
     </div>
 
 

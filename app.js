@@ -1346,16 +1346,43 @@ function generateDestinySynthesis(question) {
 
   const categoryIntro = getCategoryIntroText();
 
+  const advice3 = c3.isReversed 
+    ? (c3.reversed?.alchemy || c3.reversed?.general || d3.meaning) 
+    : (c3.meanings?.advice || c3.meanings?.general || d3.meaning);
+
   textContainer.innerHTML = `
-    <p>El hilo invisible del tiempo se despliega ante tu inquietud sobre <strong>${categoryIntro}</strong>: <em>"${question}"</em>. Las cartas no hablan de sucesos aislados, sino del viaje continuo e ininterrumpido de tu alma.</p>
-    <p>Todo comenzó en tu <strong>pasado</strong> bajo la impronta de <strong>${d1.name}</strong>, una vibración donde ${d1.meaning} Aquellas vivencias no fueron en vano; sembraron la experiencia necesaria que dio forma a tus cimientos emocionales y mentales.</p>
-    <p>De esa semilla previa germina de manera natural tu <strong>presente</strong>, ahora bajo la tutela de <strong>${d2.name}</strong>. Esta presencia te revela que ${d2.meaning} Al integrar este aprendizaje del ahora, abres la corriente vital hacia lo que está por venir.</p>
-    <p>Y es precisamente esa corriente del presente la que desemboca con fuerza en el <strong>futuro</strong> que ya se dibuja en tu horizonte, marcado por <strong>${d3.name}</strong>. Allí, el oráculo presagia que ${d3.meaning}</p>
-    <div style="background: rgba(229, 193, 88, 0.06); border-left: 3px solid var(--gold-color); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin-top: 1.5rem;">
-      <p style="margin: 0; font-family: var(--font-serif); color: var(--gold-color); font-weight: 600; font-size: 0.95rem;">✦ Síntesis Alquímica del Oráculo:</p>
-      <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
-        El puente que conecta la lección pasada de <em>${d1.name}</em> con el horizonte futuro de <em>${d3.name}</em> lo estás construyendo en este instante preciso con la sabiduría de <em>${d2.name}</em>. Confía en la continuidad de tu proceso y camina con firmeza.
+    <div style="display: flex; flex-direction: column; gap: 1.25rem; line-height: 1.7; color: var(--text-main);">
+      <p style="margin: 0; font-size: 0.95rem;">
+        El hilo invisible del tiempo se despliega ante tu inquietud sobre <strong>${categoryIntro}</strong>: <em>"${question}"</em>. Las cartas no describen sucesos aislados, sino la corriente ininterrumpida y evolutiva de tu alma a través de tres estaciones kármicas:
       </p>
+
+      <div style="border-left: 3px solid var(--gold-color); padding-left: 1rem; background: rgba(255, 255, 255, 0.02); padding-top: 0.75rem; padding-bottom: 0.75rem; border-radius: 0 10px 10px 0;">
+        <strong style="color: var(--gold-color); font-size: 0.98rem;">⏳ 1. Raíz en el Pasado: ${d1.name}</strong>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin: 0.35rem 0 0 0;">
+          Todo comenzó bajo la impronta de <strong>${d1.name}</strong> (${d1.meaning}). Aquellas vivencias y decisiones no fueron en vano; sembraron la experiencia necesaria que dio forma a tus cimientos emocionales y mentales, creando el punto de partida de tu situación actual.
+        </p>
+      </div>
+
+      <div style="border-left: 3px solid #c084fc; padding-left: 1rem; background: rgba(255, 255, 255, 0.02); padding-top: 0.75rem; padding-bottom: 0.75rem; border-radius: 0 10px 10px 0;">
+        <strong style="color: #c084fc; font-size: 0.98rem;">⚡ 2. Punto de Poder en el Presente: ${d2.name}</strong>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin: 0.35rem 0 0 0;">
+          De aquella semilla germina tu realidad de hoy bajo la tutela de <strong>${d2.name}</strong> (${d2.meaning}). Este es tu momento de libre albedrío y acción consciente: al integrar con madurez este aprendizaje del ahora, desbloqueas y encauzas la corriente hacia lo que está por manifestarse.
+        </p>
+      </div>
+
+      <div style="border-left: 3px solid #10b981; padding-left: 1rem; background: rgba(255, 255, 255, 0.02); padding-top: 0.75rem; padding-bottom: 0.75rem; border-radius: 0 10px 10px 0;">
+        <strong style="color: #34d399; font-size: 0.98rem;">🔮 3. Horizonte y Predicción de Futuro: ${d3.name}</strong>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin: 0.35rem 0 0 0;">
+          La energía del presente desemboca directamente en el desenlace marcado por <strong>${d3.name}</strong>. El oráculo predice una resolución clarificadora: <em>${d3.meaning}</em>. Si mantienes el rumbo y aplicas la conciencia adquirida, este arcano vaticina un ciclo de culminación armónica y victoria personal.
+        </p>
+      </div>
+
+      <div style="background: linear-gradient(135deg, rgba(229, 193, 88, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%); border: 1px dashed var(--gold-color); border-radius: 12px; padding: 1.15rem 1.35rem; margin-top: 0.5rem;">
+        <strong style="color: var(--gold-color); font-size: 0.95rem;">✦ Síntesis Alquímica del Oráculo:</strong>
+        <p style="margin: 0.35rem 0 0 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-main); font-style: italic;">
+          "${advice3}"
+        </p>
+      </div>
     </div>
   `;
 }
@@ -1379,15 +1406,45 @@ function generateCrossSynthesis(question) {
   const categoryIntro = getCategoryIntroText();
 
   textContainer.innerHTML = `
-    <p>Una cruz de luz mística se dibuja ante tu consulta sobre <strong>${categoryIntro}</strong>: <em>"${question}"</em>. Las fuerzas en juego dialogan entre sí para mostrarte la dinámica completa de tu situación.</p>
-    <p>En el plano de tus <strong>fortalezas y apoyos</strong> resplandece la energía de <strong>${d1.name}</strong>, la cual te recuerda que ${d1.meaning} Esta luz es tu principal ancla y recurso sagrado.</p>
-    <p>Sin embargo, esta fuerza encuentra su contrapartida y su terreno de prueba en el <strong>desafío</strong> que te plantea <strong>${d2.name}</strong>, advirtiéndote que ${d2.meaning}. No lo percibas como un obstáculo insuperable, sino como el contrapeso necesario para tu maduración.</p>
-    <p>Para equilibrar ambas fuerzas y superar la encrucijada, el oráculo te entrega como <strong>consejo de acción</strong> la vibración de <strong>${d3.name}</strong>, guiándote a que ${d3.meaning}. Al acoger con determinación esta actitud, desbloqueas el camino hacia el <strong>desenlace o solución</strong> encarnado por <strong>${d4.name}</strong>, donde ${d4.meaning}</p>
-    <div style="background: rgba(139, 92, 246, 0.08); border-left: 3px solid var(--purple-color); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin-top: 1.5rem;">
-      <p style="margin: 0; font-family: var(--font-serif); color: var(--gold-color); font-weight: 600; font-size: 0.95rem;">✦ El Eje Central de la Lectura:</p>
-      <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
-        En la intersección misma de esta cruz, como la verdad esencial que unifica toda tu vivencia, resuena la carta de <em>${d5.name}</em>: ${d5.meaning}
+    <div style="display: flex; flex-direction: column; gap: 1.25rem; line-height: 1.7; color: var(--text-main);">
+      <p style="margin: 0; font-size: 0.95rem;">
+        Una cruz de luz mística se dibuja ante tu consulta sobre <strong>${categoryIntro}</strong>: <em>"${question}"</em>. Las fuerzas en juego dialogan entre sí para mostrarte la dinámica completa de tu situación:
       </p>
+
+      <div style="border-left: 3px solid #10b981; padding-left: 1rem; background: rgba(255, 255, 255, 0.02); padding-top: 0.75rem; padding-bottom: 0.75rem; border-radius: 0 10px 10px 0;">
+        <strong style="color: #34d399; font-size: 0.98rem;">✦ 1. Tu Fortaleza y Aliado Invisible: ${d1.name}</strong>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin: 0.35rem 0 0 0;">
+          Resplandece como tu mayor respaldo: <em>${d1.meaning}</em>. Esta energía es tu ancla segura y el manantial del que debes beber para no perder tu centro.
+        </p>
+      </div>
+
+      <div style="border-left: 3px solid #f472b6; padding-left: 1rem; background: rgba(255, 255, 255, 0.02); padding-top: 0.75rem; padding-bottom: 0.75rem; border-radius: 0 10px 10px 0;">
+        <strong style="color: #f472b6; font-size: 0.98rem;">✦ 2. El Desafío y Piedra de Toque: ${d2.name}</strong>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin: 0.35rem 0 0 0;">
+          Tu terreno de prueba se manifiesta con <strong>${d2.name}</strong> (${d2.meaning}). No representa una barrera infranqueable, sino el contrapeso necesario para fortalecer tu templanza y madurez.
+        </p>
+      </div>
+
+      <div style="border-left: 3px solid var(--gold-color); padding-left: 1rem; background: rgba(255, 255, 255, 0.02); padding-top: 0.75rem; padding-bottom: 0.75rem; border-radius: 0 10px 10px 0;">
+        <strong style="color: var(--gold-color); font-size: 0.98rem;">✦ 3. El Consejo Maestro de Acción: ${d3.name}</strong>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin: 0.35rem 0 0 0;">
+          Para resolver la tensión entre el apoyo y el desafío, el oráculo te entrega la clave de <strong>${d3.name}</strong> (${d3.meaning}). Aplica este consejo con determinación práctica.
+        </p>
+      </div>
+
+      <div style="border-left: 3px solid #38bdf8; padding-left: 1rem; background: rgba(255, 255, 255, 0.02); padding-top: 0.75rem; padding-bottom: 0.75rem; border-radius: 0 10px 10px 0;">
+        <strong style="color: #38bdf8; font-size: 0.98rem;">✦ 4. La Predicción de Desenlace: ${d4.name}</strong>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin: 0.35rem 0 0 0;">
+          Al dar el paso aconsejado, el camino desemboca en el éxito guiado por <strong>${d4.name}</strong>: <em>${d4.meaning}</em>.
+        </p>
+      </div>
+
+      <div style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.09) 0%, rgba(229, 193, 88, 0.09) 100%); border-left: 4px solid var(--gold-color); padding: 1.15rem 1.35rem; border-radius: 0 12px 12px 0;">
+        <strong style="font-family: var(--font-serif); color: var(--gold-color); font-size: 0.98rem;">✦ El Eje de Síntesis Central: ${d5.name}</strong>
+        <p style="margin: 0.35rem 0 0 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-main);">
+          En el corazón sagrado de la tirada resuena <strong>${d5.name}</strong>: <em>${d5.meaning}</em>. Esta es la verdad espiritual última que unifica tu experiencia y te guía hacia la plenitud.
+        </p>
+      </div>
     </div>
   `;
 }
@@ -3415,14 +3472,14 @@ function showAstroInterpretation() {
     if (selectedAstroSpread === 'astro_daily') {
       const card = currentAstroSpread[0];
       const cardName = card.isReversed ? `${card.name} (Invertida)` : card.name;
-      const themes = card.isReversed ? "los bloqueos y aprendizajes" : card.keyThemes.toLowerCase().replace('.', '');
-      summaryText = `Hoy es un día para <strong>enfocar tu fuerza interior</strong>. La influencia de <strong>${cardName}</strong> te invita a conectar con <em>${themes}</em>. En tu signo <strong>${userSignData.name}</strong>, esta energía kármica se manifiesta como un llamado a la acción consciente, recordándote cuidar tu bienestar físico e interior.`;
+      const themes = card.isReversed ? "los bloqueos a transformar y la cautela" : (card.keyThemes || "la expansión y la claridad").toLowerCase().replace('.', '');
+      summaryText = `Hoy, bajo el influjo estelar de <strong>${cardName}</strong>, el firmamento te llama a sintonizar con <em>${themes}</em>. Tu clave para estas 24 horas como nativo de <strong>${userSignData.name}</strong> es actuar desde la serenidad interior, cuidando tu energía física y tomando decisiones meditadas sin apresurar los tiempos cósmicos.`;
     } else if (selectedAstroSpread === 'astro_houses' && currentAstroSpread.length === 12) {
       const c1 = currentAstroSpread[0];
       const c10 = currentAstroSpread[9];
       const name1 = c1.isReversed ? `${c1.name} (Invertida)` : c1.name;
       const name10 = c10.isReversed ? `${c10.name} (Invertida)` : c10.name;
-      summaryText = `Tu ciclo astrológico sitúa a <strong>${name1}</strong> en tu Casa I (Personalidad y Autoexpresión) y a <strong>${name10}</strong> en tu Casa X (Carrera y Destino Profesional). Esto señala que tu camino de madurez esta temporada requiere alinear tu verdad interior con tus aspiraciones de éxito en el mundo externo.`;
+      summaryText = `El mapa de las 12 Casas revela tu eje maestro de evolución: <strong>${name1}</strong> rige tu Casa I (Identidad y Autoexpresión) mientras <strong>${name10}</strong> corona tu Casa X (Destino y Profesión). Tu gran triunfo en este ciclo dependerá de alinear tu autenticidad más pura con tus más altas ambiciones mundanas.`;
     } else if (selectedAstroSpread === 'astro_weekly' && currentAstroSpread.length === 3) {
       const c1 = currentAstroSpread[0];
       const c2 = currentAstroSpread[1];
@@ -3430,7 +3487,7 @@ function showAstroInterpretation() {
       const name1 = c1.isReversed ? `${c1.name} (Invertida)` : c1.name;
       const name2 = c2.isReversed ? `${c2.name} (Invertida)` : c2.name;
       const name3 = c3.isReversed ? `${c3.name} (Invertida)` : c3.name;
-      summaryText = `Esta semana se presenta como un <strong>período de crecimiento y equilibrio</strong> para <strong>${userSignData.name}</strong>. Tu camino estará guiado por la energía de <strong>${name1}</strong>, teniendo como gran reto a superar a <strong>${name2}</strong>. La clave del éxito para estos 7 días consistirá en aplicar el sabio consejo de <strong>${name3}</strong>.`;
+      summaryText = `Tu semana para <strong>${userSignData.name}</strong> se proyecta como una travesía de transformación integral: arrancas con la corriente de <strong>${name1}</strong>, superarás la prueba de aprendizaje de <strong>${name2}</strong> a mitad de semana, y alcanzarás una resolución victoriosa aplicando el consejo maestro de <strong>${name3}</strong>.`;
     }
     astroSummaryForecastText.innerHTML = summaryText;
   }
@@ -3519,7 +3576,7 @@ function showAstroInterpretation() {
       }
       
       const cardNameDisplay = card.isReversed ? `${card.name} (Invertida)` : card.name;
-      const meaningText = card.isReversed ? card.reversed.general : card.meanings.general;
+      const meaningText = card.isReversed ? (card.reversed?.general || card.meanings?.general) : card.meanings?.general;
       const astro = ASTRO_MAP[card.id] || { ruler: "Cosmos", symbol: "✦", keywords: "Fuerza universal" };
       
       let cardRuler = astro.ruler;
@@ -3566,62 +3623,192 @@ function showAstroInterpretation() {
 function generateDailyAstroForecast(sunSign, moonSign, moonPhase, userSignData) {
   const card = currentAstroSpread[0];
   const cardName = card.isReversed ? `${card.name} (Invertida)` : card.name;
-  const meaning = card.isReversed ? card.reversed.general : card.meanings.general;
+  const meaning = card.isReversed ? (card.reversed?.general || card.meanings?.general) : card.meanings?.general;
+  const love = card.isReversed ? (card.reversed?.love || meaning) : (card.meanings?.love || meaning);
+  const work = card.isReversed ? (card.reversed?.work || meaning) : (card.meanings?.work || meaning);
+  const health = card.isReversed ? (card.reversed?.health || meaning) : (card.meanings?.health || meaning);
+  const advice = card.isReversed ? (card.reversed?.alchemy || card.reversed?.general || meaning) : (card.meanings?.advice || card.meanings?.general || meaning);
   const astro = ASTRO_MAP[card.id];
-  
-  const isWaning = moonPhase.phaseName.toLowerCase().includes('menguante') || moonPhase.phaseName === 'Luna Nueva';
-  const clothTip = `<br><br><span style="display:block; margin-top:1.5rem; font-size:0.85rem; color:var(--text-muted); border-top: 1px dashed var(--border-color); padding-top:1rem;">💡 <strong>Consejo de tu Grimorio</strong>: Hoy te sugerimos envolver tu baraja en un paño de <strong>seda violeta</strong> y guardarla en una <strong>cajita de madera</strong> para proteger su vibración espiritual. ${!isWaning ? 'Aprovecha que la Luna está en fase creciente o llena (acumulando luz) para sintonizar y magnetizar mejor tu mazo.' : 'Hoy es un excelente momento de fase menguante o luna nueva para limpiar y purificar tu mazo y el espacio donde haces tus lecturas.'}</span>`;
-  
+
   const sunChakra = getAstroChakra(sunSign);
   const transitRuler = ZODIAC_INFO[getSanitizedSignKey(moonSign)].ruler;
   const lunarAngel = PLANETARY_ANGELS[transitRuler.split(' y ')[0]] ? PLANETARY_ANGELS[transitRuler.split(' y ')[0]].angel : "Gabriel";
+  const isWaning = moonPhase.phaseName.toLowerCase().includes('menguante') || moonPhase.phaseName === 'Luna Nueva';
 
-  let forecast = `<p style="margin-bottom:1rem;">El universo te saluda hoy, <strong>${userSignData.name}</strong>. El Sol ilumina el signo de <strong>${sunSign}</strong> mientras la Luna teje sus hilos de plata por <strong>${moonSign}</strong>, transitando su fase de <strong>${moonPhase.phaseName}</strong>. Este es el mosaico celeste que colorea tu día.</p>
-  
-  <p style="margin-bottom:1rem;"><strong>✦ El Cuerpo como Templo:</strong> La Luna en <strong>${moonSign}</strong> dirige su atención hacia <strong>${ZODIAC_INFO[getSanitizedSignKey(moonSign)].body}</strong>. Tu naturaleza de <strong>${userSignData.name}</strong> también te invita a cuidar especialmente <strong>${userSignData.body}</strong> hoy. Respira, muévete con conciencia, y escucha lo que el cuerpo te murmura en silencio.</p>
-  
-  <p style="margin-bottom:1rem;"><strong>✦ La Voz del Tarot:</strong> El arcano que guía tu jornada es <strong>${cardName}</strong>, vibración de <em>${astro ? astro.keywords.toLowerCase() : 'fuerzas universales'}</em>. El oráculo te susurra: <br><span style="display:block; margin: 0.5rem 0 0.5rem 1rem; border-left: 2px solid var(--gold-color); padding-left: 0.75rem; font-style: italic; color: var(--text-muted);">${meaning}</span></p>
-  
-  <p style="margin-bottom:0;"><strong>✦ Tu Guardián de Hoy:</strong> El ángel <strong>${lunarAngel}</strong> tiende su manto protector sobre este día. Para sintonizar con él, dedica unos instantes a respirar con atención plena, llevando tu presencia a la zona de <strong>${sunChakra.loc}</strong> —tu chakra <strong>${sunChakra.name.split(' ')[0]}</strong>— y dejando que la calma se expanda desde ahí hacia cada parte de tu ser.</p>${clothTip}`;
-  
+  let forecast = `
+    <div class="daily-forecast-container" style="display: flex; flex-direction: column; gap: 1.35rem; line-height: 1.7; color: var(--text-main);">
+      
+      <div style="background: rgba(229, 193, 88, 0.05); border: 1px solid var(--border-color); border-radius: 14px; padding: 1.25rem 1.5rem;">
+        <h4 style="color: var(--gold-color); font-family: var(--font-serif); font-size: 1.15rem; margin: 0 0 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+          <span>☀️</span> Clima Cósmico de Hoy para ${userSignData.name}
+        </h4>
+        <p style="font-size: 0.93rem; color: var(--text-muted); margin: 0;">
+          El firmamento te recibe hoy con el <strong>Sol transitando por ${sunSign}</strong> y la <strong>Luna en ${moonSign} (${moonPhase.phaseName})</strong>. Tu naturaleza de <strong>${userSignData.element}</strong>, custodiada por <strong>${userSignData.ruler}</strong>, recibe el influjo directo del arcano <strong>${cardName}</strong>, cuya frecuencia primordial vibra en sintonía con <em>${astro ? astro.keywords.toLowerCase() : 'el orden universal'}</em>.
+        </p>
+      </div>
+
+      <!-- Predicción Central del Arcano -->
+      <div style="border-left: 3px solid var(--gold-color); padding-left: 1rem; background: rgba(255, 255, 255, 0.02); padding-top: 0.85rem; padding-bottom: 0.85rem; border-radius: 0 10px 10px 0;">
+        <strong style="color: var(--gold-color); font-size: 0.98rem;">✦ El Mensaje del Oráculo para las Próximas 24 Horas:</strong>
+        <p style="font-size: 0.93rem; color: var(--text-muted); margin: 0.4rem 0 0 0;">
+          ${meaning}
+        </p>
+      </div>
+
+      <!-- Áreas del Día: Amor, Trabajo, Salud -->
+      <div style="background: rgba(8, 7, 17, 0.5); border: 1px solid var(--border-color); border-radius: 14px; padding: 1.25rem 1.5rem;">
+        <h4 style="color: var(--gold-color); font-family: var(--font-serif); font-size: 1.05rem; margin: 0 0 0.85rem 0; display: flex; align-items: center; gap: 0.5rem;">
+          <span>🔮</span> Predicción del Día por Áreas
+        </h4>
+        <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">
+            <strong style="color: #f472b6;">❤️ Amor y Vínculos:</strong> ${love}
+          </p>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">
+            <strong style="color: var(--gold-color);">💼 Trabajo y Finanzas:</strong> ${work}
+          </p>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">
+            <strong style="color: #38bdf8;">🌿 Vitalidad y Templo Corporal:</strong> ${health} Cuida especialmente <strong>${userSignData.body}</strong> y sintoniza con tu chakra de <strong>${sunChakra.loc}</strong> (${sunChakra.name}).
+          </p>
+        </div>
+      </div>
+
+      <!-- Consejo Alquímico -->
+      <div style="background: linear-gradient(135deg, rgba(229, 193, 88, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%); border: 1px dashed var(--gold-color); border-radius: 14px; padding: 1.15rem 1.35rem;">
+        <strong style="color: var(--gold-color); font-size: 0.95rem;">🗝️ Clave de Alquimia Diaria:</strong>
+        <p style="font-size: 0.92rem; color: var(--text-main); margin: 0.35rem 0 0.5rem 0; font-style: italic;">
+          "${advice}"
+        </p>
+        <span style="display: block; font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 0.5rem;">
+          Ángel custodio del día: <strong>${lunarAngel}</strong>. ${!isWaning ? 'Fase de luz propicia para sembrar intenciones y magnetizar deseos.' : 'Fase lunar menguante ideal para purificar tu energía y soltar tensiones innecesarias.'}
+        </span>
+      </div>
+
+    </div>
+  `;
+
   return forecast;
 }
 
 function generateWeeklyAstroForecast(sunSign, moonSign, moonPhase, userSignData) {
   const c1 = currentAstroSpread[0]; // Energía Regente
   const c2 = currentAstroSpread[1]; // Desafío
-  const c3 = currentAstroSpread[2]; // Consejo
-  
+  const c3 = currentAstroSpread[2]; // Consejo y Desenlace
+
   const d1 = getCardNarrativeDetails(c1);
   const d2 = getCardNarrativeDetails(c2);
   const d3 = getCardNarrativeDetails(c3);
-  
+
   const sunRuler = ZODIAC_INFO[getSanitizedSignKey(sunSign)].ruler;
   const primarySunRuler = sunRuler.split(' y ')[0];
   const sunAngel = PLANETARY_ANGELS[primarySunRuler] ? PLANETARY_ANGELS[primarySunRuler].angel : "Gabriel";
   const sunChakra = getAstroChakra(sunSign);
-  
-  let forecast = `<p style="margin-bottom:1.25rem;">Los astros han tejido para ti, <strong>${userSignData.name}</strong>, una semana con su propio ritmo y su propia música. El Sol recorre <strong>${sunSign}</strong> bajo la tutela del ángel <strong>${sunAngel}</strong>, mientras la Luna respira en <strong>${moonSign}</strong>, en su etapa de <strong>${moonPhase.phaseName}</strong>. Esta es la partitura celeste de tus próximos siete días.</p>
-  
-  <p style="margin-bottom:1rem; font-weight: 600; color: var(--gold-color);">✦ Los tres mensajes que el cosmos reserva para ti esta semana:</p>
-  
-  <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
-    <li style="border-left: 3px solid var(--gold-color); padding-left: 0.75rem;">
-      <strong>1. La Energía que te sostiene: ${d1.name}</strong><br>
-      <span style="font-size: 0.9rem; color: var(--text-muted); display: block; margin-top: 0.25rem;">Esta es la corriente de fondo que fluye en tu favor esta semana. Confía en su vibración: ${d1.meaning}</span>
-    </li>
-    <li style="border-left: 3px solid var(--purple-color); padding-left: 0.75rem;">
-      <strong>2. La Enseñanza que te espera: ${d2.name}</strong><br>
-      <span style="font-size: 0.9rem; color: var(--text-muted); display: block; margin-top: 0.25rem;">El cosmos siempre incluye una prueba en el mapa. Esta semana, la tuya viene envuelta en la energía de este arcano. Ábrela con curiosidad, no con resistencia: ${d2.meaning}</span>
-    </li>
-    <li style="border-left: 3px solid var(--success-color); padding-left: 0.75rem;">
-      <strong>3. El Camino que te libera: ${d3.name}</strong><br>
-      <span style="font-size: 0.9rem; color: var(--text-muted); display: block; margin-top: 0.25rem;">Aquí está la clave que transforma el desafío en aprendizaje. El oráculo te dice: ${d3.meaning}</span>
-    </li>
-  </ul>
-  
-  <p style="margin-bottom: 0; border-top: 1px dashed var(--border-color); padding-top: 1rem;">🌸 <strong>Sintonía de la Semana</strong>: Tu chakra de <strong>${sunChakra.loc}</strong> merece atención especial estos días. Cada mañana, antes de que el mundo reclame tu energía, dedica unos instantes a respirar con intención hacia esa zona. El ángel <strong>${sunAngel}</strong> acompaña ese espacio sagrado contigo.</p>`;
-  
+
+  // Specific domain interpretations extracted from rich tarotDb
+  const love1 = c1.isReversed ? (c1.reversed?.love || d1.meaning) : (c1.meanings?.love || d1.meaning);
+  const love2 = c2.isReversed ? (c2.reversed?.love || d2.meaning) : (c2.meanings?.love || d2.meaning);
+  const love3 = c3.isReversed ? (c3.reversed?.love || d3.meaning) : (c3.meanings?.love || d3.meaning);
+
+  const work1 = c1.isReversed ? (c1.reversed?.work || d1.meaning) : (c1.meanings?.work || d1.meaning);
+  const work2 = c2.isReversed ? (c2.reversed?.work || d2.meaning) : (c2.meanings?.work || d2.meaning);
+  const work3 = c3.isReversed ? (c3.reversed?.work || d3.meaning) : (c3.meanings?.work || d3.meaning);
+
+  const health1 = c1.isReversed ? (c1.reversed?.health || d1.meaning) : (c1.meanings?.health || d1.meaning);
+  const health2 = c2.isReversed ? (c2.reversed?.health || d2.meaning) : (c2.meanings?.health || d2.meaning);
+  const health3 = c3.isReversed ? (c3.reversed?.health || d3.meaning) : (c3.meanings?.health || d3.meaning);
+
+  const advice3 = c3.isReversed ? (c3.reversed?.alchemy || c3.reversed?.general || d3.meaning) : (c3.meanings?.advice || c3.meanings?.general || d3.meaning);
+
+  let forecast = `
+    <div class="weekly-forecast-container" style="display: flex; flex-direction: column; gap: 1.5rem; line-height: 1.7; color: var(--text-main);">
+      
+      <!-- 1. Cabecera Astral -->
+      <div style="background: rgba(229, 193, 88, 0.05); border: 1px solid var(--border-color); border-radius: 14px; padding: 1.25rem 1.5rem;">
+        <h4 style="color: var(--gold-color); font-family: var(--font-serif); font-size: 1.15rem; margin: 0 0 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+          <span>🌌</span> Clima Celeste Semanal para ${userSignData.name} (${userSignData.element})
+        </h4>
+        <p style="font-size: 0.93rem; color: var(--text-muted); margin: 0;">
+          Esta semana los hilos del destino se entretejen bajo la radiación del <strong>Sol en ${sunSign}</strong> y las corrientes de la <strong>Luna en ${moonSign} (${moonPhase.phaseName})</strong>. Como nativo de <strong>${userSignData.name}</strong>, regido por <strong>${userSignData.ruler}</strong>, tu vibración de ${userSignData.element.toLowerCase()} se activa para procesar un ciclo kármico de evolución, toma de decisiones y expansión consciente.
+        </p>
+      </div>
+
+      <!-- 2. Relato Predictivo Continuo -->
+      <div>
+        <h4 style="color: var(--gold-color); font-family: var(--font-serif); font-size: 1.15rem; margin: 0 0 1rem 0; display: flex; align-items: center; gap: 0.5rem;">
+          <span>📜</span> El Hilo Kármico Semanal: De la Causa al Desenlace
+        </h4>
+        
+        <!-- Fase 1 -->
+        <div style="margin-bottom: 1.25rem; border-left: 3px solid var(--gold-color); padding-left: 1rem; background: rgba(255, 255, 255, 0.02); padding-top: 0.75rem; padding-bottom: 0.75rem; border-radius: 0 10px 10px 0;">
+          <strong style="color: var(--gold-color); font-size: 0.98rem;">✦ 1. Apertura y Energía Base: ${d1.name}</strong>
+          <p style="font-size: 0.92rem; color: var(--text-muted); margin: 0.4rem 0 0 0;">
+            Los primeros compases de la semana arrancan marcados por la presencia de <strong>${d1.name}</strong>. Esta vibración establece el tono de tus motivaciones: <em>${d1.meaning}</em>. En tu signo <strong>${userSignData.name}</strong>, esto te empuja a tomar la iniciativa y no posponer decisiones cruciales, otorgándote una plataforma de impulso consciente.
+          </p>
+        </div>
+
+        <!-- Fase 2 -->
+        <div style="margin-bottom: 1.25rem; border-left: 3px solid #c084fc; padding-left: 1rem; background: rgba(255, 255, 255, 0.02); padding-top: 0.75rem; padding-bottom: 0.75rem; border-radius: 0 10px 10px 0;">
+          <strong style="color: #c084fc; font-size: 0.98rem;">✦ 2. El Crisol de Prueba y Desafío: ${d2.name}</strong>
+          <p style="font-size: 0.92rem; color: var(--text-muted); margin: 0.4rem 0 0 0;">
+            Hacia la mitad del ciclo, el firmamento pondrá a prueba tu temple mediante el influjo de <strong>${d2.name}</strong>. El reto no surge para detenerte, sino para purificar tu intención: <em>${d2.meaning}</em>. Deberás prestar atención a no caer en reacciones precipitadas, apegos o bloqueos de orgullo; tu maestría consistirá en responder desde la templanza y la visión elevada.
+          </p>
+        </div>
+
+        <!-- Fase 3 -->
+        <div style="margin-bottom: 1.25rem; border-left: 3px solid #10b981; padding-left: 1rem; background: rgba(255, 255, 255, 0.02); padding-top: 0.75rem; padding-bottom: 0.75rem; border-radius: 0 10px 10px 0;">
+          <strong style="color: #34d399; font-size: 0.98rem;">✦ 3. La Clave de Triunfo y Desenlace: ${d3.name}</strong>
+          <p style="font-size: 0.92rem; color: var(--text-muted); margin: 0.4rem 0 0 0;">
+            El cierre de la semana decanta de forma victoriosa si aplicas la sabiduría de <strong>${d3.name}</strong>. El oráculo predice una resolución clarificadora: <em>${d3.meaning}</em>. La integración armónica de este arcano despeja las incertidumbres anteriores, permitiéndote culminar los 7 días con mayor serenidad, madurez y alineación con tu destino.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3. Pronóstico Predictivo por Áreas Vitales -->
+      <div style="background: rgba(8, 7, 17, 0.5); border: 1px solid var(--border-color); border-radius: 14px; padding: 1.25rem 1.5rem;">
+        <h4 style="color: var(--gold-color); font-family: var(--font-serif); font-size: 1.15rem; margin: 0 0 1rem 0; display: flex; align-items: center; gap: 0.5rem;">
+          <span>🧭</span> Pronóstico Detallado por Dimensiones Vitales
+        </h4>
+        
+        <div style="display: flex; flex-direction: column; gap: 1.1rem;">
+          <div>
+            <strong style="color: #f472b6; font-size: 0.95rem;">❤️ Amor y Vínculos Afectivos:</strong>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0.25rem 0 0 0;">
+              En tus relaciones, el tránsito de <em>${d1.name}</em> a <em>${d3.name}</em> señala una semana de clarificación emocional. Si tienes pareja, será vital trascender pequeños malentendidos (${d2.name}) abriendo el diálogo sincero: ${love3}. Si estás soltero o en búsqueda, tu magnetismo natural aumentará conforme liberes expectativas rígidas y permitas que la autenticidad guíe tus encuentros.
+            </p>
+          </div>
+
+          <div>
+            <strong style="color: var(--gold-color); font-size: 0.95rem;">💼 Trabajo, Proyectos y Prosperidad:</strong>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0.25rem 0 0 0;">
+              A nivel profesional y económico, la estrategia es tu mayor aliada. Inicias con el empuje de <em>${d1.name}</em>, pero deberás vigilar posibles demoras o contratos confusos bajo <em>${d2.name}</em>. La predicción de éxito se concreta hacia el final del ciclo: ${work3}. Mantén orden en tus números y confía en tu talento.
+            </p>
+          </div>
+
+          <div>
+            <strong style="color: #38bdf8; font-size: 0.95rem;">🌿 Vitalidad, Cuerpo y Salud:</strong>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0.25rem 0 0 0;">
+              El cuerpo somatiza los tránsitos celestes. Para <strong>${userSignData.name}</strong>, es crucial prestar atención a <strong>${userSignData.body}</strong> y a tu centro energético de <strong>${sunChakra.loc}</strong> (${sunChakra.name}). ${health2} Modera el estrés con momentos de meditación, descanso reparador y respiración consciente.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Alquimia y Decreto Semanal -->
+      <div style="background: linear-gradient(135deg, rgba(229, 193, 88, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%); border: 1px dashed var(--gold-color); border-radius: 14px; padding: 1.25rem 1.5rem;">
+        <h4 style="color: var(--gold-color); font-family: var(--font-serif); font-size: 1.05rem; margin: 0 0 0.4rem 0; display: flex; align-items: center; gap: 0.5rem;">
+          <span>🗝️</span> Consejo Oracular & Alquimia Semanal
+        </h4>
+        <p style="font-size: 0.92rem; color: var(--text-main); margin: 0 0 0.75rem 0; font-style: italic;">
+          "${advice3}"
+        </p>
+        <div style="font-size: 0.86rem; color: #fef08a; border-top: 1px solid rgba(229, 193, 88, 0.2); padding-top: 0.6rem;">
+          ✨ <strong>Decreto de Poder para ${userSignData.name}</strong>: <em>"Alineo mi voluntad con el orden cósmico. Acojo el aprendizaje con serenidad y decreto que mi luz interior disuelve toda sombra y abre caminos de abundancia, salud y paz."</em>
+        </div>
+      </div>
+
+    </div>
+  `;
+
   return forecast;
 }
 
@@ -3641,20 +3828,76 @@ function generateHousesAstroForecast(sunSign, moonSign, moonPhase, userSignData)
     { name: "Casa XII: Subconsciente y Trascendencia", desc: "El karma, el subconsciente, tus miedos ocultos y la espiritualidad secreta." }
   ];
 
-  let forecast = `<p style="margin-bottom:1.5rem;">La Rueda de las 12 Casas Astrológicas revela un mapa completo de tu energía celeste para <strong>${userSignData.name}</strong>, estructurado bajo el influjo del Sol en <strong>${sunSign}</strong> y la Luna en <strong>${moonSign}</strong>.</p>`;
+  const c1 = currentAstroSpread[0];
+  const c4 = currentAstroSpread[3];
+  const c7 = currentAstroSpread[6];
+  const c10 = currentAstroSpread[9];
+
+  const name1 = c1.isReversed ? `${c1.name} (Invertida)` : c1.name;
+  const name4 = c4.isReversed ? `${c4.name} (Invertida)` : c4.name;
+  const name7 = c7.isReversed ? `${c7.name} (Invertida)` : c7.name;
+  const name10 = c10.isReversed ? `${c10.name} (Invertida)` : c10.name;
+
+  let forecast = `
+    <div class="houses-forecast-container" style="display: flex; flex-direction: column; gap: 1.5rem; line-height: 1.7; color: var(--text-main);">
+      
+      <!-- 1. Cabecera -->
+      <div style="background: rgba(229, 193, 88, 0.05); border: 1px solid var(--border-color); border-radius: 14px; padding: 1.25rem 1.5rem;">
+        <h4 style="color: var(--gold-color); font-family: var(--font-serif); font-size: 1.15rem; margin: 0 0 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+          <span>🪐</span> Gran Mandala de las 12 Casas para ${userSignData.name}
+        </h4>
+        <p style="font-size: 0.93rem; color: var(--text-muted); margin: 0;">
+          La Rueda de las 12 Casas Astrológicas despliega una radiografía holística de tu existencia bajo el influjo del <strong>Sol en ${sunSign}</strong> y la <strong>Luna en ${moonSign}</strong>. Cada casa actúa como un portal donde una faceta de tu destino se manifiesta e interactúa con el resto de tu universo personal.
+        </p>
+      </div>
+
+      <!-- 2. Los Cuatro Pilares Angulares (La Cruz Cardinal del Destino) -->
+      <div style="background: rgba(8, 7, 17, 0.5); border: 1px solid var(--border-color); border-radius: 14px; padding: 1.35rem 1.5rem;">
+        <h4 style="color: var(--gold-color); font-family: var(--font-serif); font-size: 1.1rem; margin: 0 0 1rem 0; display: flex; align-items: center; gap: 0.5rem;">
+          <span>🏛️</span> Los Cuatro Ángulos Maestros (La Cruz Mayor)
+        </h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+          
+          <div style="border-left: 3px solid var(--gold-color); padding-left: 0.75rem; background: rgba(255,255,255,0.02); padding: 0.75rem; border-radius: 0 8px 8px 0;">
+            <strong style="color: var(--gold-color); font-size: 0.9rem;">✦ Casa I (Ascendente / Tu Yo):</strong>
+            <div style="font-weight: 600; color: var(--text-main); font-size: 0.95rem; margin: 0.2rem 0;">${name1}</div>
+            <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0;">Rige tu energía vital, temperamento y la fuerza con la que comienzas este ciclo.</p>
+          </div>
+
+          <div style="border-left: 3px solid #38bdf8; padding-left: 0.75rem; background: rgba(255,255,255,0.02); padding: 0.75rem; border-radius: 0 8px 8px 0;">
+            <strong style="color: #38bdf8; font-size: 0.9rem;">✦ Casa IV (Fondo de Cielo / Raíces):</strong>
+            <div style="font-weight: 600; color: var(--text-main); font-size: 0.95rem; margin: 0.2rem 0;">${name4}</div>
+            <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0;">Rige tu hogar, tu mundo emocional más íntimo y tu estabilidad de base.</p>
+          </div>
+
+          <div style="border-left: 3px solid #f472b6; padding-left: 0.75rem; background: rgba(255,255,255,0.02); padding: 0.75rem; border-radius: 0 8px 8px 0;">
+            <strong style="color: #f472b6; font-size: 0.9rem;">✦ Casa VII (Descendente / Pareja):</strong>
+            <div style="font-weight: 600; color: var(--text-main); font-size: 0.95rem; margin: 0.2rem 0;">${name7}</div>
+            <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0;">Rige tus alianzas afectivas, contratos, matrimonio y el espejo de tu alma.</p>
+          </div>
+
+          <div style="border-left: 3px solid #34d399; padding-left: 0.75rem; background: rgba(255,255,255,0.02); padding: 0.75rem; border-radius: 0 8px 8px 0;">
+            <strong style="color: #34d399; font-size: 0.9rem;">✦ Casa X (Medio Cielo / Vocación):</strong>
+            <div style="font-weight: 600; color: var(--text-main); font-size: 0.95rem; margin: 0.2rem 0;">${name10}</div>
+            <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0;">Rige tus metas mundanas, éxito profesional, reputación y destino social.</p>
+          </div>
+
+        </div>
+      </div>
+  `;
 
   const quadrants = [
-    { title: "Primer Cuadrante: Desarrollo Personal (Casas I a III)", startIndex: 0 },
-    { title: "Segundo Cuadrante: Integración Personal (Casas IV a VI)", startIndex: 3 },
-    { title: "Tercer Cuadrante: Relación con el Entorno (Casas VII a IX)", startIndex: 6 },
-    { title: "Cuarto Cuadrante: Trascendencia y Destino (Casas X a XII)", startIndex: 9 }
+    { title: "Primer Cuadrante: Desarrollo de la Identidad Personal (Casas I a III)", startIndex: 0 },
+    { title: "Segundo Cuadrante: Integración Material y Emocional (Casas IV a VI)", startIndex: 3 },
+    { title: "Tercer Cuadrante: Relación con el Espejo Externo (Casas VII a IX)", startIndex: 6 },
+    { title: "Cuarto Cuadrante: Trascendencia y Destino Cósmico (Casas X a XII)", startIndex: 9 }
   ];
 
-  quadrants.forEach((q, qIndex) => {
+  quadrants.forEach((q) => {
     forecast += `
-      <div class="quadrant-block" style="margin-bottom: 2rem; border: 1.5px solid rgba(229, 193, 88, 0.15); border-radius: 12px; padding: 1.5rem; background: rgba(8, 7, 17, 0.45);">
-        <h4 style="color: var(--gold-color); margin-top: 0; margin-bottom: 1.25rem; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px dashed rgba(229, 193, 88, 0.2); padding-bottom: 0.5rem;">${q.title}</h4>
-        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+      <div class="quadrant-block" style="margin-bottom: 0.5rem; border: 1.5px solid rgba(229, 193, 88, 0.15); border-radius: 14px; padding: 1.35rem 1.5rem; background: rgba(8, 7, 17, 0.45);">
+        <h4 style="color: var(--gold-color); margin-top: 0; margin-bottom: 1.15rem; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px dashed rgba(229, 193, 88, 0.2); padding-bottom: 0.5rem;">${q.title}</h4>
+        <div style="display: flex; flex-direction: column; gap: 1.1rem;">
     `;
 
     for (let i = 0; i < 3; i++) {
@@ -3662,17 +3905,17 @@ function generateHousesAstroForecast(sunSign, moonSign, moonPhase, userSignData)
       const card = currentAstroSpread[idx];
       const house = housesInfo[idx];
       const cardName = card.isReversed ? `${card.name} (Invertida)` : card.name;
-      const meaning = card.isReversed ? card.reversed.general : card.meanings.general;
+      const meaning = card.isReversed ? (card.reversed?.general || card.meanings?.general) : card.meanings?.general;
       const astro = ASTRO_MAP[card.id] || { ruler: "Cosmos", symbol: "✦" };
 
       forecast += `
-        <div class="house-item" style="border-left: 2px solid ${card.isReversed ? 'var(--purple-color)' : 'var(--gold-color)'}; padding-left: 0.75rem;">
+        <div class="house-item" style="border-left: 2px solid ${card.isReversed ? 'var(--purple-color, #c084fc)' : 'var(--gold-color)'}; padding-left: 0.75rem;">
           <h5 style="color: var(--text-main); font-size: 0.95rem; margin: 0 0 0.25rem 0; font-weight: 600;">
             ${house.name} &mdash; <span style="color: var(--gold-color);">${cardName}</span> 
             <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: normal; margin-left: 0.5rem;">(Ref: ${astro.symbol} ${astro.ruler})</span>
           </h5>
-          <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0 0 0.4rem 0; font-style: italic;">${house.desc}</p>
-          <p style="font-size: 0.88rem; color: var(--text-main); margin: 0; line-height: 1.5;">${meaning}</p>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0 0 0.35rem 0; font-style: italic;">${house.desc}</p>
+          <p style="font-size: 0.88rem; color: var(--text-main); margin: 0; line-height: 1.55;">${meaning}</p>
         </div>
       `;
     }
@@ -3689,9 +3932,20 @@ function generateHousesAstroForecast(sunSign, moonSign, moonPhase, userSignData)
   const sunAngel = PLANETARY_ANGELS[primarySunRuler] ? PLANETARY_ANGELS[primarySunRuler].angel : "Gabriel";
   
   forecast += `
-    <p style="margin-top: 1.5rem; border-top: 1px dashed var(--border-color); padding-top: 1rem; line-height: 1.6;">
-      🔮 <strong>Síntesis Cósmica</strong>: La Rueda de las Casas te muestra el mapa completo de tu energía en este instante. El cosmos señala tu chakra de <strong>${sunChakra.loc}</strong> como el centro de mayor resonancia en esta temporada. Invoca la guía del arcángel <strong>${sunAngel}</strong> para transmutar los bloqueos y expandir los dones que cada casa ha revelado.
-    </p>
+      <!-- 4. Gran Síntesis Kármica -->
+      <div style="background: linear-gradient(135deg, rgba(229, 193, 88, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%); border: 1px dashed var(--gold-color); border-radius: 14px; padding: 1.25rem 1.5rem;">
+        <h4 style="color: var(--gold-color); font-family: var(--font-serif); font-size: 1.05rem; margin: 0 0 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+          <span>🔮</span> Gran Síntesis del Mandala Astrológico
+        </h4>
+        <p style="font-size: 0.92rem; color: var(--text-main); margin: 0 0 0.75rem 0; line-height: 1.65;">
+          La Rueda de las Casas demuestra que no existen áreas aisladas en tu vida: tus emociones familiares (Casa IV) sostienen tus victorias profesionales (Casa X), y el cultivo de tu verdad interior (Casa I) es la clave para la plenitud en tus relaciones afectivas (Casa VII). El cosmos destaca tu chakra de <strong>${sunChakra.loc}</strong> (${sunChakra.name}) como tu gran canalizador energético.
+        </p>
+        <div style="font-size: 0.86rem; color: #fef08a; border-top: 1px solid rgba(229, 193, 88, 0.2); padding-top: 0.6rem;">
+          ✨ <strong>Invocación de Cierre para ${userSignData.name}</strong>: <em>Bajo la custodia del arcángel ${sunAngel}, asumo la maestría sobre mi destino, transmutando cada desafío en sabiduría y abriéndome a la bendición de todas las casas del cielo.</em>
+        </div>
+      </div>
+
+    </div>
   `;
 
   return forecast;
