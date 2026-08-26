@@ -269,6 +269,63 @@ const TAROT_COUPLES = [
 ];
 
 
+// Astronomical Database of Solar and Lunar Eclipses (2024 - 2030)
+const ASTRONOMICAL_ECLIPSES = [
+  // 2024
+  { date: "2024-03-25", type: "lunar", category: "Penumbral", name: "Eclipse Lunar Penumbral", sign: "Libra", symbol: "♎", desc: "Portal de revisión en vínculos afectivos, justicia kármica y equilibrio relacional." },
+  { date: "2024-04-08", type: "solar", category: "Total", name: "Eclipse Solar Total", sign: "Aries", symbol: "♈", desc: "Gran portal de nuevos comienzos, valentía y reinvención de la identidad personal." },
+  { date: "2024-09-18", type: "lunar", category: "Parcial", name: "Eclipse Lunar Parcial", sign: "Piscis", symbol: "♓", desc: "Cierre de ciclos kármicos profundos, purificación emocional y despertar intuitivo." },
+  { date: "2024-10-02", type: "solar", category: "Anular", name: "Eclipse Solar Anular (Anillo de Fuego)", sign: "Libra", symbol: "♎", desc: "Siembra de acuerdos armónicos, pactos del alma y reestructuración de alianzas." },
+
+  // 2025
+  { date: "2025-03-14", type: "lunar", category: "Total", name: "Eclipse Lunar Total (Luna de Sangre)", sign: "Virgo", symbol: "♍", desc: "Purificación profunda de la salud, hábitos y orden material. Sanación del templo físico." },
+  { date: "2025-03-29", type: "solar", category: "Parcial", name: "Eclipse Solar Parcial", sign: "Aries", symbol: "♈", desc: "Activación del fuego interior, iniciativa audaz y ruptura de cadenas del pasado." },
+  { date: "2025-09-07", type: "lunar", category: "Total", name: "Eclipse Lunar Total (Luna de Sangre)", sign: "Piscis", symbol: "♓", desc: "Clímax espiritual de máxima intuición, disolución de apegos y revelación mística." },
+  { date: "2025-09-21", type: "solar", category: "Parcial", name: "Eclipse Solar Parcial", sign: "Virgo", symbol: "♍", desc: "Nuevas metodologías de trabajo, servicio consciente y reorganización de prioridades." },
+
+  // 2026
+  { date: "2026-02-17", type: "solar", category: "Anular", name: "Eclipse Solar Anular (Anillo de Fuego)", sign: "Acuario", symbol: "♒", desc: "Apertura a ideas vanguardistas, libertad comunitaria y salto evolutivo en proyectos." },
+  { date: "2026-03-03", type: "lunar", category: "Total", name: "Eclipse Lunar Total (Luna de Sangre)", sign: "Virgo", symbol: "♍", desc: "Gran purificación kármica en el discernimiento, servicio y sanación cuerpo-mente." },
+  { date: "2026-08-12", type: "solar", category: "Total", name: "Eclipse Solar Total Histórico", sign: "Leo", symbol: "♌", desc: "Portal solar de máxima potencia visible en España y Europa. Renacimiento de la soberanía, brillo auténtico y liderazgo del corazón." },
+  { date: "2026-08-28", type: "lunar", category: "Parcial", name: "Eclipse Lunar Parcial", sign: "Piscis", symbol: "♓", desc: "Cierre de patrones ilusorios, catarsis emocional y elevación de la intuición hacia lo sagrado." },
+
+  // 2027
+  { date: "2027-02-06", type: "solar", category: "Anular", name: "Eclipse Solar Anular", sign: "Acuario", symbol: "♒", desc: "Revolución de ideales, conexión con redes afines y creación de nuevas estructuras colectivas." },
+  { date: "2027-02-20", type: "lunar", category: "Penumbral", name: "Eclipse Lunar Penumbral", sign: "Virgo", symbol: "♍", desc: "Ajustes sutiles en la rutina diaria y decantación de aprendizajes prácticos." },
+  { date: "2027-07-18", type: "lunar", category: "Penumbral", name: "Eclipse Lunar Penumbral", sign: "Capricornio", symbol: "♑", desc: "Evaluación de estructuras de responsabilidad, metas a largo plazo y madurez profesional." },
+  { date: "2027-08-02", type: "solar", category: "Total", name: "Eclipse Solar Total Monumental", sign: "Leo", symbol: "♌", desc: "Poderosa alineación solar en el Mediterráneo. Manifestación de propósito y soberanía del alma." },
+  { date: "2027-08-17", type: "lunar", category: "Penumbral", name: "Eclipse Lunar Penumbral", sign: "Acuario", symbol: "♒", desc: "Liberación de mandatos sociales y reafirmación de la autenticidad individual." },
+
+  // 2028
+  { date: "2028-01-12", type: "lunar", category: "Parcial", name: "Eclipse Lunar Parcial", sign: "Cáncer", symbol: "♋", desc: "Sanación del linaje ancestral, emociones del hogar y nutrición afectiva." },
+  { date: "2028-01-26", type: "solar", category: "Anular", name: "Eclipse Solar Anular", sign: "Acuario", symbol: "♒", desc: "Visión futurista y siembra de proyectos colaborativos de alto impacto social." },
+  { date: "2028-07-06", type: "lunar", category: "Parcial", name: "Eclipse Lunar Parcial", sign: "Capricornio", symbol: "♑", desc: "Cierre de viejos compromisos profesionales y consolidación de verdadera maestría." },
+  { date: "2028-07-22", type: "solar", category: "Total", name: "Eclipse Solar Total", sign: "Cáncer", symbol: "♋", desc: "Renovación del templo íntimo, raíces afectivas y nuevo concepto de pertenencia." },
+  { date: "2028-12-31", type: "lunar", category: "Total", name: "Eclipse Lunar Total (Luna de Sangre de Nochevieja)", sign: "Cáncer", symbol: "♋", desc: "Culminación kármica excepcional de fin de año, transmutación y apertura a un nuevo ciclo vital." },
+
+  // 2029
+  { date: "2029-01-14", type: "solar", category: "Parcial", name: "Eclipse Solar Parcial", sign: "Capricornio", symbol: "♑", desc: "Siembra de disciplina, metas firmes y soberanía en el mundo tangible." },
+  { date: "2029-06-12", type: "solar", category: "Parcial", name: "Eclipse Solar Parcial", sign: "Géminis", symbol: "♊", desc: "Apertura de nuevos canales de comunicación, aprendizaje y perspectiva mental." },
+  { date: "2029-06-26", type: "lunar", category: "Total", name: "Eclipse Lunar Total (Luna de Sangre)", sign: "Sagitario", symbol: "♐", desc: "Liberación de dogmas limitantes, salto de fe y expansión del horizonte espiritual." },
+  { date: "2029-07-11", type: "solar", category: "Parcial", name: "Eclipse Solar Parcial", sign: "Cáncer", symbol: "♋", desc: "Protección del espacio sagrado y nuevos acuerdos en el entorno familiar." },
+  { date: "2029-12-05", type: "solar", category: "Parcial", name: "Eclipse Solar Parcial", sign: "Sagitario", symbol: "♐", desc: "Inspiración hacia nuevos ideales de vida y búsqueda de verdades profundas." },
+  { date: "2029-12-20", type: "lunar", category: "Total", name: "Eclipse Lunar Total (Luna de Sangre)", sign: "Géminis", symbol: "♊", desc: "Purificación de la mente comunicativa, soltando el ruido y abrazando la claridad interior." },
+
+  // 2030
+  { date: "2030-06-01", type: "solar", category: "Anular", name: "Eclipse Solar Anular", sign: "Géminis", symbol: "♊", desc: "Pacto de nuevas ideas y acuerdos de comunicación a gran escala." },
+  { date: "2030-06-15", type: "lunar", category: "Parcial", name: "Eclipse Lunar Parcial", sign: "Sagitario", symbol: "♐", desc: "Conclusión de estudios, viajes espirituales y asimilación de sabiduría." },
+  { date: "2030-11-25", type: "solar", category: "Total", name: "Eclipse Solar Total", sign: "Sagitario", symbol: "♐", desc: "Nuevas filosofías de vida y expansión audaz de la vocación espiritual." },
+  { date: "2030-12-09", type: "lunar", category: "Penumbral", name: "Eclipse Lunar Penumbral", sign: "Géminis", symbol: "♊", desc: "Ajuste del discernimiento y serenidad mental antes del solsticio." }
+];
+
+function getEclipseForDate(date = new Date()) {
+  const y = date.getFullYear();
+  const m = (date.getMonth() + 1).toString().padStart(2, '0');
+  const d = date.getDate().toString().padStart(2, '0');
+  const dateKey = `${y}-${m}-${d}`;
+  return ASTRONOMICAL_ECLIPSES.find(e => e.date === dateKey) || null;
+}
+
 // Calculate current moon phase details dynamically
 function getMoonPhaseDetails(date = new Date()) {
   // Use milliseconds-based synodic cycle calculation starting from a known New Moon reference.
@@ -5104,6 +5161,7 @@ function renderLunarTabDetails(date = selectedLunarDate) {
   const moonPhase = getMoonPhaseDetails(date);
   const moonSign = getMoonSign(date);
   const savedHem = localStorage.getItem('lunar_hemisphere') || 'north';
+  const eclipse = getEclipseForDate(date);
 
   // Calculate age and illumination percentage
   const age = (moonPhase.phase * 29.53059).toFixed(1);
@@ -5118,6 +5176,28 @@ function renderLunarTabDetails(date = selectedLunarDate) {
     else if (icon === '🌖') icon = '🌔';
     else if (icon === '🌗') icon = '🌓';
     else if (icon === '🌘') icon = '🌒';
+  }
+
+  // Render eclipse banner if today or selected date is an eclipse
+  const eclipseBanner = document.getElementById('lunar-eclipse-banner');
+  if (eclipseBanner) {
+    if (eclipse) {
+      eclipseBanner.classList.remove('hidden');
+      const isSolar = eclipse.type === 'solar';
+      eclipseBanner.innerHTML = `
+        <div class="eclipse-card-badge ${isSolar ? 'solar' : 'lunar'}">
+          <span>${isSolar ? '☀️ PORTAL DE ECLIPSE SOLAR' : '🩸 PORTAL DE ECLIPSE LUNAR'} (${eclipse.category.toUpperCase()})</span>
+        </div>
+        <h4 class="eclipse-card-title">${eclipse.name} en ${eclipse.sign} ${eclipse.symbol}</h4>
+        <p class="eclipse-card-desc">${eclipse.desc}</p>
+        <div class="eclipse-card-advice">
+          <strong>🔮 Consejo Místico del Portal:</strong> Los eclipses operan como potentes aceleradores del destino y catalizadores de transformación kármica. Durante estas 48 horas no se aconseja forzar acuerdos ni cargar mazos/cristales a la intemperie; dedica este influjo a la introspección profunda, el desapego y la elevación de conciencia.
+        </div>
+      `;
+    } else {
+      eclipseBanner.classList.add('hidden');
+      eclipseBanner.innerHTML = '';
+    }
   }
 
   // Render text content
@@ -5222,6 +5302,7 @@ function initLunarCalendar() {
   const monthYearEl = document.getElementById('lunar-cal-month-year');
   const prevBtn = document.getElementById('lunar-cal-prev');
   const nextBtn = document.getElementById('lunar-cal-next');
+  const todayBtn = document.getElementById('lunar-cal-today');
   
   if (!grid || !monthYearEl || !prevBtn || !nextBtn) return;
   
@@ -5245,6 +5326,17 @@ function initLunarCalendar() {
       }
       renderLunarCalendar();
     });
+
+    if (todayBtn) {
+      todayBtn.addEventListener('click', () => {
+        const now = new Date();
+        lunarCalendarMonth = now.getMonth();
+        lunarCalendarYear = now.getFullYear();
+        selectedLunarDate = now;
+        renderLunarCalendar();
+        renderLunarTabDetails(now);
+      });
+    }
     
     const backToTodayBtn = document.getElementById('lunar-back-to-today-btn');
     if (backToTodayBtn) {
@@ -5269,15 +5361,93 @@ function initLunarCalendar() {
         if (titleEl) titleEl.textContent = "La Influencia Lumínica de Hoy";
       });
     }
+
+    renderUpcomingEclipseChips();
   }
   
   renderLunarCalendar();
+}
+
+function renderUpcomingEclipseChips(year = lunarCalendarYear) {
+  const container = document.getElementById('eclipse-quick-chips');
+  const titleEl = document.getElementById('eclipse-chips-title');
+  if (!container) return;
+  
+  const currentYear = year || lunarCalendarYear || new Date().getFullYear();
+  
+  // Filter eclipses for the active year in calendar
+  let eclipses = ASTRONOMICAL_ECLIPSES.filter(e => e.date.startsWith(`${currentYear}-`));
+  
+  if (titleEl) {
+    titleEl.textContent = `Portales de Eclipse de ${currentYear}`;
+  }
+  
+  // If no eclipses for this specific year (e.g. browsing far into past/future), fallback to upcoming
+  if (eclipses.length === 0) {
+    if (titleEl) titleEl.textContent = `Próximos Portales de Eclipse`;
+    const todayStr = new Date().toLocaleDateString('sv');
+    eclipses = ASTRONOMICAL_ECLIPSES.filter(e => e.date >= todayStr).slice(0, 4);
+    if (eclipses.length === 0) {
+      eclipses = ASTRONOMICAL_ECLIPSES.slice(-4);
+    }
+  }
+
+  const monthNames = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+  
+  container.innerHTML = eclipses.map(e => {
+    const [y, m, d] = e.date.split('-');
+    const shortDate = `${parseInt(d)} ${monthNames[parseInt(m) - 1]} ${y}`;
+    const isSolar = e.type === 'solar';
+    const isCurrentMonth = parseInt(m) === (lunarCalendarMonth + 1) && parseInt(y) === lunarCalendarYear;
+    const activeStyle = isCurrentMonth ? 'border-color: var(--gold-color); background: rgba(229, 193, 88, 0.18); font-weight: 700;' : '';
+    return `
+      <button type="button" class="eclipse-chip ${isSolar ? 'solar-chip' : 'lunar-chip'}" data-eclipse-date="${e.date}" style="${activeStyle}" title="${e.name} en ${e.sign} (${e.category}): ${e.desc}">
+        <span>${isSolar ? '☀️' : '🩸'}</span>
+        <strong>${shortDate}</strong> • ${e.name.replace('Eclipse ', '')} (${e.sign})
+      </button>
+    `;
+  }).join('');
+
+  container.querySelectorAll('.eclipse-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const dateStr = btn.getAttribute('data-eclipse-date');
+      if (!dateStr) return;
+      const [yearNum, monthNum, dayNum] = dateStr.split('-').map(Number);
+      const targetDate = new Date(yearNum, monthNum - 1, dayNum, 12, 0, 0);
+      
+      lunarCalendarMonth = targetDate.getMonth();
+      lunarCalendarYear = targetDate.getFullYear();
+      selectedLunarDate = targetDate;
+      
+      renderLunarCalendar();
+      renderLunarTabDetails(selectedLunarDate);
+      
+      // Update input and indicator
+      const searchDateInput = document.getElementById('lunar-search-date');
+      if (searchDateInput) searchDateInput.value = dateStr;
+      
+      const indicator = document.getElementById('lunar-selected-date-indicator');
+      const textEl = document.getElementById('lunar-selected-date-text');
+      const titleMainEl = document.getElementById('lunar-clima-title');
+      if (indicator && textEl && titleMainEl) {
+        indicator.classList.remove('hidden');
+        textEl.textContent = `Viendo: ${dayNum.toString().padStart(2, '0')}/${monthNum.toString().padStart(2, '0')}/${yearNum}`;
+        titleMainEl.textContent = "La Influencia Lumínica Elegida";
+      }
+
+      // Smooth scroll to eclipse banner or climate
+      const banner = document.getElementById('lunar-eclipse-banner');
+      if (banner) banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
 }
 
 function renderLunarCalendar() {
   const grid = document.getElementById('lunar-calendar-grid');
   const monthYearEl = document.getElementById('lunar-cal-month-year');
   if (!grid || !monthYearEl) return;
+  
+  renderUpcomingEclipseChips(lunarCalendarYear);
   
   grid.innerHTML = '';
   
@@ -5305,10 +5475,29 @@ function renderLunarCalendar() {
   
   const today = new Date();
   const savedHem = localStorage.getItem('lunar_hemisphere') || 'north';
+
+  const ZODIAC_SHORT_SYMBOLS = {
+    "Aries": "♈",
+    "Tauro": "♉",
+    "Géminis": "♊",
+    "Cáncer": "♋",
+    "Leo": "♌",
+    "Virgo": "♍",
+    "Libra": "♎",
+    "Escorpio": "♏",
+    "Sagitario": "♐",
+    "Capricornio": "♑",
+    "Acuario": "♒",
+    "Piscis": "♓"
+  };
   
   for (let d = 1; d <= daysInMonth; d++) {
     const dateOfCell = new Date(lunarCalendarYear, lunarCalendarMonth, d);
     const moonPhase = getMoonPhaseDetails(dateOfCell);
+    const moonSign = getMoonSign(dateOfCell);
+    const zodiacSymbol = ZODIAC_SHORT_SYMBOLS[moonSign] || "✦";
+    const illumination = Math.round((moonPhase.phase <= 0.5 ? moonPhase.phase * 2 : (1 - moonPhase.phase) * 2) * 100);
+    const eclipse = getEclipseForDate(dateOfCell);
     
     const div = document.createElement('div');
     div.className = 'lunar-cal-day';
@@ -5323,13 +5512,40 @@ function renderLunarCalendar() {
                        
     if (isToday) div.classList.add('today');
     if (isSelected) div.classList.add('selected-day');
+
+    let majorPhaseBadge = '';
+    if (eclipse) {
+      div.classList.add(eclipse.type === 'solar' ? 'eclipse-solar' : 'eclipse-lunar');
+      majorPhaseBadge = `<span class="lunar-major-phase-badge ${eclipse.type === 'solar' ? 'badge-solar-eclipse' : 'badge-lunar-eclipse'}" title="${eclipse.name}">⚡ ${eclipse.type === 'solar' ? 'Solar' : 'Lunar'}</span>`;
+    } else if (moonPhase.phase < 0.02 || moonPhase.phase >= 0.98) {
+      majorPhaseBadge = '<span class="lunar-major-phase-badge" title="Luna Nueva">Nueva</span>';
+    } else if (moonPhase.phase >= 0.235 && moonPhase.phase <= 0.265) {
+      majorPhaseBadge = '<span class="lunar-major-phase-badge" title="Cuarto Creciente">Cuarto</span>';
+    } else if (moonPhase.phase >= 0.485 && moonPhase.phase <= 0.515) {
+      majorPhaseBadge = '<span class="lunar-major-phase-badge" title="Luna Llena">Llena</span>';
+    } else if (moonPhase.phase >= 0.735 && moonPhase.phase <= 0.765) {
+      majorPhaseBadge = '<span class="lunar-major-phase-badge" title="Cuarto Menguante">Meng.</span>';
+    }
     
     div.innerHTML = `
-      <span class="lunar-cal-day-num">${d}</span>
-      <div class="lunar-cal-day-moon" title="${moonPhase.phaseName}">
+      ${majorPhaseBadge}
+      <div class="lunar-cal-day-top">
+        <span class="lunar-cal-day-num">${d}</span>
+        <span class="lunar-cal-zodiac" title="Tránsito: Luna en ${moonSign}">${zodiacSymbol} ${moonSign.substring(0, 3)}</span>
+      </div>
+      <div class="lunar-cal-day-moon">
         ${getMoonSvg(moonPhase.phase, savedHem)}
       </div>
+      <div class="lunar-cal-day-bottom">
+        <span class="lunar-cal-illumination" title="Iluminación: ${illumination}%">${illumination}%</span>
+      </div>
     `;
+
+    if (eclipse) {
+      div.title = `⚡ ¡DÍA DE ECLIPSE! • ${eclipse.name} en ${eclipse.sign} (${eclipse.category}) • ${d} de ${MONTHS_NAMES[lunarCalendarMonth]} de ${lunarCalendarYear} • Clic para ver influencia y consejos`;
+    } else {
+      div.title = `${d} de ${MONTHS_NAMES[lunarCalendarMonth]} de ${lunarCalendarYear} • ${moonPhase.phaseName} en ${moonSign} (${illumination}% luz) • Clic para ver influencias`;
+    }
     
     div.addEventListener('click', () => {
       selectedLunarDate = dateOfCell;
@@ -5359,6 +5575,444 @@ function renderLunarCalendar() {
     });
     
     grid.appendChild(div);
+  }
+}
+
+/* ==========================================================================
+   DAILY TAROT WISDOM DATABASE (Consejos Diarios Enriquecidos 78 Arcanos)
+   ========================================================================== */
+const DAILY_WISDOM_DB = {
+  0: { // El Loco
+    upright: {
+      energyDesc: "El cosmos abre una página en blanco frente a ti. La energía de hoy vibra con el impulso de la aventura, la ligereza del alma y la valentía sagrada de dar un salto de fe sin llevar cargas del pasado.",
+      oracleMessage: "No necesitas tener todas las respuestas ni un plan milimétrico para comenzar. Confía en esa corazonada que late en tu pecho: cuando te atreves a dar el primer paso con inocencia y alegría, el universo teje el camino bajo tus pies.",
+      dailyAction: "Atrévete hoy a romper la rutina con algo inesperado: toma una ruta distinta, inicia una conversación espontánea o di 'sí' a una oportunidad que te saca de tu zona de confort.",
+      shadowWarning: "Distingue la audacia sabia de la imprudencia ciega. Camina con entusiasmo pero mirando dónde pisas para no tropezar con descuidos tontos.",
+      affirmation: "'Camino con ligereza, fe y corazón abierto. Confío en lo desconocido y me entrego a la magia de los nuevos comienzos.'",
+      dailyRitual: "Abre una ventana durante 2 minutos, respira hondo el aire fresco visualizando cómo sueltas tus viejas preocupaciones como hojas al viento, y sonríe al cielo decretando libertad."
+    },
+    reversed: {
+      energyDesc: "Hoy puedes experimentar una encrucijada entre el miedo paralizante al cambio o, por el contrario, la tentación de actuar con precipitación e irresponsabilidad.",
+      oracleMessage: "El oráculo te pide serenar la mente. Si sientes pánico a dar un paso importante, recuerda que el miedo solo es energía esperando ser canalizada. Si estás actuando por puro capricho para escapar de un compromiso, detén la marcha.",
+      dailyAction: "Revisa qué decisiones estás postergando por temor al qué dirán, o qué proyectos estás descuidando por falta de constancia. Elige el orden consciente.",
+      shadowWarning: "Evita tomar decisiones financieras o afectivas impulsivas sin haber medido las consecuencias reales a medio plazo.",
+      affirmation: "'Canalizo mi libertad con sabiduría. Abrazo la prudencia sin permitir que el miedo detenga mi evolución.'",
+      dailyRitual: "Coloca tus dos pies descalzos sobre el suelo durante 3 minutos, cierra los ojos y visualiza raíces doradas que te anclan a la tierra, devolviéndote la estabilidad."
+    }
+  },
+  1: { // El Mago
+    upright: {
+      energyDesc: "Hoy eres un canal vivo de manifestación y poder personal. Tienes la chispa del Fuego, la agilidad del Aire, la fluidez del Agua y el realismo de la Tierra a tu entera disposición.",
+      oracleMessage: "Todo lo que necesitas para resolver un dilema o iniciar un proyecto ya habita en ti. Tus palabras tienen un magnetismo especial y tu mente está afilada para la estrategia y la creatividad práctica.",
+      dailyAction: "Haz esa llamada crucial, envía esa propuesta o inicia la tarea que requiera tu máxima elocuencia. Hoy tienes el don de convencer, cautivar y liderar.",
+      shadowWarning: "No disperses tu energía en diez direcciones a la vez. El verdadero mago enfoca su vara en un solo objetivo a la vez para convertirlo en oro.",
+      affirmation: "'Poseo los talentos, la claridad y la voluntad para transformar mis ideas en triunfos tangibles. Yo soy el creador de mi realidad.'",
+      dailyRitual: "Enciende una cerilla o contempla la luz de una vela amarilla durante un minuto mientras sostienes tu libreta o bolígrafo de trabajo, consagrando tu mente para el éxito."
+    },
+    reversed: {
+      energyDesc: "Existe hoy el riesgo de caer en la duda sobre tu propia valía (síndrome del impostor) o de toparte con personas que prometen mucho y cumplen poco mediante palabras engañosas.",
+      oracleMessage: "No te dejes deslumbrar por apariencias vacías ni sabotees tus propias capacidades. La energía invertida te advierte que la manipulación o las mentiras piadosas siempre terminan pasando factura.",
+      dailyAction: "Sé impecable con tus palabras y exige total transparencia en tus acuerdos del día. Si dudas de tus talentos, anota tres logros reales que hayas alcanzado por tu propio esfuerzo.",
+      shadowWarning: "Cuidado con prometer cosas que no puedes cumplir o con intentar controlar a otros mediante artimañas psicológicas.",
+      affirmation: "'Alineo mis talentos con la verdad y la honestidad. Mi poder es auténtico y no necesita máscaras para brillar.'",
+      dailyRitual: "Lávate las manos y el rostro con agua fresca frotando una pizca de sal, visualizando que eliminas toda confusión mental y palabras tóxicas del entorno."
+    }
+  },
+  2: { // La Papisa
+    upright: {
+      energyDesc: "Día de silencio sagrado, intuición despierta y conexión profunda con los misterios de tu alma. Las verdades más importantes no se gritan en el ruido externo, sino que se susurran en tu quietud interior.",
+      oracleMessage: "No fuerces las cosas hoy; muchas situaciones se encuentran en fase de gestación invisible. Si tienes dudas ante una decisión, no consultes a diez personas: aíslate 15 minutos en silencio y escucha tu primer pálpito íntimo.",
+      dailyAction: "Dedica un espacio a la lectura pausada, el estudio místico o la anotación de tus sueños. Guarda discreción sobre tus planes más íntimos; el secreto protege la semilla.",
+      shadowWarning: "Evita la frialdad emocional o aislarte tanto que te vuelvas inaccesible para quienes de verdad te aman.",
+      affirmation: "'Mi intuición es sabia, pura y certera. Escucho la voz de mi alma en el silencio y confío en los tiempos divinos de la vida.'",
+      dailyRitual: "Bebe un vaso de agua mineral despacio y a sorbos conscientes antes de salir de casa o al comenzar tu jornada, decretando que nutres tu sexto sentido y tu paz mental."
+    },
+    reversed: {
+      energyDesc: "La niebla de la duda puede empañar tu visión. Podrías sentir desconexión de tu intuición o estar juzgando situaciones con rigidez, secretos incómodos o prejuicios.",
+      oracleMessage: "El oráculo te alerta sobre información retenida o verdades a medias en tu entorno. No te fíes de los rumores de pasillo y pregúntate si tú mismo estás ocultando algo por miedo al juicio ajeno.",
+      dailyAction: "Atrévete a hablar con claridad y suavidad sobre lo que te incomoda, disolviendo los muros de silencio que enfrían tus relaciones.",
+      shadowWarning: "No uses el silencio como castigo pasivo-agresivo ni reprimas tus emociones hasta que tu cuerpo las somatice en dolores físicos.",
+      affirmation: "'Disuelvo toda niebla y desconfianza. Me permito expresar mi verdad con serenidad y abro mi corazón a la luz.'",
+      dailyRitual: "Enciende una varita de incienso de lavanda o sándalo y pasa el humo suavemente alrededor de tu cabeza y pecho para despejar bloqueos mentales."
+    }
+  },
+  3: { // La Emperatriz
+    upright: {
+      energyDesc: "La abundancia viva del cosmos te envuelve hoy. La energía es de florecimiento, fertilidad creadora, deleite sensorial y nutrición de tus proyectos y vínculos afectivos.",
+      oracleMessage: "Date permiso para disfrutar de la belleza, cuidar tu cuerpo y recibir las bendiciones materiales y emocionales que la vida tiene para ti. Todo lo que riegues hoy con amor y paciencia crecerá con fuerza.",
+      dailyAction: "Haz algo que deleite tus cinco sentidos (un baño relajante, cocinar con mimo, rodearte de flores o arte) y avanza en tus proyectos creativos con confianza.",
+      shadowWarning: "Evita la tentación del gasto impulsivo por vanidad o el apego asfixiante hacia las personas que amas.",
+      affirmation: "'Merezco la abundancia, el placer y el amor en todas sus formas. La vida florece generosa a mi alrededor.'",
+      dailyRitual: "Riega con cariño una planta de tu hogar mientras visualizas cómo esa agua nutre y hace germinar tus mayores anhelos de prosperidad."
+    },
+    reversed: {
+      energyDesc: "Hoy puede manifestarse un bloqueo en tu creatividad, sensación de escasez o agotamiento por dar demasiado a los demás descuidando tu propio templo.",
+      oracleMessage: "No puedes servir de un pozo vacío. El oráculo te recuerda que antes de cuidar a otros, debes reponer tu propia energía y perdonarte por sentirte cansado o desanimado.",
+      dailyAction: "Establece un límite cariñoso pero firme: tómate una pausa y dedícate una hora exclusivamente a ti sin sentir culpa.",
+      shadowWarning: "Cuidado con caer en el victimismo, la queja constante o la manipulación a través del reproche sentimental.",
+      affirmation: "'Me nutro a mí mismo con respeto y ternura. Mi valor no depende del sacrificio ni de la aprobación ajena.'",
+      dailyRitual: "Prepárate una infusión tibia de manzanilla con una cucharadita de miel y tómala en silencio sintiendo el calor reconfortante en tu pecho."
+    }
+  },
+  4: { // El Emperador
+    upright: {
+      energyDesc: "Día de autoridad serena, estructura sólida, disciplina y dominio práctico. La energía te impulsa a poner orden en el caos y construir sobre cimientos indestructibles.",
+      oracleMessage: "Es momento de tomar las riendas con firmeza y pragmatismo. Tus proyectos necesitan dirección clara, presupuestos realistas y límites saludables. Cumple tu palabra y actúa como el protector de tu propio reino.",
+      dailyAction: "Organiza tus tareas prioritarias, revisa tus finanzas y mantén una postura erguida y segura ante negociaciones o compromisos del día.",
+      shadowWarning: "Evita la terquedad inflexible o intentar imponer tu voluntad por la fuerza bruta; la verdadera autoridad inspira, no tiraniza.",
+      affirmation: "'Construyo mi vida sobre cimientos de orden, disciplina y seguridad. Soy el soberano de mi propio destino.'",
+      dailyRitual: "Ordena meticulosamente tu espacio de trabajo o escritorio y coloca una piedra firme o moneda pesada como ancla de estabilidad material."
+    },
+    reversed: {
+      energyDesc: "Puedes percibir rigidez mental excesiva, choques con figuras de autoridad o, en el polo opuesto, descontrol y caos por falta de disciplina.",
+      oracleMessage: "El oráculo te advierte que la inflexibilidad te romperá ante los vientos imprevistos. Flexibiliza tus métodos sin perder de vista tu objetivo final; la adaptabilidad es señal de auténtica maestría.",
+      dailyAction: "Revisa qué reglas autoimpuestas te están asfixiando y aprende a delegar responsabilidades en quienes te rodean.",
+      shadowWarning: "Cuidado con los estallidos de mal genio por frustración o con caer en la pereza total por sentirte abrumado por las normas.",
+      affirmation: "'La verdadera fuerza es sabia y flexible. Lidero mi vida con templanza, justicia y respeto hacia los demás.'",
+      dailyRitual: "Realiza estiramientos lentos de cuello y hombros durante 3 minutos respirando hondo para soltar el peso del control."
+    }
+  },
+  5: { // El Sumo Sacerdote / El Papa
+    upright: {
+      energyDesc: "La vibración de hoy resuena con la sabiduría espiritual, los valores éticos elevados, la enseñanza y la búsqueda de consejo sabio y bienintencionado.",
+      oracleMessage: "Conecta con tus principios más nobles. Hoy es un día favorable para aprender, estudiar, buscar el asesoramiento de un mentor o mediar en conflictos con diplomacia y benevolencia.",
+      dailyAction: "Comparte tus conocimientos con generosidad sincera, escucha el consejo de personas con experiencia y actúa con rectitud moral intachable.",
+      shadowWarning: "No te aferres a dogmas ciegos ni juzgues a otros por tener caminos espirituales o estilos de vida diferentes al tuyo.",
+      affirmation: "'Camino guiado por principios nobles de verdad y compasión. Aprendo de cada alma que cruza mi sendero.'",
+      dailyRitual: "Enciende una vela blanca o incienso de mirra y dedica 5 minutos a enviar mentalmente bendiciones y gratitud a tus maestros y ancestros."
+    },
+    reversed: {
+      energyDesc: "Riesgo de toparse con consejos malintencionados, hipocresía en el entorno o rebeldía estéril contra mandatos que ya no resuenan contigo.",
+      oracleMessage: "No sigas ciegamente las reglas solo por complacer a la tradición si estas apagan tu verdad interior. Cuestiona con respeto y escucha tu propia brújula moral antes de aceptar imposiciones.",
+      dailyAction: "Libérate de un mandato o expectativa familiar obsoleta y toma una decisión basada en tu auténtica conciencia ética.",
+      shadowWarning: "Evita la rebeldía sin causa o caer en fanatismos que solo buscan tener la razón a toda costa.",
+      affirmation: "'Honro mi propia brújula moral. Encuentro la santidad en la autenticidad y la verdad de mi corazón.'",
+      dailyRitual: "Escribe en un papel una creencia limitante que hayas heredado del pasado y quémala con cuidado decretando tu emancipación espiritual."
+    }
+  },
+  6: { // Los Enamorados
+    upright: {
+      energyDesc: "Día de elecciones trascendentales dictadas por el corazón, armonía de polaridades, belleza vincular y magnetismo afectivo.",
+      oracleMessage: "El universo te coloca ante una encrucijada donde debes elegir desde el amor y la vocación genuina, no desde el miedo o la conveniencia fría. Tus relaciones se benefician de una comunicación tierna y cómplice.",
+      dailyAction: "Expresa tu afecto sin reservas a quienes amas y toma esa decisión pendiente alineándote con lo que de verdad enciende tu alma.",
+      shadowWarning: "Cuidado con la indecisión crónica o jugar a dos bandas intentando quedar bien con todo el mundo.",
+      affirmation: "'Elijo desde el amor más puro y consciente. Atraigo relaciones armónicas que elevan mi vibración y mi espíritu.'",
+      dailyRitual: "Coloca ambas manos sobre tu pecho sintiendo los latidos de tu corazón y visualiza un rayo de luz rosa y esmeralda que expande tu aura."
+    },
+    reversed: {
+      energyDesc: "Tensiones en los vínculos, dudas desgastantes, tentaciones tóxicas o sensación de desconexión entre lo que sientes y lo que haces.",
+      oracleMessage: "La carta invertida te pide honestidad radical. Si estás en una encrucijada afectiva o laboral, pregúntate qué estás sacrificando por miedo a la soledad o al cambio. La fidelidad a uno mismo es innegociable.",
+      dailyAction: "Aclara malentendidos mediante una charla madura y sincera, sin evasiones ni promesas que no piensas cumplir.",
+      shadowWarning: "Evita la infidelidad a tus propios principios morales o la manipulación emocional por celos e inseguridades.",
+      affirmation: "'Me mantengo fiel a mi verdad interior. Tomo decisiones claras y sanas que honran mi paz y mi dignidad.'",
+      dailyRitual: "Escribe en un papel las dos opciones de tu dilema actual y quema la duda al fuego de una vela declarando claridad absoluta."
+    }
+  },
+  7: { // El Carro
+    upright: {
+      energyDesc: "Energía de avance imparable, determinación férrea, triunfo sobre los obstáculos y dominio de fuerzas opuestas hacia una meta clara.",
+      oracleMessage: "Tienes las riendas de tu vida firmemente sujetas. No te dejes desviar por distracciones ni dudas externas; mantén la mirada fija en el horizonte y avanza con coraje y disciplina.",
+      dailyAction: "Enfócate en tu objetivo principal del día y no pares hasta completarlo. Es un día óptimo para resolver trámites, viajar o dar zancadas profesionales.",
+      shadowWarning: "No atropelles a los demás en tu prisa por llegar; la victoria más noble es aquella que no deja heridos en el camino.",
+      affirmation: "'Tengo la fuerza, el foco y la dirección para triunfar sobre cualquier obstáculo. Avanzo con paso firme y victorioso.'",
+      dailyRitual: "Al salir de casa, visualiza un escudo de luz dorada alrededor de tu cuerpo y camina con la espalda erguida y respiración rítmica."
+    },
+    reversed: {
+      energyDesc: "Sensación de pérdida de rumbo, choques de ego, impulsividad descontrolada o frustración por retrasos en tus planes de viaje o trabajo.",
+      oracleMessage: "Si los caballos de tu carruaje tiran en direcciones contrarias, frenar a tiempo es un acto de sabiduría. No fuerces la marcha si el terreno está resbaladizo; recalibra tu estrategia con calma.",
+      dailyAction: "Revisa qué actitudes agresivas o impacientes te están desgastando y recupera el control de tus emociones antes de actuar.",
+      shadowWarning: "Cuidado con las discusiones al volante, el exceso de velocidad o las palabras hirientes dichas en un momento de rabia.",
+      affirmation: "'Recupero el control sereno de mi carruaje vital. Domino mis impulsos y conduzco mi energía con maestría.'",
+      dailyRitual: "Siéntate en silencio durante 3 minutos, cuenta diez respiraciones lentas y bebe un vaso de agua fresca antes de reaccionar ante cualquier imprevisto."
+    }
+  },
+  8: { // La Justicia
+    upright: {
+      energyDesc: "Día de equilibrio kármico, claridad mental absoluta, decisiones justas, honestidad intachable y cosecha de lo sembrado.",
+      oracleMessage: "Todo lo que hagas hoy tendrá una repercusión directa y transparente. Actúa con rectitud, revisa contratos o documentos legales con rigor y busca el equilibrio ético en tus relaciones.",
+      dailyAction: "Pon en orden tus papeles, salda cuentas pendientes y sé justo y ecuánime tanto contigo mismo como con quienes te rodean.",
+      shadowWarning: "Evita la frialdad implacable o juzgarte con una severidad excesiva que no deje espacio para la compasión humana.",
+      affirmation: "'La verdad y la justicia divina guían mis actos. Cosecho con serenidad el fruto de mis intenciones nobles y transparentes.'",
+      dailyRitual: "Enciende una vela blanca frente a ti y coloca dos objetos equilibrados a sus lados como símbolo de armonía y claridad mental."
+    },
+    reversed: {
+      energyDesc: "Podrías percibir injusticias en el entorno, tentación de autoengaño, severidad desmedida o evasión de responsabilidades pasadas.",
+      oracleMessage: "El oráculo te invita a no buscar culpables afuera y examinar tu propia cuota de responsabilidad. Acepta las consecuencias de tus actos con madurez y busca reparar lo dañado con humildad.",
+      dailyAction: "Reconoce un error con nobleza y pide disculpas sinceras si heriste a alguien, liberándote de la pesada carga del orgullo.",
+      shadowWarning: "No justifiques trampas ni caigas en el rencor hacia quienes crees que no te trataron con equidad.",
+      affirmation: "'Me perdono y perdono a los demás. Acepto las lecciones de la vida y restauro el equilibrio en mi corazón.'",
+      dailyRitual: "Escribe una carta de perdón sincero hacia una persona (o hacia ti mismo) y destrúyela en paz decretando liberación kármica."
+    }
+  },
+  9: { // El Ermitaño
+    upright: {
+      energyDesc: "Vibración de recogimiento sabio, introspección fecunda, búsqueda de la verdad profunda, madurez y prudencia.",
+      oracleMessage: "En medio del bullicio del mundo, tu mayor fortaleza hoy reside en tu silencio interior. Tómate un tiempo para meditar, estudiar y reflexionar sobre tus metas a largo plazo. Tu propia lámpara ilumina el sendero.",
+      dailyAction: "Regálate momentos de soledad constructiva, lee sobre temas que nutran tu alma y no apresures decisiones que requieren maduración.",
+      shadowWarning: "Evita aislarte por amargura o creer que nadie puede comprenderte; la soledad sabia enriquece, no desconecta del amor.",
+      affirmation: "'Llevo mi propia lámpara encendida en la noche. En mi silencio interior encuentro la respuesta perfecta y la paz.'",
+      dailyRitual: "Apaga pantallas y luces artificiales durante 15 minutos esta noche y contempla en silencio la llama de una vela agradeciendo tu sabiduría."
+    },
+    reversed: {
+      energyDesc: "Sensación de aislamiento doloroso, terquedad de ermitaño hosco, rechazo a la ayuda ajena o prisa ciega por escapar de ti mismo.",
+      oracleMessage: "Cuidado con encerrarte en tu cueva por miedo a ser herido o juzgado. El oráculo te recuerda que el conocimiento no sirve de nada si se pudre en la oscuridad sin ser compartido con el mundo.",
+      dailyAction: "Abre la puerta al encuentro: llama a un buen amigo, da un paseo al aire libre y permite que otros te apoyen con su afecto.",
+      shadowWarning: "No caigas en la queja solitaria ni te obsesiones con detalles insignificantes que solo alimentan el pesimismo.",
+      affirmation: "'Comparto mi luz sin miedo y recibo con gratitud el cariño y la compañía de quienes me rodean.'",
+      dailyRitual: "Escribe un mensaje de cariño o agradecimiento a alguien que haya sido un faro en tu vida en momentos difíciles."
+    }
+  },
+  10: { // La Rueda de la Fortuna
+    upright: {
+      energyDesc: "Sincronicidades cósmicas, giros favorables del destino, cierre de viejos ciclos y apertura de puertas inesperadas.",
+      oracleMessage: "La vida es una danza en continuo movimiento. Si atraviesas un momento difícil, la rueda gira hacia la luz; si estás en la cima, mantén la humildad y la gratitud. Fluye con los cambios sin oponer resistencia.",
+      dailyAction: "Aprovecha las oportunidades imprevistas que surjan hoy. Di 'sí' a una invitación inesperada o inicia una nueva rutina.",
+      shadowWarning: "No te apegues a las circunstancias temporales ni pretendas controlar lo incontrolable; tu poder reside en cómo respondes al cambio.",
+      affirmation: "'Acepto el giro benéfico de mi destino. Me abro a la buena fortuna, las sincronicidades y los nuevos ciclos de luz.'",
+      dailyRitual: "Lanza una moneda al aire formulando un anhelo noble de prosperidad y guárdala en tu monedero como imán de abundancia."
+    },
+    reversed: {
+      energyDesc: "Resistencia al cambio, sensación de mala racha o bucles repetitivos donde sientes que tropiezas con la misma piedra.",
+      oracleMessage: "La rueda parece atascada porque te aferras a métodos viejos para resolver problemas nuevos. Cuando tú cambias tu forma de ver las cosas, el ciclo kármico se desbloquea de inmediato.",
+      dailyAction: "Identifica qué hábito o pensamiento negativo estás repitiendo por inercia y toma la firme decisión de actuar diferente hoy.",
+      shadowWarning: "No te victimices culpando a la 'mala suerte'; asume el control de tu actitud y la fortuna volverá a sonreírte.",
+      affirmation: "'Rompo viejos patrones y ciclos repetitivos. Yo tengo el poder de girar mi rueda hacia la victoria y la dicha.'",
+      dailyRitual: "Da 3 giros lentos sobre ti mismo en el sentido de las agujas del reloj decretando reinicio, limpieza y desbloqueo total."
+    }
+  },
+  11: { // La Fuerza
+    upright: {
+      energyDesc: "Poder del amor incondicional, dominio del instinto con suavidad, coraje sereno, paciencia infinita y salud vigorosa.",
+      oracleMessage: "Las mayores batallas no se ganan con agresión ni gritos, sino con la ternura inquebrantable de quien domina sus propias emociones. Trata a tus miedos y a las personas difíciles como a un león fiero que se rinde ante una caricia sabia.",
+      dailyAction: "Responde a las provocaciones con calma y diplomacia. Dedica energía al cuidado de tu cuerpo con ejercicio saludable o buena nutrición.",
+      shadowWarning: "No intentes someter a otros mediante la fuerza bruta o la terquedad; la compasión es tu arma más poderosa.",
+      affirmation: "'Mi fuerza es el amor, la paciencia y el autocontrol. Domo cualquier tormenta con serenidad y dulzura infinita.'",
+      dailyRitual: "Acaricia a tu mascota o abrázate a ti mismo fuertemente durante un minuto respirando hondo y decretando paz invencible."
+    },
+    reversed: {
+      energyDesc: "Agotamiento físico o emocional, estallidos de cólera reprimida, debilidad de voluntad o sensación de impotencia.",
+      oracleMessage: "Tu león interior está herido o desbordado. El oráculo te pide no exigirte más de la cuenta hoy: reconoce tus límites, descansa tu cuerpo y no te sientas culpable por necesitar una tregua.",
+      dailyAction: "Haz una pausa en tus batallas cotidianas, pospón confrontaciones y mímate con descanso reparador y comida sana.",
+      shadowWarning: "Cuidado con los arrebatos de ira de los que luego te arrepientas o con rendirte ante la primera dificultad por desánimo.",
+      affirmation: "'Reconozco mi vulnerabilidad sin juzgarme. Recupero mi vigor vital en el descanso, el silencio y la ternura.'",
+      dailyRitual: "Aplica unas gotas de aceite esencial de lavanda o romero en tus sienes y nuca dándote un masaje suave y relajante."
+    }
+  },
+  12: { // El Colgado
+    upright: {
+      energyDesc: "Pausa sagrada, cambio radical de perspectiva, iluminación espiritual, paciencia fértil y entrega consciente al proceso de la vida.",
+      oracleMessage: "A veces la mayor acción es no hacer nada y observar desde un ángulo totalmente opuesto. Deja de forzar una solución que no depende de ti en este momento; en la quietud de la entrega se revelará la respuesta mágica.",
+      dailyAction: "Mira ese problema que te agobia poniéndote en los zapatos de la otra persona. Acepta las demoras como una bendición que te protege.",
+      shadowWarning: "Distingue la pausa reflexiva del martirio inútil; no te quedes colgado de situaciones tóxicas por pura inercia.",
+      affirmation: "'En la pausa sagrada encuentro la iluminación. Suelto el control y miro el mundo con nuevos ojos llenos de paz.'",
+      dailyRitual: "Recuéstate en el suelo o cama con las piernas elevadas contra la pared durante 5 minutos para cambiar la perspectiva y la circulación."
+    },
+    reversed: {
+      energyDesc: "Sensación de sacrificio estéril, terquedad en causas perdidas, victimismo ('pobre de mí') o parálisis por miedo a soltar.",
+      oracleMessage: "El oráculo te pregunta: ¿de qué te sirve seguir sacrificándote por algo o alguien que no valora tu entrega? Desata tus propios nudos, ponte de pie y reclama tu derecho a avanzar.",
+      dailyAction: "Di 'no' a una exigencia que te drena y corta amarras con un compromiso que ya no tiene sentido en tu presente.",
+      shadowWarning: "Deja de quejarte de tu situación si tú mismo eres quien se niega a soltar las cuerdas que te aprisionan.",
+      affirmation: "'Me libero del papel de mártir. Corto amarras con lo que me ata y me pongo de pie con dignidad y poder.'",
+      dailyRitual: "Desata un nudo hecho previamente en una cinta o cuerda mientras decretas con fuerza: '¡Quedo libre de toda atadura!'"
+    }
+  },
+  13: { // La Muerte / El Arcano XIII
+    upright: {
+      energyDesc: "Transformación profunda, renacimiento sagrado, poda necesaria y cierre definitivo de lo que ya no tiene vida.",
+      oracleMessage: "No temas a la transformación: nada muere en el universo, todo se transmuta en una octava superior. Para que florezca la primavera en tu alma, es imprescindible que caigan las hojas secas del pasado.",
+      dailyAction: "Despréndete de algo viejo hoy: dona ropa que no uses, borra archivos viejos o perdona un agravio del pasado dejando ir el rencor.",
+      shadowWarning: "No intentes revivir situaciones que ya cumplieron su ciclo; la resistencia al cambio solo prolonga el sufrimiento.",
+      affirmation: "'Dejo ir con gratitud lo que ya cumplió su ciclo. Renazco con más fuerza, luz y sabiduría renovada.'",
+      dailyRitual: "Haz una limpieza a fondo de un cajón o rincón de tu casa, tirando o donando lo innecesario para abrir paso a la nueva energía."
+    },
+    reversed: {
+      energyDesc: "Aferramiento desesperado a lo que ya murió, miedo visceral al cambio, agonía prolongada o resistencia al duelo.",
+      oracleMessage: "El oráculo te advierte con amor: estás regando una planta de plástico esperando que dé frutos vivos. Acepta que esa etapa concluyó; la vida te aguarda con infinitas bendiciones al otro lado de tu miedo.",
+      dailyAction: "Acepta la realidad de un final con madurez y despídete con respeto, dando el primer paso hacia tu nuevo presente.",
+      shadowWarning: "Cuidado con quedar atrapado en nostalgias que te impiden ver las nuevas oportunidades que hoy tocan a tu puerta.",
+      affirmation: "'Suelto el pasado sin miedo ni rencor. Confío en que lo que se va deja lugar a bendiciones infinitamente mayores.'",
+      dailyRitual: "Escribe lo que te cuesta soltar en un papel y quémalo de forma segura en un cuenco, esparciendo las cenizas en la tierra."
+    }
+  },
+  14: { // La Templanza
+    upright: {
+      energyDesc: "Alquimia espiritual, moderación, armonía fluida, sanación integral, paciencia de ángel y reconciliación de opuestos.",
+      oracleMessage: "El arte de la vida es mezclar los ingredientes con sabiduría y dulzura. Hoy es un día propicio para sanar heridas, mediar en tensiones familiares o de pareja y encontrar el equilibrio justo en tus hábitos.",
+      dailyAction: "Actúa como un puente de paz en tus conversaciones, busca el término medio y modera cualquier exceso en tus comidas o gastos.",
+      shadowWarning: "Evita los extremos emocionales o la impaciencia por acelerar procesos que requieren maduración serena.",
+      affirmation: "'La armonía divina fluye a través de mí. Transmuto cualquier discordia en paz, salud y perfecto equilibrio.'",
+      dailyRitual: "Vierte agua pura de un vaso a otro lentamente tres veces sin derramar una sola gota, decretando equilibrio en tu cuerpo y mente."
+    },
+    reversed: {
+      energyDesc: "Desbalance emocional, impaciencia, choques por intolerancia, mezclas incompatibles o desasosiego interno.",
+      oracleMessage: "Has perdido el centro por intentar abarcar demasiado o por caer en excesos que desgastan tu cuerpo y tu paz mental. El oráculo te pide frenar, respirar y restaurar la sobriedad en tus rutinas.",
+      dailyAction: "Identifica en qué área estás cometiendo excesos y restablece un ritmo pausado de descanso y buena alimentación.",
+      shadowWarning: "No busques soluciones rápidas y drásticas para dilemas que requieren tacto, paciencia y diplomacia.",
+      affirmation: "'Recupero mi centro de calma y equilibrio. La serenidad es mi mayor refugio ante la prisa del mundo.'",
+      dailyRitual: "Prepara una infusión de tila o menta y bébela en completo silencio, alejado de teléfonos y ruidos externos."
+    }
+  },
+  15: { // El Diablo
+    upright: {
+      energyDesc: "Magnetismo terrenal poderoso, pasión creadora, ambición material, sombra inconsciente y lucidez de ataduras.",
+      oracleMessage: "El Diablo te muestra tus deseos más viscerales y las cadenas que tú mismo has consentido llevar. Canaliza esa fuerza volcánica hacia metas productivas y creativas sin dejarte atrapar por obsesiones o dependencias.",
+      dailyAction: "Reconoce tus tentaciones y sombras sin culpa, pero decide conscientemente si te hacen libre o si te están encadenando.",
+      shadowWarning: "Cuidado con las adicciones, los celos posesivos, la codicia material o manipular a otros por beneficio propio.",
+      affirmation: "'Reconozco mis sombras y las ilumino con conciencia. Soy libre de toda atadura y dueño absoluto de mi voluntad.'",
+      dailyRitual: "Enciende una vela y visualiza cómo cortas un cordón invisible de dependencia tóxica con unas tijeras de luz dorada."
+    },
+    reversed: {
+      energyDesc: "Despertar del engaño, ruptura de cadenas tóxicas, liberación de adicciones y recuperación de la soberanía personal.",
+      oracleMessage: "Una venda se cae de tus ojos. El oráculo te felicita porque estás dando el paso decisivo para salir de una situación o relación que te aprisionaba. Eres mucho más fuerte que cualquier apego del pasado.",
+      dailyAction: "Corta definitivamente con un hábito perjudicial o aléjate de un entorno que drena tu dignidad y tu energía vital.",
+      shadowWarning: "No caigas en la trampa de volver atrás por debilidad momentánea; tu libertad ganada no tiene precio.",
+      affirmation: "'Rompo las cadenas que me limitaban. Reclamo mi soberanía espiritual, mi dignidad y mi libertad absoluta.'",
+      dailyRitual: "Toma un baño o ducha de agua tibia frotando sal marina en tus hombros y cuello visualizando la disolución de cargas densas."
+    }
+  },
+  16: { // La Torre
+    upright: {
+      energyDesc: "Revelación liberadora, caída de falsas estructuras, desahogo necesario y verdad incontestable que rompe ilusiones.",
+      oracleMessage: "El rayo de la verdad destruye la prisión que creías hogar. Si un plan o expectativa se derrumba hoy, no te desesperes: era una estructura falsa construida sobre arena. Sobre las ruinas construirás tu vida auténtica.",
+      dailyAction: "Acepta la verdad desnuda sin disfraces, suelta el orgullo y agradece que el engaño ha caído antes de causar más daño.",
+      shadowWarning: "No intentes reconstruir muros podridos; deja que el aire fresco limpie el terreno para tu nuevo renacer.",
+      affirmation: "'Acepto la verdad que me libera. Sobre las ruinas de lo falso, construyo mi vida auténtica y luminosa.'",
+      dailyRitual: "Rompe en pedazos un papel donde hayas escrito tus viejas rigideces mentales y sonríe al cielo sintiendo alivio y ligereza."
+    },
+    reversed: {
+      energyDesc: "Negación ante el derrumbe inminente, aferramiento a una crisis evitable o pánico ante los cambios drásticos.",
+      oracleMessage: "Estás sosteniendo las paredes de una torre que se tambalea con tus propias manos. Cuanto más te resistas a aceptar la realidad, más agotador será el desenlace. Permite que caiga lo que no se sostiene.",
+      dailyAction: "Deja de encubrir errores ajenos o propios y da paso a la honestidad total aunque requiera valentía.",
+      shadowWarning: "Cuidado con prolongar el sufrimiento por miedo al qué dirán o por terror a empezar de nuevo.",
+      affirmation: "'Suelto la resistencia al cambio. Permito que caigan las máscaras y recibo con valentía mi renovación.'",
+      dailyRitual: "Respira hondo y exhala con un suspiro sonoro tres veces seguidas liberando toda la tensión acumulada en tu pecho."
+    }
+  },
+  17: { // La Estrella
+    upright: {
+      energyDesc: "Esperanza renovada, bendición cósmica, inspiración artística, generosidad transparente y fe en un futuro radiante.",
+      oracleMessage: "Las aguas de la sanación y la esperanza fluyen en tu vida. Es uno de los días más auspiciosos del tarot: tus plegarias y anhelos son escuchados por el universo. Comparte tu luz con autenticidad y confía en tu estrella.",
+      dailyAction: "Dedica tiempo a tus proyectos artísticos o solidarios, sonríe a quienes crucen tu camino y mantén viva tu ilusión más pura.",
+      shadowWarning: "No te quedes solo en fantasías etéreas; derrama tu agua sobre la tierra para que tus dones den frutos reales.",
+      affirmation: "'Las estrellas guían mi camino con bendiciones infinitas. Mi esperanza es firme y mi destino es luminoso.'",
+      dailyRitual: "Coloca un cuenco con agua limpia cerca de la ventana reflejando el cielo nocturno y formula tus tres mayores deseos con fe."
+    },
+    reversed: {
+      energyDesc: "Desánimo pasajero, pesimismo, falta de fe en ti mismo o sensación de desconexión de tus sueños más queridos.",
+      oracleMessage: "El oráculo te recuerda que la estrella sigue brillando en el firmamento aunque las nubes de tu mente no te dejen verla hoy. No permitas que una decepción del pasado te ciegue ante las bendiciones de tu porvenir.",
+      dailyAction: "Reconecta con lo que de verdad enciende tu alegría: escucha tu música favorita, pasea en la naturaleza o habla con alguien positivo.",
+      shadowWarning: "Evita el cinismo amargo o juzgar tu valor personal por un bache temporal en el camino.",
+      affirmation: "'Enciendo mi propia estrella interior. La noche más oscura es la que anuncia el amanecer más hermoso.'",
+      dailyRitual: "Enciende una vela azul celeste o blanca y repite tres veces con el corazón abierto: 'Confío en mi futuro y me abro a recibir milagros'."
+    }
+  },
+  18: { // La Luna
+    upright: {
+      energyDesc: "Intuición psíquica profunda, sueños reveladores, misterio del subconsciente y navegación sabia en la penumbra.",
+      oracleMessage: "Tus sentidos extrasensoriales están muy despiertos, pero el terreno puede prestarse a ilusiones o miedos infundados. No tomes decisiones definitivas en plena niebla; escucha tus sueños y camina con prudencia.",
+      dailyAction: "Anota tus sueños al despertar, investiga lo que está oculto bajo la superficie y confía en tu sexto sentido.",
+      shadowWarning: "Cuidado con los celos imaginarios, la paranoia o dejarte arrastrar por fantasmas del pasado que no son reales.",
+      affirmation: "'Navego mis mareas emocionales con serenidad y lucidez. La luz de mi intuición disuelve cualquier engaño.'",
+      dailyRitual: "Coloca un vaso con agua fresca y una hoja de laurel en tu mesita de noche para tener sueños protectores y lucidez mental."
+    },
+    reversed: {
+      energyDesc: "Disipación de la niebla, revelación de engaños ocultos, superación de temores y salida hacia la claridad.",
+      oracleMessage: "La luz de la verdad comienza a disipar las sombras. Una mentira o confusión que te quitaba el sueño queda al descubierto, permitiéndote tomar decisiones firmes y sanas.",
+      dailyAction: "Afronta las cosas tal como son, pide explicaciones claras si las necesitas y deja atrás los miedos irracionales.",
+      shadowWarning: "No temas enfrentarte a la realidad; por dura que parezca, siempre es más sana que una mentira reconfortante.",
+      affirmation: "'La niebla se disipa y la claridad reina en mi mente. Veo las cosas tal como son y elijo la paz y la verdad.'",
+      dailyRitual: "Lávate los ojos y el rostro con agua fresca decretando: 'Mis ojos ven la verdad con amor, sabiduría y discernimiento'."
+    }
+  },
+  19: { // El Sol
+    upright: {
+      energyDesc: "Éxito radiante, alegría contagiosa, claridad meridiana, vitalidad plena, calidez y bendición en todas las áreas.",
+      oracleMessage: "El Sol es la carta más afortunada del Tarot. Todo lo que emprendas hoy cuenta con el respaldo de la luz cósmica. Es un día para brillar sin pedir disculpas, celebrar la vida y compartir tu felicidad con generosidad.",
+      dailyAction: "Sonríe, sal a disfrutar del día, lidera tus proyectos con entusiasmo y transmite optimismo a quienes te rodean.",
+      shadowWarning: "Evita la soberbia, el orgullo o quemar a los demás con actitudes arrogantes; el verdadero sol alumbra a todos con ternura.",
+      affirmation: "'Yo soy luz, éxito, salud y dicha radiante. Todo lo que toco hoy se llena de bendición, victoria y amor.'",
+      dailyRitual: "Sal al aire libre durante 5 minutos, abre los brazos hacia el sol y siente cómo su energía dorada recarga tu vitalidad."
+    },
+    reversed: {
+      energyDesc: "Nubes pasajeras sobre tu brillo, orgullo herido, optimismo excesivamente ingenuo o retraso menor en tus planes.",
+      oracleMessage: "El sol sigue brillando detrás de esa pequeña nube. No te dejes desanimar por un contratiempo puntual ni permitas que una crítica ajena apague tu entusiasmo creador.",
+      dailyAction: "Mantén una actitud positiva y humilde, pule los detalles de tu plan y no dependas del aplauso de los demás para sentirte valioso.",
+      shadowWarning: "Cuidado con la vanidad herida o querer imponer tu brillo por encima de los demás para compensar inseguridades.",
+      affirmation: "'Mi sol interior es inagotable. Ninguna nube pasajera puede apagar la luz divina que habita en mi alma.'",
+      dailyRitual: "Enciende una vela dorada o amarilla y sonríe frente al espejo agradeciendo de corazón 3 cosas maravillosas de tu vida hoy."
+    }
+  },
+  20: { // El Juicio
+    upright: {
+      energyDesc: "Despertar de conciencia, llamado vocacional superior, perdón liberador, resurrección de proyectos y claridad kármica.",
+      oracleMessage: "El clarín del destino suena para ti. Es momento de dejar atrás tu viejo 'yo' con todas sus culpas y responder al llamado de tu verdadero propósito. Recibes una segunda oportunidad que debes aprovechar con madurez.",
+      dailyAction: "Toma esa decisión trascendental que has estado postergando y perdónate por completo por tus errores del pasado.",
+      shadowWarning: "No te juzgues con crueldad ni vivas prisionero de remordimientos estériles; el juicio divino es absolución y renacer.",
+      affirmation: "'Escucho el llamado de mi alma y despierto a mi verdadero propósito. Me libero del pasado y renazco en plenitud.'",
+      dailyRitual: "Respira hondo, alza los brazos al cielo y decreta en voz alta: '¡Acepto mi renacimiento espiritual aquí y ahora!'."
+    },
+    reversed: {
+      energyDesc: "Sordera ante el llamado interior, miedo a madurar, dudas paralizantes o temor excesivo al juicio y opinión ajena.",
+      oracleMessage: "Sabes en tu fuero interno lo que debes hacer, pero sigues postergándolo por miedo a asumir la responsabilidad de tu vida. Nadie vendrá a vivir tu destino por ti; da el paso con valentía.",
+      dailyAction: "Enfréntate a esa verdad pendiente y toma la decisión que tu corazón te exige sin esperar la aprobación de otros.",
+      shadowWarning: "Cuidado con culpar a tus padres, exparejas o al pasado para justificar tu falta de acción en el presente.",
+      affirmation: "'Me perdono por mis dudas del pasado. Hoy elijo escuchar mi voz interior y avanzar hacia mi destino sin miedo.'",
+      dailyRitual: "Escribe una carta a tu 'yo del pasado' expresándole perdón incondicional y quémala en señal de absolución total."
+    }
+  },
+  21: { // El Mundo
+    upright: {
+      energyDesc: "Plenitud absoluta, coronación de esfuerzos, éxito universal, cierre triunfal de ciclo y danza en armonía cósmica.",
+      oracleMessage: "Has alcanzado la cima de la montaña. Todos tus esfuerzos pasados se coronan con éxito y satisfacción profunda. Estás en el lugar correcto, en el momento exacto y en sintonía con la totalidad del universo.",
+      dailyAction: "Celebra tus logros, concluye ese proyecto con orgullo, viaja o expande tus horizontes sin límites.",
+      shadowWarning: "Disfruta de la cima con gratitud y humildad, recordando que cada meta alcanzada es el umbral hacia una nueva aventura evolutiva.",
+      affirmation: "'Todo está en perfecto orden divino. Celebro mi plenitud, mi éxito y mi unión armónica con el universo entero.'",
+      dailyRitual: "Dibuja un círculo imaginario de luz dorada a tu alrededor con tu dedo índice, entra en él con paso firme y decreta: '¡Habito mi plenitud!'."
+    },
+    reversed: {
+      energyDesc: "Éxito a punto de caramelo frenado por un detalle final, falta de cierre, miedo a culminar o visión estrecha.",
+      oracleMessage: "Estás a un solo paso de cruzar la meta. No te rindas en el último metro por pereza o miedo al éxito; remata esa tarea pendiente y corona tu esfuerzo con maestría.",
+      dailyAction: "Completa ese último trámite o conversación que falta para cerrar el ciclo de manera impecable.",
+      shadowWarning: "Cuidado con la trampa del perfeccionismo paralizante; lo hecho con amor y entrega es mejor que lo perfecto nunca terminado.",
+      affirmation: "'Culmino con éxito y maestría cada ciclo que inicio. Me abro a recibir los laureles de mi esfuerzo y dedicación.'",
+      dailyRitual: "Da un aplauso sonoro o un toque de campana en las 4 esquinas de tu habitación decretando victoria y cierre perfecto."
+    }
+  }
+};
+
+function getMinorArcanaDailyWisdom(card, isReversed) {
+  const isWands = card.name.includes('Bastos');
+  const isCups = card.name.includes('Copas');
+  const isSwords = card.name.includes('Espadas');
+  const isPentacles = card.name.includes('Oros');
+
+  let elementTheme = "Fuego (Acción y Pasión)";
+  let elementGlow = "🔥";
+  if (isCups) { elementTheme = "Agua (Emociones y Vínculos)"; elementGlow = "💧"; }
+  else if (isSwords) { elementTheme = "Aire (Mente y Claridad)"; elementGlow = "⚔️"; }
+  else if (isPentacles) { elementTheme = "Tierra (Materia y Prosperidad)"; elementGlow = "🪙"; }
+
+  if (!isReversed) {
+    return {
+      energyDesc: `El influjo de ${card.name} baña tu día con la vibración de ${elementGlow} ${elementTheme}. Clima: ${card.keyThemes}.`,
+      oracleMessage: card.meanings.general,
+      dailyAction: card.meanings.advice || `Alinea tus acciones con el mensaje de ${card.name}: confía en tu enfoque y avanza en tu propósito con firmeza.`,
+      shadowWarning: `No descuides el equilibrio elemental de ${elementTheme}; mantén la templanza y no actúes por prisa o sobreexigencia.`,
+      affirmation: `'Acojo la bendición de ${card.name}. Mi voluntad, mi mente y mi corazón vibran en perfecta armonía creadora.'`,
+      dailyRitual: isWands ? "Enciende una vela dorada consagrando tu pasión creadora." :
+                   isCups ? "Toma un vaso de agua con intención de paz y amor propio." :
+                   isSwords ? "Respira hondo durante 2 minutos visualizando claridad mental cristalina." :
+                   "Coloca una moneda limpia en tu mesa de trabajo como ancla de prosperidad."
+    };
+  } else {
+    return {
+      energyDesc: `La energía de ${card.name} se presenta en polaridad de sombra o desafío. Clima de transmutación: ${card.keyThemes}.`,
+      oracleMessage: card.reversed.general,
+      dailyAction: card.reversed.alchemy || `Revisa qué aspecto de ${card.name} te está bloqueando y toma un paso consciente para liberarlo hoy.`,
+      shadowWarning: `Cuidado con caer en los bloqueos arquetípicos de esta carta; no reacciones desde el miedo ni la rigidez.`,
+      affirmation: `'Transmuto cualquier bloqueo en sabiduría. Mi poder de adaptación es infinito y elijo la paz interior.'`,
+      dailyRitual: "Lávate las manos con agua fresca y una pizca de sal marina visualizando cómo se disuelve todo obstáculo del camino."
+    };
   }
 }
 
@@ -5496,19 +6150,95 @@ function initDailyExpressCard() {
     const card = window.tarotDb.find(c => c.id === s.cardId);
     if (!card) return;
 
-    expressName.textContent = card.name + (s.isReversed ? " \u2014 Energía Invertida" : " \u2014 Luz al Derecho");
+    // 1. Título con Arcano y Polaridad
+    expressName.textContent = card.name + (s.isReversed ? " — Polaridad Invertida" : " — Luz al Derecho");
     
-    let adviceText = "";
-    if (s.isReversed) {
-      adviceText = `<strong>✨ Vibraciones en Sombra hoy:</strong> <em>${card.keyThemes}</em><br><br><strong>✦ El eco del oráculo te dice:</strong> ${card.reversed.general}`;
-    } else {
-      adviceText = `<strong>✨ La energía que te acompaña hoy:</strong> <em>${card.keyThemes}</em><br><br><strong>✦ El eco del oráculo te dice:</strong> ${card.meanings.general}`;
+    // 2. Badges de Arquetipo, Planeta, Elemento y Polaridad
+    const badgesContainer = document.getElementById('daily-express-badges');
+    if (badgesContainer) {
+      const polarityClass = s.isReversed ? 'reversed' : 'upright';
+      const polarityText = s.isReversed ? '⚡ Sombra / Transmutación' : '🌟 Luz / Expansión';
+      badgesContainer.innerHTML = `
+        <span class="daily-archetype-badge">🔢 Arcano ${card.id <= 21 ? card.id : card.numerology}</span>
+        <span class="daily-archetype-badge astro">🪐 ${card.astrology}</span>
+        <span class="daily-archetype-badge element">✨ ${card.element}</span>
+        <span class="daily-archetype-badge polarity ${polarityClass}">${polarityText}</span>
+      `;
     }
-    
-    expressAdvice.innerHTML = adviceText;
-    
+
+    // 3. Obtener Sabiduría Diaria (Mayor o Menor)
+    let wisdom = null;
+    if (s.cardId <= 21 && DAILY_WISDOM_DB[s.cardId]) {
+      wisdom = s.isReversed ? DAILY_WISDOM_DB[s.cardId].reversed : DAILY_WISDOM_DB[s.cardId].upright;
+    } else {
+      wisdom = getMinorArcanaDailyWisdom(card, s.isReversed);
+    }
+
+    // 4. Consejo Principal Estructurado
+    let adviceHTML = `
+      <div style="margin-bottom: 1.15rem;">
+        <h4 style="color: var(--gold-color); font-family: var(--font-serif); font-size: 1.1rem; margin: 0 0 0.35rem 0; display: flex; align-items: center; gap: 0.45rem;">
+          <span>🌌</span> Clima Energético de Hoy
+        </h4>
+        <p style="margin: 0; line-height: 1.6; color: var(--text-main); font-size: 0.95rem;">
+          ${wisdom.energyDesc}
+        </p>
+      </div>
+
+      <div style="margin-bottom: 1.15rem;">
+        <h4 style="color: var(--gold-light, #f3e5ab); font-family: var(--font-serif); font-size: 1.05rem; margin: 0 0 0.35rem 0; display: flex; align-items: center; gap: 0.45rem;">
+          <span>✦</span> El Mensaje Sagrado del Oráculo
+        </h4>
+        <p style="margin: 0; line-height: 1.65; color: var(--text-muted); font-size: 0.94rem;">
+          ${wisdom.oracleMessage}
+        </p>
+      </div>
+
+      <div style="background: rgba(229, 193, 88, 0.05); border-left: 3px solid var(--gold-color); padding: 0.85rem 1.1rem; border-radius: 0 10px 10px 0; margin-bottom: 1rem;">
+        <h4 style="color: var(--gold-color); font-size: 0.95rem; margin: 0 0 0.25rem 0; font-family: var(--font-sans); font-weight: 700; display: flex; align-items: center; gap: 0.4rem;">
+          <span>🎯</span> Tu Acción Concreta de Hoy
+        </h4>
+        <p style="margin: 0; line-height: 1.55; color: var(--text-main); font-size: 0.92rem;">
+          ${wisdom.dailyAction}
+        </p>
+      </div>
+
+      <div style="background: rgba(239, 68, 68, 0.05); border-left: 3px solid #f87171; padding: 0.85rem 1.1rem; border-radius: 0 10px 10px 0; margin-bottom: 0.25rem;">
+        <h4 style="color: #fca5a5; font-size: 0.92rem; margin: 0 0 0.25rem 0; font-family: var(--font-sans); font-weight: 600; display: flex; align-items: center; gap: 0.4rem;">
+          <span>⚠️</span> Alerta de Consciencia
+        </h4>
+        <p style="margin: 0; line-height: 1.5; color: var(--text-muted); font-size: 0.9rem;">
+          ${wisdom.shadowWarning}
+        </p>
+      </div>
+    `;
+
+    expressAdvice.innerHTML = adviceHTML;
+
+    // 5. Afirmación del Día
+    const affirmationBox = document.getElementById('daily-affirmation');
+    if (affirmationBox) {
+      affirmationBox.innerHTML = `
+        <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--purple-color); font-weight: 700;">✦ Decreto del Día</span>
+          <span style="font-size: 1.02rem; font-style: italic; color: var(--text-main);">${wisdom.affirmation}</span>
+        </div>
+      `;
+    }
+
+    // 6. Ritual del Día
+    const ritualText = document.getElementById('daily-ritual-text');
+    if (ritualText) {
+      ritualText.innerHTML = wisdom.dailyRitual;
+    }
+
     expressInstructions.classList.add('hidden');
     expressInfo.classList.remove('hidden');
+
+    // Desplazamiento suave en móviles para ver la revelación completa
+    if (window.innerWidth <= 768) {
+      expressInfo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
   }
 }
 
@@ -5745,113 +6475,810 @@ cardFlipObserver.observe(document.body, {
 })();
 
 /* ==========================================================================
-   MEJORA 5: Tirada de 12 Meses
+   MEJORA 5: Tirada de los 12 Meses y Arcano Guía del Año
    ========================================================================== */
-function initYearlySpread(force = false) {
-  const grid = document.getElementById('yearly-spread-grid');
-  if (!grid) return;
-  if (!force && grid.children.length > 0) return;
+const YEARLY_MONTHS_META = [
+  { name: 'Enero', season: 'Invierno', seasonName: '❄️ Invierno: Siembra', element: 'Tierra / Inicio de Ciclo' },
+  { name: 'Febrero', season: 'Invierno', seasonName: '❄️ Invierno: Purificación', element: 'Aire / Claridad Interior' },
+  { name: 'Marzo', season: 'Primavera', seasonName: '🌸 Primavera: Despertar', element: 'Fuego / Impulso Vital' },
+  { name: 'Abril', season: 'Primavera', seasonName: '🌸 Primavera: Brotes', element: 'Tierra / Enraizamiento' },
+  { name: 'Mayo', season: 'Primavera', seasonName: '🌸 Primavera: Plenitud', element: 'Tierra / Placer y Arte' },
+  { name: 'Junio', season: 'Verano', seasonName: '☀️ Verano: Expansión', element: 'Aire / Comunicación' },
+  { name: 'Julio', season: 'Verano', seasonName: '☀️ Verano: Calor Emocional', element: 'Agua / Sentimientos Profundos' },
+  { name: 'Agosto', season: 'Verano', seasonName: '☀️ Verano: Cosecha Solar', element: 'Fuego / Brillo y Pasión' },
+  { name: 'Septiembre', season: 'Otoño', seasonName: '🍂 Otoño: Recolección', element: 'Tierra / Orden y Trabajo' },
+  { name: 'Octubre', season: 'Otoño', seasonName: '🍂 Otoño: Balanza', element: 'Aire / Verdad y Justicia' },
+  { name: 'Noviembre', season: 'Otoño', seasonName: '🍂 Otoño: Misterio', element: 'Agua / Muerte y Renacer' },
+  { name: 'Diciembre', season: 'Invierno', seasonName: '❄️ Invierno: Cierre de Ciclo', element: 'Fuego / Luz en la Noche' }
+];
 
-  grid.innerHTML = '';
+function calculatePersonalYearArcana(birthdateStr, year) {
+  if (!birthdateStr) {
+    const digits = `${year}`.split('').map(Number);
+    let sum = digits.reduce((a, b) => a + b, 0);
+    while (sum > 22) {
+      sum = sum.toString().split('').map(Number).reduce((a, b) => a + b, 0);
+    }
+    return sum === 22 ? 0 : sum;
+  }
 
-  const MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-  const currentMonth = new Date().getMonth(); // 0-indexed
-  const currentYear = new Date().getFullYear();
+  const [bYear, bMonth, bDay] = birthdateStr.split('-').map(Number);
+  const digits = `${bDay}${bMonth}${year}`.split('').map(Number);
+  let sum = digits.reduce((a, b) => a + b, 0);
+  while (sum > 22) {
+    sum = sum.toString().split('').map(Number).reduce((a, b) => a + b, 0);
+  }
+  return sum === 22 ? 0 : sum;
+}
 
-  const savedDate = localStorage.getItem('user_birthdate');
+function getYearlySpreadState(birthdateStr, selectedYear) {
+  const year = Number(selectedYear) || new Date().getFullYear();
   let birthSeed = 0;
   let isPersonalized = false;
 
-  if (savedDate) {
-    const digits = savedDate.replace(/-/g, '').split('').map(Number);
+  if (birthdateStr) {
+    const digits = birthdateStr.replace(/-/g, '').split('').map(Number);
     birthSeed = digits.reduce((a, b) => a + b, 0);
     isPersonalized = true;
   }
 
-  // Set up personalization tip banner
-  let tipEl = document.getElementById('yearly-spread-tip');
-  if (!tipEl) {
-    tipEl = document.createElement('div');
-    tipEl.id = 'yearly-spread-tip';
-    tipEl.style.cssText = 'text-align: center; margin-bottom: 1.5rem; padding: 0.85rem 1.25rem; border-radius: 12px; font-size: 0.9rem; line-height: 1.5; transition: all 0.3s ease;';
-    grid.parentNode.insertBefore(tipEl, grid);
-  }
+  const yearMasterId = calculatePersonalYearArcana(birthdateStr, year);
+  const masterCard = window.tarotDb.find(c => c.id === yearMasterId);
+  const masterAstro = ASTRO_MAP[yearMasterId] || { ruler: 'Cosmos', symbol: '✦', keywords: 'Fuerza universal' };
 
-  if (isPersonalized) {
-    const [y, m, d] = savedDate.split('-');
-    tipEl.style.background = 'rgba(229, 193, 88, 0.08)';
-    tipEl.style.border = '1px solid rgba(229, 193, 88, 0.3)';
-    tipEl.style.color = 'var(--gold-color)';
-    tipEl.innerHTML = `✨ <strong>Sintonía Astral Activa:</strong> Tu Tirada del Año se ha personalizado con la vibración de tu nacimiento (<strong>${d}/${m}/${y}</strong>).`;
-  } else {
-    tipEl.style.background = 'rgba(139, 92, 246, 0.06)';
-    tipEl.style.border = '1px solid rgba(139, 92, 246, 0.2)';
-    tipEl.style.color = 'var(--text-muted)';
-    tipEl.innerHTML = `🔮 <strong>Tirada Colectiva:</strong> Esta tirada muestra la energía general del año. Introduce tu fecha de nacimiento en el apartado de <strong>Arcano Natal</strong> para sintonizar tu vibración única.`;
-  }
+  const yearSeed = year * 100 + birthSeed;
+  const currentMonthIdx = new Date().getMonth();
+  const currentYearNum = new Date().getFullYear();
 
-  // Generate cards
-  const yearSeed = currentYear * 100 + birthSeed;
-  
-  MONTHS.forEach((monthName, idx) => {
+  const months = YEARLY_MONTHS_META.map((meta, idx) => {
     const seed = (yearSeed + idx * 7 + 13) % 22;
-    const cardId = seed;
-    const isReversed = ((yearSeed + idx * 3 + 5) % 7) === 0; // ~14% reversed
-    const card = window.tarotDb.find(c => c.id === cardId);
-    if (!card) return;
+    const isReversed = ((yearSeed + idx * 3 + 5) % 7) === 0;
+    const card = window.tarotDb.find(c => c.id === seed);
+    const astro = ASTRO_MAP[seed] || { ruler: 'Cosmos', symbol: '✦', keywords: 'Fuerza universal' };
+    const isCurrent = (year === currentYearNum && idx === currentMonthIdx);
+
+    return {
+      index: idx,
+      name: meta.name,
+      seasonName: meta.seasonName,
+      element: meta.element,
+      year: year,
+      isCurrent: isCurrent,
+      cardId: seed,
+      cardName: card.name,
+      isReversed: isReversed,
+      keyThemes: card.keyThemes,
+      astro: astro,
+      general: isReversed ? card.reversed.general : card.meanings.general,
+      love: isReversed ? card.reversed.love : card.meanings.love,
+      work: isReversed ? card.reversed.work : card.meanings.work,
+      advice: isReversed ? card.reversed.alchemy : card.meanings.advice
+    };
+  });
+
+  return {
+    year,
+    isPersonalized,
+    birthdateStr,
+    masterId: yearMasterId,
+    masterCard,
+    masterAstro,
+    months
+  };
+}
+
+let activeYearlyState = null;
+
+function initYearlySpread(force = false) {
+  const grid = document.getElementById('yearly-spread-grid');
+  if (!grid) return;
+
+  const yearSelect = document.getElementById('yearly-select-year');
+  const birthInput = document.getElementById('yearly-birthdate-sync');
+  const recalcBtn = document.getElementById('yearly-recalculate-btn');
+  const shareBtn = document.getElementById('yearly-share-btn');
+
+  const selectedYear = yearSelect ? Number(yearSelect.value) : new Date().getFullYear();
+  const savedBirth = localStorage.getItem('user_birthdate') || (birthInput ? birthInput.value : '');
+
+  if (birthInput && savedBirth && !birthInput.value) {
+    birthInput.value = savedBirth;
+  }
+
+  activeYearlyState = getYearlySpreadState(savedBirth, selectedYear);
+
+  // 1. Renderizar Banner del Arcano Maestro del Año
+  const banner = document.getElementById('yearly-master-arcana-banner');
+  if (banner && activeYearlyState.masterCard) {
+    const mc = activeYearlyState.masterCard;
+    const ma = activeYearlyState.masterAstro;
+    const isPers = activeYearlyState.isPersonalized;
     
-    const isCurrentMonth = idx === currentMonth;
-    const meaning = isReversed ? card.reversed.general : card.meanings.general;
-    const shortMeaning = meaning.length > 80 ? meaning.substring(0, 77) + '...' : meaning;
+    banner.innerHTML = `
+      <div class="yearly-master-img" style="background-image: url('assets/card_${mc.id}.jpg');"></div>
+      <div class="yearly-master-info">
+        <span class="yearly-master-tag">${isPers ? '🌟 Tu Arcano Maestro del Año Personal' : '🔮 Arcano Maestro Colectivo'} ${activeYearlyState.year}</span>
+        <h3 class="yearly-master-title">${mc.name} (Arcano ${mc.id})</h3>
+        <p class="yearly-master-desc">
+          <strong>Lección y Corriente Guía:</strong> ${mc.keyThemes}. ${mc.meanings.advice}
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span class="natal-num-pill">${ma.symbol} ${ma.ruler}</span>
+          <span class="natal-num-pill purple">✨ ${mc.element}</span>
+          <span class="natal-num-pill">🔑 ${ma.keywords}</span>
+        </div>
+      </div>
+    `;
+  }
+
+  // 2. Renderizar Resumen de las 4 Estaciones Cósmicas
+  const seasonsGrid = document.getElementById('yearly-seasons-summary');
+  if (seasonsGrid) {
+    const q1 = activeYearlyState.months.slice(0, 3).map(m => m.cardName).join(', ');
+    const q2 = activeYearlyState.months.slice(3, 6).map(m => m.cardName).join(', ');
+    const q3 = activeYearlyState.months.slice(6, 9).map(m => m.cardName).join(', ');
+    const q4 = activeYearlyState.months.slice(9, 12).map(m => m.cardName).join(', ');
+
+    seasonsGrid.innerHTML = `
+      <div class="yearly-season-pill">
+        <div class="yearly-season-name">❄️ T1 (Ene-Mar)</div>
+        <div class="yearly-season-theme">Siembra y Claridad</div>
+      </div>
+      <div class="yearly-season-pill">
+        <div class="yearly-season-name">🌸 T2 (Abr-Jun)</div>
+        <div class="yearly-season-theme">Brote y Expansión</div>
+      </div>
+      <div class="yearly-season-pill">
+        <div class="yearly-season-name">☀️ T3 (Jul-Sep)</div>
+        <div class="yearly-season-theme">Plenitud y Cosecha</div>
+      </div>
+      <div class="yearly-season-pill">
+        <div class="yearly-season-name">🍂 T4 (Oct-Dic)</div>
+        <div class="yearly-season-theme">Balanza y Cierre</div>
+      </div>
+    `;
+  }
+
+  // 3. Renderizar Cuadrícula de los 12 Meses
+  grid.innerHTML = '';
+  activeYearlyState.months.forEach((m) => {
+    const shortMeaning = m.general.length > 75 ? m.general.substring(0, 72) + '...' : m.general;
     
     const div = document.createElement('div');
-    div.className = `yearly-month-card${isCurrentMonth ? ' current-month' : ''}`;
+    div.className = `yearly-month-card${m.isCurrent ? ' current-month' : ''}`;
     div.innerHTML = `
-      ${isCurrentMonth ? '<span class="yearly-current-badge">HOY</span>' : ''}
-      <span class="yearly-month-label">${monthName} ${currentYear}</span>
-      <div class="yearly-month-mini-card${isReversed ? ' reversed' : ''}" style="background-image: url('assets/card_${card.id}.jpg');"></div>
-      <div class="yearly-month-card-name">${card.name}${isReversed ? ' ↓' : ''}</div>
+      ${m.isCurrent ? '<span class="yearly-current-badge">ESTE MES</span>' : ''}
+      <div class="yearly-month-header-row">
+        <span class="yearly-month-label">${m.name}</span>
+        <span class="yearly-season-tag-mini">${m.seasonName.split(':')[0]}</span>
+      </div>
+      <div class="yearly-month-mini-card${m.isReversed ? ' reversed' : ''}" style="background-image: url('assets/card_${m.cardId}.jpg');"></div>
+      <div class="yearly-month-card-name">${m.cardName}${m.isReversed ? ' ↺' : ''}</div>
       <div class="yearly-month-card-msg">${shortMeaning}</div>
     `;
     
-    // Click to show full reading for the month
-    div.addEventListener('click', () => showMonthReading(monthName, currentYear, card, isReversed));
+    div.addEventListener('click', () => showMonthReading(m.index, activeYearlyState));
     grid.appendChild(div);
   });
+
+  // Event listeners (una sola vez)
+  if (yearSelect && !yearSelect.dataset.bound) {
+    yearSelect.dataset.bound = 'true';
+    yearSelect.addEventListener('change', () => {
+      initYearlySpread(true);
+    });
+  }
+
+  if (recalcBtn && !recalcBtn.dataset.bound) {
+    recalcBtn.dataset.bound = 'true';
+    recalcBtn.addEventListener('click', () => {
+      if (birthInput && birthInput.value) {
+        localStorage.setItem('user_birthdate', birthInput.value);
+      }
+      initYearlySpread(true);
+    });
+  }
+
+  if (shareBtn && !shareBtn.dataset.bound) {
+    shareBtn.dataset.bound = 'true';
+    shareBtn.addEventListener('click', () => {
+      if (!activeYearlyState) return;
+      let text = `🌌 Mi Tirada del Año ${activeYearlyState.year} en Eco Estelar\n` +
+        `🌟 Arcano Maestro: ${activeYearlyState.masterCard.name}\n\n`;
+
+      activeYearlyState.months.forEach(m => {
+        text += `🗓️ ${m.name} ${m.year}: ${m.cardName}${m.isReversed ? ' (Invertida)' : ''} ➔ ${m.general.substring(0, 60)}...\n`;
+      });
+
+      text += `\nConsulta tu Tirada de 12 Meses en: ${window.location.href}`;
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          shareBtn.innerHTML = '<span>✅</span> ¡Guía Anual Copiada al Portapapeles!';
+          setTimeout(() => {
+            shareBtn.innerHTML = '<span>📋</span> Copiar la Guía Anual Completa';
+          }, 2500);
+        }).catch(() => {});
+      }
+    });
+  }
 }
 
-function showMonthReading(monthName, year, card, isReversed) {
-  const meaning = isReversed ? card.reversed.general : card.meanings.general;
-  const astro = ASTRO_MAP[card.id] || { ruler: 'Cosmos', symbol: '✦', keywords: 'Fuerza universal' };
-  
+function showMonthReading(monthIndex, yearlyState) {
+  if (!yearlyState || !yearlyState.months[monthIndex]) return;
+
+  const currentModal = document.getElementById('yearly-reading-modal');
+  if (currentModal) currentModal.remove();
+
+  const m = yearlyState.months[monthIndex];
+  const astro = m.astro;
+
+  const prevIdx = (monthIndex - 1 + 12) % 12;
+  const nextIdx = (monthIndex + 1) % 12;
+  const prevMonthName = yearlyState.months[prevIdx].name;
+  const nextMonthName = yearlyState.months[nextIdx].name;
+
   const modal = document.createElement('div');
-  modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(6,5,15,0.92);z-index:9999;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);animation:tabFadeIn 0.25s ease;';
+  modal.id = 'yearly-reading-modal';
+  modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(4,3,10,0.88);z-index:9999;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(10px);animation:modal-zoom-in 0.3s ease;padding: 1rem; box-sizing: border-box;';
+  
   modal.innerHTML = `
-    <div style="background:rgba(13,11,26,0.98);border:1px solid rgba(229,193,88,0.3);border-radius:20px;padding:2.5rem;max-width:520px;width:90%;position:relative;box-shadow:0 0 60px rgba(139,92,246,0.2);">
-      <button style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--text-muted);font-size:1.5rem;cursor:pointer;line-height:1;" onclick="this.closest('[style]').remove()">×</button>
-      <p style="font-size:0.8rem;color:var(--gold-color);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">${monthName} ${year}</p>
-      <h3 style="font-family:var(--font-serif);font-size:1.5rem;margin-bottom:1.25rem;">${card.name}${isReversed ? ' — Energía Invertida' : ''}</h3>
-      <div style="display:flex;gap:1.25rem;align-items:flex-start;">
-        <div style="width:90px;flex-shrink:0;aspect-ratio:2/3.3;background-image:url('assets/card_${card.id}.jpg');background-size:cover;border-radius:8px;transform:${isReversed ? 'rotate(180deg)' : 'none'};box-shadow:0 0 20px rgba(229,193,88,0.2);"></div>
-        <div>
-          <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:0.35rem;">${astro.symbol} ${astro.ruler} · ${astro.keywords}</p>
-          <p style="font-size:0.92rem;line-height:1.7;color:var(--text-main);">${meaning}</p>
+    <div style="background:rgba(13,11,26,0.98);border:1px solid rgba(229,193,88,0.35);border-radius:20px;padding:2.25rem 2rem;max-width:580px;width:100%;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 15px 50px rgba(0,0,0,0.7), 0 0 35px rgba(229,193,88,0.15);">
+      
+      <!-- Botón cerrar -->
+      <button type="button" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--text-muted);font-size:1.6rem;cursor:pointer;line-height:1;transition:color 0.2s;" onclick="this.closest('#yearly-reading-modal').remove()">×</button>
+      
+      <!-- Cabecera del Mes -->
+      <div style="margin-bottom: 1.25rem;">
+        <span style="font-size:0.75rem;color:var(--purple-color);letter-spacing:0.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:0.25rem;">
+          ${m.seasonName} · Mes ${monthIndex + 1} de 12
+        </span>
+        <h3 style="font-family:var(--font-serif);font-size:1.6rem;color:var(--gold-color);margin:0;letter-spacing:0.04em;">
+          ${m.name} ${m.year}
+        </h3>
+      </div>
+
+      <!-- Fila de Carta e Info Principal -->
+      <div style="display:flex;gap:1.25rem;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;">
+        <div style="width:100px;flex-shrink:0;aspect-ratio:2/3.3;background-image:url('assets/card_${m.cardId}.jpg');background-size:cover;background-position:center;border-radius:10px;transform:${m.isReversed ? 'rotate(180deg)' : 'none'};box-shadow:0 0 25px rgba(229,193,88,0.25);border:1px solid rgba(229,193,88,0.4);"></div>
+        <div style="flex:1;min-width:200px;">
+          <h4 style="font-family:var(--font-serif);font-size:1.25rem;color:var(--text-main);margin:0 0 0.35rem 0;">
+            ${m.cardName} ${m.isReversed ? '— Energía Invertida' : '— Luz al Derecho'}
+          </h4>
+          <p style="font-size:0.85rem;color:var(--text-muted);margin:0 0 0.5rem 0;">
+            ${astro.symbol} <strong>Regente:</strong> ${astro.ruler} · <strong>Elemento:</strong> ${m.element}
+          </p>
+          <div style="display:flex;gap:0.35rem;flex-wrap:wrap;">
+            <span class="natal-num-pill" style="font-size:0.75rem;padding:0.2rem 0.65rem;">🔑 ${m.keyThemes}</span>
+          </div>
         </div>
       </div>
+
+      <!-- Desglose de Predicciones por Áreas -->
+      <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:1.5rem;">
+        <div style="background:rgba(255,255,255,0.03);border-left:3px solid var(--gold-color);padding:0.85rem 1.1rem;border-radius:0 10px 10px 0;">
+          <h5 style="color:var(--gold-color);font-size:0.92rem;margin:0 0 0.25rem 0;font-family:var(--font-sans);font-weight:700;">
+            🌌 Clima General y Energía Evolutiva
+          </h5>
+          <p style="font-size:0.9rem;line-height:1.6;color:var(--text-main);margin:0;">
+            ${m.general}
+          </p>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.03);border-left:3px solid #f472b6;padding:0.85rem 1.1rem;border-radius:0 10px 10px 0;">
+          <h5 style="color:#f472b6;font-size:0.92rem;margin:0 0 0.25rem 0;font-family:var(--font-sans);font-weight:700;">
+            💖 Amor y Vínculos
+          </h5>
+          <p style="font-size:0.9rem;line-height:1.6;color:var(--text-main);margin:0;">
+            ${m.love}
+          </p>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.03);border-left:3px solid #38bdf8;padding:0.85rem 1.1rem;border-radius:0 10px 10px 0;">
+          <h5 style="color:#38bdf8;font-size:0.92rem;margin:0 0 0.25rem 0;font-family:var(--font-sans);font-weight:700;">
+            💼 Trabajo, Proyectos y Finanzas
+          </h5>
+          <p style="font-size:0.9rem;line-height:1.6;color:var(--text-main);margin:0;">
+            ${m.work}
+          </p>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.03);border-left:3px solid var(--purple-color);padding:0.85rem 1.1rem;border-radius:0 10px 10px 0;">
+          <h5 style="color:var(--purple-color);font-size:0.92rem;margin:0 0 0.25rem 0;font-family:var(--font-sans);font-weight:700;">
+            🗝️ Consejo del Oráculo
+          </h5>
+          <p style="font-size:0.9rem;line-height:1.6;color:var(--text-main);margin:0;">
+            ${m.advice}
+          </p>
+        </div>
+      </div>
+
+      <!-- Barra de Navegación entre Meses -->
+      <div style="display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border-color);gap:0.5rem;flex-wrap:wrap;">
+        <button type="button" id="prev-month-modal-btn" class="consult-button" style="padding:0.5rem 1rem;font-size:0.82rem;">
+          ◀ ${prevMonthName}
+        </button>
+        <span style="font-size:0.8rem;color:var(--text-muted);">${monthIndex + 1} / 12</span>
+        <button type="button" id="next-month-modal-btn" class="consult-button" style="padding:0.5rem 1rem;font-size:0.82rem;">
+          ${nextMonthName} ▶
+        </button>
+      </div>
+
     </div>
   `;
+
   document.body.appendChild(modal);
-  modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.remove();
+  });
+
+  const prevBtn = modal.querySelector('#prev-month-modal-btn');
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      showMonthReading(prevIdx, yearlyState);
+    });
+  }
+
+  const nextBtn = modal.querySelector('#next-month-modal-btn');
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      showMonthReading(nextIdx, yearlyState);
+    });
+  }
 }
 
 /* ==========================================================================
-   MEJORA 6: Carta Natal Personal
+   MEJORA 6: Arcano Natal Enriquecido (Enciclopedia y Tríada Sagrada del Tarot)
    ========================================================================== */
+const NATAL_ARCANA_DB = {
+  0: { // El Loco
+    name: "El Loco",
+    number: "0 / XXII",
+    element: "Aire / Éter Cósmico",
+    planet: "Urano",
+    crystal: "Cuarzo Transparente / Aguamarina",
+    powerColor: "Amarillo Radiante y Blanco",
+    soulMission: "Tu alma encarnó para ser un faro de libertad, innovación y ruptura de viejos paradigmas. Has venido a recordar al mundo que la vida es una aventura sagrada y que el verdadero crecimiento surge cuando confiamos en lo desconocido y damos saltos de fe con inocencia, alegría y corazón abierto.",
+    innateGifts: "Espontaneidad magnética, optimismo inagotable, capacidad innata de empezar de cero sin rencores, visión sin prejuicios y un coraje genuino para explorar caminos donde nadie más se atreve a caminar.",
+    karmicShadow: "La trampa de la irresponsabilidad, la inconstancia o la huida crónica de los compromisos afectivos y materiales por miedo a perder tu libertad. Tu gran aprendizaje es entender que el compromiso consciente no aprisiona, sino que expande tu propósito.",
+    loveAndVocation: "En el amor necesitas una pareja que vuele a tu lado sin jaulas, basada en la complicidad y el respeto al espacio mutuo. En lo profesional destacas como emprendedor, artista vanguardista, filósofo, creador de contenido disruptivo o impulsor de nuevas tendencias.",
+    lifeMantra: "'Soy un alma libre, pura y soberana. Camino con fe absoluta en el universo y me abro a la magia infinita de la vida.'"
+  },
+  1: { // El Mago
+    name: "El Mago",
+    number: "I (1)",
+    element: "Aire / Fuego Mental",
+    planet: "Mercurio",
+    crystal: "Citrino / Pirita / Ojo de Tigre",
+    powerColor: "Amarillo Dorado y Rojo Rubí",
+    soulMission: "Tu misión de vida es la maestría de la manifestación consciente. Encarnaste como un puente vivo entre el cielo y la tierra, con el propósito sagrado de convertir ideas abstractas e ilusiones en realidades tangibles, prósperas y útiles para el colectivo.",
+    innateGifts: "Elocuencia brillante, ingenio rápido, habilidad comunicativa excepcional, versatilidad para dominar múltiples disciplinas y un magnetismo persuasivo capaz de inspirar y liderar proyectos.",
+    karmicShadow: "La tentación de la manipulación, el síndrome del impostor o la dispersión mental por querer abarcar demasiados proyectos sin concluir ninguno. Tu desafío es la integridad absoluta de la palabra y el enfoque disciplinado.",
+    loveAndVocation: "En el amor buscas mentes brillantes con las que puedas dialogar, crear proyectos compartidos y debatir con ingenio. En lo laboral destacas en comunicación, ventas, tecnología, psicología, liderazgo empresarial, docencia y diseño estratégico.",
+    lifeMantra: "'Dispongo de todas las herramientas para triunfar. Mis pensamientos, palabras y acciones crean milagros reales.'"
+  },
+  2: { // La Sacerdotisa / La Papisa
+    name: "La Sacerdotisa",
+    number: "II (2)",
+    element: "Agua / Éter Místico",
+    planet: "La Luna",
+    crystal: "Piedra Luna / Selenita / Amatista",
+    powerColor: "Azul Índigo y Plata",
+    soulMission: "Tu alma es custodia de los misterios invisibles, la memoria ancestral y la sabiduría intuitiva. Has venido a este plano a enseñar el valor del silencio, la escucha interior, la diplomacia sutil y la sanación profunda a través del conocimiento oculto y la empatía.",
+    innateGifts: "Percepción extrasensorial profunda, sexto sentido certero, capacidad innata para descifrar secretos y motivaciones ajenas, serenidad pacificadora y un talento natural para la investigación y el estudio.",
+    karmicShadow: "El aislamiento defensivo, la frialdad emocional, guardar secretos que envenenan los vínculos o juzgar con severidad silenciosa. Tu lección es abrir el corazón y compartir tu sabiduría sin miedo a ser herida.",
+    loveAndVocation: "En las relaciones buscas conexiones de alma profundas, místicas y leales; te resulta insoportable la superficialidad. En lo profesional brillas en psicología, investigación, tarot y astrología, escritura, archivística, medicina holística y asesoría estratégica confidencial.",
+    lifeMantra: "'Mi intuición es sabia y certera. En mi silencio interior escucho la voz sagrada del cosmos.'"
+  },
+  3: { // La Emperatriz
+    name: "La Emperatriz",
+    number: "III (3)",
+    element: "Tierra Fértil / Agua Creadora",
+    planet: "Venus",
+    crystal: "Cuarzo Rosa / Esmeralda / Jade Verde",
+    powerColor: "Verde Esmeralda y Rosa Cuarzo",
+    soulMission: "Encarnaste como canal viva de la abundancia, la fertilidad creadora y el amor incondicional. Tu propósito es embellecer el mundo, nutrir los sueños de quienes te rodean y manifestar prosperidad material y afectiva a través del arte, la calidez y el deleite sensorial.",
+    innateGifts: "Creatividad desbordante, carisma arrollador, elegancia natural, don para hacer florecer cualquier proyecto o negocio y una capacidad maternal/nutricia que reconforta a cualquier alma afligida.",
+    karmicShadow: "El apego posesivo, el drama emocional, la vanidad o la dependencia de la aprobación externa. Tu gran prueba kármica es recordar que tu valor propio es infinito y no depende de lo que des a los demás.",
+    loveAndVocation: "En el amor eres apasionado, generoso y muy afectuoso; necesitas romance, caricias y deleite compartido. En lo profesional triunfas en diseño, arte, gastronomía, eventos, medicina, relaciones públicas, estética, moda y dirección creativa.",
+    lifeMantra: "'Soy un imán vivo de abundancia, belleza y amor. Todo lo que toco con mi amor florece en prosperidad.'"
+  },
+  4: { // El Emperador
+    name: "El Emperador",
+    number: "IV (4)",
+    element: "Fuego Terrenal / Estructura",
+    planet: "Aries / Marte",
+    crystal: "Jaspe Rojo / Hematita / Granate",
+    powerColor: "Rojo Escarlata y Dorado Solar",
+    soulMission: "Tu misión de vida es ser el arquitecto de la estabilidad, el orden y la justicia protectora. Has venido a crear estructuras seguras, liderar con rectitud inquebrantable y convertir el caos en imperios prósperos y duraderos para tu familia y comunidad.",
+    innateGifts: "Liderazgo nato, capacidad estratégica y ejecutiva excepcional, resiliencia ante la presión, lealtad a toda prueba y un sentido del deber y la organización envidiables.",
+    karmicShadow: "La rigidez mental, el autoritarismo, el miedo a mostrar vulnerabilidad o la dificultad para delegar y perdonar errores. Tu maestría reside en comprender que la fuerza más sublime es flexible como el bambú.",
+    loveAndVocation: "En el amor ofreces protección, lealtad incondicional y seguridad duradera; valoras la honestidad y los proyectos de vida compartidos. En el trabajo destacas en alta dirección, leyes, ingeniería, arquitectura, gestión patrimonial y fuerzas de orden o gobierno.",
+    lifeMantra: "'Gobierno mi vida con orden, fuerza y nobleza. Construyo un legado sólido de paz y prosperidad.'"
+  },
+  5: { // El Sumo Sacerdote / El Papa
+    name: "El Sumo Sacerdote",
+    number: "V (5)",
+    element: "Tierra / Aire Espiritual",
+    planet: "Tauro / Quirón",
+    crystal: "Lapislázuli / Sodalita / Zafiro",
+    powerColor: "Azul Real y Púrpura Imperial",
+    soulMission: "Tu alma es un puente sagrado de transmisión ética, enseñanza y unión espiritual. Tu propósito es tender puentes entre la tradición ancestral y las nuevas conciencias, guiando a otros a través del consejo sabio, la educación y la búsqueda del sentido trascendental.",
+    innateGifts: "Vocación pedagógica innata, capacidad para mediar en conflictos con ecuanimidad, oratoria inspiradora, don de consejo y un respeto profundo por los valores humanistas.",
+    karmicShadow: "El dogmatismo inflexible, la intolerancia ante quienes piensan distinto o la hipocresía moral. Tu desafío evolutivo es cuestionar tus propios paradigmas y respetar el camino individual de cada alma.",
+    loveAndVocation: "En el amor valoras la lealtad, los valores compartidos y el crecimiento intelectual y espiritual en pareja. En lo laboral destacas en docencia universitaria, abogacía, mediación, filosofía, psicoterapia, asesoría espiritual y dirección institucional.",
+    lifeMantra: "'Enseño con el ejemplo y aprendo con humildad. Mi corazón es un templo de sabiduría y tolerancia.'"
+  },
+  6: { // Los Enamorados
+    name: "Los Enamorados",
+    number: "VI (6)",
+    element: "Aire / Conexión Cósmica",
+    planet: "Géminis",
+    crystal: "Rodocrosita / Aventurina Verde / Ágata",
+    powerColor: "Rosa Pastel, Celeste y Esmeralda",
+    soulMission: "Tu propósito es aprender y enseñar el arte sagrado de la elección consciente desde el corazón. Has venido a unir polaridades, celebrar la belleza de los vínculos humanos y demostrar que el amor auténtico es la fuerza más transformadora del universo.",
+    innateGifts: "Sensibilidad estética exquisita, empatía vincular, carisma magnético, diplomacia pacificadora y un talento único para conectar a personas y crear alianzas fértiles.",
+    karmicShadow: "La indecisión crónica, el miedo al compromiso profundo por terror a perder otras opciones o la dependencia emocional. Tu gran maestría es aprender a decir 'sí' desde tu verdad interior sin titubeos.",
+    loveAndVocation: "Para ti el amor es el eje central de tu existencia; buscas una comunión de almas con pasión, respeto y diálogo constante. En lo profesional brillas en diseño, diplomacia, psicología de parejas, marketing de moda, artes visuales y coaching de relaciones.",
+    lifeMantra: "'Elijo siempre desde el amor más puro. Mis vínculos son espejos de luz y crecimiento espiritual.'"
+  },
+  7: { // El Carro
+    name: "El Carro",
+    number: "VII (7)",
+    element: "Agua / Fuego de Victoria",
+    planet: "Cáncer / Marte",
+    crystal: "Ojo de Halcón / Malaquita / Ámbar",
+    powerColor: "Dorado Brillante y Amarillo Eléctrico",
+    soulMission: "Tu misión de vida es la victoria sobre la adversidad mediante la autodeterminación y el dominio de las emociones. Has encarnado para ser un pionero imparable, superando cualquier límite y demostrando que la disciplina enfocada conquista cualquier horizonte.",
+    innateGifts: "Fuerza de voluntad inquebrantable, rapidez mental para resolver crisis, capacidad para liderar bajo presión y un instinto ganador que convierte obstáculos en trampolines.",
+    karmicShadow: "La impaciencia desmedida, el atropello a los sentimientos ajenos en la prisa por triunfar o la agresividad ante los retrasos. Tu lección es comprender que la pausa también forma parte de la estrategia victoriosa.",
+    loveAndVocation: "En el amor necesitas a alguien independiente y apasionado que comparta tu ritmo de vida dinámico y no tema a tus ambiciones. En el plano laboral destacas en transporte, comercio internacional, deportes de élite, tecnología innovadora y emprendimientos de alto impacto.",
+    lifeMantra: "'Tengo el timón de mi destino. Avanzo con coraje, foco y maestría hacia el triunfo de mis sueños.'"
+  },
+  8: { // La Justicia
+    name: "La Justicia",
+    number: "VIII (8)",
+    element: "Aire / Balanza Kármica",
+    planet: "Libra / Saturno",
+    crystal: "Turmalina Negra / Obsidiana / Fluorita",
+    powerColor: "Blanco Puro y Azul Cobalto",
+    soulMission: "Tu misión es ser guardián de la verdad, el equilibrio kármico y la honestidad radical. Has venido a restablecer el orden ético, disolver el autoengaño en tu entorno y enseñar que toda causa engendra un efecto ineludible en el tejido cósmico.",
+    innateGifts: "Mente analítica brillante, objetividad intachable, capacidad para tomar decisiones difíciles sin titubear, discernimiento moral y serenidad ante el caos.",
+    karmicShadow: "La severidad implacable, el perfeccionismo paralizante, la frialdad o la dificultad para perdonarte a ti mismo y a los demás. Tu desafío es integrar la compasión y la ternura en tus juicios.",
+    loveAndVocation: "En tus relaciones exiges honestidad total, equidad y respeto mutuo; no toleras mentiras ni manipulaciones. En lo profesional destacas en leyes, auditoría, arbitraje, bioética, consultoría de calidad, contabilidad y magistratura.",
+    lifeMantra: "'Camino en la verdad y la equidad divina. Cosecho con serenidad y gratitud los frutos de mis buenas intenciones.'"
+  },
+  9: { // El Ermitaño
+    name: "El Ermitaño",
+    number: "IX (9)",
+    element: "Tierra / Fuego Interior",
+    planet: "Virgo / Mercurio Retrógrado",
+    crystal: "Cuarzo Ahumado / Labradorita / Ágata Musgosa",
+    powerColor: "Gris Perla, Ocre y Azul Noche",
+    soulMission: "Tu alma es un faro de introspección, prudencia y sabiduría milenaria. Tu propósito vital es explorar las profundidades del conocimiento humano y espiritual, encender tu propia lámpara en la soledad fecunda y alumbrar el sendero para las generaciones venideras.",
+    innateGifts: "Madurez precoz, capacidad profunda de análisis y reflexión, independencia emocional, discreción absoluta y una intuición filosófica única.",
+    karmicShadow: "El aislamiento amargado, el escepticismo destructivo o creer que nadie puede comprender tu mundo interior. Tu lección es recordar que la luz de tu lámpara debe ser compartida para que cumpla su cometido divino.",
+    loveAndVocation: "En el amor buscas un compañero maduro con quien compartir silencios cómplices, intimidad espiritual y respeto absoluto por la soledad de cada uno. En lo profesional brillas en investigación científica, escritura, arqueología, psicología profunda, archivística y asesoría filosófica.",
+    lifeMantra: "'Llevo mi propia luz en la noche. En mi silencio interior descubro la verdad que libera mi alma.'"
+  },
+  10: { // La Rueda de la Fortuna
+    name: "La Rueda de la Fortuna",
+    number: "X (10)",
+    element: "Fuego / Giro del Destino",
+    planet: "Júpiter",
+    crystal: "Pirita / Ojo de Tigre / Aventurina Naranja",
+    powerColor: "Dorado Solar, Naranja y Púrpura",
+    soulMission: "Tu misión de vida es dominar el arte de fluir con los ciclos del destino, la sincronicidad cósmica y la adaptabilidad. Has venido a enseñar a la humanidad que nada es estático y que la verdadera fortuna reside en reinventarse con optimismo ante cada giro vital.",
+    innateGifts: "Visión para detectar oportunidades antes que nadie, resiliencia asombrosa para renacer de las crisis, optimismo contagioso y una sintonía especial con la suerte y el azar.",
+    karmicShadow: "El fatalismo ('todo es culpa de la mala suerte'), la ludopatía o la pereza esperando que el destino resuelva lo que te corresponde hacer con tu propio esfuerzo.",
+    loveAndVocation: "En el amor experimentas relaciones kármicas intensas y transformadoras; necesitas una pareja adaptable que disfrute de los viajes y cambios de vida. En el trabajo destacas en bolsa, inversiones, comercio global, marketing digital, producción de eventos y turismo.",
+    lifeMantra: "'Acepto con sabiduría los giros del destino. Conduzco la rueda de mi vida hacia la abundancia y la dicha.'"
+  },
+  11: { // La Fuerza
+    name: "La Fuerza",
+    number: "XI (11)",
+    element: "Fuego / Amor Transformador",
+    planet: "Leo / Sol",
+    crystal: "Cornalina / Rubí / Granate Rojo",
+    powerColor: "Rojo Pasión, Dorado y Naranja",
+    soulMission: "Tu misión es demostrar la soberanía del amor sobre el instinto salvaje. Has venido a sanar heridas emocionales profundas a través de la dulzura, la paciencia infinita y el coraje sereno, demostrando que la ternura desarma a cualquier león rugiente.",
+    innateGifts: "Poder de convicción amoroso, resistencia física y anímica colosal, magnetismo apasionado, don para pacificar conflictos y una generosidad sin límites.",
+    karmicShadow: "La represión de las emociones viscerales hasta explotar en ira ciega, o el desgaste por intentar salvar o controlar a personas destructivas.",
+    loveAndVocation: "En tus relaciones entregas una pasión arrolladora y lealtad inquebrantable; necesitas reciprocidad profunda y respeto por tu fuego. En lo profesional brillas en veterinaria, rescate de fauna, medicina intensiva, defensa de derechos humanos, psicoterapia corporal y artes escénicas.",
+    lifeMantra: "'Mi fuerza suprema es el amor y la serenidad. Domo cualquier tormenta con la nobleza de mi espíritu.'"
+  },
+  12: { // El Colgado
+    name: "El Colgado",
+    number: "XII (12)",
+    element: "Agua / Éter de Iluminación",
+    planet: "Neptuno",
+    crystal: "Aguamarina / Celestina / Cuarzo Azul",
+    powerColor: "Azul Turquesa y Verde Agua",
+    soulMission: "Tu alma encarnó para romper la visión materialista del mundo mediante una nueva perspectiva espiritual. Tu propósito es enseñar el valor de la pausa sagrada, el desapego consciente del ego y la entrega generosa al flujo superior del universo.",
+    innateGifts: "Capacidad para ver soluciones donde otros solo ven callejones sin salida, empatía infinita, talento artístico y visionario, y una paciencia mística extraordinaria.",
+    karmicShadow: "El victimismo ('siempre me sacrifico por todos y nadie me lo agradece'), la parálisis ante la acción o permanecer en situaciones tóxicas por resignación pasiva.",
+    loveAndVocation: "En el amor eres profundamente devoto, romántico y comprensivo; debes cuidar no atraer parejas dependientes. En lo profesional destacas en artes visuales, fotografía, composición musical, yoga y meditación, trabajo social y labores humanitarias.",
+    lifeMantra: "'En la pausa sagrada encuentro la iluminación. Suelto el control y miro el mundo con ojos de paz.'"
+  },
+  13: { // La Muerte / El Arcano XIII
+    name: "La Muerte (La Transformación)",
+    number: "XIII (13)",
+    element: "Agua Fija / Alquimia Profunda",
+    planet: "Escorpio / Plutón",
+    crystal: "Obsidiana Nevada / Turmalina Negra / Malaquita",
+    powerColor: "Negro Profundo, Blanco y Borgoña",
+    soulMission: "Tu alma es un catalizador vivo de renacimiento y purificación. Tu misión es ayudar a personas y sistemas a cerrar ciclos agotados, superar duelos y podar lo obsoleto para que la verdadera esencia luminosa pueda renacer con fuerza invencible.",
+    innateGifts: "Resiliencia sobrehumana para reconstruirte tras cualquier crisis, intuición psicológica quirúrgica, honestidad radical y la capacidad de regenerar cualquier entorno degradado.",
+    karmicShadow: "El miedo visceral al cambio que te lleva a aferrarte a relaciones o trabajos tóxicos ya muertos, o la frialdad destructiva cuando te sientes traicionado.",
+    loveAndVocation: "En el amor buscas fusiones de alma completas, transformadoras y leales; las relaciones a medias tintas no tienen cabida en tu vida. En lo laboral destacas en cirugía, psiquiatría profunda, gestión de crisis corporativas, reciclaje ecológico, tanatología y bioenergética.",
+    lifeMantra: "'Dejo ir con gratitud lo que cumplió su ciclo. Renazco más sabio, libre y luminoso en cada instante.'"
+  },
+  14: { // La Templanza
+    name: "La Templanza",
+    number: "XIV (14)",
+    element: "Fuego / Agua Alquímica",
+    planet: "Sagitario / Venus",
+    crystal: "Amatista / Angelita / Cuarzo Verde",
+    powerColor: "Azul Celeste, Violeta y Oro Suave",
+    soulMission: "Tu propósito vital es ser un puente de sanación, armonía y alquimia entre opuestos. Has encarnado para calmar las aguas turbulentas del mundo, mediar entre culturas o posturas irreconciliables y enseñar la belleza del equilibrio y la moderación.",
+    innateGifts: "Don innato de sanación energética y emocional, diplomacia exquisita, capacidad para mezclar talentos diversos y una paz interior contagiosa.",
+    karmicShadow: "La pasividad ante abusos por miedo al conflicto, la postergación de decisiones cruciales o la tendencia a los excesos cuando pierdes tu centro.",
+    loveAndVocation: "En tus relaciones buscas paz, ternura, complicidad serena y crecimiento mutuo sin sobresaltos dramáticos. En lo laboral triunfas en mediación diplomática, farmacia holística, medicina integrativa, psicología comunitaria, enología y química verde.",
+    lifeMantra: "'Soy un canal de paz y sanación divina. La armonía fluye en mi mente, mi cuerpo y mis relaciones.'"
+  },
+  15: { // El Diablo
+    name: "El Diablo",
+    number: "XV (15)",
+    element: "Tierra / Fuego Instintivo",
+    planet: "Capricornio / Plutón",
+    crystal: "Obsidiana Negra / Ojo de Tigre / Granate",
+    powerColor: "Rojo Carmesí y Negro Azabache",
+    soulMission: "Tu alma encarnó para dominar y transmutar las fuerzas de la materia, la ambición, el deseo y la sombra inconsciente. Tu misión es desvelar los mecanismos de manipulación y adicción para enseñar a otros la verdadera libertad y soberanía espiritual.",
+    innateGifts: "Magnetismo personal irresistible, capacidad colosal para generar riqueza material, astucia estratégica y un conocimiento visceral de la psique humana.",
+    karmicShadow: "La codicia material, la manipulación emocional, las adicciones o el miedo a perder el control sobre los demás. Tu prueba de fuego es usar tu inmenso poder para empoderar al colectivo en lugar de encadenarlo.",
+    loveAndVocation: "En el amor eres magnético, sensual y apasionado; tu camino es aprender a amar desde la libertad mutua y no desde el apego posesivo. En lo profesional brillas en finanzas de alto nivel, política, leyes corporativas, negocios de gran escala, psicología forense y dirección de espectáculos.",
+    lifeMantra: "'Reconozco mi poder terrenal y lo pongo al servicio de la luz. Soy soberano y libre de toda atadura.'"
+  },
+  16: { // La Torre
+    name: "La Torre",
+    number: "XVI (16)",
+    element: "Fuego / Aire del Rayo",
+    planet: "Marte / Urano",
+    crystal: "Lepidolita / Cuarzo Ahumado / Pirita",
+    powerColor: "Rojo Fuego, Gris Tormenta y Amarillo Rayo",
+    soulMission: "Tu propósito es ser un liberador de almas aprisionadas en estructuras falsas y mentiras reconfortantes. Has venido a destruir el ego ilusorio, sacudir zonas de confort asfixiantes y demostrar que la verdad más cruda es mil veces más sagrada que una jaula dorada.",
+    innateGifts: "Valentía inaudita ante las crisis repentinas, lucidez para detectar la hipocresía institucional, capacidad de reinvención fulgurante y un dinamismo renovador.",
+    karmicShadow: "La resistencia desesperada ante lo inevitable que prolonga el dolor, o provocar rupturas y conflictos innecesarios por pura intolerancia.",
+    loveAndVocation: "En tus relaciones necesitas autenticidad absoluta y constante evolución; las mentiras o apariencias destruyen el vínculo de inmediato. En lo profesional destacas en demolición y arquitectura reconstructiva, gestión de emergencias, periodismo de investigación, cirugía de urgencias y reestructuración empresarial.",
+    lifeMantra: "'Abrazo la verdad que me libera. Sobre los escombros de lo falso construyo mi grandeza eterna.'"
+  },
+  17: { // La Estrella
+    name: "La Estrella",
+    number: "XVII (17)",
+    element: "Aire / Agua Celestial",
+    planet: "Acuario / Venus",
+    crystal: "Aguamarina / Amazonita / Cuarzo Cristal",
+    powerColor: "Azul Turquesa, Plata y Verde Menta",
+    soulMission: "Tu misión de vida es ser un faro viviente de esperanza, inspiración cósmica y generosidad desinteresada. Has venido a recordar a la humanidad que después de cada tormenta el cielo se llena de estrellas, y que la fe en el futuro es la semilla de todos los milagros.",
+    innateGifts: "Transparencia de alma, creatividad artística sublime, optimismo visionario, magnetismo pacificador y una conexión directa con las energías sutiles del universo.",
+    karmicShadow: "El desánimo por idealismo excesivo ('el mundo es demasiado cruel'), la desconexión con la realidad práctica o dar tanto a otros que quedas desprotegido.",
+    loveAndVocation: "En el amor buscas un alma afín con la que compartir ideales nobles, arte y ternura cristalina. En lo laboral destacas en artes, ecología, astronomía, humanitarismo, diseño del futuro, terapias de sanación y comunicación inspiracional.",
+    lifeMantra: "'Mi esperanza es firme y mi destino es luminoso. Irradio bendiciones, belleza y paz en cada paso.'"
+  },
+  18: { // La Luna
+    name: "La Luna",
+    number: "XVIII (18)",
+    element: "Agua / Mareas Subconscientes",
+    planet: "Piscis / La Luna",
+    crystal: "Piedra Luna / Labradorita / Selenita",
+    powerColor: "Plata Lunar, Azul Marino y Blanco Perla",
+    soulMission: "Tu alma es exploradora de los abismos del subconsciente, los sueños premonitorios y la memoria emocional colectiva. Tu misión es navegar en la oscuridad con la brújula de la intuición y rescatar perlas de sabiduría oculta para transformarlas en arte y sanación.",
+    innateGifts: "Mediumnidad e intuición psíquica hiperdesarrollada, imaginación poética deslumbrante, capacidad para conectar con el dolor ajeno y talento para el misticismo.",
+    karmicShadow: "La paranoia, los celos imaginarios, la confusión mental o dejarte paralizar por miedos ancestrales irracionales. Tu desafío es anclar tus pies a la tierra y distinguir la intuición pura del espejismo del ego.",
+    loveAndVocation: "En el amor eres intensamente sensible y devoto; necesitas una pareja sólida que te ofrezca seguridad y contención emocional. En lo profesional brillas en psicología analítica, interpretación de sueños, poesía, cine fantástico, música ambiental, astrología y tarot.",
+    lifeMantra: "'Navego mis mareas con serenidad y lucidez. La luz divina de mi intuición disuelve cualquier temor.'"
+  },
+  19: { // El Sol
+    name: "El Sol",
+    number: "XIX (19)",
+    element: "Fuego Radiante / Luz Vital",
+    planet: "El Sol / Leo",
+    crystal: "Citrino / Piedra Sol / Ámbar Dorado",
+    powerColor: "Amarillo Oro, Blanco Brillante y Naranja",
+    soulMission: "Tu propósito sagrado es irradiar alegría, calidez, vitalidad y éxito en todas las direcciones. Encarnaste para iluminar los rincones oscuros del mundo con tu entusiasmo contagioso, celebrar la fraternidad humana y liderar desde la generosidad y el gozo de vivir.",
+    innateGifts: "Carisma irresistible, alegría de vivir natural, claridad mental meridiana, liderazgo cálido y un talento innato para el éxito y la prosperidad en todo lo que emprendes.",
+    karmicShadow: "La vanidad, el egocentrismo, el orgullo herido o quemar a los demás con actitudes dominantes. Tu maestría es recordar que el verdadero sol alumbra a todos por igual sin vanagloriarse.",
+    loveAndVocation: "En el amor entregas calidez, lealtad radiante y alegría compartida; necesitas una relación transparente donde ambos brillen con luz propia. En lo profesional destacas en docencia infantil, dirección de empresas, artes escénicas, liderazgo comunitario, recreación y emprendimientos solares.",
+    lifeMantra: "'Yo soy luz, alegría y éxito abundante. Todo lo que ilumino con mi presencia se llena de dicha y bendición.'"
+  },
+  20: { // El Juicio
+    name: "El Juicio",
+    number: "XX (20)",
+    element: "Fuego / Aire del Clarín Cósmico",
+    planet: "Plutón / Mercurio Superior",
+    crystal: "Moldavita / Amatista / Cuarzo Rutilado",
+    powerColor: "Púrpura Místico, Dorado y Blanco",
+    soulMission: "Tu misión de vida es responder y despertar al llamado superior de la conciencia. Has venido a este mundo a romper cadenas kármicas ancestrales, promover el perdón liberador y resucitar proyectos y almas que parecían perdidos para integrarlos a una nueva dimensión espiritual.",
+    innateGifts: "Claridad vocacional implacable, don de absolución y perdón, oratoria que despierta conciencias dormidas y una visión global de los propósitos cósmicos.",
+    karmicShadow: "La autocrítica destructiva, vivir atrapado en culpas pasadas o juzgar a la familia con resentimiento. Tu desafío evolutivo es concederte el perdón incondicional y renacer en libertad.",
+    loveAndVocation: "En tus relaciones buscas vínculos maduros basados en la sinceridad, la evolución mutua y la capacidad de perdonar y reinventarse. En el plano laboral destacas en vocaciones de servicio público, abogacía de causas nobles, medicina regenerativa, psicoterapia transpersonal y liderazgo ético.",
+    lifeMantra: "'Escucho el llamado de mi alma y despierto a mi grandeza. Me perdono, me libero y renazco en plenitud.'"
+  },
+  21: { // El Mundo
+    name: "El Mundo",
+    number: "XXI (21)",
+    element: "Tierra Integrada / Cuatro Elementos",
+    planet: "Saturno / Todo el Zodíaco",
+    crystal: "Diamante / Zafiro Estrella / Cuarzo Arcoíris",
+    powerColor: "Dorado Cósmico, Verde Esmeralda y Violeta",
+    soulMission: "Tu alma encarnó para alcanzar la consumación y maestría de la existencia terrenal y espiritual. Tu propósito es integrar todos tus talentos, expandir tus horizontes más allá de fronteras geográficas o culturales y celebrar la danza cósmica de la totalidad y el éxito universal.",
+    innateGifts: "Visión global y cosmopolita, capacidad para culminar proyectos monumentales con éxito, sabiduría integral y una sensación de estar en el lugar correcto en el momento exacto.",
+    karmicShadow: "El miedo a concluir etapas por no saber qué vendrá después, el perfeccionismo paralizante o la visión estrecha por temor a salir de tu entorno seguro.",
+    loveAndVocation: "En el amor experimentas una plenitud armónica; disfrutas de parejas internacionales, viajes compartidos y enriquecimiento cultural continuo. En lo profesional brillas en diplomacia global, comercio exterior, grandes corporaciones internacionales, artes universales, antropología y ecología planetaria.",
+    lifeMantra: "'Habito mi plenitud absoluta. Danzo en perfecta armonía con el universo y celebro el triunfo de mi camino.'"
+  }
+};
+
+function calculateTarotNatalProfile(birthdateStr) {
+  if (!birthdateStr) return null;
+  const [year, month, day] = birthdateStr.split('-').map(Number);
+  
+  const digits = `${day}${month}${year}`.split('').map(Number);
+  let sum1 = digits.reduce((a, b) => a + b, 0);
+  let steps = [`${day}/${month}/${year} ➔ Dígitos: ${digits.join('+')} = ${sum1}`];
+  
+  let principalId = sum1;
+  while (principalId > 22) {
+    const subDigits = principalId.toString().split('').map(Number);
+    principalId = subDigits.reduce((a, b) => a + b, 0);
+    steps.push(`Reducción: ${subDigits.join('+')} = ${principalId}`);
+  }
+  
+  const arcanoPrincipalId = (principalId === 22) ? 0 : principalId;
+
+  let dayNum = day;
+  if (dayNum > 22) {
+    dayNum = day.toString().split('').map(Number).reduce((a, b) => a + b, 0);
+  }
+  const arcanoDonId = (dayNum === 22) ? 0 : dayNum;
+
+  let shadowId = (22 - (arcanoPrincipalId === 0 ? 22 : arcanoPrincipalId));
+  if (shadowId === 22 || shadowId === 0) shadowId = 0;
+
+  return {
+    birthdateStr,
+    day, month, year,
+    steps,
+    calcFormula: steps.join(' ➔ '),
+    principalId: arcanoPrincipalId,
+    donId: arcanoDonId,
+    shadowId: shadowId
+  };
+}
+
 function initNatalCard() {
   const btn = document.getElementById('natal-reveal-btn');
   const result = document.getElementById('natal-card-result');
   if (!btn || result.dataset.initialized) return;
   result.dataset.initialized = 'true';
+
+  let currentProfile = null;
+  let activeDisplayCardId = null;
+
+  function renderNatalProfile(cardId, isTriadSelect = false) {
+    const card = window.tarotDb.find(c => c.id === cardId);
+    const natal = NATAL_ARCANA_DB[cardId];
+    if (!card || !natal) return;
+
+    activeDisplayCardId = cardId;
+
+    // 1. Imagen y Encabezado Hero
+    const imgEl = document.getElementById('natal-card-img');
+    if (imgEl) imgEl.style.backgroundImage = `url('assets/card_${card.id}.jpg')`;
+
+    const numEl = document.getElementById('natal-life-number');
+    if (numEl) numEl.textContent = `Arcano ${natal.number}`;
+
+    const nameEl = document.getElementById('natal-card-name');
+    if (nameEl) nameEl.textContent = card.name;
+
+    // 2. Desglose de Cálculo
+    const calcEl = document.getElementById('natal-calc-badge');
+    if (calcEl && currentProfile) {
+      calcEl.innerHTML = `🧮 <strong>Fórmula de Reducción Sagrada:</strong> ${currentProfile.calcFormula}`;
+    }
+
+    // 3. Badges de Correspondencias
+    const pillsEl = document.getElementById('natal-pills');
+    if (pillsEl) {
+      pillsEl.innerHTML = `
+        <span class="natal-num-pill">🪐 ${natal.planet}</span>
+        <span class="natal-num-pill">✨ ${natal.element}</span>
+        <span class="natal-num-pill purple">💎 ${natal.crystal}</span>
+        <span class="natal-num-pill purple">🎨 ${natal.powerColor}</span>
+        <span class="natal-num-pill">🔑 ${card.keyThemes}</span>
+      `;
+    }
+
+    // 4. Bloques de Interpretación Profunda
+    const missionEl = document.getElementById('natal-desc-mission');
+    if (missionEl) missionEl.textContent = natal.soulMission;
+
+    const giftsEl = document.getElementById('natal-desc-gifts');
+    if (giftsEl) giftsEl.textContent = natal.innateGifts;
+
+    const shadowEl = document.getElementById('natal-desc-shadow');
+    if (shadowEl) shadowEl.textContent = natal.karmicShadow;
+
+    const loveEl = document.getElementById('natal-desc-love');
+    if (loveEl) loveEl.textContent = natal.loveAndVocation;
+
+    const mantraEl = document.getElementById('natal-desc-mantra');
+    if (mantraEl) mantraEl.textContent = natal.lifeMantra;
+
+    // 5. Actualizar estado activo en las tarjetas de la tríada
+    const triadCards = document.querySelectorAll('.natal-triad-card');
+    triadCards.forEach(tc => {
+      if (Number(tc.dataset.cardId) === cardId) {
+        tc.classList.add('active');
+      } else {
+        tc.classList.remove('active');
+      }
+    });
+
+    result.classList.remove('hidden');
+
+    if (isTriadSelect && window.innerWidth <= 768) {
+      document.getElementById('natal-reading-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function renderTriadCards(profile) {
+    const triadGrid = document.getElementById('natal-triad-grid');
+    if (!triadGrid) return;
+
+    const triadDefs = [
+      {
+        tag: '🌟 Misión de Vida',
+        role: 'Propósito sagrado del alma',
+        id: profile.principalId
+      },
+      {
+        tag: '💎 Don Innato',
+        role: 'Talento activo al nacer (Día)',
+        id: profile.donId
+      },
+      {
+        tag: '⚖️ Desafío Kármico',
+        role: 'Sombra a integrar en esta vida',
+        id: profile.shadowId
+      }
+    ];
+
+    triadGrid.innerHTML = '';
+    triadDefs.forEach(def => {
+      const card = window.tarotDb.find(c => c.id === def.id);
+      const natal = NATAL_ARCANA_DB[def.id];
+      if (!card || !natal) return;
+
+      const div = document.createElement('div');
+      div.className = `natal-triad-card ${def.id === profile.principalId ? 'active' : ''}`;
+      div.dataset.cardId = def.id;
+      div.innerHTML = `
+        <span class="natal-triad-tag">${def.tag}</span>
+        <div class="natal-triad-img" style="background-image: url('assets/card_${def.id}.jpg');"></div>
+        <div class="natal-triad-name">${card.name}</div>
+        <div class="natal-triad-role">${def.role}</div>
+      `;
+
+      div.addEventListener('click', () => {
+        renderNatalProfile(def.id, true);
+      });
+
+      triadGrid.appendChild(div);
+    });
+  }
 
   btn.addEventListener('click', (e) => {
     const input = document.getElementById('natal-birthdate');
@@ -5864,66 +7291,48 @@ function initNatalCard() {
     localStorage.setItem('user_birthdate', input.value);
     initYearlySpread(true);
     
-    const [year, month, day] = input.value.split('-').map(Number);
-    // Calculate life path number
-    const digits = `${day}${month}${year}`.split('').map(Number);
-    let sum = digits.reduce((a, b) => a + b, 0);
-    while (sum > 22 || (sum > 9 && sum !== 11 && sum !== 22)) {
-      sum = sum.toString().split('').reduce((a, b) => a + Number(b), 0);
-    }
-    let arcanoNum = sum;
-    if (arcanoNum === 0) arcanoNum = 22; // map to 22 = The World as 0
-    if (arcanoNum > 21) arcanoNum = arcanoNum % 22;
-    
-    const card = window.tarotDb.find(c => c.id === arcanoNum);
-    if (!card) return;
-    
-    const astro = ASTRO_MAP[card.id] || { ruler: 'Cosmos', symbol: '✦', keywords: 'Fuerza universal' };
-    
-    const natalDescs = {
-      0:  'El Loco como carta natal te convierte en un alma libre, pionera e innovadora. Tu misión es explorar sin límites y enseñar a otros la belleza del salto al vacío.',
-      1:  'El Mago natal habla de un poder manifestador extraordinario. Eres alguien con la capacidad de transformar ideas en realidad mediante tu voluntad y enfoque.',
-      2:  'La Sacerdotisa natal indica una persona profundamente intuitiva, conectada con lo invisible. Tu sabiduría viene del silencio, la pausa y la escucha interior.',
-      3:  'La Emperatriz natal te dota de creatividad, sensualidad y magnetismo natural. Eres un ser de abundancia llamado a nutrir y hacer florecer todo lo que tocas.',
-      4:  'El Emperador natal te da una estructura interna poderosa. Eres alguien que necesita poner orden para crecer y tiene el don de construir imperios con paciencia.',
-      5:  'El Papa natal indica un alma buscadora de sentido, tradición y guía espiritual. Tu vida se enriquece cuando compartes tu sabiduría y aprendes de grandes maestros.',
-      6:  'Los Enamorados natal hablan de una persona cuya mayor misión es aprender a elegir desde el corazón. Tus relaciones son el espejo más claro de tu evolución.',
-      7:  'El Carro natal te impulsa hacia adelante con una determinación innata. Eres alguien que vence obstáculos y se mueve con propósito hacia sus metas.',
-      8:  'La Justicia natal indica un alma que busca el equilibrio y la verdad en todo. Tienes un sentido natural de la ética y estás llamado a restaurar la armonía.',
-      9:  'El Ermitaño natal señala un alma sabia y reflexiva que necesita períodos de soledad para brillar. Tu profundidad interior es un faro para los que te rodean.',
-      10: 'La Rueda natal habla de una vida dinámica y cambiante. Eres una persona destinada a vivir múltiples ciclos y extraer sabiduría de cada giro de la rueda.',
-      11: 'La Fuerza natal indica una persona con un poder interior inmenso, especialmente emocional. Eres capaz de domar fieras internas con amor y paciencia.',
-      12: 'El Colgado natal habla de un alma que aprende a través de la entrega y la espera. Tienes el don de ver lo que otros no ven cuando suspendes el juicio.',
-      13: 'La Muerte natal no es un presagio oscuro sino una señal de profunda capacidad de transformación. Renaces una y otra vez más sabio, más auténtico.',
-      14: 'La Templanza natal te dona el don de la moderación, la síntesis y la sanación. Eres un alquimista natural que armoniza opuestos con maestría.',
-      15: 'El Diablo natal invita a confrontar las cadenas que tú mismo has creado. Tu misión es transformar la materia en espíritu y liberarte de patrones limitantes.',
-      16: 'La Torre natal habla de una vida marcada por momentos de ruptura liberadora. Cada crisis te revela una verdad más profunda y te acerca a lo esencial.',
-      17: 'La Estrella natal te dona una fe inquebrantable y un magnetismo especial. Eres una persona que inspira esperanza en los demás con solo estar presente.',
-      18: 'La Luna natal indica una psique profunda y sensible, llena de sueños y simbolismo. Tu mundo interior es rico e infinito y tus sueños son mensajes del alma.',
-      19: 'El Sol natal te dona vitalidad, claridad y una energía radiante que ilumina las vidas a tu alrededor. Tu camino es brillar sin disculpas.',
-      20: 'El Juicio natal te llama a escuchar tu vocación más profunda. Es una vida de despertar, de responder al llamado del alma con valentía.',
-      21: 'El Mundo natal indica una persona que ha alcanzado o alcanzará la maestría en esta vida. Eres un alma completa, viajera de dimensiones y reinos.'
-    };
-    
-    document.getElementById('natal-card-img').style.backgroundImage = `url('assets/card_${card.id}.jpg')`;
-    document.getElementById('natal-life-number').textContent = `Arcano ${arcanoNum}`;
-    document.getElementById('natal-card-name').textContent = card.name;
-    document.getElementById('natal-card-desc').textContent = natalDescs[card.id] || card.meanings.general;
-    
-    const pillsEl = document.getElementById('natal-pills');
-    pillsEl.innerHTML = `
-      <span class="natal-num-pill">${astro.symbol} ${astro.ruler}</span>
-      <span class="natal-num-pill">🔑 ${card.keyThemes}</span>
-      <span class="natal-num-pill">⚡ ${astro.keywords}</span>
-    `;
-    
-    result.classList.remove('hidden');
+    currentProfile = calculateTarotNatalProfile(input.value);
+    if (!currentProfile) return;
+
+    renderTriadCards(currentProfile);
+    renderNatalProfile(currentProfile.principalId, false);
+
     if (e && e.isTrusted) {
       result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   });
 
-  // Load saved birthdate and auto-calculate
+  // Botón para compartir o copiar perfil natal
+  const shareBtn = document.getElementById('natal-share-btn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', () => {
+      if (!currentProfile) return;
+      const principalCard = window.tarotDb.find(c => c.id === currentProfile.principalId);
+      const donCard = window.tarotDb.find(c => c.id === currentProfile.donId);
+      const shadowCard = window.tarotDb.find(c => c.id === currentProfile.shadowId);
+      const natal = NATAL_ARCANA_DB[currentProfile.principalId];
+
+      const text = `🌟 Mi Carta Natal del Tarot (Eco Estelar)\n` +
+        `📅 Nacimiento: ${currentProfile.day}/${currentProfile.month}/${currentProfile.year}\n` +
+        `✨ Misión de Vida: ${principalCard.name} (${natal.number})\n` +
+        `💎 Don Innato: ${donCard.name}\n` +
+        `⚖️ Desafío Kármico: ${shadowCard.name}\n` +
+        `🪐 Planeta: ${natal.planet} | Elemento: ${natal.element}\n` +
+        `📜 Mantra: ${natal.lifeMantra}\n\n` +
+        `Descubre tu Arcano Natal en: ${window.location.href}`;
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          shareBtn.innerHTML = '<span>✅</span> ¡Perfil Copiado al Portapapeles!';
+          setTimeout(() => {
+            shareBtn.innerHTML = '<span>📋</span> Copiar mi Perfil Astral del Tarot';
+          }, 2500);
+        }).catch(() => {});
+      }
+    });
+  }
+
+  // Cargar fecha guardada automáticamente
   const savedDate = localStorage.getItem('user_birthdate');
   if (savedDate) {
     const input = document.getElementById('natal-birthdate');

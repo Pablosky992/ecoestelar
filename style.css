@@ -4349,16 +4349,40 @@ body.light-mode .mode-btn.active {
 .daily-archetype-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(139, 92, 246, 0.15);
+  gap: 0.4rem;
+  background: rgba(139, 92, 246, 0.12);
   border: 1px solid rgba(139, 92, 246, 0.35);
   border-radius: 20px;
-  padding: 0.35rem 0.9rem;
-  font-size: 0.82rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
   color: var(--purple-color);
   font-weight: 500;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin: 0.2rem;
+  transition: all 0.25s ease;
+}
+
+.daily-archetype-badge.astro {
+  background: rgba(229, 193, 88, 0.1);
+  border-color: rgba(229, 193, 88, 0.35);
+  color: var(--gold-color);
+}
+
+.daily-archetype-badge.element {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.35);
+  color: #60a5fa;
+}
+
+.daily-archetype-badge.polarity.upright {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: #34d399;
+}
+
+.daily-archetype-badge.polarity.reversed {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: #f87171;
 }
 
 /* ==========================================================================
@@ -4478,13 +4502,110 @@ body.light-mode .mode-btn.active {
 }
 
 /* ==========================================================================
-   MEJORA 5: Tirada de 12 Meses
+   MEJORA 5: Tirada de 12 Meses y Año Personal Enriquecida
    ========================================================================== */
+
+.yearly-master-banner {
+  background: linear-gradient(135deg, rgba(229, 193, 88, 0.12) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border: 1px solid rgba(229, 193, 88, 0.35);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+@media (min-width: 680px) {
+  .yearly-master-banner {
+    flex-direction: row;
+    text-align: left;
+    gap: 2rem;
+  }
+}
+
+.yearly-master-img {
+  width: 90px;
+  aspect-ratio: 2/3.3;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  border: 1px solid rgba(229, 193, 88, 0.5);
+  box-shadow: 0 0 25px rgba(229, 193, 88, 0.25);
+  flex-shrink: 0;
+}
+
+.yearly-master-info {
+  flex: 1;
+}
+
+.yearly-master-tag {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--purple-color);
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.yearly-master-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--gold-color);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.04em;
+}
+
+.yearly-master-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin: 0 0 0.65rem 0;
+}
+
+.yearly-seasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.yearly-season-pill {
+  background: rgba(13, 11, 26, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0.75rem 0.65rem;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.yearly-season-pill:hover {
+  border-color: var(--gold-color);
+  background: rgba(229, 193, 88, 0.05);
+}
+
+.yearly-season-name {
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  color: var(--gold-color);
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.yearly-season-theme {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
 
 .yearly-spread-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 1.15rem;
   margin-top: 1rem;
 }
 
@@ -4497,35 +4618,54 @@ body.light-mode .mode-btn.active {
 }
 
 .yearly-month-card {
-  background: rgba(13, 11, 26, 0.7);
+  background: rgba(13, 11, 26, 0.75);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 0.85rem;
-  transition: all 0.3s;
+  border-radius: 14px;
+  padding: 1rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
 }
 
 .yearly-month-card:hover {
   border-color: var(--gold-color);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(229, 193, 88, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(229, 193, 88, 0.15);
 }
 
 .yearly-month-card.current-month {
   border-color: var(--purple-color);
-  box-shadow: 0 0 12px rgba(139, 92, 246, 0.2);
+  background: rgba(139, 92, 246, 0.08);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.25);
+}
+
+.yearly-month-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .yearly-month-label {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   color: var(--gold-color);
   font-family: var(--font-serif);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  display: block;
+  font-weight: 700;
+  margin: 0;
+}
+
+.yearly-season-tag-mini {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.15rem 0.4rem;
+  border-radius: 6px;
 }
 
 .yearly-month-mini-card {
@@ -4533,44 +4673,59 @@ body.light-mode .mode-btn.active {
   aspect-ratio: 2/3.3;
   background-size: cover;
   background-position: center;
-  border-radius: 6px;
-  margin-bottom: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  border-radius: 8px;
+  margin-bottom: 0.65rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(229, 193, 88, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.yearly-month-card:hover .yearly-month-mini-card {
+  transform: scale(1.02);
 }
 
 .yearly-month-mini-card.reversed {
   transform: rotate(180deg);
 }
 
+.yearly-month-card:hover .yearly-month-mini-card.reversed {
+  transform: rotate(180deg) scale(1.02);
+}
+
 .yearly-month-card-name {
-  font-size: 0.75rem;
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
   color: var(--text-main);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.3;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.35rem;
+  text-align: center;
 }
 
 .yearly-month-card-msg {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
-  line-height: 1.4;
+  line-height: 1.45;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  text-align: center;
 }
 
 .yearly-current-badge {
   position: absolute;
-  top: 0.4rem;
-  right: 0.4rem;
-  background: var(--purple-color);
+  top: 0.45rem;
+  right: 0.45rem;
+  background: linear-gradient(135deg, var(--purple-color), #7c3aed);
   color: #fff;
   font-size: 0.6rem;
-  padding: 0.15rem 0.4rem;
+  padding: 0.15rem 0.45rem;
   border-radius: 10px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  z-index: 2;
 }
 
 /* ==========================================================================
@@ -4582,7 +4737,16 @@ body.light-mode .mode-btn.active {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
+}
+
+@media (min-width: 650px) {
+  .natal-card-reveal {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+  }
 }
 
 .natal-card-visual {
@@ -4590,11 +4754,12 @@ body.light-mode .mode-btn.active {
   aspect-ratio: 2/3.3;
   background-size: cover;
   background-position: center;
-  border-radius: 12px;
-  box-shadow: 0 0 30px rgba(229, 193, 88, 0.3), 0 0 60px rgba(139, 92, 246, 0.15);
-  border: 1px solid rgba(229, 193, 88, 0.4);
+  border-radius: 14px;
+  box-shadow: 0 0 35px rgba(229, 193, 88, 0.35), 0 0 70px rgba(139, 92, 246, 0.2);
+  border: 1.5px solid rgba(229, 193, 88, 0.5);
   transition: transform 0.4s;
   animation: natal-float 4s ease-in-out infinite alternate;
+  flex-shrink: 0;
 }
 
 @keyframes natal-float {
@@ -4604,12 +4769,12 @@ body.light-mode .mode-btn.active {
 
 .natal-card-info {
   text-align: center;
-  max-width: 500px;
+  max-width: 550px;
 }
 
 .natal-card-number {
   font-family: var(--font-serif);
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--gold-color);
   line-height: 1;
   margin-bottom: 0.25rem;
@@ -4620,22 +4785,27 @@ body.light-mode .mode-btn.active {
   font-family: var(--font-serif);
   font-size: 1.6rem;
   color: var(--text-main);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.natal-card-description {
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: var(--text-muted);
-  text-align: left;
+.natal-calc-box {
+  background: rgba(229, 193, 88, 0.07);
+  border: 1px dashed rgba(229, 193, 88, 0.3);
+  border-radius: 10px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  color: var(--gold-color);
+  margin: 0.4rem auto 0.65rem auto;
+  display: inline-block;
+  letter-spacing: 0.03em;
 }
 
 .natal-numerology-row {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
 }
 
 .natal-num-pill {
@@ -4643,8 +4813,175 @@ body.light-mode .mode-btn.active {
   border: 1px solid rgba(229, 193, 88, 0.25);
   border-radius: 20px;
   padding: 0.3rem 0.85rem;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--gold-color);
+}
+
+.natal-num-pill.purple {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.3);
+  color: var(--purple-color);
+}
+
+.natal-triad-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.natal-triad-card {
+  background: rgba(13, 11, 26, 0.7);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(10px);
+}
+
+.natal-triad-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-color);
+  box-shadow: 0 8px 25px rgba(229, 193, 88, 0.15);
+}
+
+.natal-triad-card.active {
+  border-color: var(--gold-color);
+  background: rgba(229, 193, 88, 0.08);
+  box-shadow: 0 0 20px rgba(229, 193, 88, 0.2);
+}
+
+.natal-triad-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple-color);
+}
+
+.natal-triad-img {
+  width: 55px;
+  height: 90px;
+  border-radius: 6px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(229, 193, 88, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin: 0.25rem 0;
+}
+
+.natal-triad-name {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.natal-triad-role {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.natal-reading-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.15rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .natal-reading-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.natal-section-box {
+  background: rgba(8, 7, 17, 0.65);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.35rem 1.5rem;
+  text-align: left;
+  backdrop-filter: blur(10px);
+  transition: var(--transition-smooth);
+}
+
+.natal-section-box:hover {
+  border-color: rgba(229, 193, 88, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.natal-section-box.mission {
+  border-left: 4px solid var(--gold-color);
+}
+
+.natal-section-box.gifts {
+  border-left: 4px solid #38bdf8;
+}
+
+.natal-section-box.shadow {
+  border-left: 4px solid #f87171;
+}
+
+.natal-section-box.love {
+  border-left: 4px solid #c084fc;
+}
+
+.natal-box-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--gold-color);
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.03em;
+}
+
+.natal-box-title span.icon {
+  font-size: 1.15rem;
+}
+
+.natal-section-box p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.natal-mantra-box {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(229, 193, 88, 0.1));
+  border: 1px solid rgba(229, 193, 88, 0.3);
+  border-left: 4px solid var(--purple-color);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  text-align: center;
+  position: relative;
+}
+
+.natal-mantra-box .mantra-tag {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--purple-color);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.natal-mantra-box .mantra-text {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* ==========================================================================
@@ -5562,6 +5899,8 @@ body.light-mode .daily-sub-tab.active {
 
 /* ==========================================================================
    MEJORA LUNAR: Calendario Lunar Interactivo
+/* ==========================================================================
+   Calendario Lunar Interactivo — Diseño y Celdas Enriquecidas
    ========================================================================== */
 .lunar-calendar-grid {
   display: grid;
@@ -5573,29 +5912,30 @@ body.light-mode .daily-sub-tab.active {
 
 .lunar-cal-header {
   font-family: var(--font-serif);
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: var(--gold-color);
-  font-weight: 600;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(229, 193, 88, 0.15);
-  margin-bottom: 0.25rem;
+  font-weight: 700;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(229, 193, 88, 0.2);
+  margin-bottom: 0.35rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
 .lunar-cal-day {
-  background: rgba(13, 11, 26, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 10px;
-  padding: 0.6rem 0.25rem;
+  background: rgba(13, 11, 26, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.55rem 0.35rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  min-height: 64px;
+  min-height: 88px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .lunar-cal-day.empty {
@@ -5605,45 +5945,33 @@ body.light-mode .daily-sub-tab.active {
   pointer-events: none;
 }
 
+.lunar-cal-day-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 0.15rem;
+}
+
 .lunar-cal-day-num {
-  font-size: 0.78rem;
-  font-weight: 600;
+  font-size: 0.84rem;
+  font-weight: 700;
   color: var(--text-muted);
   line-height: 1;
 }
 
-.lunar-cal-day:hover {
-  transform: scale(1.05);
-  border-color: rgba(229, 193, 88, 0.45);
-  background: rgba(139, 92, 246, 0.12);
-  box-shadow: 0 0 12px rgba(139, 92, 246, 0.2);
-}
-
-.lunar-cal-day.today {
-  border-color: var(--purple-color);
-  background: rgba(139, 92, 246, 0.08);
-  box-shadow: 0 0 10px rgba(139, 92, 246, 0.25);
-}
-
-.lunar-cal-day.today .lunar-cal-day-num {
-  color: var(--purple-color);
-}
-
-.lunar-cal-day.selected-day {
-  border-color: var(--gold-color);
-  background: rgba(229, 193, 88, 0.12);
-  box-shadow: 0 0 15px rgba(229, 193, 88, 0.3);
-}
-
-.lunar-cal-day.selected-day .lunar-cal-day-num {
-  color: var(--gold-color);
-  text-shadow: 0 0 8px rgba(229, 193, 88, 0.2);
+.lunar-cal-zodiac {
+  font-size: 0.7rem;
+  color: var(--gold-light, #fef08a);
+  opacity: 0.9;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .lunar-cal-day-moon {
-  width: 22px;
-  height: 22px;
-  margin-top: 6px;
+  width: 28px;
+  height: 28px;
+  margin: 3px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5655,38 +5983,239 @@ body.light-mode .daily-sub-tab.active {
   height: 100%;
 }
 
+.lunar-cal-day-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.lunar-cal-illumination {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #c084fc;
+  background: rgba(192, 132, 252, 0.1);
+  border-radius: 6px;
+  padding: 1px 5px;
+  line-height: 1.2;
+}
+
+.lunar-cal-day:hover {
+  transform: translateY(-3px) scale(1.03);
+  border-color: rgba(229, 193, 88, 0.55);
+  background: rgba(139, 92, 246, 0.16);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.25);
+}
+
 .lunar-cal-day:hover .lunar-cal-day-moon {
   transform: scale(1.15) rotate(5deg);
 }
 
+.lunar-cal-day.today {
+  border-color: var(--purple-color);
+  background: rgba(139, 92, 246, 0.12);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.35);
+}
+
+.lunar-cal-day.today .lunar-cal-day-num {
+  color: #c084fc;
+  font-weight: 800;
+}
+
+.lunar-cal-day.selected-day {
+  border-color: var(--gold-color);
+  background: rgba(229, 193, 88, 0.16);
+  box-shadow: 0 0 18px rgba(229, 193, 88, 0.4);
+}
+
+.lunar-cal-day.selected-day .lunar-cal-day-num {
+  color: var(--gold-color);
+  text-shadow: 0 0 8px rgba(229, 193, 88, 0.3);
+}
+
+.lunar-cal-day.selected-day .lunar-cal-illumination {
+  color: var(--gold-color);
+  background: rgba(229, 193, 88, 0.15);
+}
+
+.lunar-major-phase-badge {
+  position: absolute;
+  top: -5px;
+  right: -3px;
+  font-size: 0.58rem;
+  font-weight: 800;
+  color: #080711;
+  background: var(--gold-color);
+  padding: 1px 4px;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(229, 193, 88, 0.5);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Eclipses en el Calendario */
+.lunar-cal-day.eclipse-solar {
+  border-color: rgba(245, 158, 11, 0.75);
+  background: radial-gradient(circle at center, rgba(245, 158, 11, 0.15) 0%, rgba(13, 11, 26, 0.6) 100%);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+}
+
+.lunar-cal-day.eclipse-lunar {
+  border-color: rgba(239, 68, 68, 0.7);
+  background: radial-gradient(circle at center, rgba(239, 68, 68, 0.15) 0%, rgba(13, 11, 26, 0.6) 100%);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.28);
+}
+
+.lunar-major-phase-badge.badge-solar-eclipse {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #1a0f00;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.7);
+}
+
+.lunar-major-phase-badge.badge-lunar-eclipse {
+  background: linear-gradient(135deg, #f87171 0%, #dc2626 100%);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.7);
+}
+
+/* Tarjeta / Banner de Eclipse en el Tapete */
+.lunar-eclipse-card {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(139, 92, 246, 0.12) 50%, rgba(239, 68, 68, 0.12) 100%);
+  border: 1px solid rgba(229, 193, 88, 0.5);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 0 25px rgba(229, 193, 88, 0.15);
+  animation: pulseGlow 4s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 15px rgba(229, 193, 88, 0.15); }
+  100% { box-shadow: 0 0 30px rgba(229, 193, 88, 0.35); }
+}
+
+.eclipse-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.eclipse-card-badge.solar {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.eclipse-card-badge.lunar {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.eclipse-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--gold-color);
+  margin: 0 0 0.5rem 0;
+}
+
+.eclipse-card-desc {
+  font-size: 0.92rem;
+  color: var(--text-main);
+  line-height: 1.55;
+  margin: 0 0 0.75rem 0;
+}
+
+.eclipse-card-advice {
+  background: rgba(8, 7, 17, 0.4);
+  border-left: 3px solid var(--gold-color);
+  padding: 0.75rem 1rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* Quick Eclipse Chips */
+.eclipse-quick-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.eclipse-chip {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.76rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.eclipse-chip:hover {
+  background: rgba(229, 193, 88, 0.15);
+  border-color: var(--gold-color);
+  color: var(--gold-color);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(229, 193, 88, 0.2);
+}
+
+.eclipse-chip.solar-chip {
+  border-left: 3px solid #f59e0b;
+}
+
+.eclipse-chip.lunar-chip {
+  border-left: 3px solid #ef4444;
+}
+
 /* Adaptación del Calendario en Modo Claro (Light Mode) */
 body.light-mode .lunar-cal-day {
-  background: rgba(255, 253, 248, 0.7);
-  border-color: rgba(13, 11, 26, 0.06);
+  background: rgba(255, 253, 248, 0.85);
+  border-color: rgba(13, 11, 26, 0.1);
 }
 
 body.light-mode .lunar-cal-day:hover {
-  background: rgba(229, 193, 88, 0.12);
-  border-color: rgba(229, 193, 88, 0.5);
-  box-shadow: 0 0 12px rgba(229, 193, 88, 0.15);
+  background: rgba(229, 193, 88, 0.18);
+  border-color: rgba(229, 193, 88, 0.6);
+  box-shadow: 0 4px 14px rgba(229, 193, 88, 0.2);
 }
 
 body.light-mode .lunar-cal-day.today {
-  border-color: var(--gold-color);
-  background: rgba(229, 193, 88, 0.05);
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.08);
 }
 
 body.light-mode .lunar-cal-day.today .lunar-cal-day-num {
-  color: var(--gold-color);
+  color: #7c3aed;
 }
 
 body.light-mode .lunar-cal-day.selected-day {
-  background: rgba(229, 193, 88, 0.15);
+  background: rgba(229, 193, 88, 0.22);
   border-color: var(--gold-color);
 }
 
 body.light-mode .lunar-cal-day.selected-day .lunar-cal-day-num {
-  color: var(--gold-color);
+  color: #854d0e;
+}
+
+body.light-mode .lunar-cal-illumination {
+  color: #7c3aed;
+  background: rgba(124, 58, 237, 0.1);
+}
+
+body.light-mode .lunar-cal-zodiac {
+  color: #854d0e;
 }
 
 /* Adaptación en Alto Contraste */
@@ -5705,26 +6234,122 @@ body.high-contrast .lunar-cal-day.today {
 
 body.high-contrast .lunar-cal-day.selected-day {
   border: 3px solid var(--gold-color);
-  background: rgba(229, 193, 88, 0.2);
+  background: rgba(229, 193, 88, 0.25);
 }
 
-/* Responsividad para móviles */
-@media (max-width: 600px) {
+/* Responsividad para tablets y móviles */
+@media (max-width: 768px) {
   .lunar-calendar-grid {
-    gap: 4px;
+    gap: 6px;
+  }
+  .lunar-cal-header {
+    font-size: 0.75rem;
+    padding: 0.4rem 0;
   }
   .lunar-cal-day {
-    min-height: 52px;
-    padding: 0.4rem 0.15rem;
+    min-height: 76px;
+    padding: 0.45rem 0.2rem;
+    border-radius: 8px;
+  }
+  .lunar-cal-day-num {
+    font-size: 0.78rem;
+  }
+  .lunar-cal-zodiac {
+    font-size: 0.62rem;
+  }
+  .lunar-cal-day-moon {
+    width: 22px;
+    height: 22px;
+  }
+  .lunar-cal-illumination {
+    font-size: 0.65rem;
+    padding: 1px 3px;
+  }
+  .lunar-eclipse-card {
+    padding: 1rem 1.15rem;
+  }
+  .eclipse-quick-chips {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.4rem;
+    scrollbar-width: none;
+  }
+  .eclipse-quick-chips::-webkit-scrollbar {
+    display: none;
+  }
+  .eclipse-chip {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .lunar-calendar-grid {
+    gap: 3px;
+  }
+  .lunar-cal-header {
+    font-size: 0.68rem;
+    padding: 0.3rem 0;
+    letter-spacing: 0;
+  }
+  .lunar-cal-day {
+    min-height: 64px;
+    padding: 0.3rem 0.12rem;
     border-radius: 6px;
   }
   .lunar-cal-day-num {
     font-size: 0.72rem;
   }
+  .lunar-cal-zodiac {
+    font-size: 0.54rem;
+  }
   .lunar-cal-day-moon {
-    width: 16px;
-    height: 16px;
-    margin-top: 4px;
+    width: 18px;
+    height: 18px;
+    margin: 1px 0;
+  }
+  .lunar-cal-illumination {
+    font-size: 0.58rem;
+    padding: 0 2px;
+  }
+  .lunar-major-phase-badge {
+    font-size: 0.48rem;
+    padding: 0 3px;
+    top: -4px;
+    right: -2px;
+    border-radius: 4px;
+  }
+  .lunar-widget-display {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  .lunar-quick-stats {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .lunar-calendar-grid {
+    gap: 2px;
+  }
+  .lunar-cal-day {
+    min-height: 56px;
+    padding: 0.2rem 0.08rem;
+  }
+  .lunar-cal-day-num {
+    font-size: 0.65rem;
+  }
+  .lunar-cal-zodiac {
+    font-size: 0.48rem;
+  }
+  .lunar-cal-day-moon {
+    width: 15px;
+    height: 15px;
+  }
+  .lunar-cal-illumination {
+    font-size: 0.52rem;
   }
 }
 
@@ -6853,6 +7478,35 @@ body.reduced-motion .glass-card:hover {
   box-shadow: 0 0 8px var(--portal-glow);
 }
 
+.mystical-cal-day.event-eclipse {
+  border: 1px solid rgba(245, 158, 11, 0.7);
+  box-shadow: inset 0 0 14px rgba(245, 158, 11, 0.25);
+}
+.mystical-cal-day.event-eclipse::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f59e0b, #ef4444);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
+}
+
+.mystical-cal-day.event-daily {
+  border: 1px solid rgba(147, 197, 253, 0.35);
+  box-shadow: inset 0 0 8px rgba(147, 197, 253, 0.1);
+}
+.mystical-cal-day.event-daily::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #60a5fa;
+}
+
 /* Event Emoji badge inside calendar cell */
 .mystical-cal-emoji {
   font-size: 1.1rem;
@@ -6943,6 +7597,18 @@ body.reduced-motion .glass-card:hover {
   color: var(--portal-color);
   box-shadow: 0 0 10px rgba(236, 72, 153, 0.2);
 }
+.calendar-filter-chip[data-filter="eclipse"].active {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: #f59e0b;
+  color: #fbbf24;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+}
+.calendar-filter-chip[data-filter="daily"].active {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: #60a5fa;
+  color: #93c5fd;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+}
 
 /* Sidebar Progress Widget */
 .progress-widget {
@@ -7007,6 +7673,9 @@ body.reduced-motion .glass-card:hover {
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .ritual-detail-badge.sabbat {
@@ -7034,6 +7703,35 @@ body.reduced-motion .glass-card:hover {
   border: 1.5px solid var(--portal-color);
   color: var(--portal-color);
   box-shadow: 0 0 10px rgba(236, 72, 153, 0.1);
+}
+
+.ritual-detail-badge.eclipse {
+  background: rgba(245, 158, 11, 0.18);
+  border: 1.5px solid #f59e0b;
+  color: #fbbf24;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+}
+
+.ritual-detail-badge.daily {
+  background: rgba(59, 130, 246, 0.15);
+  border: 1.5px solid #60a5fa;
+  color: #93c5fd;
+}
+
+.ritual-detail-badge.element-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-main);
+  text-transform: none;
+  font-weight: 500;
+}
+
+.ritual-detail-badge.timing-badge {
+  background: rgba(229, 193, 88, 0.08);
+  border: 1px solid rgba(229, 193, 88, 0.3);
+  color: var(--gold-color);
+  text-transform: none;
+  font-weight: 500;
 }
 
 .ritual-detail-section {
@@ -7205,6 +7903,269 @@ body.reduced-motion .glass-card:hover {
 
 .history-item-btn:active {
   transform: translateY(0);
+}
+
+/* ==========================================================================
+   MYSTICAL CALENDAR: Optimizaciones Responsive para Versión Móvil
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .mystical-calendar-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Filtros en carrusel horizontal táctil deslizante */
+  .calendar-filters-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0.35rem 0.25rem 0.65rem 0.25rem;
+    gap: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    margin-bottom: 1.25rem;
+  }
+
+  .calendar-filters-bar::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .calendar-filters-bar::-webkit-scrollbar-thumb {
+    background: rgba(229, 193, 88, 0.35);
+    border-radius: 4px;
+  }
+
+  .calendar-filter-chip {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.82rem;
+  }
+
+  /* Grid del Calendario en Tablet / Móvil */
+  .mystical-calendar-grid {
+    gap: 6px;
+    margin-top: 1rem;
+  }
+
+  .mystical-cal-weekday {
+    font-size: 0.76rem;
+    padding: 0.4rem 0;
+    margin-bottom: 0.15rem;
+  }
+
+  .mystical-cal-day {
+    min-height: 64px;
+    padding: 0.4rem 0.2rem;
+    border-radius: 8px;
+  }
+
+  .mystical-cal-day-num {
+    font-size: 0.82rem;
+  }
+
+  .mystical-cal-emoji {
+    font-size: 1.05rem;
+    margin-top: 0.15rem;
+  }
+
+  .mystical-cal-completed-badge {
+    width: 14px;
+    height: 14px;
+    font-size: 0.65rem;
+    bottom: 2px;
+    right: 2px;
+  }
+
+  /* Tapete y Panel de Detalle del Ritual */
+  .tapete-mat {
+    padding: 1.25rem 0.85rem !important;
+    gap: 1.5rem !important;
+  }
+
+  #ritual-detail-panel {
+    padding: 1.25rem 1rem !important;
+  }
+
+  #ritual-name {
+    font-size: 1.2rem !important;
+    line-height: 1.35;
+    text-align: left;
+  }
+
+  .ritual-detail-header-layout {
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .ritual-detail-badge {
+    font-size: 0.72rem;
+    padding: 0.28rem 0.65rem;
+  }
+
+  .ritual-detail-section {
+    padding: 1rem 0.9rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+  }
+
+  .ritual-detail-section h4 {
+    font-size: 0.98rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Pasos del Ritual */
+  .ritual-step-item {
+    padding: 0.85rem 0.9rem;
+    gap: 0.75rem;
+    border-radius: 8px;
+  }
+
+  .ritual-step-item:hover {
+    transform: none;
+  }
+
+  .ritual-step-num {
+    width: 24px;
+    height: 24px;
+    font-size: 0.8rem;
+  }
+
+  .ritual-step-text {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  /* Botón de completar ritual */
+  .ritual-complete-btn {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.95rem;
+    justify-content: center;
+  }
+
+  /* Progreso e Historial */
+  .progress-widget {
+    padding: 1rem 0.85rem;
+    margin-top: 1rem;
+  }
+
+  #calendar-history-list {
+    max-height: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Grid ultra-optimizado para móviles compactos */
+  .mystical-calendar-grid {
+    gap: 4px;
+  }
+
+  .mystical-cal-weekday {
+    font-size: 0.68rem;
+    padding: 0.25rem 0;
+    letter-spacing: 0;
+  }
+
+  .mystical-cal-day {
+    min-height: 52px;
+    padding: 0.25rem 0.1rem;
+    border-radius: 6px;
+  }
+
+  .mystical-cal-day-num {
+    font-size: 0.74rem;
+  }
+
+  .mystical-cal-emoji {
+    font-size: 0.88rem;
+    margin-top: 0.1rem;
+  }
+
+  .mystical-cal-completed-badge {
+    width: 12px;
+    height: 12px;
+    font-size: 0.6rem;
+    bottom: 1px;
+    right: 1px;
+  }
+
+  /* Cabecera del mes */
+  #cal-month-year {
+    font-size: 1.05rem !important;
+  }
+
+  #cal-prev-btn, #cal-next-btn {
+    padding: 0.35rem 0.6rem !important;
+    font-size: 0.76rem !important;
+  }
+
+  #cal-today-btn {
+    padding: 0.2rem 0.45rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  #ritual-name {
+    font-size: 1.1rem !important;
+  }
+
+  .ritual-step-item {
+    padding: 0.75rem 0.75rem;
+    gap: 0.6rem;
+  }
+
+  .ritual-step-num {
+    width: 22px;
+    height: 22px;
+    font-size: 0.75rem;
+  }
+
+  .ritual-step-text {
+    font-size: 0.84rem;
+  }
+
+  #ritual-astro-desc {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+  }
+
+  #ritual-closing {
+    font-size: 0.84rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Pantallas ultra-pequeñas (320px - 360px) */
+  .mystical-calendar-grid {
+    gap: 2px;
+  }
+
+  .mystical-cal-day {
+    min-height: 46px;
+    padding: 0.2rem 0.05rem;
+    border-radius: 4px;
+  }
+
+  .mystical-cal-day-num {
+    font-size: 0.68rem;
+  }
+
+  .mystical-cal-emoji {
+    font-size: 0.78rem;
+  }
+
+  .mystical-cal-weekday {
+    font-size: 0.62rem;
+  }
+
+  .calendar-filter-chip {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.75rem;
+  }
 }
 
 /* ==========================================================================
@@ -7955,6 +8916,281 @@ html.in-iframe div[style*="border:1px dashed"] {
   /* Slow down infinite star background animation on mobile to save battery and CPU */
   .twinkling {
     animation-duration: 90s !important;
+  }
+}
+
+/* ==========================================================================
+   OPTIMIZACIONES MÓVILES PARA CARTA DEL DÍA, ARCANO NATAL Y TIRADA DEL AÑO
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Subnavegación de pestañas diaria táctil y desplazable */
+  .daily-nav-tabs {
+    display: flex !important;
+    gap: 0.5rem !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 0.35rem 0.2rem !important;
+    scrollbar-width: none !important;
+  }
+  .daily-nav-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .daily-tab-btn {
+    flex: 1 0 auto !important;
+    white-space: nowrap !important;
+    font-size: 0.85rem !important;
+    padding: 0.65rem 0.9rem !important;
+    border-radius: 12px !important;
+    min-height: 44px !important;
+  }
+
+  /* Carta del Día: Deck y lectura express */
+  .daily-express-deck-container {
+    padding: 1.5rem 0.5rem !important;
+    min-height: 250px !important;
+  }
+
+  .daily-express-card {
+    width: 145px !important;
+    aspect-ratio: 2/3.3 !important;
+  }
+
+  .daily-full-reading {
+    gap: 1.15rem !important;
+  }
+
+  .daily-wisdom-card {
+    padding: 1.1rem 1rem !important;
+  }
+
+  .daily-wisdom-header {
+    gap: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .daily-wisdom-header h4 {
+    font-size: 0.95rem !important;
+  }
+
+  .daily-wisdom-body p {
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .daily-affirmation-box {
+    padding: 1.1rem 1rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .daily-ritual-box {
+    padding: 1.1rem 1rem !important;
+    gap: 0.75rem !important;
+  }
+
+  .daily-ritual-icon {
+    font-size: 1.5rem !important;
+  }
+
+  .daily-ritual-content h4 {
+    font-size: 0.85rem !important;
+  }
+
+  .daily-ritual-content p {
+    font-size: 0.86rem !important;
+  }
+
+  .daily-archetype-badge {
+    font-size: 0.75rem !important;
+    padding: 0.3rem 0.65rem !important;
+    margin: 0.15rem !important;
+  }
+
+  /* Arcano Natal en móvil */
+  .natal-form-container {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+  }
+
+  .natal-form-container input[type="date"],
+  .natal-form-container button {
+    width: 100% !important;
+  }
+
+  .natal-card-reveal {
+    gap: 1rem !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  .natal-card-visual {
+    width: 130px !important;
+  }
+
+  .natal-card-number {
+    font-size: 1.8rem !important;
+  }
+
+  .natal-card-title {
+    font-size: 1.35rem !important;
+  }
+
+  .natal-triad-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  @media (min-width: 480px) and (max-width: 768px) {
+    .natal-triad-grid {
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 0.5rem !important;
+    }
+    .natal-triad-card {
+      padding: 0.85rem 0.45rem !important;
+    }
+    .natal-triad-img {
+      width: 45px !important;
+      height: 75px !important;
+    }
+    .natal-triad-name {
+      font-size: 0.82rem !important;
+    }
+    .natal-triad-role {
+      font-size: 0.7rem !important;
+    }
+  }
+
+  .natal-section-box {
+    padding: 1.15rem 1rem !important;
+  }
+
+  .natal-section-box p {
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .natal-mantra-box {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .natal-mantra-text {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Tirada del Año en móvil */
+  .yearly-controls-bar {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    align-items: stretch !important;
+  }
+
+  .yearly-controls-bar > div {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.35rem !important;
+    width: 100% !important;
+  }
+
+  .yearly-controls-bar select,
+  .yearly-controls-bar input,
+  .yearly-controls-bar button {
+    width: 100% !important;
+  }
+
+  .yearly-master-banner {
+    padding: 1.25rem 1rem !important;
+    gap: 1rem !important;
+  }
+
+  .yearly-master-img {
+    width: 75px !important;
+  }
+
+  .yearly-master-title {
+    font-size: 1.2rem !important;
+  }
+
+  .yearly-master-desc {
+    font-size: 0.85rem !important;
+  }
+
+  .yearly-seasons-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  .yearly-season-pill {
+    padding: 0.6rem 0.45rem !important;
+  }
+
+  .yearly-season-name {
+    font-size: 0.75rem !important;
+  }
+
+  .yearly-spread-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
+  }
+
+  .yearly-month-card {
+    padding: 0.75rem 0.6rem !important;
+    border-radius: 12px !important;
+  }
+
+  .yearly-month-label {
+    font-size: 0.72rem !important;
+  }
+
+  .yearly-month-card-name {
+    font-size: 0.8rem !important;
+  }
+
+  .yearly-month-card-msg {
+    font-size: 0.7rem !important;
+    -webkit-line-clamp: 2 !important;
+  }
+
+  /* Modal de Lectura Anual en móvil */
+  #yearly-reading-modal > div {
+    padding: 1.5rem 1.15rem !important;
+    max-height: 88vh !important;
+    border-radius: 16px !important;
+  }
+
+  #yearly-reading-modal h3 {
+    font-size: 1.35rem !important;
+  }
+
+  #yearly-reading-modal h4 {
+    font-size: 1.1rem !important;
+  }
+
+  #yearly-reading-modal p {
+    font-size: 0.85rem !important;
+  }
+
+  /* Guía SEO en móvil */
+  .seo-guide-section {
+    padding: 1.5rem 1rem !important;
+  }
+
+  .seo-guide-section h2 {
+    font-size: 1.45rem !important;
+  }
+
+  .seo-guide-section h3 {
+    font-size: 1.15rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .yearly-spread-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .yearly-month-mini-card {
+    max-width: 140px;
+    margin: 0 auto 0.5rem auto;
   }
 }
 
