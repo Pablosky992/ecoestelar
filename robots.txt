@@ -1,4 +1,16 @@
+# Robots.txt — Eco Estelar (https://ecoestelar.com)
 User-agent: *
 Allow: /
 
-Sitemap: https://elecodelasestrellas.com/sitemap.xml
+# Permitir indexación de recursos esenciales (CSS, JS, Imágenes y Fuentes)
+Allow: /style.css
+Allow: /app.js
+Allow: /tienda.js
+Allow: /calendario.js
+Allow: /tarotDb.js
+Allow: /assets/
+
+# Declaración oficial del Sitemap
+Sitemap: https://www.ecoestelar.com/sitemap.xml
+Sitemap: https://ecoestelar.com/sitemap.xml
+

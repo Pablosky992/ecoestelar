@@ -7912,104 +7912,298 @@ function initNatalCard() {
    Sección Legal y Cookies
    ========================================================================== */
 
+/* ==========================================================================
+   Sección Legal y Cookies (Conforme a RGPD, LOPDGDD, LSSI-CE y ePrivacy)
+   ========================================================================== */
+
 const LEGAL_TEXTS = {
   aviso: {
     title: "Aviso Legal",
     content: `
-      <p><strong>1. DATOS IDENTIFICATIVOS</strong></p>
-      <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSICE), a continuación se reflejan los siguientes datos: el titular de este dominio web es Pablo, con dirección a estos efectos en Barcelona (España) y correo electrónico de contacto: Consultasydudasvarias@hotmail.com.</p>
-      <p><strong>2. USUARIOS</strong></p>
-      <p>El acceso y/o uso de este portal atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas.</p>
-      <p><strong>3. USO DEL PORTAL</strong></p>
-      <p>Eco Estelar proporciona el acceso a multitud de informaciones, servicios, programas o datos (en adelante, "los contenidos") en Internet pertenecientes a Pablo o a sus licenciantes a los que el USUARIO pueda tener acceso. El USUARIO asume la responsabilidad del uso del portal. Dicha responsabilidad se extiende al registro que fuese necesario para acceder a determinados servicios o contenidos.</p>
-      <p><strong>4. EXCLUSIÓN DE GARANTÍAS Y RESPONSABILIDAD</strong></p>
-      <p>Pablo no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos o lesivos en los contenidos, a pesar de haber adoptado todas las medidas tecnológicas necesarias para evitarlo.</p>
-      <p>El contenido astrológico y de tarot del portal tiene fines de entretenimiento y ocio. Las lecturas no deben sustituir asesoramiento profesional, médico, psicológico, legal o financiero.</p>
+      <div style="display: flex; flex-direction: column; gap: 1.15rem; text-align: left;">
+        <div>
+          <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.35rem 0; font-size: 1.05rem;">1. DATOS IDENTIFICATIVOS</h4>
+          <p style="margin: 0; line-height: 1.65; font-size: 0.9rem; color: var(--text-muted);">
+            En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa de que el sitio web <strong>https://ecoestelar.com</strong> (en adelante, <em>"Eco Estelar"</em>) es un portal digital de contenidos astrológicos y esotéricos administrado por el equipo titular de Eco Estelar, con domicilio a efectos de notificaciones en Barcelona (España) y correo electrónico de contacto: <a href="mailto:Consultasydudasvarias@hotmail.com" style="color: var(--gold-color); text-decoration: underline;">Consultasydudasvarias@hotmail.com</a>.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.35rem 0; font-size: 1.05rem;">2. CONDICIONES GENERALES DE USO</h4>
+          <p style="margin: 0; line-height: 1.65; font-size: 0.9rem; color: var(--text-muted);">
+            El acceso y/o uso de este portal atribuye la condición de USUARIO, quien acepta plenamente y sin reservas las presentes Condiciones Generales de Uso. El usuario se compromete a hacer un uso lícito y responsable de los contenidos, oráculos, herramientas y utilidades interactivas del sitio web.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.35rem 0; font-size: 1.05rem;">3. PROPIEDAD INTELECTUAL E INDUSTRIAL</h4>
+          <p style="margin: 0; line-height: 1.65; font-size: 0.9rem; color: var(--text-muted);">
+            Todos los contenidos del portal (incluyendo, a título enunciativo, textos, relatos alquímicos, interpretaciones de arcanos, algoritmos de cálculo natal y numerológico, código fuente, diseño gráfico, logotipos e iconografía) son titularidad de Eco Estelar o de terceros licenciantes, estando protegidos por la legislación española e internacional de Propiedad Intelectual e Industrial. Queda prohibida su reproducción, distribución o comunicación pública con fines comerciales sin previa autorización escrita.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.35rem 0; font-size: 1.05rem;">4. EXENCIÓN DE RESPONSABILIDAD: FINALIDAD LÚDICA Y ESPIRITUAL</h4>
+          <p style="margin: 0; line-height: 1.65; font-size: 0.9rem; color: var(--text-muted);">
+            Las interpretaciones de cartas de tarot, tránsitos planetarios, efemérides lunares, análisis de sueños y cálculos numerológicos tienen una <strong>finalidad exclusivamente recreativa, lúdica, espiritual y de autoconocimiento</strong>. En ningún caso constituyen ni sustituyen asesoramiento médico, psicológico, psiquiátrico, financiero, legal o profesional. Las decisiones vitales adoptadas por el usuario son de su exclusiva y libre responsabilidad personal.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.35rem 0; font-size: 1.05rem;">5. ENLACES A TERCEROS Y PROGRAMAS DE AFILIACIÓN</h4>
+          <p style="margin: 0; line-height: 1.65; font-size: 0.9rem; color: var(--text-muted);">
+            Eco Estelar participa en el <strong>Programa de Afiliados de Amazon Services LLC</strong> y cuenta con enlaces a plataformas de terceros como PayPal. Dichos enlaces permiten percibir ingresos por comisiones publicitarias en compras adscritas que cumplan los requisitos aplicables, sin ningún coste adicional para el usuario. Eco Estelar no se responsabiliza del contenido, disponibilidad ni de las transacciones efectuadas en sitios web de terceros enlazados.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.35rem 0; font-size: 1.05rem;">6. LEGISLACIÓN APLICABLE Y JURISDICCIÓN</h4>
+          <p style="margin: 0; line-height: 1.65; font-size: 0.9rem; color: var(--text-muted);">
+            Para la resolución de cualquier litigio o controversia derivada del uso del portal, será de aplicación la legislación española, sometiéndose las partes expresamente a la jurisdicción de los Juzgados y Tribunales de la ciudad de Barcelona (España).
+          </p>
+        </div>
+      </div>
     `
   },
   privacidad: {
     title: "Política de Privacidad",
     content: `
-      <p><strong>1. TRATAMIENTO DE DATOS PERSONALES</strong></p>
-      <p>En cumplimiento de lo dispuesto en el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), te informamos que "Eco Estelar" está diseñado bajo el principio de <strong>Privacidad por Diseño</strong>. Esto significa que nuestra aplicación <strong>no requiere registro de usuario, no recopila nombres, direcciones de correo ni información de pago</strong> para funcionar.</p>
-      <p><strong>2. DATOS ALMACENADOS LOCALMENTE</strong></p>
-      <p>Toda la información introducida en la web (como tu signo del zodiaco, preferencias de volumen, modo oscuro o datos temporales de las lecturas de tarot) se almacena exclusivamente de forma local en tu propio dispositivo utilizando la tecnología <code>localStorage</code> de tu navegador web. <strong>Nosotros no transferimos, leemos ni almacenamos esta información en nuestros servidores.</strong> Eres dueño absoluto de tus datos y puedes eliminarlos en cualquier momento borrando el historial/datos de tu navegador.</p>
-      <p><strong>3. CORREOS DE CONTACTO</strong></p>
-      <p>Si decides contactarnos a través del correo electrónico Consultasydudasvarias@hotmail.com, los datos personales que nos facilites (tu email y nombre) serán tratados única y exclusivamente para responder a tu consulta, no siendo cedidos a terceros ni añadidos a listas de marketing sin tu consentimiento explícito.</p>
-      <p><strong>4. DERECHOS DEL USUARIO</strong></p>
-      <p>Puedes ejercer tus derechos de acceso, rectificación, limitación y suprimir los datos escribiendo a nuestro correo de contacto.</p>
+      <div style="display: flex; flex-direction: column; gap: 1.15rem; text-align: left;">
+        <div>
+          <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.35rem 0; font-size: 1.05rem;">1. RESPONSABLE DEL TRATAMIENTO</h4>
+          <p style="margin: 0; line-height: 1.65; font-size: 0.9rem; color: var(--text-muted);">
+            De conformidad con el <strong>Reglamento (UE) 2016/679 (RGPD)</strong> y la <strong>Ley Orgánica 3/2018 (LOPDGDD)</strong>, se informa de que el responsable del tratamiento de datos es Eco Estelar. Correo electrónico del Delegado/Responsable de Privacidad: <a href="mailto:Consultasydudasvarias@hotmail.com" style="color: var(--gold-color); text-decoration: underline;">Consultasydudasvarias@hotmail.com</a>.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.35rem 0; font-size: 1.05rem;">2. PRINCIPIO DE PRIVACIDAD POR DEFECTO Y DATOS LOCALES</h4>
+          <p style="margin: 0; line-height: 1.65; font-size: 0.9rem; color: var(--text-muted);">
+            Eco Estelar está diseñado bajo el principio ético de <strong>Privacidad por Diseño y por Defecto</strong>. No se requiere registro de cuentas de usuario, ni se solicitan contraseñas, documentos de identidad, números telefónicos ni datos de pago en nuestros servidores.
+          </p>
+          <p style="margin: 0.5rem 0 0 0; line-height: 1.65; font-size: 0.9rem; color: var(--text-muted);">
+            La información ingresada para personalizar las lecturas (como fecha de nacimiento para el Arcano Natal, signo zodiacal, historial de tiradas o configuración de audio) se almacena <strong>exclusivamente en la memoria local de tu propio navegador (<code>localStorage</code>)</strong>. Nosotros no enviamos ni alojamos estos datos en servidores centrales; tú mantienes el control absoluto sobre ellos y puedes eliminarlos en cualquier momento borrando la caché y datos de tu navegador.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.35rem 0; font-size: 1.05rem;">3. FORMULARIOS DE CONTACTO Y MENSAJES</h4>
+          <p style="margin: 0; line-height: 1.65; font-size: 0.9rem; color: var(--text-muted);">
+            Si el usuario envía voluntariamente un mensaje a través del formulario de contacto o por correo electrónico, los datos facilitados (nombre/alias y dirección de email) serán tratados únicamente para atender, gestionar y responder a su consulta. La base jurídica es el <strong>consentimiento del interesado (art. 6.1.a RGPD)</strong>. Los datos no serán cedidos a terceros ni utilizados con fines de prospección comercial sin autorización explícita.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.35rem 0; font-size: 1.05rem;">4. SERVICIOS DE PUBLICIDAD Y TERCEROS (GOOGLE ADSENSE)</h4>
+          <p style="margin: 0; line-height: 1.65; font-size: 0.9rem; color: var(--text-muted);">
+            Este sitio web utiliza <strong>Google AdSense</strong>, un servicio prestado por Google LLC (con sede en EE.UU.). Google y sus socios pueden utilizar identificadores y cookies para mostrar anuncios basados en las visitas previas del usuario a este u otros sitios web. Puedes consultar la política de privacidad de Google en: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" style="color: var(--gold-color); text-decoration: underline;">policies.google.com/technologies/ads</a>.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.35rem 0; font-size: 1.05rem;">5. EJERCICIO DE DERECHOS ARCO-POL</h4>
+          <p style="margin: 0; line-height: 1.65; font-size: 0.9rem; color: var(--text-muted);">
+            Puedes ejercer en cualquier momento tus derechos de <strong>Acceso, Rectificación, Supresión (Derecho al Olvido), Limitación del Tratamiento, Portabilidad y Oposición</strong> enviando una solicitud a <a href="mailto:Consultasydudasvarias@hotmail.com" style="color: var(--gold-color); text-decoration: underline;">Consultasydudasvarias@hotmail.com</a>. Si consideras que el tratamiento no se ajusta a la normativa vigente, tienes derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong> en <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" style="color: var(--gold-color); text-decoration: underline;">www.aepd.es</a>.
+          </p>
+        </div>
+      </div>
     `
   },
   cookies: {
     title: "Política de Cookies",
     content: `
-      <p><strong>¿Qué son las cookies?</strong></p>
-      <p>Una cookie es un fichero que se descarga en su ordenador al acceder a determinadas páginas web. Las cookies permiten a una página web, entre otras cosas, almacenar y recuperar información sobre los hábitos de navegación de un usuario o de su equipo.</p>
-      <p><strong>¿Qué tipos de cookies utiliza esta página web?</strong></p>
-      <ul>
-        <li><strong>Cookies técnicas y de personalización (Propias):</strong> Utilizamos <code>localStorage</code> (una tecnología similar a las cookies) para recordar tus preferencias de interfaz (modo noche, tamaño de texto, volumen de la música) y el estado de la guía interactiva. Estas cookies son necesarias para el correcto funcionamiento estético y técnico de la web.</li>
-        <li><strong>Cookies de análisis o publicidad (De terceros):</strong> Actualmente o en el futuro, podríamos integrar servicios de publicidad de terceros (redes publicitarias). Estos terceros podrían instalar cookies en tu dispositivo para analizar el tráfico o mostrarte anuncios personalizados basados en tu navegación. Puedes aceptar o rechazar estas cookies mediante el banner de consentimiento que aparece al entrar en la web.</li>
-      </ul>
-      <p><strong>Revocación y eliminación de cookies</strong></p>
-      <p>Puedes permitir, bloquear o eliminar las cookies instaladas en tu equipo mediante la configuración de las opciones del navegador instalado en tu ordenador (Chrome, Firefox, Safari, Edge, etc.).</p>
+      <div style="display: flex; flex-direction: column; gap: 1.15rem; text-align: left;">
+        <div>
+          <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.35rem 0; font-size: 1.05rem;">1. ¿QUÉ SON LAS COOKIES Y EL ALMACENAMIENTO LOCAL?</h4>
+          <p style="margin: 0; line-height: 1.65; font-size: 0.9rem; color: var(--text-muted);">
+            Una cookie es un pequeño archivo que se almacena en el navegador del usuario al visitar una página web. Las tecnologías de almacenamiento local como <code>localStorage</code> permiten recordar tus preferencias y configuraciones estéticas en tu propio dispositivo de forma rápida, eficiente y segura.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.35rem 0; font-size: 1.05rem;">2. CLASIFICACIÓN DE COOKIES Y TECNOLOGÍAS UTILIZADAS</h4>
+          
+          <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem;">
+              <strong style="color: var(--gold-color); font-size: 0.9rem;">A. Cookies Técnicas y de Preferencias (Propias / Estrictamente Necesarias):</strong>
+              <p style="margin: 0.35rem 0 0 0; font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
+                Garantizan el funcionamiento correcto de la interfaz y se gestionan mediante <code>localStorage</code>:
+              </p>
+              <ul style="margin: 0.35rem 0 0 1.25rem; padding: 0; font-size: 0.82rem; color: var(--text-muted); line-height: 1.55;">
+                <li><code>tarot_theme</code>: Guarda tu modo de visualización preferido (Modo Noche / Modo Día).</li>
+                <li><code>tarot_cookie_consent</code>: Almacena tu elección de consentimiento de cookies (<em>all</em> o <em>technical</em>).</li>
+                <li><code>tarot_audio_enabled</code> / <code>tarot_audio_volume</code>: Ajustes de música y volumen ambiental.</li>
+                <li><code>tarot_onboarding_completed</code>: Evita mostrar de forma reiterada la guía inicial.</li>
+                <li><code>tarot_reading_*</code> / <code>tarot_saved_birthdate</code>: Conservación local de tiradas y fecha natal.</li>
+              </ul>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem;">
+              <strong style="color: var(--gold-color); font-size: 0.9rem;">B. Cookies Publicitarias y de Medición (De Terceros - Google AdSense):</strong>
+              <p style="margin: 0.35rem 0 0 0; font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
+                Google LLC y sus socios tecnológicos pueden emplear cookies (como <code>__gads</code>, <code>__gpi</code>, <code>IDE</code>) para medir impresiones de anuncios, evitar saturación de publicidad y mostrar anuncios relevantes. Puedes autorizarlas o rechazarlas en el banner de entrada.
+              </p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem;">
+              <strong style="color: var(--gold-color); font-size: 0.9rem;">C. Cookies de Enlaces de Afiliados (De Terceros - Amazon Associates):</strong>
+              <p style="margin: 0.35rem 0 0 0; font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
+                Al hacer clic en un enlace de producto hacia Amazon.es, se instalan cookies temporales de sesión para acreditar la procedencia de la compra a Eco Estelar sin recabar datos privados identificativos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="color: var(--gold-color); font-family: var(--font-serif); margin: 0 0 0.35rem 0; font-size: 1.05rem;">3. CÓMO CONFIGURAR O REVOCAR LAS COOKIES EN TU NAVEGADOR</h4>
+          <p style="margin: 0; line-height: 1.65; font-size: 0.9rem; color: var(--text-muted);">
+            Puedes configurar, bloquear o eliminar las cookies en cualquier momento desde las opciones de privacidad de tu navegador:
+          </p>
+          <ul style="margin: 0.4rem 0 0 1.25rem; padding: 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            <li><strong>Google Chrome:</strong> Configuración &gt; Privacidad y seguridad &gt; Cookies y otros datos de sitios.</li>
+            <li><strong>Mozilla Firefox:</strong> Opciones &gt; Privacidad y Seguridad &gt; Cookies y datos del sitio.</li>
+            <li><strong>Apple Safari:</strong> Preferencias &gt; Privacidad &gt; Bloquear todas las cookies.</li>
+            <li><strong>Microsoft Edge:</strong> Configuración &gt; Permisos del sitio &gt; Cookies y datos de sitios.</li>
+          </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 0.5rem; padding-top: 0.85rem; border-top: 1px dashed var(--border-color);">
+          <button type="button" class="consult-button" id="btn-reopen-cookie-banner" style="font-size: 0.85rem; padding: 0.6rem 1.25rem; cursor: pointer; border-radius: 8px;">
+            ⚙️ Modificar Preferencias de Cookies
+          </button>
+        </div>
+      </div>
     `
   }
 };
 
 (function initLegalAndCookies() {
-  // --- Cookies Banner Logic ---
-  const banner = document.getElementById('cookies-banner');
+  // Asegurar que el modal legal existe en el DOM (inyección dinámica si falta en el HTML)
+  function ensureLegalModal() {
+    let legalModal = document.getElementById('legal-modal');
+    if (!legalModal) {
+      legalModal = document.createElement('div');
+      legalModal.id = 'legal-modal';
+      legalModal.className = 'onboarding-modal hidden';
+      legalModal.setAttribute('role', 'dialog');
+      legalModal.setAttribute('aria-modal', 'true');
+      legalModal.innerHTML = `
+        <div class="onboarding-content glass-card" style="max-width: 800px; width: 100%;">
+          <div class="onboarding-header">
+            <h3 id="legal-modal-title" class="gold">Términos Legales</h3>
+            <button type="button" id="legal-close-btn" class="onboarding-close-btn" aria-label="Cerrar">&times;</button>
+          </div>
+          <div class="onboarding-body" id="legal-modal-body" style="text-align: left; max-height: 60vh; overflow-y: auto; padding: 1rem 1.5rem; line-height: 1.6; font-size: 0.9rem;">
+            <!-- Contenido inyectado dinámicamente -->
+          </div>
+        </div>
+      `;
+      document.body.appendChild(legalModal);
+    }
+    return legalModal;
+  }
+
+  // Asegurar que el banner de cookies existe en el DOM (inyección dinámica si falta)
+  function ensureCookiesBanner() {
+    let banner = document.getElementById('cookies-banner');
+    if (!banner) {
+      banner = document.createElement('div');
+      banner.id = 'cookies-banner';
+      banner.className = 'cookies-banner hidden';
+      banner.setAttribute('role', 'dialog');
+      banner.setAttribute('aria-live', 'polite');
+      banner.innerHTML = `
+        <div class="cookies-content">
+          <div class="cookies-text">
+            <h4 class="gold" style="margin:0 0 0.5rem 0; font-family:'Cinzel',serif;">Galletas del Destino (Cookies)</h4>
+            <p style="margin:0; font-size:0.85rem; line-height:1.4;">
+              Utilizamos cookies técnicas locales para guardar tus preferencias astrales y mejorar la experiencia. También podríamos incluir cookies de terceros para mostrar contenido o anuncios relevantes.
+              <a href="#" class="legal-link" data-legal="cookies" style="color:var(--gold-light); text-decoration:underline;">Saber más</a>.
+            </p>
+          </div>
+          <div class="cookies-actions">
+            <button type="button" id="btn-accept-cookies" class="primary-btn pulse-button" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Aceptar Todas</button>
+            <button type="button" id="btn-reject-cookies" class="secondary-btn" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Solo Necesarias</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(banner);
+    }
+    return banner;
+  }
+
+  const legalModal = ensureLegalModal();
+  const banner = ensureCookiesBanner();
+
   const btnAccept = document.getElementById('btn-accept-cookies');
   const btnReject = document.getElementById('btn-reject-cookies');
-  
-  // Check if consent is already given
+  const legalCloseBtn = document.getElementById('legal-close-btn');
+  const legalTitle = document.getElementById('legal-modal-title');
+  const legalBody = document.getElementById('legal-modal-body');
+
+  // Comprobar consentimiento previo
   const consent = localStorage.getItem('tarot_cookie_consent');
   if (!consent && banner) {
-    // Small delay to allow initial animations to run before showing banner
     setTimeout(() => {
       banner.classList.remove('hidden');
     }, 1500);
   }
-  
+
   const handleConsent = (value) => {
     localStorage.setItem('tarot_cookie_consent', value);
-    if (banner) {
-      banner.classList.add('hidden');
-    }
+    if (banner) banner.classList.add('hidden');
   };
-  
+
   if (btnAccept) btnAccept.addEventListener('click', () => handleConsent('all'));
   if (btnReject) btnReject.addEventListener('click', () => handleConsent('technical'));
 
-  // --- Legal Modal Logic ---
-  const legalModal = document.getElementById('legal-modal');
-  const legalCloseBtn = document.getElementById('legal-close-btn');
-  const legalTitle = document.getElementById('legal-modal-title');
-  const legalBody = document.getElementById('legal-modal-body');
-  const legalLinks = document.querySelectorAll('.legal-link');
-  
-  if (legalModal && legalCloseBtn) {
+  // Apertura de modal legal
+  function openLegal(type) {
+    const data = LEGAL_TEXTS[type];
+    if (data && legalModal && legalTitle && legalBody) {
+      legalTitle.textContent = data.title;
+      legalBody.innerHTML = data.content;
+      legalModal.classList.remove('hidden');
+
+      // Botón para reabrir cookies desde el modal de cookies
+      const reopenBtn = legalBody.querySelector('#btn-reopen-cookie-banner');
+      if (reopenBtn) {
+        reopenBtn.addEventListener('click', () => {
+          legalModal.classList.add('hidden');
+          if (banner) banner.classList.remove('hidden');
+        });
+      }
+    }
+  }
+
+  // Cerrar modal legal
+  if (legalCloseBtn && legalModal) {
     legalCloseBtn.addEventListener('click', () => {
       legalModal.classList.add('hidden');
     });
-    
-    legalLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const type = link.getAttribute('data-legal');
-        const data = LEGAL_TEXTS[type];
-        if (data) {
-          legalTitle.textContent = data.title;
-          legalBody.innerHTML = data.content;
-          legalModal.classList.remove('hidden');
-          // Hide cookies banner temporarily if open so it doesn't overlap excessively
-          if (banner && !banner.classList.contains('hidden')) {
-            banner.style.zIndex = 10;
-          }
-        }
-      });
+
+    legalModal.addEventListener('click', (e) => {
+      if (e.target === legalModal) {
+        legalModal.classList.add('hidden');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !legalModal.classList.contains('hidden')) {
+        legalModal.classList.add('hidden');
+      }
     });
   }
+
+  // Delegación de eventos para todos los enlaces legales presentes o futuros
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('[data-legal]');
+    if (target) {
+      e.preventDefault();
+      const type = target.getAttribute('data-legal');
+      if (type) openLegal(type);
+    }
+  });
 })();
 
 // Lógica de Sub-pestañas de la sección de Carta del Día
