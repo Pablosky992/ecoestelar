@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foro Místico y Comunidad Espiritual | Eco Estelar</title>
+  <meta name="description" content="Únete a la comunidad de Eco Estelar. Comparte tus tiradas de tarot, descifra sueños, debate tránsitos astrológicos y consulta sobre rituales y minerales mágicos.">
+  <link rel="canonical" href="https://www.ecoestelar.com/foro.html">
+
+  <!-- Favicon / Icono de la pestaña -->
+  <link rel="icon" type="image/png" href="assets/logo_luna_v2.webp">
+  <link rel="apple-touch-icon" href="assets/logo_luna_v2.webp">
+
+  <!-- Open Graph / Redes Sociales -->
+  <meta property="og:title" content="Foro Místico y Comunidad Espiritual | Eco Estelar">
+  <meta property="og:description" content="El Círculo de las Estrellas: Comparte tiradas de cartas, sueños, astrología y sabiduría mágica en nuestra comunidad esotérica.">
+  <meta property="og:url" content="https://www.ecoestelar.com/foro.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.ecoestelar.com/assets/tarot_social.png">
+  <meta property="og:site_name" content="Eco Estelar">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Foro Místico y Comunidad Espiritual | Eco Estelar">
+  <meta name="twitter:description" content="Únete al foro de Eco Estelar para compartir lecturas de tarot, reflexiones astrológicas y sabiduría espiritual.">
+  <meta name="twitter:image" content="https://www.ecoestelar.com/assets/tarot_social.png">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6762391039868735" crossorigin="anonymous"></script>
+
+  <!-- Preconexión a Fuentes de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Datos Estructurados JSON-LD Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.ecoestelar.com/foro.html#webpage",
+        "url": "https://www.ecoestelar.com/foro.html",
+        "name": "Foro Místico y Comunidad Espiritual | Eco Estelar",
+        "description": "Comunidad esotérica para debatir e interpretar tiradas de tarot, astrología, sueños y rituales mágicos.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://www.ecoestelar.com/#website",
+          "url": "https://www.ecoestelar.com/",
+          "name": "Eco Estelar"
+        },
+        "inLanguage": "es"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.ecoestelar.com/foro.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://www.ecoestelar.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Comunidad y Foro",
+            "item": "https://www.ecoestelar.com/foro.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Mystical Stars Background -->
+  <div class="stars-container">
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <canvas id="constellations-canvas"></canvas>
+  </div>
+
+  <div class="app-container">
+    <!-- Header Oficial del Templo -->
+    <header class="app-header">
+      <div class="logo">
+        <a href="index.html" title="Volver al Inicio">
+          <img loading="lazy" decoding="async" src="assets/logo_luna_v2.webp" class="logo-img" alt="Luna llena mística - Eco Estelar">
+        </a>
+      </div>
+      <h1 class="main-title">ECO ESTELAR</h1>
+      <p class="subtitle">Sintoniza con tu vibración astral y el tarot</p>
+      
+      <!-- Widget de Fase Lunar -->
+      <div class="moon-phase-widget" id="moon-phase-widget">
+        <div class="moon-phase-main">
+          <div class="moon-icon-container" id="moon-icon"></div>
+          <div class="moon-text-content">
+            <span class="moon-label">Fase Lunar de Hoy</span>
+            <span class="moon-name" id="moon-name">Luna Nueva</span>
+          </div>
+        </div>
+        <div class="moon-phase-description" id="moon-phase-description">
+          Calculando la influencia lunar para el día de hoy...
+        </div>
+      </div>
+    </header>
+
+    <!-- Menú de Pestañas Universal -->
+    <nav class="app-nav" aria-label="Navegación principal">
+      <a href="index.html" class="nav-tab">
+        <span class="tab-icon">🏠</span> Inicio
+      </a>
+      <a href="oraculo.html" class="nav-tab">
+        <span class="tab-icon">🔮</span> El Oráculo
+      </a>
+      <a href="carta-del-dia.html" class="nav-tab">
+        <span class="tab-icon">🌟</span> Carta del Día
+      </a>
+      <a href="horoscopo.html" class="nav-tab">
+        <span class="tab-icon">✨</span> Tu Horóscopo
+      </a>
+      <a href="fase-lunar.html" class="nav-tab">
+        <span class="tab-icon">🌙</span> La Luna
+      </a>
+      <a href="calendario.html" class="nav-tab">
+        <span class="tab-icon">🕯️</span> Rituales
+      </a>
+      <a href="numerologia.html" class="nav-tab">
+        <span class="tab-icon">🔢</span> Numerología
+      </a>
+      <a href="grimorio.html" class="nav-tab">
+        <span class="tab-icon">📖</span> El Libro del Tarot
+      </a>
+      <a href="significado-suenos.html" class="nav-tab">
+        <span class="tab-icon">💤</span> Sueños
+      </a>
+      <a href="propiedades-minerales.html" class="nav-tab">
+        <span class="tab-icon">💎</span> Minerales
+      </a>
+      <a href="articulos.html" class="nav-tab">
+        <span class="tab-icon">📰</span> Artículos
+      </a>
+      <a href="tienda.html" class="nav-tab">
+        <span class="tab-icon">🛍️</span> Tienda
+      </a>
+      <a href="foro.html" class="nav-tab active">
+        <span class="tab-icon">💬</span> Foro
+      </a>
+    </nav>
+
+    <!-- Contenido Principal del Foro -->
+    <main class="main-layout" style="display: block;">
+
+      <!-- Hero Banner del Foro -->
+      <section class="glass-card forum-hero-card" id="forum-hero-section">
+        <span class="section-tag" style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold-color); font-weight: 600; display: block; margin-bottom: 0.5rem;">✦ Comunidad de Almas Místicas ✦</span>
+        <h2 class="gold" style="font-family: var(--font-serif); font-size: 2.2rem; margin: 0.4rem 0 0.8rem 0; text-shadow: 0 0 15px rgba(229, 193, 88, 0.3);">
+          El Círculo de las Estrellas
+        </h2>
+        <p class="forum-hero-desc">
+          Un espacio sagrado para compartir tus tiradas de tarot, desvelar los mensajes de tus sueños, consultar sobre tránsitos astrológicos y enriquecerte con la sabiduría de la comunidad.
+        </p>
+
+        <!-- Barra de Estadísticas de la Comunidad -->
+        <div class="forum-stats-bar">
+          <div class="forum-stat-pill">
+            <span class="stat-icon">📜</span>
+            <span><strong id="stats-threads-count">0</strong> Temas</span>
+          </div>
+          <div class="forum-stat-pill">
+            <span class="stat-icon">💬</span>
+            <span><strong id="stats-replies-count">0</strong> Respuestas</span>
+          </div>
+          <div class="forum-stat-pill">
+            <span class="stat-icon">🔮</span>
+            <span><strong id="stats-rooms-count">6</strong> Salas Sagradas</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel de Controles: Salas, Filtros, Búsqueda y Botón Crear -->
+      <section class="forum-controls-wrapper" id="forum-controls-section">
+        
+        <!-- Píldoras de Salas Temáticas -->
+        <div class="forum-rooms-scroll" id="category-pills-container">
+          <!-- Inyectado dinámicamente -->
+        </div>
+
+        <!-- Barra de Búsqueda y Acción -->
+        <div class="forum-action-bar glass-card">
+          <div class="forum-search-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="forum-search-input" class="forum-search-input" placeholder="Buscar tiradas, sueños, signos o temas...">
+            <button type="button" id="forum-search-clear" class="search-clear-btn hidden" aria-label="Limpiar">✕</button>
+          </div>
+
+          <div class="forum-action-buttons">
+            <select id="forum-sort-select" class="forum-select" style="min-width: 140px;" aria-label="Ordenar temas">
+              <option value="recent" selected>Más Recientes</option>
+              <option value="replies">Más Comentados 🔥</option>
+              <option value="pinned">Fijados del Templo 📌</option>
+            </select>
+
+            <button type="button" id="btn-open-create-thread" class="consult-button pulse-button" style="padding: 0.65rem 1.25rem; font-size: 0.9rem; white-space: nowrap;">
+              ✨ Crear Tema
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Listado de Hilos / Temas -->
+      <section class="forum-threads-section" id="threads-list-section">
+        <div id="threads-list-container">
+          <!-- Contenido inyectado dinámicamente -->
+        </div>
+      </section>
+
+      <!-- Vista de Detalle de un Tema (Oculto por defecto) -->
+      <section class="forum-thread-detail-section hidden" id="thread-detail-container">
+        <!-- Inyectado dinámicamente al abrir un hilo -->
+      </section>
+
+      <!-- Guía Educativa y Normas del Círculo -->
+      <section class="glass-card forum-rules-card" style="margin-top: 3rem; padding: 2rem; text-align: left;">
+        <h3 class="gold" style="font-family: var(--font-serif); font-size: 1.4rem; margin-top: 0;">
+          📜 Principios y Armonía del Círculo Místico
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+          <div class="rule-box">
+            <strong style="color: var(--gold-color);">1. Respeto y Empatía Astral</strong>
+            <p style="margin: 0.35rem 0 0 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+              Cada alma se encuentra en una etapa distinta de su camino. Comparte tus interpretaciones con delicadeza, apertura y sabiduría.
+            </p>
+          </div>
+          <div class="rule-box">
+            <strong style="color: var(--gold-color);">2. Claridad en tus Consultas</strong>
+            <p style="margin: 0.35rem 0 0 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+              Al compartir una tirada, indica las cartas obtenidas y la pregunta o situación para que la comunidad pueda enriquecer tu visión.
+            </p>
+          </div>
+          <div class="rule-box">
+            <strong style="color: var(--gold-color);">3. Cero Spam y Publicidad</strong>
+            <p style="margin: 0.35rem 0 0 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+              Este es un santuario de crecimiento personal. Los mensajes con enlaces sospechosos o publicidad serán transmutados por los moderadores.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal para Crear Nuevo Tema -->
+    <div id="create-thread-modal" class="onboarding-modal hidden" role="dialog" aria-modal="true">
+      <div class="onboarding-content glass-card forum-modal-content" style="max-width: 680px; width: 100%;">
+        <div class="onboarding-header">
+          <h3 class="gold" style="margin: 0; font-family: var(--font-serif); font-size: 1.35rem;">
+            ✨ Iniciar un Nuevo Tema Místico
+          </h3>
+          <button type="button" id="btn-close-create-thread" class="onboarding-close-btn" aria-label="Cerrar">&times;</button>
+        </div>
+
+        <div class="onboarding-body" style="padding: 1.25rem 1.5rem; text-align: left;">
+          <form id="form-create-thread">
+            
+            <div class="form-group">
+              <label for="new-thread-category" style="display: block; margin-bottom: 0.35rem; color: var(--gold-color); font-size: 0.88rem;">Sala del Templo:</label>
+              <select id="new-thread-category" class="forum-select" style="width: 100%;" required>
+                <!-- Opciones inyectadas dinámicamente -->
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-top: 1rem;">
+              <label for="new-thread-title" style="display: block; margin-bottom: 0.35rem; color: var(--gold-color); font-size: 0.88rem;">Título del Tema:</label>
+              <input type="text" id="new-thread-title" class="forum-input" maxlength="100" placeholder="Ej. Duda con El Juicio y La Luna en el amor..." required>
+            </div>
+
+            <div class="composer-grid" style="margin-top: 1rem;">
+              <div class="form-group">
+                <label for="new-thread-alias" style="display: block; margin-bottom: 0.35rem; color: var(--gold-color); font-size: 0.88rem;">Tu Nombre / Alias:</label>
+                <input type="text" id="new-thread-alias" class="forum-input" maxlength="35" placeholder="Ej. OraculoDelAlba" required>
+              </div>
+
+              <div class="form-group">
+                <label for="new-thread-sign" style="display: block; margin-bottom: 0.35rem; color: var(--gold-color); font-size: 0.88rem;">Tu Signo:</label>
+                <select id="new-thread-sign" class="forum-select">
+                  <option value="♈">♈ Aries</option>
+                  <option value="♉">♉ Tauro</option>
+                  <option value="♊">♊ Géminis</option>
+                  <option value="♋">♋ Cáncer</option>
+                  <option value="♌">♌ Leo</option>
+                  <option value="♍">♍ Virgo</option>
+                  <option value="♎">♎ Libra</option>
+                  <option value="♏">♏ Escorpio</option>
+                  <option value="♐">♐ Sagitario</option>
+                  <option value="♑">♑ Capricornio</option>
+                  <option value="♒">♒ Acuario</option>
+                  <option value="♓">♓ Piscis</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="new-thread-avatar" style="display: block; margin-bottom: 0.35rem; color: var(--gold-color); font-size: 0.88rem;">Avatar Místico:</label>
+                <select id="new-thread-avatar" class="forum-select">
+                  <option value="🧙">🧙 Mago</option>
+                  <option value="🔮">🔮 Oráculo</option>
+                  <option value="🌙">🌙 Sacerdotisa</option>
+                  <option value="☀️">☀️ Alquimista</option>
+                  <option value="🦅">🦅 Chamán</option>
+                  <option value="🌿">🌿 Druida</option>
+                  <option value="🦉">🦉 Sabio</option>
+                  <option value="🕯️">🕯️ Místico</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Honeypot invisible -->
+            <input type="text" name="forum_check_hp" id="thread-hp-check" style="display:none !important;" tabindex="-1" autocomplete="off">
+
+            <div class="form-group" style="margin-top: 1rem;">
+              <label for="new-thread-content" style="display: block; margin-bottom: 0.35rem; color: var(--gold-color); font-size: 0.88rem;">Tu Reflexión o Pregunta:</label>
+              <textarea id="new-thread-content" class="forum-textarea" rows="6" maxlength="2500" placeholder="Explica tu tirada, sueño o inquietud con todos los detalles..." required></textarea>
+              <div class="form-char-count"><span id="new-thread-chars">0</span>/2500 caracteres</div>
+            </div>
+
+            <div class="modal-actions" style="margin-top: 1.5rem; display: flex; justify-content: flex-end; gap: 1rem;">
+              <button type="button" class="secondary-btn" onclick="document.getElementById('create-thread-modal').classList.add('hidden')">Cancelar</button>
+              <button type="submit" class="consult-button pulse-button" id="btn-submit-new-thread">✨ Publicar en el Foro</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pie de Página Sagrado -->
+    <footer class="app-footer">
+      <div class="footer-links">
+        <a href="#" class="legal-link" data-legal="aviso">Aviso Legal</a>
+        <a href="#" class="legal-link" data-legal="privacidad">Política de Privacidad</a>
+        <a href="#" class="legal-link" data-legal="cookies">Política de Cookies</a>
+      </div>
+      <p class="copyright" id="forum-copyright-trigger" style="user-select: none;">© 2026 Eco Estelar. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+
+  <!-- Cliente Oficial Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- Scripts del Templo -->
+  <script src="tarotDb.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="foro.js" defer></script>
+</body>
+</html>
