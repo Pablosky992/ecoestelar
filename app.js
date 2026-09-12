@@ -315,7 +315,43 @@ const ASTRONOMICAL_ECLIPSES = [
   { date: "2030-06-01", type: "solar", category: "Anular", name: "Eclipse Solar Anular", sign: "Géminis", symbol: "♊", desc: "Pacto de nuevas ideas y acuerdos de comunicación a gran escala." },
   { date: "2030-06-15", type: "lunar", category: "Parcial", name: "Eclipse Lunar Parcial", sign: "Sagitario", symbol: "♐", desc: "Conclusión de estudios, viajes espirituales y asimilación de sabiduría." },
   { date: "2030-11-25", type: "solar", category: "Total", name: "Eclipse Solar Total", sign: "Sagitario", symbol: "♐", desc: "Nuevas filosofías de vida y expansión audaz de la vocación espiritual." },
-  { date: "2030-12-09", type: "lunar", category: "Penumbral", name: "Eclipse Lunar Penumbral", sign: "Géminis", symbol: "♊", desc: "Ajuste del discernimiento y serenidad mental antes del solsticio." }
+  { date: "2030-12-09", type: "lunar", category: "Penumbral", name: "Eclipse Lunar Penumbral", sign: "Géminis", symbol: "♊", desc: "Ajuste del discernimiento y serenidad mental antes del solsticio." },
+
+  // 2031
+  { date: "2031-05-07", type: "lunar", category: "Penumbral", name: "Eclipse Lunar Penumbral", sign: "Escorpio", symbol: "♏", desc: "Decantación emocional y revelación de misterios ocultos en el inconsciente." },
+  { date: "2031-05-21", type: "solar", category: "Anular", name: "Eclipse Solar Anular", sign: "Tauro", symbol: "♉", desc: "Siembra de estabilidad material duradera, arraigo y nuevos recursos tangibles." },
+  { date: "2031-10-30", type: "lunar", category: "Penumbral", name: "Eclipse Lunar Penumbral", sign: "Tauro", symbol: "♉", desc: "Cierre de viejos apegos materiales y valoración de la auténtica autosuficiencia." },
+  { date: "2031-11-14", type: "solar", category: "Híbrido", name: "Eclipse Solar Híbrido", sign: "Escorpio", symbol: "♏", desc: "Portal alquímico de transmutación profunda, renacimiento del poder personal y regeneración áurica." },
+
+  // 2032
+  { date: "2032-04-25", type: "lunar", category: "Total", name: "Eclipse Lunar Total (Luna de Sangre)", sign: "Escorpio", symbol: "♏", desc: "Gran catarsis psíquica y liberación de ataduras kármicas ancestrales." },
+  { date: "2032-05-09", type: "solar", category: "Anular", name: "Eclipse Solar Anular", sign: "Tauro", symbol: "♉", desc: "Consagración de nuevos proyectos creativos con base sólida y belleza terrenal." },
+  { date: "2032-10-18", type: "lunar", category: "Total", name: "Eclipse Lunar Total (Luna de Sangre)", sign: "Aries", symbol: "♈", desc: "Culminación de procesos de autoafirmación, valentía y liderazgo personal." },
+  { date: "2032-11-03", type: "solar", category: "Parcial", name: "Eclipse Solar Parcial", sign: "Escorpio", symbol: "♏", desc: "Iniciación en senderos de misterio, intuición profunda y sanación del alma." },
+
+  // 2033
+  { date: "2033-03-30", type: "solar", category: "Total", name: "Eclipse Solar Total", sign: "Aries", symbol: "♈", desc: "Despertar del guerrero espiritual, audacia para emprender y corte de dependencias." },
+  { date: "2033-04-14", type: "lunar", category: "Total", name: "Eclipse Lunar Total (Luna de Sangre)", sign: "Libra", symbol: "♎", desc: "Reajuste kármico en relaciones de pareja, acuerdos sagrados y balance afectivo." },
+  { date: "2033-09-23", type: "solar", category: "Parcial", name: "Eclipse Solar Parcial", sign: "Virgo", symbol: "♍", desc: "Reorganización de métodos curativos, servicio devocional y purificación de hábitos." },
+  { date: "2033-10-08", type: "lunar", category: "Total", name: "Eclipse Lunar Total (Luna de Sangre)", sign: "Piscis", symbol: "♓", desc: "Portal de rendición ante lo sagrado, disolución del ego y conexión universal." },
+
+  // 2034
+  { date: "2034-03-20", type: "solar", category: "Total", name: "Eclipse Solar Total de Equinoccio", sign: "Piscis", symbol: "♓", desc: "Renacimiento estelar coincidiendo con el equinoccio. Máxima apertura espiritual e inspiración poética." },
+  { date: "2034-04-03", type: "lunar", category: "Penumbral", name: "Eclipse Lunar Penumbral", sign: "Libra", symbol: "♎", desc: "Sutileza en la resolución de conflictos y armonización pacífica del entorno." },
+  { date: "2034-09-12", type: "solar", category: "Anular", name: "Eclipse Solar Anular", sign: "Virgo", symbol: "♍", desc: "Siembra de disciplina espiritual, sanación con plantas maestras y alquimia cotidiana." },
+  { date: "2034-09-28", type: "lunar", category: "Parcial", name: "Eclipse Lunar Parcial", sign: "Piscis", symbol: "♓", desc: "Cierre de ciclos de victimismo y entrega confiada a la guía de las estrellas." },
+
+  // 2035
+  { date: "2035-02-22", type: "lunar", category: "Penumbral", name: "Eclipse Lunar Penumbral", sign: "Virgo", symbol: "♍", desc: "Puesta a punto de la salud integral y discernimiento sutil en las metas diarias." },
+  { date: "2035-03-09", type: "solar", category: "Anular", name: "Eclipse Solar Anular", sign: "Piscis", symbol: "♓", desc: "Invocación de visiones artísticas, compasión infinita y creación de arte sagrado." },
+  { date: "2035-08-19", type: "lunar", category: "Parcial", name: "Eclipse Lunar Parcial", sign: "Acuario", symbol: "♒", desc: "Liberación de estructuras mentales rígidas y apertura a la hermandad cósmica." },
+  { date: "2035-09-02", type: "solar", category: "Total", name: "Eclipse Solar Total Monumental", sign: "Virgo", symbol: "♍", desc: "Gran alineación solar transformadora visible en Asia y el Pacífico. Maestría y síntesis de sabiduría ancestral." },
+
+  // 2036
+  { date: "2036-02-11", type: "lunar", category: "Total", name: "Eclipse Lunar Total (Luna de Sangre)", sign: "Leo", symbol: "♌", desc: "Celebración de la nobleza del alma, autenticidad radiante y soberanía del corazón." },
+  { date: "2036-02-27", type: "solar", category: "Anular", name: "Eclipse Solar Anular", sign: "Piscis", symbol: "♓", desc: "Nuevas mareas de sensibilidad mística y despertar de la telepatía intuitiva." },
+  { date: "2036-07-23", type: "solar", category: "Total", name: "Eclipse Solar Total", sign: "Cáncer", symbol: "♋", desc: "Consagración de santuarios sagrados, protección del clan y nutrición emocional." },
+  { date: "2036-08-07", type: "lunar", category: "Total", name: "Eclipse Lunar Total (Luna de Sangre)", sign: "Acuario", symbol: "♒", desc: "Culminación de ideales humanitarios y sintonización con las frecuencias de la Nueva Era." }
 ];
 
 function getEclipseForDate(date = new Date()) {

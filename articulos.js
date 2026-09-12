@@ -5,6 +5,409 @@
 // Base de Datos Estática de Artículos
 const ARTICULOS_DB = [
   {
+    id: "tirada-cruz-celta-guia",
+    title: "La Tirada de la Cruz Celta: Guía Maestra Paso a Paso para Descifrar el Pasado, Presente y Futuro",
+    badge: "Tarot",
+    image: "assets/tirada_cruz_celta_banner.png",
+    date: "12 de Septiembre, 2026",
+    author: "Eco Estelar",
+    excerpt: "Domina la tirada más célebre y profunda de la cartomancia occidental. Significado de las 10 posiciones de la Cruz Celta, lectura del cruce de fuerzas y ejemplo práctico comentado.",
+    body: `<p>La <strong>Tirada de la Cruz Celta</strong> es, sin lugar a dudas, el método de lectura más icónico, reverenciado y completo de toda la cartomancia occidental. Popularizada a principios del siglo XX por el místico Arthur Edward Waite (creador de la baraja Rider-Waite-Smith y miembro de la Orden Hermética de la Golden Dawn), esta disposición de diez cartas ofrece una radiografía multidimensional de cualquier consulta, abarcando desde las causas inconscientes más remotas hasta las influencias ambientales y el desenlace final.</p>
+
+      <img src="assets/tirada_cruz_celta_banner.png" alt="Tirada de la Cruz Celta con cartas de tarot doradas y velas sagradas sobre tapete de terciopelo">
+
+      <p>A diferencia de las tiradas simples de tres cartas, que aportan una respuesta rápida y concisa, la Cruz Celta está diseñada para desentrañar situaciones complejas donde existen múltiples factores en juego: dudas existenciales, encrucijadas laborales, crisis afectivas profundas o procesos de transformación espiritual. En esta guía maestra aprenderás la arquitectura sagrada de sus 10 posiciones, el arte de interpretar los cruces de fuerza y cómo realizar una lectura fluida sin bloquear tu intuición.</p>
+
+      <h3>1. La Estructura Geométrica de la Cruz Celta</h3>
+      <p>La disposición de la Cruz Celta se divide en dos secciones maestras que dialogan constantemente entre sí:</p>
+      <ul>
+        <li><strong>El Círculo y la Cruz Central (Cartas 1 a 6):</strong> Representa el corazón del asunto, la interacción entre el consultante y su entorno inmediato, y el flujo temporal lineal (pasado reciente, presente y futuro próximo).</li>
+        <li><strong>El Bastón o Columna de la Escalera (Cartas 7 a 10):</strong> Representa la dimensión psicológica, las influencias externas, las esperanzas o temores inconscientes y la síntesis evolutiva o desenlace.</li>
+      </ul>
+
+      <h3>2. Desglose Exhaustivo de las 10 Posiciones</h3>
+
+      <div class="table-container" style="overflow-x:auto; margin: 1.5rem 0;">
+        <table style="width:100%; border-collapse:collapse; border:1px solid var(--border-color); font-family:var(--font-sans); font-size:0.9rem;">
+          <thead>
+            <tr style="background:rgba(229,193,88,0.15); color:var(--gold-color); font-family:var(--font-serif);">
+              <th style="padding:0.75rem; border:1px solid var(--border-color); text-align:center; width:15%;">POSICIÓN</th>
+              <th style="padding:0.75rem; border:1px solid var(--border-color); text-align:left; width:30%;">NOMBRE TRADICIONAL</th>
+              <th style="padding:0.75rem; border:1px solid var(--border-color); text-align:left;">SIGNIFICADO EVOLUTIVO Y PREGUNTA CLAVE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Carta 1</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Centro del Asunto</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">La atmósfera actual, el estado presente del consultante y la energía nuclear que envuelve la pregunta en este instante.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Carta 2</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Desafío / El Cruce</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Se coloca horizontalmente cruzando la Carta 1. Representa el obstáculo directo, la prueba a superar o la fuerza complementaria que dinamiza la situación.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Carta 3</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>La Raíz / El Fundamento</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Ubicada debajo del centro. Revela el origen inconsciente, lecciones kármicas pasadas o motivaciones profundas que originaron el problema actual.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Carta 4</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Pasado Reciente</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Ubicada a la izquierda del centro. Eventos que acaban de concluir o energías que están perdiendo fuerza pero que aún influyen en el ánimo del consultante.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Carta 5</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>La Corona / Lo Posible</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Ubicada arriba del centro. La aspiración consciente, el mejor resultado alcanzable o la meta que la mente del consultante proyecta hacia el futuro.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Carta 6</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Futuro Próximo</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Ubicada a la derecha del centro. El siguiente paso inminente en las próximas 2 a 6 semanas si se mantiene la trayectoria actual.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Carta 7</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>Tu Actitud / El Yo Interno</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Base de la columna vertical. Cómo se posiciona el consultante ante la situación: sus recursos personales, bloqueos psicológicos o autoimagen.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Carta 8</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Entorno y los Otros</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Segunda de la columna. El ambiente externo, la opinión de familiares, socios, amigos o la energía del lugar de trabajo.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Carta 9</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>Esperanzas y Temores</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Tercera de la columna. Lo que el corazón desea secretamente o el miedo oculto que sabotea el éxito antes de intentar la meta.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Carta 10</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Desenlace / Síntesis</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Cima de la columna. El resultado final a largo plazo, la consolidación del ciclo y la lección kármica que el alma debe asimilar.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3. El Secreto de la Interpretación Dinámica: Los 5 Ejes de Diálogo</h3>
+      <p>Uno de los errores más habituales al leer la Cruz Celta es tratar cada carta como una isla aislada. El verdadero poder de esta tirada surge al observar cómo dialogan entre sí las posiciones emparejadas:</p>
+      <ul>
+        <li><strong>Eje de Tensión Central (Cartas 1 y 2):</strong> Define el conflicto nuclear. Si en la posición 1 aparece <em>El Loco</em> y en la 2 <em>El Emperador</em>, el deseo de libertad y cambio choca frontalmente contra estructuras rígidas o figuras de autoridad.</li>
+        <li><strong>Eje de la Conciencia (Cartas 3 y 5):</strong> Compara lo que el subconsciente arrastra (raíz) con lo que la mente desea alcanzar (corona). Si hay contradicción, el consultante está sufriendo autosabotaje.</li>
+        <li><strong>Eje Temporal Horizontal (Cartas 4 y 6):</strong> Muestra la transición fluida de lo que se despide y lo que entra inmediatamente.</li>
+        <li><strong>Eje del Espejo Social (Cartas 7 y 8):</strong> Analiza si la percepción que el consultante tiene de sí mismo coincide o choca con lo que su entorno realmente proyecta sobre él.</li>
+        <li><strong>Eje de la Manifestación Final (Cartas 9 y 10):</strong> Muestra si el desenlace responde a los miedos o a las esperanzas del consultante, confirmando que la mente crea la realidad física.</li>
+      </ul>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--gold-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>✦ Consejo de Maestría:</strong> Si la Carta 10 resulta enigmática o deja dudas abiertas, puedes extraer una carta adicional de aclaración colocándola justo encima de la décima posición para arrojar luz sobre el consejo de los arcanos.
+      </div>
+
+      <h3>4. Ejemplo Práctico de Lectura: Encrucijada Profesional</h3>
+      <p>Imaginemos una consulta donde el consultante pregunta si debe renunciar a un trabajo corporativo seguro para emprender su propio proyecto holístico:</p>
+      <ol>
+        <li><strong>Centro (Ocho de Oros):</strong> Rutina diaria de trabajo arduo y perfeccionismo técnico.</li>
+        <li><strong>Cruce (La Torre):</strong> Miedo a la pérdida súbita de ingresos y ruptura de la comodidad económica.</li>
+        <li><strong>Raíz (El Juicio):</strong> Un llamado vocacional y espiritual que ya no puede seguir siendo postergado.</li>
+        <li><strong>Pasado (Cuatro de Espadas):</strong> Meses de agotamiento mental y necesidad de descanso reparador.</li>
+        <li><strong>Corona (La Estrella):</strong> La esperanza de un proyecto alineado con la misión del alma y la luz propia.</li>
+        <li><strong>Futuro Próximo (As de Bastos):</strong> Llegará una oportunidad emocionante o propuesta inicial en las próximas semanas.</li>
+        <li><strong>Actitud Interna (El Ermitaño):</strong> Prudencia, introspección y búsqueda de sabiduría antes de actuar.</li>
+        <li><strong>Entorno (Tres de Copas):</strong> Amigos y círculos cercanos dispuestos a apoyar y celebrar el nuevo camino.</li>
+        <li><strong>Miedos (Nueve de Espadas):</strong> Noches de insomnio por pensar en los peores escenarios económicos imaginarios.</li>
+        <li><strong>Desenlace (El Mundo):</strong> Éxito rotundo, culminación triunfal y realización plena en el nuevo proyecto a largo plazo.</li>
+      </ol>
+      <p><strong>Síntesis del Consejo:</strong> El mazo indica claramente que, aunque La Torre (el miedo al cambio) genera ansiedad mental (Nueve de Espadas), la raíz es un despertar genuino (El Juicio) y el desenlace final es el éxito total (El Mundo). El As de Bastos confirma que es hora de dar el paso con valentía.</p>
+
+      <h3>Conclusión: El Templo de la Sabiduría en tu Tapete</h3>
+      <p>La Cruz Celta no es solo una técnica de adivinación; es un mapa iniciático que te permite elevar la perspectiva sobre cualquier encrucijada de tu vida. Al practicarla con respeto y calma, tus lecturas ganarán una precisión, profundidad y elocuencia sin precedentes.</p>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--purple-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>🔮 Realiza tu consulta ahora:</strong> Si deseas explorar los mensajes que los arcanos tienen para ti en este instante, visita nuestro <a href="oraculo.html" style="color: var(--purple-color); text-decoration: underline;">Oráculo de Tarot Online</a> y permite que la sabiduría cósmica guíe tus pasos.
+      </div>`
+  },
+  {
+    id: "sinastria-compatibilidad-pareja",
+    title: "Sinastría de Pareja y Compatibilidad Astral: La Química del Alma entre Signos del Zodiaco",
+    badge: "Astrología",
+    image: "assets/sinastria_pareja_banner.png",
+    date: "12 de Septiembre, 2026",
+    author: "Eco Estelar",
+    excerpt: "Descubre cómo la sinastría astrológica revela la verdadera afinidad entre dos almas. El papel de Venus, Marte, la Luna, los Nodos Lunares y la alquimia de los 4 elementos en el amor.",
+    body: `<p>¿Por qué con ciertas personas sentimos una conexión magnética e inexplicable desde el primer cruce de miradas, mientras que con otras la convivencia resulta un constante choque de voluntades? En el universo de la astrología tradicional y psicológica, la respuesta no se encuentra en el horóscopo simplista de los signos solares de revista, sino en una disciplina mucho más profunda y milenaria: la <strong>Sinastría de Pareja</strong>.</p>
+
+      <img src="assets/sinastria_pareja_banner.png" alt="Rueda zodiacal de sinastría de pareja con dos almas cósmicas conectadas bajo constelaciones de Venus y Marte">
+
+      <p>La palabra *sinastría* proviene del griego <em>syn</em> (juntos) y <em>astron</em> (estrella). Es la técnica astrológica que consiste en superponer dos cartas natales completas para analizar cómo interactúan los planetas, casas y aspectos de dos individuos. Lejos de dictar una sentencia fatalista sobre el destino de una relación, la sinastría actúa como un mapa de navegación emocional: revela dónde reside la química natural, qué lecciones kármicas han venido a trabajar juntos y cómo superar las áreas de fricción para construir un amor consciente y duradero.</p>
+
+      <h3>1. Los Cuatro Pilares Planetarios del Amor</h3>
+      <p>Para entender la dinámica de una pareja en sinastría, los astrólogos prestamos especial atención a cuatro cuerpos celestes fundamentales:</p>
+
+      <ul>
+        <li><strong>Venus (♀) — El Lenguaje del Afecto y los Valores:</strong> Describe qué consideramos bello, cómo expresamos el cariño, qué necesitamos para sentirnos amados y cómo gestionamos las finanzas compartidas. Cuando el Venus de una persona hace aspectos armónicos (trígonos o sextiles) con el Sol, la Luna o el Ascendente de la otra, el romanticismo y la dulzura fluyen sin esfuerzo.</li>
+        <li><strong>Marte (♂) — La Pasión, la Atracción Física y la Conquista:</strong> Rige la energía sexual, el impulso del deseo, la química corporal y la manera en que afrontamos las discusiones. Los contactos fuertes entre el Marte de uno y el Venus o Plutón del otro generan una atracción magnética irrefrenable.</li>
+        <li><strong>La Luna (🌙) — La Intimidad Emocional y la Convivencia Diaria:</strong> Representa nuestras necesidades de seguridad afectiva, la memoria infantil, las costumbres hogareñas y las respuestas automáticas ante el estrés. Para que una relación prospere bajo el mismo techo a largo plazo, la armonía entre las dos Lunas natales es el factor más crucial de todos.</li>
+        <li><strong>El Ascendente — La Puerta de Entrada y el Reconocimiento Físico:</strong> Determina la primera impresión, la atracción estética inmediata y la energía con la que nos mostramos al mundo. Cuando el planeta regente de uno toca el Ascendente del otro, existe una sensación instantánea de familiaridad y encanto.</li>
+      </ul>
+
+      <h3>2. La Alquimia de los Cuatro Elementos en el Amor</h3>
+      <p>La combinación de los elementos de los signos solares, lunares y ascendentes define el temperamento básico de la pareja:</p>
+
+      <div class="table-container" style="overflow-x:auto; margin: 1.5rem 0;">
+        <table style="width:100%; border-collapse:collapse; border:1px solid var(--border-color); font-family:var(--font-sans); font-size:0.9rem;">
+          <thead>
+            <tr style="background:rgba(139,92,246,0.15); color:var(--gold-color); font-family:var(--font-serif);">
+              <th style="padding:0.75rem; border:1px solid var(--border-color); width:25%;">COMBINACIÓN</th>
+              <th style="padding:0.75rem; border:1px solid var(--border-color); width:35%;">DINÁMICA ENERGÉTICA</th>
+              <th style="padding:0.75rem; border:1px solid var(--border-color);">CONSEJO PARA LA PAREJA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color);">Fuego + Aire<br><small>(Aries/Leo/Sag + Gém/Lib/Acu)</small></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">El aire aviva la llama del fuego. Relación llena de entusiasmo, aventuras, creatividad, viajes y constante estímulo intelectual.</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Aprender a aterrizar las ideas en la realidad material y no quemar la energía en discusiones de orgullo.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color);">Tierra + Agua<br><small>(Tau/Vir/Cap + Cán/Esc/Pis)</small></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">El agua nutre la tierra haciéndola fértil; la tierra contiene el agua dándole estructura y seguridad. Amor nutritivo, fiel y seguro.</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Evitar la rutina excesiva (tierra) y no dejarse arrastrar por el pesimismo o hipersensibilidad (agua).</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color);">Fuego + Agua<br><small>(Aries/Leo/Sag + Cán/Esc/Pis)</small></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Pasión volcánica y vapor emocional. Gran intensidad romántica pero con riesgo de apagar la chispa o hervir en dramas.</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">El fuego debe moderar su impulsividad y el agua debe comunicar sus emociones sin guardar resentimientos.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color);">Tierra + Aire<br><small>(Tau/Vir/Cap + Gém/Lib/Acu)</small></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">La mente brillante del aire se encuentra con el pragmatismo constructor de la tierra. Excelente para proyectos conjuntos.</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Cultivar la ternura y la demostración física de afecto para que el vínculo no se vuelva excesivamente frío o mental.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3. Vínculos Kármicos y Relaciones de Almas Compañeras</h3>
+      <p>En la sinastría avanzada, ciertos contactos planetarios señalan pactos del alma y lecciones trascendentales traídas de vidas pasadas:</p>
+      <ul>
+        <li><strong>Contactos con los Nodos Lunares:</strong> Cuando los planetas personales de una persona se alinean con el Nodo Norte de la otra, la relación actúa como un catalizador de crecimiento evolutivo. Aunque puede haber retos, ambos sienten que su encuentro era 'inevitable'.</li>
+        <li><strong>Aspectos con Saturno (El Pegamento Cósmico):</strong> Saturno suele tener mala fama, pero en sinastría es el planeta que aporta compromiso, estabilidad, lealtad y capacidad de construir un matrimonio sólido a prueba del paso de las décadas.</li>
+        <li><strong>Contactos con Plutón (La Alquimia del Deseo):</strong> Provocan transformaciones psicológicas radicales. Son amores intensos, pasionales y catárticos que obligan a ambos a mirar sus sombras y renacer más fuertes.</li>
+      </ul>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--gold-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>✦ Sabiduría del Santuario:</strong> Ninguna carta de sinastría es 'perfecta' ni 'imposible'. Los aspectos armónicos representan los dones que la pareja disfruta de forma natural, mientras que las cuadraturas y oposiciones son los gimnasios espirituales donde el amor madura y se vuelve invencible.
+      </div>
+
+      <h3>Conclusión: Amar desde la Conciencia Astral</h3>
+      <p>Conocer la sinastría con tu pareja no busca predecir el fin o el inicio de una historia, sino honrar la individualidad de cada alma. Cuando comprendes qué lenguaje emocional habla tu ser amado según las estrellas, el juicio desaparece y da paso a la empatía, el respeto y la devoción verdadera.</p>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--purple-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>🔮 Descubre tu vibración de hoy:</strong> Explora las influencias astrales que marcan el día para tu signo y el de tu pareja en nuestro <a href="horoscopo.html" style="color: var(--purple-color); text-decoration: underline;">Horóscopo Astral Diario</a> y sintoniza con las mejores energías del amor.
+      </div>`
+  },
+  {
+    id: "guia-pendulo-radiestesia",
+    title: "El Poder del Péndulo y la Radiestesia: Guía Completa de Uso, Calibración y Alineación de Chakras",
+    badge: "Amuletos",
+    image: "assets/pendulo_radiestesia_banner.png",
+    date: "12 de Septiembre, 2026",
+    author: "Eco Estelar",
+    excerpt: "Aprende el arte milenario de la radiestesia. Cómo elegir tu péndulo de amatista o cuarzo, programar tu código Sí/No, alinear los 7 chakras y purificar estancias con precisión.",
+    body: `<p>La <strong>Radiestesia</strong> (del latín <em>radius</em>, rayo o radiación, y del griego <em>aisthesis</em>, sensibilidad) es el arte milenario de percibir y medir las radiaciones, vibraciones y campos energéticos sutiles que emiten los seres vivos, los objetos y la propia Tierra. Dentro de esta noble disciplina esotérica y terapéutica, el <strong>Péndulo</strong> es la herramienta reina: un instrumento sagrado capaz de actuar como un puente directo entre nuestra intuición profunda y la mente consciente.</p>
+
+      <img src="assets/pendulo_radiestesia_banner.png" alt="Péndulo de amatista y orgonita suspendido sobre gráfico sagrado de radiestesia con símbolos de chakras y velas">
+
+      <p>Lejos de ser un artefacto 'mágico' que toma decisiones por sí mismo, el péndulo funciona a través del denominado <strong>efecto ideomotor</strong>: los micromovimientos neuromusculares involuntarios que nuestro sistema nervioso genera cuando el subconsciente capta una frecuencia o respuesta energética. El péndulo simplemente actúa como un amplificador visual de tu propia sabiduría interior. En esta guía completa aprenderás a elegir tu péndulo, calibrar tu código personal de respuestas y utilizarlo para la armonización energética y el diagnóstico de chakras.</p>
+
+      <h3>1. Tipos de Péndulos y Cómo Elegir el Adecuado</h3>
+      <p>El material del que está fabricado el péndulo influye en su peso, velocidad de oscilación y propósito energético:</p>
+
+      <ul>
+        <li><strong>Péndulos de Cristal / Mineral (Amatista, Cuarzo Blanco, Cuarzo Rosa, Ojo de Tigre):</strong> Son los favoritos para el trabajo espiritual, la intuición y la sanación de chakras. La amatista potencia la visión psíquica, mientras que el cuarzo transparente aporta máxima claridad y neutralidad.</li>
+        <li><strong>Péndulos de Orgonita:</strong> Combinan resina, metales y virutas de cuarzo. Tienen la propiedad única de transmutar la energía densa o negativa de forma constante, siendo ideales para medir lugares cargados o realizar limpiezas energéticas de espacios.</li>
+        <li><strong>Péndulos de Metal (Latón, Cobre, Acero):</strong> Son instrumentos muy precisos, con excelente peso y simetría geométrica. No acumulan energía residual tan rápido como los cristales, por lo que son excelentes para búsquedas sobre mapas o tablas numeradas.</li>
+        <li><strong>Péndulos de Madera (Ébano, Olivo, Haya):</strong> Son instrumentos neutros y orgánicos, muy sensibles a la vibración biológica de plantas y alimentos.</li>
+      </ul>
+
+      <h3>2. Limpieza y Consagración de tu Péndulo</h3>
+      <p>Antes de utilizar un péndulo por primera vez (o tras una sesión intensa), es fundamental purificarlo:</p>
+      <ol>
+        <li><strong>Sahumado Purificador:</strong> Enciende una vara de Palo Santo o Salvia Blanca y pasa el péndulo siete veces a través del humo en círculos en el sentido de las agujas del reloj.</li>
+        <li><strong>Recarga Lunar:</strong> Deja reposar tu péndulo en una ventana bajo la luz de la <strong>Luna Llena</strong> o sobre una barra de selenita durante la noche.</li>
+        <li><strong>Consagración Personal:</strong> Sostén el péndulo entre las palmas de tus manos a la altura del corazón, respira profundo y di con convicción: <em>“Consagro este péndulo a la verdad, la luz y el mayor bien. Que sea un canal puro de mi sabiduría interior.”</em></li>
+      </ol>
+
+      <h3>3. Protocolo de Calibración: Tu Código Personal (Sí / No / Duda)</h3>
+      <p>Cada persona tiene su propio patrón neuromuscular. Nunca asumas que el 'Sí' es siempre en círculo o en línea recta; debes preguntárselo a tu péndulo al inicio de cada sesión:</p>
+
+      <div class="table-container" style="overflow-x:auto; margin: 1.5rem 0;">
+        <table style="width:100%; border-collapse:collapse; border:1px solid var(--border-color); font-family:var(--font-sans); font-size:0.9rem;">
+          <thead>
+            <tr style="background:rgba(229,193,88,0.15); color:var(--gold-color); font-family:var(--font-serif);">
+              <th style="padding:0.75rem; border:1px solid var(--border-color); text-align:center; width:20%;">PASO</th>
+              <th style="padding:0.75rem; border:1px solid var(--border-color); text-align:left; width:35%;">PREGUNTA DE CALIBRACIÓN</th>
+              <th style="padding:0.75rem; border:1px solid var(--border-color); text-align:left;">QUÉ OBSERVAR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Paso 1</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><em>"Muéstrame un SÍ claro"</em></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Observa el movimiento espontáneo (suele ser giro horario o vaivén vertical). Ese será tu 'SÍ' oficial.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Paso 2</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><em>"Muéstrame un NO claro"</em></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Observa el cambio de dirección (suele ser giro antihorario o vaivén horizontal). Ese será tu 'NO'.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">Paso 3</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><em>"Muéstrame DUDA / NO SÉ"</em></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Suele manifestarse como una oscilación diagonal o inmovilidad total. Indica que la pregunta no está bien formulada o que no es el momento de saberlo.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>4. Alineación y Diagnóstico de los 7 Chakras</h3>
+      <p>El péndulo es una de las herramientas más eficaces para medir el estado de los centros energéticos del cuerpo humano:</p>
+      <ol>
+        <li>Coloca el péndulo a unos 5-10 centímetros por encima de cada chakra (o sobre una foto o plantilla anatómica).</li>
+        <li><strong>Giro amplio en sentido horario:</strong> El chakra se encuentra abierto, activo y con flujo armónico.</li>
+        <li><strong>Giro antihorario o vaivén errático:</strong> El chakra presenta un bloqueo energético, sobrecarga o fuga de vitalidad.</li>
+        <li><strong>Para armonizarlo:</strong> Mantén el péndulo sobre el chakra visualizando una luz del color correspondiente (Rojo en Raíz, Naranja en Sacro, Amarillo en Plexo, Verde en Corazón, Azul en Garganta, Índigo en Tercer Ojo, Violeta en Corona) hasta que el péndulo comience a girar naturalmente en sentido horario.</li>
+      </ol>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--gold-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>✦ Regla de Oro en Radiestesia:</strong> Para evitar sesgos o respuestas condicionadas por tu mente consciente, mantén siempre una actitud de 'neutralidad emocional'. Si deseas con demasiada fuerza que la respuesta sea 'Sí', tu mente influirá en el péndulo. Respira profundo y adopta la postura de un observador imparcial.
+      </div>
+
+      <h3>Conclusión: El Diálogo con tu Sabiduría Interior</h3>
+      <p>Trabajar con el péndulo es un camino apasionante que afina tu sensibilidad psíquica día a día. Con paciencia, práctica y respeto, descubrirás que las respuestas que buscas en el exterior siempre estuvieron grabadas en el santuario de tu propia intuición.</p>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--purple-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>🛍️ Encuentra tu Péndulo Consagrado:</strong> Visita nuestra <a href="tienda.html" style="color: var(--purple-color); text-decoration: underline;">Tienda Mágica</a> para descubrir nuestra selección de péndulos de amatista, orgonita de los 7 chakras y minerales naturales consagrados para tu práctica espiritual.
+      </div>`
+  },
+  {
+    id: "guia-horas-espejo-sincronicidad",
+    title: "El Secreto de las Horas Espejo: Qué Significa ver el 11:11, 22:22, 12:12 y los Mensajes del Universo",
+    badge: "Numerología",
+    image: "assets/horas_espejo_banner.png",
+    date: "12 de Septiembre, 2026",
+    author: "Eco Estelar",
+    excerpt: "Descifra el misterio de las sincronicidades numéricas. Guía completa con el significado espiritual de las 24 horas espejo, horas invertidas y cómo activar los portales de manifestación.",
+    body: `<p>Miras el reloj del teléfono o del coche sin pensarlo y marca exactamente las <strong>11:11</strong>. Al día siguiente, te despiertas en mitad de la noche y el reloj digital brilla con un <strong>03:03</strong>. Vas por la calle y una matrícula muestra el <strong>222</strong> o miras la hora justo a las <strong>22:22</strong>. Si este fenómeno te ocurre con frecuencia, no estás sufriendo una simple coincidencia matemática: estás experimentando un fenómeno de <strong>Sincronicidad Numérica</strong>.</p>
+
+      <img src="assets/horas_espejo_banner.png" alt="Portal cósmico con números sagrados 11:11, 22:22 y 12:12 flotando en el firmamento estrellado">
+
+      <p>El célebre psicólogo suizo Carl Gustav Jung definió la sincronicidad como la coincidencia temporal de dos o más acontecimientos no vinculados causalmente, pero que comparten un significado profundo para el observador. En la numerología pitagórica y la angelología esotérica, las <strong>Horas Espejo</strong> (aquellas donde los dígitos de la hora y los minutos coinciden exactamente, como 11:11, 14:14 o 20:20) son consideradas pequeñas llamadas de atención del cosmos: toques en el hombro de tus guías espirituales para recordarte que estás alineado con el flujo del universo.</p>
+
+      <h3>1. ¿Por qué el Universo se Comunica a través de los Números?</h3>
+      <p>Los números son el lenguaje universal y puro de la creación; no están condicionados por idiomas humanos, modas ni barreras culturales. Cuando tu mente inconsciente capta una hora espejo repetida, ocurre por tres razones esenciales:</p>
+      <ul>
+        <li><strong>Confirmación de Sendero:</strong> Estás en el lugar correcto, en el momento preciso y tomando las decisiones adecuadas para tu evolución.</li>
+        <li><strong>Alerta de Pensamiento:</strong> El universo te pide que prestes atención a lo que estabas pensando exactamente un segundo antes de mirar el reloj (ya que estás manifestando esa realidad con gran rapidez).</li>
+        <li><strong>Despertar de Conciencia:</strong> Tu vibración está elevándose y tu glándula pineal comienza a percibir las sutiles sincronías que unen el plano físico con el plano espiritual.</li>
+      </ul>
+
+      <h3>2. Diccionario Completo de las Horas Espejo Principales</h3>
+
+      <div class="table-container" style="overflow-x:auto; margin: 1.5rem 0;">
+        <table style="width:100%; border-collapse:collapse; border:1px solid var(--border-color); font-family:var(--font-sans); font-size:0.9rem;">
+          <thead>
+            <tr style="background:rgba(229,193,88,0.15); color:var(--gold-color); font-family:var(--font-serif);">
+              <th style="padding:0.75rem; border:1px solid var(--border-color); text-align:center; width:15%;">HORA</th>
+              <th style="padding:0.75rem; border:1px solid var(--border-color); text-align:left; width:30%;">ARQUETIPO CÓSMICO</th>
+              <th style="padding:0.75rem; border:1px solid var(--border-color); text-align:left;">MENSAJE ESPIRITUAL Y CONSEJO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">00:00</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Renacimiento / El Vacío Fértil</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Cierre absoluto de un ciclo y vuelta al origen sagrado. Estás ante una hoja en blanco; pide un deseo con fe.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">01:01</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Liderazgo y el Amor</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Alguien piensa en ti con afecto. Te recuerda confiar en tu fuerza iniciadora y tomar las riendas de tus proyectos.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">03:03</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>La Creatividad y la Intuición</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Alineación de mente, cuerpo y espíritu. Es hora de expresarte a través del arte, la palabra y la verdad interior.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">07:07</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>La Sabiduría Espiritual</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">El número místico por excelencia. Confirmación de que tus oraciones y meditaciones están dando frutos visibles.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">10:10</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>La Rueda de la Fortuna</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Grandes giros positivos en el destino material y afectivo. Prepárate para recoger la cosecha de tu esfuerzo.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">11:11</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Gran Portal de Manifestación</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">La hora espejo más poderosa de todas. Portal directo entre dimensiones. Mantén pensamientos de máxima luz y decreta tu realidad.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">12:12</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Salto Cuántico y la Fe</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Momento de soltar el control y confiar. Una gran transformación está ocurriendo entre bastidores a tu favor.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">15:15</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>La Pasión y el Magnetismo</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Despertar de la energía vital y relaciones intensas. Cuidado con caer en tentaciones de apego material o celos.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">20:20</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Juicio y la Claridad</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Se disipan las dudas. Una verdad que estaba oculta sale a la luz para liberarte y darte paz mental.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:700; color:var(--gold-color); text-align:center;">22:22</td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);"><strong>El Gran Constructor Terrenal</strong></td>
+              <td style="padding:0.75rem; border:1px solid var(--border-color);">Tus sueños e ideales espirituales están a punto de plasmarse en el plano material tangible. Sigue perseverando.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3. Las Horas Invertidas Más Relevantes</h3>
+      <p>Cuando los dígitos se reflejan de forma invertida (como <strong>12:21</strong> o <strong>21:12</strong>), el mensaje suele apuntar a la necesidad de revisar tu mundo interior:</p>
+      <ul>
+        <li><strong>12:21:</strong> Alguien de tu entorno está hablando de ti de forma positiva; mantén la generosidad y el optimismo.</li>
+        <li><strong>13:31:</strong> Te advierte sobre la necesidad de paciencia y prudencia ante posibles contratiempos menores.</li>
+        <li><strong>21:12:</strong> Confirma que tus ángeles custodios y protectores cuidan de tu salud y tu familia.</li>
+      </ul>
+
+      <h3>4. El Ritual de Anclaje de 1 Minuto al Ver una Hora Espejo</h3>
+      <p>Cuando te encuentres con una hora espejo, no te limites a sonreír y seguir con tu rutina. Aprovecha el portal con este sencillo ejercicio:</p>
+      <ol>
+        <li>Detente por diez segundos y coloca una mano sobre tu corazón.</li>
+        <li>Inhala profundo y repite mentalmente: <em>“Agradezco la guía de mis protectores y me abro a recibir las bendiciones del cosmos en perfecta armonía.”</em></li>
+        <li>Sonríe y continúa tu jornada con la certeza de que no caminas en soledad.</li>
+      </ol>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--gold-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>✦ Conexión Numérica:</strong> Los números espejo no son casualidades; son guiños luminosos del universo recordándote que la magia está viva en cada segundo de tu existencia.
+      </div>
+
+      <h3>Conclusión: Sintoniza con la Sincronía Universal</h3>
+      <p>Aprender a descifrar las horas espejo transforma tu relación con el tiempo. El reloj deja de ser una máquina de estrés y plazos para convertirse en un oráculo viviente que te acompaña, te protege y te recuerda tu naturaleza cósmica.</p>
+
+      <div class="narrative-box" style="background: rgba(8, 7, 17, 0.6); border-left: 4px solid var(--purple-color); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem;">
+        <strong>🔢 Calcula tu Número de Destino:</strong> Si deseas profundizar en el significado de tus números personales de nacimiento, visita nuestra sección de <a href="numerologia.html" style="color: var(--purple-color); text-decoration: underline;">Numerología Pitagórica</a> y descubre tu Sendero de Vida hoy mismo.
+      </div>`
+  },
+  {
     id: "numerologia-destino",
     title: "Guía Completa de Numerología: Calcula tu Sendero de Vida y Número de Destino",
     badge: "Numerología",
